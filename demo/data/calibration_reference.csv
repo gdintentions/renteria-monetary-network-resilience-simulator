@@ -1,0 +1,13 @@
+dataset,period,series,value,unit,source_url,note
+IMF COFER,2024Q4,USD,57.79,percent of allocated FX reserves,https://data.imf.org/en/news/imf-data-brief-jul-9,Prior-period value reported in IMF 2025Q1 release
+IMF COFER,2024Q4,EUR,19.84,percent of allocated FX reserves,https://data.imf.org/en/news/imf-data-brief-jul-9,Prior-period value reported in IMF 2025Q1 release
+IMF COFER,2024Q4,CNY,2.18,percent of allocated FX reserves,https://data.imf.org/en/news/imf-data-brief-jul-9,Prior-period value reported in IMF 2025Q1 release
+IMF COFER,2025Q4,USD,56.77,percent of global FX reserves,https://data.imf.org/en/news/imf%20data%20brief%20march%2027,IMF COFER world aggregate
+IMF COFER,2025Q4,EUR,20.25,percent of global FX reserves,https://data.imf.org/en/news/imf%20data%20brief%20march%2027,IMF COFER world aggregate
+IMF COFER,2025Q4,CNY,1.95,percent of global FX reserves,https://data.imf.org/en/news/imf%20data%20brief%20march%2027,IMF COFER world aggregate
+BIS Triennial FX Survey,2022,USD,88.4,percent of FX trades (one side),https://www.bis.org/publications/202509-commentary-otc-derivatives,Historical comparator cited in 2025 BIS survey commentary
+BIS Triennial FX Survey,2022,EUR,30.6,percent of FX trades (one side),https://www.bis.org/publications/202509-commentary-otc-derivatives,Historical comparator cited in 2025 BIS survey commentary
+BIS Triennial FX Survey,2022,CNY,7.0,percent of FX trades (one side),https://www.bis.org/publications/renminbi-propels-growth-eme-currency-trading,Historical comparator cited in BIS analysis
+BIS Triennial FX Survey,2025,USD,89.2,percent of FX trades (one side),https://www.bis.org/publications/202509-commentary-otc-derivatives,BIS 2025 Triennial Central Bank Survey
+BIS Triennial FX Survey,2025,EUR,28.9,percent of FX trades (one side),https://www.bis.org/publications/202509-commentary-otc-derivatives,BIS 2025 Triennial Central Bank Survey
+BIS Triennial FX Survey,2025,CNY,8.5,percent of FX trades (one side),https://www.bis.org/publications/202509-commentary-otc-derivatives,BIS 2025 Triennial Central Bank Survey
