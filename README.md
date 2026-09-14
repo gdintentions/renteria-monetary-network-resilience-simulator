@@ -2,9 +2,14 @@
 
 A portfolio-grade scenario simulator for exploring how competing global monetary and payment networks could evolve over a 10–15 year horizon under geopolitical, fiscal, cyber, commodity, and digital-currency shocks.
 
+The repository now contains two connected interfaces:
+
+- `app.py` — original lean simulator dashboard
+- `demo/recruiter_app.py` — hardened recruiter/public demo built on the same core engine
+
 ## What this project models
 
-The default scenario tracks six actors:
+The core scenario tracks six network actors:
 
 - U.S. / USD network
 - BRICS settlement network
@@ -21,33 +26,69 @@ The baseline scenario includes five major shocks:
 4. Cyberattack on payments infrastructure
 5. Rapid digital-currency adoption
 
-The model is intentionally stylized. It is designed for scenario exploration, comparative resilience analysis, and portfolio demonstration—not as a prediction engine or financial-advice system.
+The model is intentionally stylized. It is designed for scenario exploration, comparative resilience analysis, systems-modeling demonstration, and portfolio review—not as a prediction engine or financial-advice system.
 
-## Key features
+## Recruiter demo hardening
 
-- Deterministic runs using a configurable random seed
-- 10–15 year simulation horizon
-- Shock persistence and resilience effects
-- Structural growth and volatility by network
-- Normalized modeled market/network shares
-- Interactive Streamlit dashboard
-- Downloadable CSV output
-- Unit tests for normalization, reproducibility, ranking, and validation
+The `demo/recruiter_app.py` build combines the original model with:
+
+- Monte Carlo uncertainty analysis
+- 10th / median / 90th percentile bands
+- 12 country-level agents
+- country-to-network graph visualization
+- historically anchored calibration
+- concentration and diversification diagnostics
+- transparent model-card disclosures
+- reproducible seeds
+- downloadable Monte Carlo outputs
+- deployment-ready Streamlit configuration
+- CI test workflow
+
+### Historical calibration
+
+The calibration layer uses public institutional data as **signals**, not as direct substitutes for the simulator's internal `share` variable.
+
+**IMF COFER — 2025Q4**
+- USD: 56.77%
+- EUR: 20.25%
+- CNY: 1.95%
+- Source: https://data.imf.org/en/news/imf%20data%20brief%20march%2027
+
+**BIS Triennial FX Survey — 2025**
+- USD: 89.2% of FX trades (one side)
+- EUR: 28.9%
+- CNY: 8.5%
+- Source: https://www.bis.org/publications/202509-commentary-otc-derivatives
+
+Reference rows are stored in `demo/data/calibration_reference.csv`.
 
 ## Architecture
 
 ```text
 .
-├── app.py                  # Streamlit dashboard
-├── simulator.py            # Core simulation engine
-├── requirements.txt        # Python dependencies
+├── app.py                              # Original Streamlit dashboard
+├── simulator.py                        # Core simulation engine
+├── demo/
+│   ├── recruiter_app.py                # Hardened recruiter/public demo
+│   ├── hardening.py                    # Monte Carlo, calibration, country agents
+│   ├── README.md                       # Recruiter demo documentation
+│   ├── DEPLOYMENT.md                   # Public deployment checklist
+│   └── data/
+│       └── calibration_reference.csv   # Public historical anchors
 ├── tests/
-│   └── test_simulator.py   # Unit tests
+│   ├── test_simulator.py               # Core-model tests
+│   └── test_recruiter_demo.py          # Advanced-layer tests
+├── .streamlit/
+│   └── config.toml                     # Cloud/app configuration
+├── .github/workflows/
+│   └── demo-tests.yml                  # CI
+├── pytest.ini
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
-The simulation engine is separated from the interface so it can later be reused in notebooks, APIs, agent systems, Monte Carlo studies, or model-comparison workflows.
+The architecture intentionally separates model mechanics from the public presentation layer. The recruiter demo calls the original engine directly rather than maintaining a second simulation implementation.
 
 ## Quick start
 
@@ -59,16 +100,22 @@ cd renteria-monetary-network-resilience-simulator
 python -m venv .venv
 ```
 
-Activate it, then install dependencies:
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the dashboard:
+Run the original dashboard:
 
 ```bash
 streamlit run app.py
+```
+
+Run the recruiter/public demo:
+
+```bash
+streamlit run demo/recruiter_app.py
 ```
 
 Run the core model from the command line:
@@ -77,7 +124,7 @@ Run the core model from the command line:
 python simulator.py
 ```
 
-Run tests:
+Run all tests:
 
 ```bash
 pytest -q
@@ -96,22 +143,33 @@ For each simulated year, the engine combines structural growth, lingering shock 
 
 A shock can affect multiple networks differently. For example, partial oil de-dollarization can increase modeled BRICS and neutral-network attractiveness while reducing USD-network attractiveness.
 
+### Monte Carlo layer
+
+The hardened demo repeatedly executes the original engine with reproducible independent seeds. For each network/year pair, it reports the 10th percentile, median, mean, and 90th percentile across runs.
+
+These bands describe uncertainty **inside the scenario model**. They are not frequentist confidence intervals for real-world monetary outcomes.
+
+### Country-agent layer
+
+Twelve country agents use explicit scenario affinities plus modeled network states to produce normalized exposure profiles. The strongest links are rendered as a network graph.
+
+The country affinities are inspectable assumptions. They are not inferred confidential reserve holdings or claims about official policy.
+
 ## Important interpretation note
 
-The variable called `share` is a model-internal relative attractiveness/usage share. It is **not** intended to equal official reserve-currency composition, SWIFT market share, trade-invoicing share, or any single real-world metric.
+The variable called `share` is a model-internal relative attractiveness/usage share. It is **not** intended to equal official reserve-currency composition, SWIFT payment share, trade-invoicing share, BIS FX turnover, or any single real-world metric.
 
-## Possible next-stage extensions
+The historical calibration is therefore deliberately light-touch and documented.
 
-- Monte Carlo confidence bands across thousands of runs
-- Agent-based strategic response functions
-- Country-level nodes and alliance switching
-- Trade, energy, debt, sanctions, and reserve datasets
-- Network-graph visualization
-- Stablecoin versus CBDC submodels
-- Cyber-resilience and settlement-contagion modeling
-- Historical backtesting
-- Bayesian calibration
-- LLM-generated scenario narratives tied to simulation results
+## Public demo deployment
+
+The recruiter build is organized for Streamlit Community Cloud:
+
+- Repository: `gdintentions/renteria-monetary-network-resilience-simulator`
+- Branch: `main`
+- Entrypoint: `demo/recruiter_app.py`
+
+See `demo/DEPLOYMENT.md` for the final account-side deployment steps.
 
 ## Portfolio value
 
@@ -119,11 +177,25 @@ This project demonstrates:
 
 - Python modeling
 - scenario design
-- geopolitical/economic systems thinking
-- simulation architecture
+- Monte Carlo simulation
+- agent-based modeling concepts
+- graph/network analysis
+- public-data calibration
+- model-governance disclosure
 - reproducibility
 - test-driven implementation
+- CI
 - interactive data applications
+
+## Remaining research extensions
+
+- historical backtesting against multiple vintages
+- Bayesian parameter calibration
+- trade and energy network datasets
+- sanctions and debt-service channels
+- CBDC versus stablecoin submodels
+- cyber-contagion propagation
+- LLM-generated scenario narratives tied to simulation outputs
 
 ## Disclaimer
 
