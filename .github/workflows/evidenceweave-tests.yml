@@ -1,0 +1,31 @@
+name: EvidenceWeave Tests
+
+on:
+  push:
+    paths:
+      - "portfolio_projects/renteria-evidenceweave/**"
+      - ".github/workflows/evidenceweave-tests.yml"
+  pull_request:
+    paths:
+      - "portfolio_projects/renteria-evidenceweave/**"
+      - ".github/workflows/evidenceweave-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio_projects/renteria-evidenceweave
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: portfolio_projects/renteria-evidenceweave/pyproject.toml
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m ruff check .
+      - run: python -m pytest

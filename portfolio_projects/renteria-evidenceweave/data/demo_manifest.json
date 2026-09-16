@@ -1,0 +1,9 @@
+{
+  "dataset": "synthetic-retrieval-benchmark",
+  "purpose": "recruiter-safe demonstration",
+  "contains_private_data": false,
+  "claims": 5,
+  "known_conflicts": 1,
+  "modalities": ["text", "chart", "table", "equation"]
+}
+
