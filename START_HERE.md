@@ -42,7 +42,7 @@ flowchart LR
 | **Enterprise AI Chatbot — Governed RAG** | Governance & evidence foundation | TF-IDF/cosine retrieval, citations, confidence scoring, safe/review/block routing, FastAPI, human review | RAG architecture, explainability, AI governance |
 | **Governed RAG Demo** | Recruiter-safe operational demo | Standalone policy Q&A, evidence ranking, governance simulation, no private data or API key | Fast demonstration of grounded AI controls |
 | **Governed RAG Recruiter Demo v2** | Model evaluation lab | Jaccard, TF-IDF, trigram and hybrid retrieval; MRR, Hit@3, robustness and governance calibration | Model comparison, evaluation math, robustness analysis |
-| **Renteria Polyglot Relay** | Governed multilingual interaction | Voice/text workflows, quality/risk/latency models, relay decisions, transcript controls, network visualization | Responsible AI interaction design, accessibility, routing logic |
+| **Renteria Polyglot Relay** | Governed multilingual interaction | Voice/text workflows, quality/risk/latency models, relay decisions, transcript controls, network visualization | Responsible AI interaction design, accessibility, routing logic |\n| **Renteria ArgusLoop** | Governed vision-driven automation | Typed computer-use actions, policy gating, normalized coordinates, audit logs, threat modeling, benchmark reporting | Multimodal agents, safety engineering, testable desktop automation |
 
 ## Recommended recruiter review path — 10 minutes
 
@@ -54,7 +54,7 @@ flowchart LR
 
 **4. Review the lightweight Governed RAG Demo.** It demonstrates the same operating pattern in a compact, recruiter-safe form that requires no production credentials or private documents.
 
-**5. Finish with Polyglot Relay.** It extends the portfolio from document intelligence into multilingual interaction, accessibility, and governed communication routing.
+**5. Review Polyglot Relay.** It extends the portfolio from document intelligence into multilingual interaction, accessibility, and governed communication routing.\n\n**6. Finish with Renteria ArgusLoop.** It demonstrates a vision-powered desktop agent in which model proposals pass through deterministic risk controls, dry-run safeguards, structured validation, and an auditable execution layer.
 
 ## Shared engineering standards
 
@@ -83,6 +83,6 @@ The goal is for the portfolio to become progressively more connected: individual
 - [Enterprise AI Chatbot — Governed RAG](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag)
 - [Governed RAG Demo](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag-demo)
 - [Governed RAG Recruiter Demo v2](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag-recruiter-demo-v2)
-- [Renteria Polyglot Relay](https://github.com/gdintentions/renteria-polglot-relay)
+- [Renteria Polyglot Relay](https://github.com/gdintentions/renteria-polglot-relay)\n- [Renteria ArgusLoop](portfolio_projects/renteria-argusloop/README.md)
 
 > Some recruiter/demo repositories may be private. The public portfolio index remains the canonical map of how the projects relate.

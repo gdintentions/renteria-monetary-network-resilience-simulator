@@ -1,0 +1,38 @@
+[project]
+name = "renteria-argusloop"
+version = "0.1.0"
+description = "A safety-first, auditable vision agent for controlled desktop automation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Jason-Benjamin Renteria"}]
+dependencies = [
+  "google-genai>=1.0,<2",
+  "pillow>=10,<13",
+  "pydantic>=2.8,<3",
+  "python-dotenv>=1,<2",
+  "pyautogui>=0.9.54,<1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "pytest-cov>=5,<7", "ruff>=0.8,<1"]
+charts = ["matplotlib>=3.9,<4"]
+
+[project.scripts]
+argusloop = "argusloop.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/argusloop"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+

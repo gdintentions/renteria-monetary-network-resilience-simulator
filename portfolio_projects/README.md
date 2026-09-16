@@ -1,0 +1,7 @@
+# Portfolio Projects
+
+This directory contains self-contained recruiter-safe project snapshots that extend the public Renteria AI Systems Portfolio.
+
+- [Renteria ArgusLoop](renteria-argusloop/README.md) — safety-first vision-powered desktop automation with typed actions, deterministic policy gates, audit logs, threat modeling, tests, and benchmark reporting.
+
+Each project retains its own dependency manifest and documentation so it can be reviewed independently without changing the Monetary Network Resilience Simulator runtime.
