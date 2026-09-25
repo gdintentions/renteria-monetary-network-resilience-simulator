@@ -17,11 +17,11 @@ answer—or an explicit abstention when the record does not support one.
 
 ## What makes it different
 
-- first-class provenance for text, tables, charts, equations, and images
+- typed provenance records for text, tables, charts, equations, and images (sample fixtures)
 - claim ledger connecting every answer statement to evidence blocks
-- automatic competing-value and contradiction detection
+- rule-based competing-value detection in the synthetic demo
 - explainable integrity score with positive and negative components
-- source authority, freshness, extraction-confidence, and modality tracking
+- configured source reliability, freshness, extraction-confidence, and modality fields; weights are illustrative
 - deterministic, key-free recruiter demonstration
 - modular contracts for later vision, parsing, embedding, and LLM adapters
 - tests, model card, equations, architecture, CI, and responsible-use limits
@@ -90,3 +90,7 @@ medical, legal, employment, credit, insurance, policing, or financial decisions.
 
 MIT.
 
+
+## Evidence and user validation status
+
+The sample conflict is planted in a synthetic fixture. The score weights are design choices, not a calibrated probability of truth. The intended user is an analyst checking conflicting claims in a document set. Before claiming production value, test with independently labeled documents and analysts, measuring citation accuracy, missed contradictions, false alerts, and time to resolve a claim.
