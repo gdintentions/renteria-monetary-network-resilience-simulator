@@ -6,6 +6,8 @@
 
 A growing portfolio of working AI systems, governance controls, simulation models, and recruiter-safe demonstrations. The projects are designed to show not only what an AI system can do, but how it can be evaluated, explained, governed, stress-tested, and extended as new insights emerge.
 
+[Evidence review and test results](EVIDENCE_REVIEW_2026-09-25.md) — observed checks, synthetic benchmarks, limitations, and next validation steps.
+
 ## Portfolio thesis
 
 The portfolio is organized around five recurring questions:
