@@ -105,10 +105,28 @@ def run_simulation(
         raise ValueError("years must be >= 1")
 
     rng = random.Random(seed)
-    model_agents = _clone_agents(agents or DEFAULT_AGENTS)
+    model_agents = _clone_agents(DEFAULT_AGENTS if agents is None else agents)
+    if not model_agents:
+        raise ValueError("at least one agent is required")
+    names = [agent.name for agent in model_agents]
+    if len(names) != len(set(names)) or any(not name.strip() for name in names):
+        raise ValueError("agent names must be unique and nonempty")
+    for agent in model_agents:
+        values = (agent.share, agent.structural_growth, agent.resilience, agent.volatility, agent.shock_memory)
+        if not all(math.isfinite(value) for value in values):
+            raise ValueError("agent parameters must be finite")
+        if agent.share <= 0 or agent.volatility < 0 or not 0 <= agent.resilience <= 1:
+            raise ValueError("agent share, volatility, or resilience is out of range")
+    total_share = sum(agent.share for agent in model_agents)
+    if not math.isclose(total_share, 1.0, rel_tol=0, abs_tol=1e-6):
+        raise ValueError("initial agent shares must sum to one")
     shock_list = list(shocks if shocks is not None else default_shocks(start_year))
     shock_by_year: Dict[int, List[Shock]] = {}
     for shock in shock_list:
+        if not 0 <= shock.persistence <= 1 or not math.isfinite(shock.persistence):
+            raise ValueError("shock persistence must be finite and between zero and one")
+        if set(shock.effects) - set(names) or not all(math.isfinite(v) for v in shock.effects.values()):
+            raise ValueError("shock effects must be finite and reference known agents")
         shock_by_year.setdefault(shock.year, []).append(shock)
 
     rows: List[Dict[str, float | int | str]] = []
