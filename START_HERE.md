@@ -1,8 +1,8 @@
 # Renteria AI Systems Portfolio — Start Here
 
-[![Portfolio](https://img.shields.io/badge/Renteria%20AI%20Systems%20Portfolio-Growing%20Systems%20Portfolio-1f3a5f?style=for-the-badge)](https://github.com/gdintentions)
+[![Portfolio](https://img.shields.io/badge/Renteria%20AI%20Systems%20Portfolio-Growing-1f3a5f?style=for-the-badge)](https://github.com/gdintentions)
 [![Focus](https://img.shields.io/badge/Focus-AI%20Systems%20%7C%20Governance%20%7C%20Simulation-2f5d8c?style=for-the-badge)](https://github.com/gdintentions)
-[![Recruiter Ready](https://img.shields.io/badge/Recruiter-Ready-2ea44f?style=for-the-badge)](https://github.com/gdintentions)
+[![Recruiter Ready](https://img.shields.io/badge/Recruiter-Demo%20Code-2ea44f?style=for-the-badge)](https://github.com/gdintentions)
 
 A growing portfolio of working AI systems, governance controls, simulation models, and recruiter-safe demonstrations. The projects are designed to show not only what an AI system can do, but how it can be evaluated, explained, governed, stress-tested, and extended as new insights emerge.
 
@@ -38,11 +38,13 @@ flowchart LR
 
 | Project | Portfolio role | What it demonstrates | Recruiter focus |
 |---|---|---|---|
-| **Monetary Network Resilience Simulator** | Scenario modeling & resilience | Monte Carlo simulation, country agents, network graphs, historical calibration, uncertainty bands | Systems thinking, simulation design, quantitative modeling |
+| **Monetary Network Resilience Simulator** | Scenario modeling & resilience | Monte Carlo simulation, settlement-network agents, network graphs, illustrative calibration inputs, uncertainty bands | Systems thinking, simulation design, quantitative modeling |
 | **Enterprise AI Chatbot — Governed RAG** | Governance & evidence foundation | TF-IDF/cosine retrieval, citations, confidence scoring, safe/review/block routing, FastAPI, human review | RAG architecture, explainability, AI governance |
 | **Governed RAG Demo** | Recruiter-safe operational demo | Standalone policy Q&A, evidence ranking, governance simulation, no private data or API key | Fast demonstration of grounded AI controls |
 | **Governed RAG Recruiter Demo v2** | Model evaluation lab | Jaccard, TF-IDF, trigram and hybrid retrieval; MRR, Hit@3, robustness and governance calibration | Model comparison, evaluation math, robustness analysis |
-| **Renteria Polyglot Relay** | Governed multilingual interaction | Voice/text workflows, quality/risk/latency models, relay decisions, transcript controls, network visualization | Responsible AI interaction design, accessibility, routing logic |\n| **Renteria ArgusLoop** | Governed vision-driven automation | Typed computer-use actions, policy gating, normalized coordinates, audit logs, threat modeling, benchmark reporting | Multimodal agents, safety engineering, testable desktop automation |\n| **Renteria EvidenceWeave** | Multimodal evidence intelligence | Provenance-preserving claim graphs, contradiction detection, cross-modal agreement, explainable Evidence Integrity Score | Document AI, GraphRAG, model governance, evidence auditing |
+| **Renteria Polyglot Relay** | Governed multilingual interaction | Voice/text workflows, quality/risk/latency models, relay decisions, transcript controls, network visualization | Responsible AI interaction design, accessibility, routing logic |
+| **Renteria ArgusLoop** | Governed vision-driven automation | Typed computer-use actions, policy gating, normalized coordinates, audit logs, threat modeling, benchmark reporting | Multimodal agents, safety engineering, testable desktop automation |
+| **Renteria EvidenceWeave** | Multimodal evidence intelligence | Provenance-preserving claim graphs, contradiction detection, cross-modal agreement, explainable Evidence Integrity Score | Document AI, GraphRAG, model governance, evidence auditing |
 
 ## Recommended recruiter review path — 10 minutes
 
