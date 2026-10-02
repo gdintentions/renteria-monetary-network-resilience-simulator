@@ -30,3 +30,17 @@ def test_horizon_validation():
         assert "years must be >= 1" in str(exc)
     else:
         raise AssertionError("Expected ValueError")
+
+
+def test_invalid_scenario_inputs_are_rejected():
+    from simulator import Agent, Shock
+    import pytest
+
+    with pytest.raises(ValueError, match="at least one agent"):
+        run_simulation(agents=[])
+    with pytest.raises(ValueError, match="unique"):
+        run_simulation(agents=[Agent("duplicate", 0.5, 0, 1, 0), Agent("duplicate", 0.5, 0, 1, 0)])
+    with pytest.raises(ValueError, match="sum to one"):
+        run_simulation(agents=[Agent("only", 0.8, 0, 1, 0)])
+    with pytest.raises(ValueError, match="known agents"):
+        run_simulation(shocks=[Shock(2027, "bad", {"unknown": 0.1})])

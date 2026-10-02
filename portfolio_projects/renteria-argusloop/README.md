@@ -59,7 +59,7 @@ supervised execution, set `ARGUSLOOP_MODE=live`. Keep `ARGUSLOOP_MAX_RISK=medium
 | `action` | `click`, `type`, `scroll`, `press_key`, `wait`, or `done` |
 | `x`, `y` | Normalized coordinates in `[0,1000]` |
 | `risk` | `low`, `medium`, `high`, or `critical` |
-| `confidence` | Calibrated estimate in `[0,1]` |
+| `confidence` | Planner-reported estimate in `[0,1]`; not calibrated |
 | `expected_effect` | Visible change expected after execution |
 
 ## What the original image tutorial left incomplete
