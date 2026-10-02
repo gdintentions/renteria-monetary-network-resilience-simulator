@@ -91,8 +91,8 @@ DEFAULT_COUNTRIES: List[CountryAgent] = [
 # is not a reserve-share measure, so both are treated as signals rather than
 # direct replacements for model shares.
 OBSERVED_CALIBRATION = {
-    "reserve_2024q4": {"USD": 57.79, "EUR": 19.84, "CNY": 2.18},
-    "reserve_2025q4": {"USD": 56.77, "EUR": 20.25, "CNY": 1.95},
+    "reserve_2026q1": {"USD": 57.18, "EUR": 20.04, "CNY": 1.98},
+    "reserve_2026q2": {"USD": 56.70, "EUR": 20.60, "CNY": 2.11},
     "fx_2022": {"USD": 88.4, "EUR": 30.6, "CNY": 7.0},
     "fx_2025": {"USD": 89.2, "EUR": 28.9, "CNY": 8.5},
 }
@@ -136,7 +136,7 @@ def calibrated_agents(calibration_weight: float = 0.30) -> List[Agent]:
         return agents
     by_name = {a.name: a for a in agents}
 
-    reserve = OBSERVED_CALIBRATION["reserve_2025q4"]
+    reserve = OBSERVED_CALIBRATION["reserve_2026q2"]
     fx = OBSERVED_CALIBRATION["fx_2025"]
     reserve_norm = _normalize(reserve)
     fx_norm = _normalize(fx)
@@ -168,8 +168,8 @@ def calibrated_agents(calibration_weight: float = 0.30) -> List[Agent]:
     # Momentum adjustments are deliberately small. They only nudge structural
     # growth using the direction of recent reserve and FX changes.
     reserve_delta = {
-        k: OBSERVED_CALIBRATION["reserve_2025q4"][k]
-        - OBSERVED_CALIBRATION["reserve_2024q4"][k]
+        k: OBSERVED_CALIBRATION["reserve_2026q2"][k]
+        - OBSERVED_CALIBRATION["reserve_2026q1"][k]
         for k in ("USD", "EUR", "CNY")
     }
     fx_delta = {
