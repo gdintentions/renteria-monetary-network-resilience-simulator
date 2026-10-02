@@ -13,12 +13,16 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: monetary-screenshot-main
+  cancel-in-progress: true
+
 jobs:
   screenshot:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
       - run: |
@@ -45,4 +49,5 @@ jobs:
           git add docs/screenshots/recruiter-demo.png
           git diff --cached --quiet && exit 0
           git commit -m "docs: refresh recruiter demo screenshot [skip ci]"
+          git pull --rebase origin main
           git push
