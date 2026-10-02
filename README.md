@@ -67,8 +67,8 @@ Calibration is intentionally **light-touch**. Public institutional data is used 
 
 Reference anchors currently include:
 
-- IMF COFER 2025Q4 reserve composition
-- BIS 2025 Triennial FX Survey measures
+- IMF COFER 2026Q2 reserve composition (published September 30, 2026)
+- BIS 2025 Triennial FX Survey measures (final results released June 2026)
 
 Reference rows are stored in `demo/data/calibration_reference.csv`.
 
