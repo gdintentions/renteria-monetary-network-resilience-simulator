@@ -1,0 +1,24 @@
+name: Demo-Safe Showcase Tests
+
+on:
+  push:
+    paths:
+      - "demo_safe/**"
+      - ".github/workflows/demo-safe-tests.yml"
+  pull_request:
+    paths:
+      - "demo_safe/**"
+      - ".github/workflows/demo-safe-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python demo_safe/smoke_test.py
