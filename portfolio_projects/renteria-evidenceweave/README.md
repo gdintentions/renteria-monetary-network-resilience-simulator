@@ -94,3 +94,25 @@ MIT.
 ## Evidence and user validation status
 
 The sample conflict is planted in a synthetic fixture. The score weights are design choices, not a calibrated probability of truth. The intended user is an analyst checking conflicting claims in a document set. Before claiming production value, test with independently labeled documents and analysts, measuring citation accuracy, missed contradictions, false alerts, and time to resolve a claim.
+
+
+## External labeled conflict evaluation
+
+EvidenceWeave now runs against **ConflictQA COMP/TripleConf**, using the benchmark's positive-only counterpart as a non-conflict control and its conflicting-triple version as the known-conflict case.
+
+Measured results across **430 paired items**:
+
+- precision: **0.9773**
+- recall: **0.4000**
+- F1: **0.5677**
+- true positives: **172**
+- false positives: **4**
+- true negatives: **426**
+- missed known conflicts: **258**
+
+Every failure ID is published in [the ConflictQA evaluation report](docs/CONFLICTQA_EXTERNAL_EVAL.md), with machine-readable results in `artifacts/conflictqa-external-eval.json`.
+
+The result is revealing: the current exact subject/predicate graph rule is highly precise when it flags a conflict, but it misses many benchmark conflicts that are indirect, multi-hop, or structurally different. This test evaluates conflict surfacing **after structured triples are normalized into claims**; it does not evaluate free-text contradiction extraction or LLM reasoning.
+
+**What the failures tell us to build next:** distinguish legitimate multi-valued relations from mutually exclusive facts, add relation/entity normalization, add multi-hop conflict reasoning, then add a separate text-level contradiction layer.
+
