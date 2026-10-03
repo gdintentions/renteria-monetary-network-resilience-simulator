@@ -1,0 +1,241 @@
+{
+  "policy": {
+    "rows": [
+      {
+        "case": "dry_run_click",
+        "category": "dry-run",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "dry-run: proposed action recorded but not executed",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "dry_run_type",
+        "category": "dry-run",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "dry-run: proposed action recorded but not executed",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "live_wait_low",
+        "category": "allowed",
+        "expected_allowed": true,
+        "observed_allowed": true,
+        "reason": "policy approved",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "live_done_low",
+        "category": "allowed",
+        "expected_allowed": true,
+        "observed_allowed": true,
+        "reason": "policy approved",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "live_safe_type_medium",
+        "category": "allowed",
+        "expected_allowed": true,
+        "observed_allowed": true,
+        "reason": "policy approved",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "sensitive_password",
+        "category": "sensitive",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "possible secret or sensitive credential detected",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "sensitive_api_key",
+        "category": "sensitive",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "possible secret or sensitive credential detected",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "dangerous_delete",
+        "category": "dangerous-key",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "destructive/system key is blocked",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "dangerous_f4",
+        "category": "dangerous-key",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "destructive/system key is blocked",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "risk_ceiling",
+        "category": "risk-ceiling",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "risk high exceeds policy ceiling medium",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "critical_never",
+        "category": "critical",
+        "expected_allowed": false,
+        "observed_allowed": false,
+        "reason": "critical actions are never automated",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "safe_scroll",
+        "category": "allowed",
+        "expected_allowed": true,
+        "observed_allowed": true,
+        "reason": "policy approved",
+        "passed": true,
+        "failure_category": ""
+      }
+    ]
+  },
+  "coordinates": {
+    "rows": [
+      {
+        "case": "origin",
+        "expected": [
+          0,
+          0
+        ],
+        "observed": [
+          0,
+          0
+        ],
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "max_corner",
+        "expected": [
+          1919,
+          1079
+        ],
+        "observed": [
+          1919,
+          1079
+        ],
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "center",
+        "expected": [
+          960,
+          540
+        ],
+        "observed": [
+          960,
+          540
+        ],
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "small_screen_max",
+        "expected": [
+          319,
+          199
+        ],
+        "observed": [
+          319,
+          199
+        ],
+        "passed": true,
+        "failure_category": ""
+      }
+    ]
+  },
+  "dispatch": {
+    "rows": [
+      {
+        "case": "click",
+        "expected_adapter_call": "click",
+        "observed_adapter_call": "click",
+        "message": "clicked (799, 599)",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "type",
+        "expected_adapter_call": "write",
+        "observed_adapter_call": "write",
+        "message": "typed 9 characters",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "scroll",
+        "expected_adapter_call": "scroll",
+        "observed_adapter_call": "scroll",
+        "message": "scrolled down",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "press_key",
+        "expected_adapter_call": "press",
+        "observed_adapter_call": "press",
+        "message": "pressed enter",
+        "passed": true,
+        "failure_category": ""
+      },
+      {
+        "case": "done",
+        "expected_adapter_call": null,
+        "observed_adapter_call": null,
+        "message": "done",
+        "passed": true,
+        "failure_category": ""
+      }
+    ],
+    "adapter_calls": [
+      [
+        "click",
+        799,
+        599
+      ],
+      [
+        "write",
+        "synthetic",
+        0.02
+      ],
+      [
+        "scroll",
+        -500
+      ],
+      [
+        "press",
+        "enter"
+      ]
+    ]
+  },
+  "summary": {
+    "total_cases": 21,
+    "passed": 21,
+    "failed": 0,
+    "failure_categories": {},
+    "failures": []
+  }
+}
