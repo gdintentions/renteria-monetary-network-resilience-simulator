@@ -6,6 +6,7 @@
 
 A growing portfolio of working AI systems, governance controls, simulation models, local-first prototypes, and recruiter-safe demonstrations. The projects are designed to show not only what a system can do, but how its evidence, uncertainty, controls, limitations, and test results can be inspected.
 
+- [Portfolio validation matrix — external benchmarks, failures, next engineering responses](docs/VALIDATION_MATRIX.md)
 - [Portfolio evidence review and test results](EVIDENCE_REVIEW_2026-09-25.md)
 - [Public recruiter snapshots for private-source projects](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md)
 - [Live browser demo-safe showcase](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/)
