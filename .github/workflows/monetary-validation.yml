@@ -10,7 +10,7 @@ on:
       - ".github/workflows/monetary-validation.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   validate:
@@ -27,3 +27,12 @@ jobs:
           path: |
             docs/evaluations/MONETARY_VALIDATION.md
             artifacts/monetary_validation.json
+      - name: Publish validation results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/evaluations/MONETARY_VALIDATION.md artifacts/monetary_validation.json
+          git diff --cached --quiet && exit 0
+          git commit -m "eval: publish monetary validation results [skip ci]"
+          git pull --rebase origin main
+          git push
