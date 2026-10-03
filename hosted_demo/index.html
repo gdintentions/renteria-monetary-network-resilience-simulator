@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Renteria AI Systems — Demo-Safe Showcase</title>
+<meta name="description" content="Browser-runnable synthetic demonstrations of selected Renteria AI Systems portfolio projects.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="#home">Renteria AI Systems <span>Demo-Safe Showcase</span></a>
+  <nav aria-label="Primary">
+    <a href="#home">Projects</a>
+    <a href="#boundary">Evidence Boundary</a>
+    <a href="https://github.com/gdintentions/renteria-monetary-network-resilience-simulator">GitHub</a>
+  </nav>
+</header>
+<main id="main">
+<section id="home" class="view active">
+  <div class="hero">
+    <p class="eyebrow">PUBLIC · SYNTHETIC · BROWSER-RUNNABLE</p>
+    <h1>Inspectable AI systems without exposing private source.</h1>
+    <p class="lede">Useful AI systems should expose evidence, uncertainty, controls, limitations, and testability. These reduced demos let reviewers interact with those patterns using synthetic data only.</p>
+  </div>
+  <div class="grid projects">
+    <a class="card project" href="#governed-rag"><div class="kicker">Evidence & governance</div><h2>Governed RAG</h2><p>Ask synthetic policy questions, inspect evidence, confidence, and safe/review/block routing.</p></a>
+    <a class="card project" href="#polyglot-relay"><div class="kicker">Governed interaction</div><h2>Polyglot Relay</h2><p>Explore controlled multilingual routing with explicit unsupported and human-review states.</p></a>
+    <a class="card project" href="#context-atlas"><div class="kicker">Explainable knowledge</div><h2>Context Atlas</h2><p>Inspect explicit wikilinks, missing targets, and explainable lexical relationships.</p></a>
+    <a class="card project" href="#monetary-simulator"><div class="kicker">Scenario modeling</div><h2>Monetary Simulator</h2><p>Run deterministic synthetic monetary-network scenarios with visible assumptions and limits.</p></a>
+  </div>
+</section>
+
+<section id="governed-rag" class="view">
+  <div class="pagehead"><a href="#home">← Projects</a><p class="eyebrow">DEMO-SAFE</p><h1>Governed RAG — Evidence & Review Demo</h1><p>Reduced browser demonstration using four synthetic policy statements.</p></div>
+  <div class="layout">
+    <div class="panel">
+      <label for="rag-question">Ask a policy question</label>
+      <textarea id="rag-question" rows="4">Who approves vendor production access?</textarea>
+      <div class="examples">
+        <button data-rag="Who approves vendor production access?">Vendor access</button>
+        <button data-rag="How often is external document access reviewed?">Review cadence</button>
+        <button data-rag="What legal questions require human review?">Legal review</button>
+        <button data-rag="What is the cafeteria menu?">No-answer case</button>
+      </div>
+      <button class="primary" id="rag-run">Evaluate question</button>
+    </div>
+    <div class="panel">
+      <div class="metricrow">
+        <div><span>Decision</span><strong id="rag-decision">—</strong></div>
+        <div><span>Heuristic confidence</span><strong id="rag-confidence">—</strong></div>
+      </div>
+      <p id="rag-answer" class="answer">Run a question to inspect the evidence path.</p>
+    </div>
+  </div>
+  <div class="panel"><h2>Ranked evidence</h2><div id="rag-evidence"></div></div>
+  <aside class="disclosure"><strong>About this demo.</strong> Synthetic corpus only. Confidence is a heuristic, not a calibrated probability. The private implementation contains additional architecture not exposed here.</aside>
+</section>
+
+<section id="polyglot-relay" class="view">
+  <div class="pagehead"><a href="#home">← Projects</a><p class="eyebrow">DEMO-SAFE</p><h1>Polyglot Relay — Governed Multilingual Interaction Demo</h1><p>Controlled phrase dictionary with explicit routing boundaries.</p></div>
+  <div class="layout">
+    <div class="panel">
+      <label for="poly-phrase">Phrase</label>
+      <input id="poly-phrase" value="hello">
+      <div class="examples">
+        <button data-poly="hello">hello</button>
+        <button data-poly="thank you">thank you</button>
+        <button data-poly="legal emergency">high-risk unsupported</button>
+        <button data-poly="good morning">unsupported phrase</button>
+      </div>
+      <label for="poly-target">Target language</label>
+      <select id="poly-target"><option value="es">Spanish</option><option value="fr">French</option><option value="ja">Japanese</option></select>
+      <button class="primary" id="poly-run">Run relay</button>
+    </div>
+    <div class="panel">
+      <h2>Output</h2><p id="poly-output" class="bigoutput">—</p>
+      <div class="metricrow"><div><span>Supported?</span><strong id="poly-supported">—</strong></div><div><span>Quality heuristic</span><strong id="poly-quality">—</strong></div><div><span>Risk</span><strong id="poly-risk">—</strong></div><div><span>Decision</span><strong id="poly-decision">—</strong></div></div>
+    </div>
+  </div>
+  <aside class="disclosure"><strong>About this demo.</strong> This is not unrestricted translation. No speech capture, provider API, credentials, or real translation-quality measurement is used.</aside>
+</section>
+
+<section id="context-atlas" class="view">
+  <div class="pagehead"><a href="#home">← Projects</a><p class="eyebrow">DEMO-SAFE</p><h1>Context Atlas — Explainable Knowledge Map Demo</h1><p>Four synthetic notes. Every relationship has an inspectable reason.</p></div>
+  <div class="layout atlaslayout">
+    <div class="panel"><svg id="atlas-svg" viewBox="0 0 700 430" role="img" aria-label="Synthetic knowledge graph"></svg><div class="legend"><span>● explicit</span><span>┄ suggested</span><span>⚠ missing target</span></div></div>
+    <div class="panel"><h2 id="atlas-title">Select a note</h2><pre id="atlas-body">Choose a node in the map.</pre><div id="atlas-reasons"></div></div>
+  </div>
+  <aside class="disclosure"><strong>About this demo.</strong> Synthetic notes only. Lexical suggestions are explainable overlap—not semantic truth. No uploads, persistence, personal records, or integrations.</aside>
+</section>
+
+<section id="monetary-simulator" class="view">
+  <div class="pagehead"><a href="#home">← Projects</a><p class="eyebrow">PUBLIC SCENARIO DEMO</p><h1>Monetary Network Resilience Simulator</h1><p>Deterministic browser-only synthetic scenario model.</p></div>
+  <div class="controls panel">
+    <label>Horizon <input id="sim-years" type="range" min="10" max="15" value="15"><output id="sim-years-out">15 years</output></label>
+    <label>Seed <input id="sim-seed" type="number" min="0" max="99999" value="42"></label>
+    <label>Scenario intensity <input id="sim-intensity" type="range" min="0" max="100" value="60"><output id="sim-intensity-out">60%</output></label>
+    <label>Calibration weight <input id="sim-calibration" type="range" min="0" max="60" value="30"><output id="sim-calibration-out">30%</output></label>
+    <button class="primary" id="sim-run">Run scenario</button>
+  </div>
+  <div class="panel chartpanel"><canvas id="sim-chart" width="1100" height="520" aria-label="Modeled relative network shares"></canvas></div>
+  <div class="grid metrics" id="sim-metrics"></div>
+  <div class="layout"><div class="panel"><h2>Final-year ranking</h2><div id="sim-ranking"></div></div><div class="panel"><h2>Scenario timeline</h2><div id="sim-events"></div></div></div>
+  <div class="panel anchors"><h2>Public reference anchors</h2><p><strong>IMF COFER 2026Q2:</strong> USD 56.70%, EUR 20.60%, CNY 2.11% of global FX reserves.</p><p><strong>BIS 2025 Triennial FX survey:</strong> USD 89.2%, EUR 28.9%, CNY 8.5% of FX trades (one side).</p><p>These unlike measures are informational anchors only. They are not substituted for the model's internal shares.</p></div>
+  <aside class="disclosure"><strong>About this demo.</strong> Synthetic scenario outputs only—not forecasts, probabilities, reserve shares, exchange-rate predictions, or financial advice.</aside>
+</section>
+
+<section id="boundary" class="view">
+  <div class="pagehead"><a href="#home">← Projects</a><p class="eyebrow">EVIDENCE BOUNDARY</p><h1>What these public demos do—and do not—prove</h1></div>
+  <div class="grid boundarygrid">
+    <div class="card"><h2>What is real</h2><p>Working browser interactions, deterministic client-side logic, synthetic fixtures, visible controls, and explicit failure/abstention states.</p></div>
+    <div class="card"><h2>What stays private</h2><p>Private repository source, proprietary implementation details, credentials, real user data, provider integrations, richer prompts, and sensitive configuration.</p></div>
+    <div class="card"><h2>What is not claimed</h2><p>Production readiness, market demand, calibrated probabilities, real-world translation quality, or forecasting skill.</p></div>
+    <div class="card"><h2>What green tests mean</h2><p>Only that tested code paths passed for that revision. They are not proof of external effectiveness or complete security.</p></div>
+  </div>
+  <p><a href="https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/main/START_HERE.md">Portfolio Start Here</a> · <a href="https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/tree/main/demo_safe">Demo-safe source miniatures</a></p>
+</section>
+</main>
+<footer>Renteria AI Systems · Demo-safe synthetic showcase · Private working repositories remain restricted.</footer>
+<script src="app.js"></script>
+</body>
+</html>
