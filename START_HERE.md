@@ -8,7 +8,8 @@ A growing portfolio of working AI systems, governance controls, simulation model
 
 - [Portfolio evidence review and test results](EVIDENCE_REVIEW_2026-09-25.md)
 - [Public recruiter snapshots for private-source projects](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md)
-- [Runnable demo-safe showcase](demo_safe/README.md)
+- [Live browser demo-safe showcase](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/)
+- [Runnable demo-safe source showcase](demo_safe/README.md)
 
 ## Portfolio thesis
 
