@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 import sys
 import types
+from pathlib import Path
 
 from argusloop.actions import execute
 from argusloop.models import Action, Risk
