@@ -39,7 +39,7 @@ jobs:
           assert "56.70" in html and "89.2" in html
           print("static showcase verification: PASS")
           PY
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:
           path: hosted_demo
