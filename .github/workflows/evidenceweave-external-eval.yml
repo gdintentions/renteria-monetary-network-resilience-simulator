@@ -30,6 +30,7 @@ jobs:
             portfolio_projects/renteria-evidenceweave/docs/CONFLICTQA_EXTERNAL_EVAL.md
             portfolio_projects/renteria-evidenceweave/artifacts/conflictqa-external-eval.json
       - name: Publish evaluation results
+        working-directory: ${{ github.workspace }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
