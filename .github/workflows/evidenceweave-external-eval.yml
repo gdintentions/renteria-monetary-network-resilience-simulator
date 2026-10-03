@@ -8,7 +8,7 @@ on:
       - ".github/workflows/evidenceweave-external-eval.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   conflictqa:
@@ -27,5 +27,14 @@ jobs:
         with:
           name: evidenceweave-conflictqa-evaluation
           path: |
-            portfolio_projects/renteria-evidenceweave/artifacts/CONFLICTQA_EXTERNAL_EVAL.md
+            portfolio_projects/renteria-evidenceweave/docs/CONFLICTQA_EXTERNAL_EVAL.md
             portfolio_projects/renteria-evidenceweave/artifacts/conflictqa-external-eval.json
+      - name: Publish evaluation results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio_projects/renteria-evidenceweave/docs/CONFLICTQA_EXTERNAL_EVAL.md portfolio_projects/renteria-evidenceweave/artifacts/conflictqa-external-eval.json
+          git diff --cached --quiet && exit 0
+          git commit -m "eval: publish ConflictQA results [skip ci]"
+          git pull --rebase origin main
+          git push
