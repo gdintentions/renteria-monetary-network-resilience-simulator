@@ -109,6 +109,16 @@
 
 <section id="boundary" class="view">
   <div class="pagehead"><a href="#home">← Projects</a><p class="eyebrow">EVIDENCE BOUNDARY</p><h1>What these public demos do—and do not—prove</h1></div>
+  <div class="panel" style="margin-bottom:1rem">
+    <h2>Failure-first validation snapshot</h2>
+    <div class="grid metrics">
+      <div class="card"><span>Governed RAG</span><strong>33.4% top-10 misses</strong><small>BEIR/NFCorpus · 108/323</small></div>
+      <div class="card"><span>Monetary proxy backtest</span><strong>1 / 3 directions</strong><small>USD FAIL · EUR FAIL · CNY proxy PASS</small></div>
+      <div class="card"><span>ArgusLoop controls</span><strong>21 / 21 fixed cases</strong><small>Real GUI completion still unproven</small></div>
+      <div class="card"><span>EvidenceWeave</span><strong>40.0% conflict recall</strong><small>258 missed conflicts · 4 false positives</small></div>
+    </div>
+    <p><a href="https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/main/docs/VALIDATION_MATRIX.md">Inspect the full validation matrix and published failures →</a></p>
+  </div>
   <div class="grid boundarygrid">
     <div class="card"><h2>What is real</h2><p>Working browser interactions, deterministic client-side logic, synthetic fixtures, visible controls, and explicit failure/abstention states.</p></div>
     <div class="card"><h2>What stays private</h2><p>Private repository source, proprietary implementation details, credentials, real user data, provider integrations, richer prompts, and sensitive configuration.</p></div>
