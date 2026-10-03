@@ -192,7 +192,7 @@ def write_report(result: dict, path: Path) -> None:
 def main() -> None:
     result = {"policy": run_policy(), "coordinates": run_coordinates(), "dispatch": run_dispatch()}
     result["summary"] = summarize(result)
-    write_report(result, Path("artifacts/CONTROLLED_BENCHMARK.md"))
+    write_report(result, Path("docs/CONTROLLED_BENCHMARK.md"))
     Path("artifacts/controlled-benchmark.json").write_text(json.dumps(result, indent=2, default=list), encoding="utf-8")
     print(json.dumps(result["summary"], indent=2, default=list))
     if result["summary"]["failed"]:
