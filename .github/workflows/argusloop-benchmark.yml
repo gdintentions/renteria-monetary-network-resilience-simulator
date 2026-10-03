@@ -9,7 +9,7 @@ on:
       - ".github/workflows/argusloop-benchmark.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   benchmark:
@@ -28,5 +28,14 @@ jobs:
         with:
           name: argusloop-controlled-benchmark
           path: |
-            portfolio_projects/renteria-argusloop/artifacts/CONTROLLED_BENCHMARK.md
+            portfolio_projects/renteria-argusloop/docs/CONTROLLED_BENCHMARK.md
             portfolio_projects/renteria-argusloop/artifacts/controlled-benchmark.json
+      - name: Publish benchmark results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add portfolio_projects/renteria-argusloop/docs/CONTROLLED_BENCHMARK.md portfolio_projects/renteria-argusloop/artifacts/controlled-benchmark.json
+          git diff --cached --quiet && exit 0
+          git commit -m "eval: publish ArgusLoop benchmark results [skip ci]"
+          git pull --rebase origin main
+          git push
