@@ -10,6 +10,8 @@
 
 **[Start Here: portfolio map →](START_HERE.md)**
 
+**[Validation Matrix →](docs/VALIDATION_MATRIX.md)** — external benchmarks, published failures, and next engineering responses.
+
 **[Live Demo-Safe Showcase →](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/)** — browser-runnable synthetic demonstrations for recruiter and academic review.
 
 **[Demo-Safe Source Miniatures →](demo_safe/README.md)** — reduced public code without private implementation details.
