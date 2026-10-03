@@ -1,0 +1,425 @@
+{
+  "sensitivity": {
+    "runs": 25,
+    "seeds": [
+      1,
+      7,
+      42,
+      99,
+      314
+    ],
+    "calibration_weights": [
+      0.0,
+      0.15,
+      0.3,
+      0.45,
+      0.6
+    ],
+    "leader_counts": {
+      "BRICS settlement network": 18,
+      "US / USD network": 7
+    },
+    "final_share_ranges": {
+      "US / USD network": {
+        "min_pct": 17.367,
+        "max_pct": 23.431,
+        "range_pp": 6.064
+      },
+      "BRICS settlement network": {
+        "min_pct": 15.733,
+        "max_pct": 31.566,
+        "range_pp": 15.832999999999998
+      },
+      "Europe / EUR network": {
+        "min_pct": 15.152,
+        "max_pct": 19.92,
+        "range_pp": 4.7680000000000025
+      },
+      "Gold": {
+        "min_pct": 16.537,
+        "max_pct": 20.871,
+        "range_pp": 4.334
+      },
+      "Bitcoin & stablecoins": {
+        "min_pct": 6.308,
+        "max_pct": 10.529,
+        "range_pp": 4.221
+      },
+      "Neutral / multi-aligned states": {
+        "min_pct": 9.72,
+        "max_pct": 12.886,
+        "range_pp": 3.1659999999999986
+      }
+    },
+    "runs_detail": [
+      {
+        "seed": 1,
+        "calibration_weight": 0.0,
+        "final": {
+          "US / USD network": 17.367,
+          "BRICS settlement network": 29.643,
+          "Europe / EUR network": 16.023,
+          "Gold": 16.931,
+          "Bitcoin & stablecoins": 9.433,
+          "Neutral / multi-aligned states": 10.603
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 7,
+        "calibration_weight": 0.0,
+        "final": {
+          "US / USD network": 18.881,
+          "BRICS settlement network": 26.976,
+          "Europe / EUR network": 16.587,
+          "Gold": 19.006,
+          "Bitcoin & stablecoins": 7.55,
+          "Neutral / multi-aligned states": 11.0
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 42,
+        "calibration_weight": 0.0,
+        "final": {
+          "US / USD network": 19.08,
+          "BRICS settlement network": 27.444,
+          "Europe / EUR network": 15.726,
+          "Gold": 17.377,
+          "Bitcoin & stablecoins": 8.981,
+          "Neutral / multi-aligned states": 11.392
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 99,
+        "calibration_weight": 0.0,
+        "final": {
+          "US / USD network": 18.311,
+          "BRICS settlement network": 31.437,
+          "Europe / EUR network": 15.152,
+          "Gold": 17.072,
+          "Bitcoin & stablecoins": 8.308,
+          "Neutral / multi-aligned states": 9.72
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 314,
+        "calibration_weight": 0.0,
+        "final": {
+          "US / USD network": 17.973,
+          "BRICS settlement network": 31.566,
+          "Europe / EUR network": 16.177,
+          "Gold": 16.537,
+          "Bitcoin & stablecoins": 6.308,
+          "Neutral / multi-aligned states": 11.439
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 1,
+        "calibration_weight": 0.15,
+        "final": {
+          "US / USD network": 18.342,
+          "BRICS settlement network": 26.876,
+          "Europe / EUR network": 16.832,
+          "Gold": 17.381,
+          "Bitcoin & stablecoins": 9.684,
+          "Neutral / multi-aligned states": 10.885
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 7,
+        "calibration_weight": 0.15,
+        "final": {
+          "US / USD network": 19.866,
+          "BRICS settlement network": 24.365,
+          "Europe / EUR network": 17.359,
+          "Gold": 19.438,
+          "Bitcoin & stablecoins": 7.722,
+          "Neutral / multi-aligned states": 11.25
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 42,
+        "calibration_weight": 0.15,
+        "final": {
+          "US / USD network": 20.089,
+          "BRICS settlement network": 24.806,
+          "Europe / EUR network": 16.469,
+          "Gold": 17.785,
+          "Bitcoin & stablecoins": 9.192,
+          "Neutral / multi-aligned states": 11.659
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 99,
+        "calibration_weight": 0.15,
+        "final": {
+          "US / USD network": 19.379,
+          "BRICS settlement network": 28.562,
+          "Europe / EUR network": 15.95,
+          "Gold": 17.563,
+          "Bitcoin & stablecoins": 8.547,
+          "Neutral / multi-aligned states": 9.999
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 314,
+        "calibration_weight": 0.15,
+        "final": {
+          "US / USD network": 19.021,
+          "BRICS settlement network": 28.68,
+          "Europe / EUR network": 17.029,
+          "Gold": 17.013,
+          "Bitcoin & stablecoins": 6.489,
+          "Neutral / multi-aligned states": 11.768
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 1,
+        "calibration_weight": 0.3,
+        "final": {
+          "US / USD network": 19.371,
+          "BRICS settlement network": 23.952,
+          "Europe / EUR network": 17.687,
+          "Gold": 17.857,
+          "Bitcoin & stablecoins": 9.949,
+          "Neutral / multi-aligned states": 11.184
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 7,
+        "calibration_weight": 0.3,
+        "final": {
+          "US / USD network": 20.897,
+          "BRICS settlement network": 21.628,
+          "Europe / EUR network": 18.168,
+          "Gold": 19.892,
+          "Bitcoin & stablecoins": 7.902,
+          "Neutral / multi-aligned states": 11.513
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 42,
+        "calibration_weight": 0.3,
+        "final": {
+          "US / USD network": 21.148,
+          "BRICS settlement network": 22.035,
+          "Europe / EUR network": 17.25,
+          "Gold": 18.213,
+          "Bitcoin & stablecoins": 9.413,
+          "Neutral / multi-aligned states": 11.94
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 99,
+        "calibration_weight": 0.3,
+        "final": {
+          "US / USD network": 20.512,
+          "BRICS settlement network": 25.51,
+          "Europe / EUR network": 16.797,
+          "Gold": 18.084,
+          "Bitcoin & stablecoins": 8.8,
+          "Neutral / multi-aligned states": 10.296
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 314,
+        "calibration_weight": 0.3,
+        "final": {
+          "US / USD network": 20.133,
+          "BRICS settlement network": 25.616,
+          "Europe / EUR network": 17.934,
+          "Gold": 17.518,
+          "Bitcoin & stablecoins": 6.682,
+          "Neutral / multi-aligned states": 12.117
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 1,
+        "calibration_weight": 0.45,
+        "final": {
+          "US / USD network": 20.46,
+          "BRICS settlement network": 20.856,
+          "Europe / EUR network": 18.592,
+          "Gold": 18.362,
+          "Bitcoin & stablecoins": 10.231,
+          "Neutral / multi-aligned states": 11.5
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 7,
+        "calibration_weight": 0.45,
+        "final": {
+          "US / USD network": 21.979,
+          "BRICS settlement network": 18.754,
+          "Europe / EUR network": 19.018,
+          "Gold": 20.369,
+          "Bitcoin & stablecoins": 8.091,
+          "Neutral / multi-aligned states": 11.789
+        },
+        "leader": "US / USD network"
+      },
+      {
+        "seed": 42,
+        "calibration_weight": 0.45,
+        "final": {
+          "US / USD network": 22.26,
+          "BRICS settlement network": 19.122,
+          "Europe / EUR network": 18.07,
+          "Gold": 18.665,
+          "Bitcoin & stablecoins": 9.647,
+          "Neutral / multi-aligned states": 12.236
+        },
+        "leader": "US / USD network"
+      },
+      {
+        "seed": 99,
+        "calibration_weight": 0.45,
+        "final": {
+          "US / USD network": 21.715,
+          "BRICS settlement network": 22.266,
+          "Europe / EUR network": 17.698,
+          "Gold": 18.639,
+          "Bitcoin & stablecoins": 9.07,
+          "Neutral / multi-aligned states": 10.612
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 314,
+        "calibration_weight": 0.45,
+        "final": {
+          "US / USD network": 21.315,
+          "BRICS settlement network": 22.358,
+          "Europe / EUR network": 18.896,
+          "Gold": 18.056,
+          "Bitcoin & stablecoins": 6.887,
+          "Neutral / multi-aligned states": 12.489
+        },
+        "leader": "BRICS settlement network"
+      },
+      {
+        "seed": 1,
+        "calibration_weight": 0.6,
+        "final": {
+          "US / USD network": 21.613,
+          "BRICS settlement network": 17.574,
+          "Europe / EUR network": 19.551,
+          "Gold": 18.898,
+          "Bitcoin & stablecoins": 10.529,
+          "Neutral / multi-aligned states": 11.836
+        },
+        "leader": "US / USD network"
+      },
+      {
+        "seed": 7,
+        "calibration_weight": 0.6,
+        "final": {
+          "US / USD network": 23.116,
+          "BRICS settlement network": 15.733,
+          "Europe / EUR network": 19.911,
+          "Gold": 20.871,
+          "Bitcoin & stablecoins": 8.291,
+          "Neutral / multi-aligned states": 12.079
+        },
+        "leader": "US / USD network"
+      },
+      {
+        "seed": 42,
+        "calibration_weight": 0.6,
+        "final": {
+          "US / USD network": 23.431,
+          "BRICS settlement network": 16.055,
+          "Europe / EUR network": 18.934,
+          "Gold": 19.14,
+          "Bitcoin & stablecoins": 9.893,
+          "Neutral / multi-aligned states": 12.547
+        },
+        "leader": "US / USD network"
+      },
+      {
+        "seed": 99,
+        "calibration_weight": 0.6,
+        "final": {
+          "US / USD network": 22.996,
+          "BRICS settlement network": 18.808,
+          "Europe / EUR network": 18.657,
+          "Gold": 19.231,
+          "Bitcoin & stablecoins": 9.358,
+          "Neutral / multi-aligned states": 10.949
+        },
+        "leader": "US / USD network"
+      },
+      {
+        "seed": 314,
+        "calibration_weight": 0.6,
+        "final": {
+          "US / USD network": 22.573,
+          "BRICS settlement network": 18.886,
+          "Europe / EUR network": 19.92,
+          "Gold": 18.629,
+          "Bitcoin & stablecoins": 7.106,
+          "Neutral / multi-aligned states": 12.886
+        },
+        "leader": "US / USD network"
+      }
+    ]
+  },
+  "historical_proxy_backtest": {
+    "definition": "BIS 2022\u21922025 normalized USD/EUR/CNY subset; zero-volatility, no-shock structural-growth replay",
+    "direction_accuracy": 0.3333333333333333,
+    "mae_pp": 1.001330595050027,
+    "currency_results": [
+      {
+        "currency": "USD",
+        "start_2022_pct_normalized": 70.15873015873017,
+        "observed_2025_pct_normalized": 70.45813586097947,
+        "predicted_2025_pct_normalized": 69.86580000000001,
+        "observed_change_pp": 0.2994057022493002,
+        "predicted_change_pp": -0.2929301587301647,
+        "direction_correct": false,
+        "absolute_error_pp": 0.5923358609794649
+      },
+      {
+        "currency": "EUR",
+        "start_2022_pct_normalized": 24.285714285714285,
+        "observed_2025_pct_normalized": 22.82780410742496,
+        "predicted_2025_pct_normalized": 24.3298,
+        "observed_change_pp": -1.457910178289326,
+        "predicted_change_pp": 0.04408571428571317,
+        "direction_correct": false,
+        "absolute_error_pp": 1.5019958925750392
+      },
+      {
+        "currency": "CNY",
+        "start_2022_pct_normalized": 5.555555555555555,
+        "observed_2025_pct_normalized": 6.714060031595577,
+        "predicted_2025_pct_normalized": 5.8044,
+        "observed_change_pp": 1.1585044760400218,
+        "predicted_change_pp": 0.2488444444444446,
+        "direction_correct": true,
+        "absolute_error_pp": 0.9096600315955772
+      }
+    ],
+    "limitations": [
+      "BIS turnover shares are not reserve shares and sum to 200% across all currencies because each trade has two sides.",
+      "The comparison normalizes only USD/EUR/CNY to a three-currency subset.",
+      "CNY is mapped to the BRICS settlement network as a coarse proxy; they are not equivalent.",
+      "Only one 2022\u21922025 interval is evaluated, so this is a sanity check rather than evidence of forecasting skill."
+    ]
+  }
+}
