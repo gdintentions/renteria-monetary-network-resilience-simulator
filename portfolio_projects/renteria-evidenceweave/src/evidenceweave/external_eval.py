@@ -160,7 +160,9 @@ def main() -> None:
     result = evaluate()
     report = Path("docs/CONFLICTQA_EXTERNAL_EVAL.md")
     write_report(result, report)
-    Path("artifacts/conflictqa-external-eval.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+    artifact = Path("artifacts/conflictqa-external-eval.json")
+    artifact.parent.mkdir(parents=True, exist_ok=True)
+    artifact.write_text(json.dumps(result, indent=2), encoding="utf-8")
     print(json.dumps({k: v for k, v in result.items() if k not in {"failures"}}, indent=2))
 
 
