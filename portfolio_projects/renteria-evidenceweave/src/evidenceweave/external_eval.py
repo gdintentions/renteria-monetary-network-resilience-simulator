@@ -139,7 +139,7 @@ def write_report(result: dict, path: Path) -> None:
         "| ID | Case | Failure category |",
         "|---|---|---|",
     ]
-    for row in result["failures"][:80]:
+    for row in result["failures"]:
         lines.append(f"| {row['id']} | {row['case']} | {row['failure_category']} |")
     if not result["failures"]:
         lines.append("| — | — | No failures in this run |")
