@@ -8,6 +8,7 @@ A growing portfolio of working AI systems, governance controls, simulation model
 
 - [Portfolio evidence review and test results](EVIDENCE_REVIEW_2026-09-25.md)
 - [Public recruiter snapshots for private-source projects](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md)
+- [Runnable demo-safe showcase](demo_safe/README.md)
 
 ## Portfolio thesis
 
@@ -57,14 +58,14 @@ flowchart LR
 | Project | Access | Portfolio role | What it demonstrates |
 |---|---|---|---|
 | **Monetary Network Resilience Simulator** | Public source | Scenario modeling & resilience | Monte Carlo simulation, settlement-network agents, network graphs, illustrative calibration inputs, uncertainty bands |
-| **Enterprise AI Chatbot — Governed RAG** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#enterprise-ai-chatbot--governed-rag) · private source | Governance & evidence foundation | TF-IDF/cosine retrieval, citations, heuristic confidence, safe/review/block routing, FastAPI, human review |
-| **Governed RAG Demo** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#governed-rag-demo) · private source | Recruiter-safe operational demo | Compact policy Q&A, evidence ranking, abstention, governance simulation |
-| **Governed RAG Recruiter Demo v2** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#governed-rag-recruiter-demo-v2) · private source | Retrieval evaluation lab | Jaccard, TF-IDF, trigram and hybrid retrieval; MRR, Hit@3, robustness tests |
-| **Renteria Polyglot Relay** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-polyglot-relay) · private source | Governed multilingual interaction | Voice/text workflows, accessibility, risk/quality routing, transcript observability |
-| **Renteria Context Atlas** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-context-atlas) · private source | Explainable knowledge mapping | Wikilinks, broken-link visibility, lexical graph suggestions, source hashes |
-| **Renteria Local Model Workbench** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-local-model-workbench) · private source | Local-model experimentation | Ollama model comparison, runtime/error ledger, opt-in experiment storage |
-| **Renteria Notes Evidence RAG** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-notes-evidence-rag) · private source | Source-first local Q&A | Line-level excerpts, content hashes, abstention, citation-ID gating |
-| **Renteria Personal Assistant Ledger** | [Public snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-personal-assistant-ledger) · private source | Memory & task governance | Editable memory, reminder state machine, approval states, audit trail |
+| **Enterprise AI Chatbot — Governed RAG** | [Safe demo](demo_safe/governed-rag/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#enterprise-ai-chatbot--governed-rag) · private source | Governance & evidence foundation | TF-IDF/cosine retrieval, citations, heuristic confidence, safe/review/block routing, FastAPI, human review |
+| **Governed RAG Demo** | [Safe demo](demo_safe/governed-rag/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#governed-rag-demo) · private source | Recruiter-safe operational demo | Compact policy Q&A, evidence ranking, abstention, governance simulation |
+| **Governed RAG Recruiter Demo v2** | [Safe demo](demo_safe/governed-rag-model-lab/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#governed-rag-recruiter-demo-v2) · private source | Retrieval evaluation lab | Jaccard, TF-IDF, trigram and hybrid retrieval; MRR, Hit@3, robustness tests |
+| **Renteria Polyglot Relay** | [Safe demo](demo_safe/polyglot-relay/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-polyglot-relay) · private source | Governed multilingual interaction | Voice/text workflows, accessibility, risk/quality routing, transcript observability |
+| **Renteria Context Atlas** | [Safe demo](demo_safe/context-atlas/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-context-atlas) · private source | Explainable knowledge mapping | Wikilinks, broken-link visibility, lexical graph suggestions, source hashes |
+| **Renteria Local Model Workbench** | [Safe demo](demo_safe/local-model-workbench/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-local-model-workbench) · private source | Local-model experimentation | Ollama model comparison, runtime/error ledger, opt-in experiment storage |
+| **Renteria Notes Evidence RAG** | [Safe demo](demo_safe/notes-evidence-rag/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-notes-evidence-rag) · private source | Source-first local Q&A | Line-level excerpts, content hashes, abstention, citation-ID gating |
+| **Renteria Personal Assistant Ledger** | [Safe demo](demo_safe/personal-assistant-ledger/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-personal-assistant-ledger) · private source | Memory & task governance | Editable memory, reminder state machine, approval states, audit trail |
 | **Renteria ArgusLoop** | [Public source](portfolio_projects/renteria-argusloop/README.md) | Governed vision-driven automation | Typed computer-use actions, policy gating, normalized coordinates, audit logs, dry-run safeguards |
 | **Renteria EvidenceWeave** | [Public source](portfolio_projects/renteria-evidenceweave/README.md) | Multimodal evidence intelligence | Provenance records, conflict detection, cross-modal agreement, explainable integrity scoring |
 
@@ -108,6 +109,7 @@ The long-term direction is to make the portfolio progressively more connected: i
 ## Public entry points
 
 - [Monetary Network Resilience Simulator](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator)
+- [Runnable demo-safe showcase](demo_safe/README.md)
 - [Recruiter snapshots for private-source projects](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md)
 - [Renteria ArgusLoop](portfolio_projects/renteria-argusloop/README.md)
 - [Renteria EvidenceWeave](portfolio_projects/renteria-evidenceweave/README.md)
