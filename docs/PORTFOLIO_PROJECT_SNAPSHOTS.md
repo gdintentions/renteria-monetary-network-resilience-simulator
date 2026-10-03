@@ -4,6 +4,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 ## Enterprise AI Chatbot — Governed RAG
 
+[Run the reduced public demo](../demo_safe/governed-rag/README.md)
+
 **Role:** evidence-grounded policy Q&A and AI governance reference implementation.
 
 **Implemented:** section-aware chunking, TF-IDF/cosine retrieval, source citations, heuristic confidence scoring, safe/review/block routing, FastAPI endpoints, an in-memory human-review queue, deterministic evaluation, and a Streamlit recruiter dashboard.
@@ -11,6 +13,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 **Verified boundary:** the corpus and benchmark cases are authored fixtures. Confidence is a heuristic score, not a calibrated probability. The review queue is not durable and authentication is not implemented.
 
 ## Governed RAG Demo
+
+[Run the reduced public demo](../demo_safe/governed-rag/README.md)
 
 **Role:** compact recruiter walkthrough of the governed-RAG control loop.
 
@@ -20,6 +24,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 ## Governed RAG Recruiter Demo v2
 
+[Run the reduced public model lab](../demo_safe/governed-rag-model-lab/README.md)
+
 **Role:** retrieval-model comparison and robustness lab.
 
 **Implemented:** Jaccard, TF-IDF cosine, character-trigram Dice, and hybrid retrieval; Top-1, MRR, Hit@3, synthetic corruption tests, and governance-threshold simulation.
@@ -28,6 +34,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 ## Renteria Polyglot Relay
 
+[Run the reduced public demo](../demo_safe/polyglot-relay/README.md)
+
 **Role:** governed multilingual interaction and accessibility prototype.
 
 **Implemented:** React/Vite interface, browser speech input/output where supported, controlled sample translations, quality/risk/latency formulas, route decisions, transcript export, analytics, and deterministic simulation.
@@ -35,6 +43,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 **Verified boundary:** unrestricted translation is not implemented. Built-in translations cover only listed English source phrases; production translation requires a provider adapter. Quality and latency metrics are illustrative formulas, not measured service-level results.
 
 ## Renteria Context Atlas
+
+[Run the reduced public demo](../demo_safe/context-atlas/README.md)
 
 **Role:** explainable personal-knowledge graph prototype.
 
@@ -46,6 +56,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 ## Renteria Local Model Workbench
 
+[Run the reduced public demo](../demo_safe/local-model-workbench/README.md)
+
 **Role:** repeatable local-model comparison harness.
 
 **Implemented:** discovery of locally installed Ollama models, one-to-three-model prompt comparison, runtime/error/token recording, opt-in experiment persistence, export/delete, and loopback-only adapter restrictions.
@@ -56,6 +68,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 ## Renteria Notes Evidence RAG
 
+[Run the reduced public demo](../demo_safe/notes-evidence-rag/README.md)
+
 **Role:** source-first Q&A for small Markdown/text collections.
 
 **Implemented:** note import/edit/delete/export, lexical passage ranking, line-numbered excerpts, content hashes, no-match abstention, extractive mode, optional local-model generation, and citation-ID validation.
@@ -65,6 +79,8 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 **Boundary:** citation-ID validation proves that a cited source identifier exists; it does not prove entailment or factual correctness. Generated output remains a human-review draft.
 
 ## Renteria Personal Assistant Ledger
+
+[Run the reduced public demo](../demo_safe/personal-assistant-ledger/README.md)
 
 **Role:** local memory and task-state-machine prototype.
 
