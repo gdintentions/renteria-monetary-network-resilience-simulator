@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import json
-from pathlib import Path
 import re
 import urllib.request
+from pathlib import Path
 
 from .models import Claim, EvidenceBlock, Modality, Source
 from .pipeline import EvidenceWeave
