@@ -87,6 +87,21 @@ scripts/         benchmark summary and chart generator
 - Model confidence is self-reported and is not a calibrated guarantee.
 - Completion currently relies on the planner; an independent verifier is recommended.
 
+## Controlled benchmark status
+
+ArgusLoop now has a disposable CI benchmark covering deterministic safety/control behavior:
+
+- **21 / 21** benchmark cases passed
+- policy cases cover dry-run mutation blocking, risk ceilings, critical-action blocking, sensitive-text blocking, destructive-key blocking, and allowed low/medium-risk controls
+- coordinate cases cover origin, center, inclusive maximum bounds, and a smaller display
+- dispatch cases exercise click/type/scroll/key/done behavior against a fake desktop adapter
+
+See [the controlled benchmark report](docs/CONTROLLED_BENCHMARK.md).
+
+A perfect score here is deliberately **not** presented as real computer-use accuracy. The benchmark does not test vision-planner localization, real application state, unexpected dialogs, theme/layout drift, or end-to-end task completion.
+
+**What remains next:** run supervised tasks inside a disposable graphical environment with synthetic accounts/data, record completion/failure categories, and measure false approvals/false blocks from real planner proposals before making any live-agent performance claim.
+
 ## Evaluation preview
 
 ![Synthetic benchmark chart](artifacts/sample-benchmark.png)
