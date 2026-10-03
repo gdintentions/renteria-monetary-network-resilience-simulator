@@ -1,0 +1,3210 @@
+{
+  "dataset": "ConflictQA COMP/TripleConf",
+  "paired_items": 430,
+  "true_positive": 172,
+  "false_positive": 4,
+  "true_negative": 426,
+  "false_negative": 258,
+  "precision": 0.9772727272727273,
+  "recall": 0.4,
+  "f1": 0.5676567656765676,
+  "failure_count": 262,
+  "failures": [
+    {
+      "id": "WebQTest-100_aa08b377a001e8fbfcc5a18009ca8197",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Tropical Storm Alpha, meteorology.tropical_cyclone.affected_areas, Haiti)"
+      ],
+      "conflicting_triples": [
+        "(Tropical Storm Alpha, meteorology.tropical_cyclone.affected_areas, Haiti)",
+        "(Haiti, location.country.official_language, French)",
+        "(Haiti, location.country.languages_spoken, French)"
+      ]
+    },
+    {
+      "id": "WebQTest-100_bf66fd89b6e9fc5fcb96c8b3f7a0e616",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Nord-Ouest Department, location.administrative_division.country, Haiti)",
+        "(Nord-Ouest Department, location.location.containedby, Haiti)"
+      ],
+      "conflicting_triples": [
+        "(Nord-Ouest Department, location.administrative_division.country, Haiti)",
+        "(Nord-Ouest Department, location.location.containedby, Haiti)",
+        "(Haiti, location.country.official_language, Spanish)",
+        "(Haiti, location.country.languages_spoken, Portuguese)"
+      ]
+    },
+    {
+      "id": "WebQTest-1168_1591d6a0e6cef93c6863edb2eb0e198f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Kurt Cobain, book.author.book_editions_published, Kurt Cobain Journals)"
+      ],
+      "conflicting_triples": [
+        "(Kurt Cobain, book.author.book_editions_published, Kurt Cobain Journals)",
+        "(Kurt Cobain, music.guitarist.guitars_played, Fender Mustang)"
+      ]
+    },
+    {
+      "id": "WebQTest-1168_17147c6f2bf24962e9f919a8a53f59e6",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Creperie (Parodie de Rape Me), music.composition.composer, Kurt Cobain)"
+      ],
+      "conflicting_triples": [
+        "(Creperie (Parodie de Rape Me), music.composition.composer, Kurt Cobain)",
+        "(Kurt Cobain, music.guitarist.guitars_played, Fender Mustang)"
+      ]
+    },
+    {
+      "id": "WebQTest-1168_8d0b479d648d518072ba26f45d31a385",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Heart-Shaped Box, music.composition.lyricist, Kurt Cobain)"
+      ],
+      "conflicting_triples": [
+        "(Heart-Shaped Box, music.composition.lyricist, Kurt Cobain)",
+        "(Kurt Cobain, music.guitarist.guitars_played, Fender Mustang)"
+      ]
+    },
+    {
+      "id": "WebQTest-1168_90746cdb6907ee563690492ccc6d7234",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Heart-Shaped Box, music.composition.composer, Kurt Cobain)"
+      ],
+      "conflicting_triples": [
+        "(Heart-Shaped Box, music.composition.composer, Kurt Cobain)",
+        "(Kurt Cobain, music.guitarist.guitars_played, Fender Mustang)"
+      ]
+    },
+    {
+      "id": "WebQTest-1168_f6cf5b0414c7636d8fecd35de820ce08",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Pen Cap Chew, music.composition.lyricist, Kurt Cobain)"
+      ],
+      "conflicting_triples": [
+        "(Pen Cap Chew, music.composition.lyricist, Kurt Cobain)",
+        "(Kurt Cobain, music.guitarist.guitars_played, Fender Mustang)"
+      ]
+    },
+    {
+      "id": "WebQTest-1178_bef1a23164be79d6626c67a50fd6f3f5",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Rose That Grew from Concrete, book.written_work.author, Tupac Shakur)"
+      ],
+      "conflicting_triples": [
+        "(The Rose That Grew from Concrete, book.written_work.author, Tupac Shakur)",
+        "(Tupac Shakur, people.person.place_of_birth, Brooklyn)"
+      ]
+    },
+    {
+      "id": "WebQTest-1178_e1d81a60b5954aea1f4417696d8cf733",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Still Ballin', music.composition.composer, Tupac Shakur)"
+      ],
+      "conflicting_triples": [
+        "(Still Ballin', music.composition.composer, Tupac Shakur)",
+        "(Tupac Shakur, people.person.place_of_birth, Bronx)"
+      ]
+    },
+    {
+      "id": "WebQTest-1200_374aac68297f3bd9113db011a9d8fe63",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(DeSoto Bridge, transportation.bridge.body_of_water_spanned, Mississippi River)"
+      ],
+      "conflicting_triples": [
+        "(DeSoto Bridge, transportation.bridge.body_of_water_spanned, Mississippi River)",
+        "(Mississippi River, geography.river.mouth, Atlantic Ocean)"
+      ]
+    },
+    {
+      "id": "WebQTest-1200_fc02976fc922fe099524d60306f45766",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Bridge of Hope, transportation.bridge.body_of_water_spanned, Mississippi River)"
+      ],
+      "conflicting_triples": [
+        "(Bridge of Hope, transportation.bridge.body_of_water_spanned, Mississippi River)",
+        "(Mississippi River, geography.river.mouth, Caribbean Sea)"
+      ]
+    },
+    {
+      "id": "WebQTest-1200_ff2d4334c998533d71c0b0c8e6989103",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Lake Itasca, geography.lake.outflow, Mississippi River)"
+      ],
+      "conflicting_triples": [
+        "(Lake Itasca, geography.lake.outflow, Mississippi River)",
+        "(Mississippi River, geography.river.mouth, Atlantic Ocean)"
+      ]
+    },
+    {
+      "id": "WebQTest-1216_ccea58cf2c1e0cddd28bd1ed6cb710fe",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(One death is a tragedy; a million is a statistic., media_common.quotation.author, Joseph Stalin)"
+      ],
+      "conflicting_triples": [
+        "(One death is a tragedy; a million is a statistic., media_common.quotation.author, Joseph Stalin)",
+        "(Joseph Stalin, people.person.nationality, Russia)"
+      ]
+    },
+    {
+      "id": "WebQTest-1306_1514f1e9c4973110faa2ad25559c0435",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Afshar language, language.human_language.main_country, Iran)",
+        "(Afshar language, language.human_language.countries_spoken_in, Iran)"
+      ],
+      "conflicting_triples": [
+        "(Afshar language, language.human_language.main_country, Iran)",
+        "(Afshar language, language.human_language.countries_spoken_in, Iran)",
+        "(Iran, location.country.form_of_government, Islamic State)"
+      ]
+    },
+    {
+      "id": "WebQTest-1376_6ccb0247e2b78057c0bd25b1539df404",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Montreal City Council, government.governmental_body.jurisdiction, Montreal)"
+      ],
+      "conflicting_triples": [
+        "(Montreal City Council, government.governmental_body.jurisdiction, Montreal)",
+        "(Montreal, base.biblioness.bibs_location.state, Ontario)"
+      ]
+    },
+    {
+      "id": "WebQTest-1387_0281ead9c42fde29e92269a2ccf10495",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Harbourfront, location.neighborhood.neighborhood_of, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Harbourfront, location.neighborhood.neighborhood_of, Toronto)",
+        "(Toronto, location.location.time_zones, Atlantic Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTest-1387_05e8d9daed68737095e3b0511502217b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Oakwood\u2013Vaughan, location.neighborhood.neighborhood_of, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Oakwood\u2013Vaughan, location.neighborhood.neighborhood_of, Toronto)",
+        "(Toronto, location.location.time_zones, Atlantic Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTest-1387_46114008e5fa5395b2ea254aaea6985e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Fiona Coyne, fictional_universe.fictional_character.places_lived, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Fiona Coyne, fictional_universe.fictional_character.places_lived, Toronto)",
+        "(Toronto, location.location.time_zones, Atlantic Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTest-1387_c6146585b4ccc06a7cd611c93cba660c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Gilfoyle, fictional_universe.fictional_character.places_lived, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Gilfoyle, fictional_universe.fictional_character.places_lived, Toronto)",
+        "(Toronto, location.location.time_zones, Central Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTest-1387_c93b982bbc3358f769cd28fe07c446be",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Toronto City Council, government.governmental_body.jurisdiction, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Toronto City Council, government.governmental_body.jurisdiction, Toronto)",
+        "(Toronto, location.location.time_zones, Atlantic Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTest-1473_3d4ecc1165ae1c21499afb8f7b9e25a3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cypriot Maronite Arabic, language.human_language.main_country, Cyprus)",
+        "(Cypriot Maronite Arabic, language.human_language.countries_spoken_in, Cyprus)"
+      ],
+      "conflicting_triples": [
+        "(Cypriot Maronite Arabic, language.human_language.main_country, Cyprus)",
+        "(Cypriot Maronite Arabic, language.human_language.countries_spoken_in, Cyprus)",
+        "(Cyprus, location.country.currency_used, Cypriot pound)"
+      ]
+    },
+    {
+      "id": "WebQTest-1473_4cab2477ddfe14ba3e1ac774680a1f75",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cypriot pound, finance.currency.countries_formerly_used, Cyprus)"
+      ],
+      "conflicting_triples": [
+        "(Cypriot pound, finance.currency.countries_formerly_used, Cyprus)",
+        "(Cyprus, location.country.currency_used, Cypriot pound)"
+      ]
+    },
+    {
+      "id": "WebQTest-1569_0b5333d98ef87008aa02d1fbc1554b05",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)"
+      ],
+      "conflicting_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)",
+        "(Jamaica, location.country.currency_used, Trinidad and Tobago dollar)"
+      ]
+    },
+    {
+      "id": "WebQTest-1569_6f91b128b3ff3663ab0fb24cb4bfd1b2",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)"
+      ],
+      "conflicting_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)",
+        "(Jamaica, location.country.currency_used, Trinidad and Tobago dollar)"
+      ]
+    },
+    {
+      "id": "WebQTest-159_bbbbf54885ccfa192f01115549bc19db",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Ke Kalahea, book.newspaper.circulation_areas, Hilo)"
+      ],
+      "conflicting_triples": [
+        "(Ke Kalahea, book.newspaper.circulation_areas, Hilo)",
+        "(Hilo, location.location.time_zones, Alaska Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTest-1603_38a6be99c929582756a9a7019d8a8ef9",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Tao Te Ching, religion.religious_text.religious_text_of, Taoism)"
+      ],
+      "conflicting_triples": [
+        "(Tao Te Ching, religion.religious_text.religious_text_of, Taoism)",
+        "(Taoism, religion.religion.texts, I Ching)"
+      ]
+    },
+    {
+      "id": "WebQTest-1603_e92665e57d1cb0110944dbefb39b4684",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Jade Emperor, religion.deity.deity_of, Taoism)"
+      ],
+      "conflicting_triples": [
+        "(Jade Emperor, religion.deity.deity_of, Taoism)",
+        "(Taoism, religion.religion.texts, Tao Te Ching)"
+      ]
+    },
+    {
+      "id": "WebQTest-1603_fd6bc0723ffb931d6e283f5a968e4d03",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Laozi, religion.founding_figure.religion_founded, Taoism)"
+      ],
+      "conflicting_triples": [
+        "(Laozi, religion.founding_figure.religion_founded, Taoism)",
+        "(Taoism, religion.religion.texts, Tao Te Ching)"
+      ]
+    },
+    {
+      "id": "WebQTest-1705_35c94dc6944d964963b44949d8ed512c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(What She Came For, music.composition.composer, Franz Ferdinand)"
+      ],
+      "conflicting_triples": [
+        "(What She Came For, music.composition.composer, Franz Ferdinand)",
+        "(Franz Ferdinand, music.artist.origin, Edinburgh)"
+      ]
+    },
+    {
+      "id": "WebQTest-1705_9b87c65bc0a5068bb2044b29f81f2342",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Dark of the Matinee (Spanish version), music.recording.featured_artists, Franz Ferdinand)"
+      ],
+      "conflicting_triples": [
+        "(The Dark of the Matinee (Spanish version), music.recording.featured_artists, Franz Ferdinand)",
+        "(Franz Ferdinand, music.artist.origin, Edinburgh)"
+      ]
+    },
+    {
+      "id": "WebQTest-1705_b21b88494f9e92b507bace52eec29f2a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Dark of the Matinee, music.recording.artist, Franz Ferdinand)"
+      ],
+      "conflicting_triples": [
+        "(The Dark of the Matinee, music.recording.artist, Franz Ferdinand)",
+        "(Franz Ferdinand, music.artist.origin, Edinburgh)"
+      ]
+    },
+    {
+      "id": "WebQTest-1812_179b358fd4db2b454708a6448ec682de",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(If I Never See Your Face Again (remix edit), music.recording.featured_artists, Rihanna)"
+      ],
+      "conflicting_triples": [
+        "(If I Never See Your Face Again (remix edit), music.recording.featured_artists, Rihanna)",
+        "(Rihanna, people.person.place_of_birth, Saint George Parish)",
+        "(Rihanna, music.artist.origin, Saint George Parish)"
+      ]
+    },
+    {
+      "id": "WebQTest-1812_65b5730a361fac314fa12f043413a8c2",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Love the Way You Lie, music.recording.featured_artists, Rihanna)"
+      ],
+      "conflicting_triples": [
+        "(Love the Way You Lie, music.recording.featured_artists, Rihanna)",
+        "(Rihanna, people.person.place_of_birth, Bridgetown)"
+      ]
+    },
+    {
+      "id": "WebQTest-1812_c29807a955ea46fa79cdc9f7aeacba18",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Rihanna: Live in Concert Tour, music.concert_tour.artist, Rihanna)"
+      ],
+      "conflicting_triples": [
+        "(Rihanna: Live in Concert Tour, music.concert_tour.artist, Rihanna)",
+        "(Rihanna, people.person.place_of_birth, Bridgetown)",
+        "(Rihanna, music.artist.origin, Bridgetown)"
+      ]
+    },
+    {
+      "id": "WebQTest-375_3a9a869538584999b9670edcd9773dab",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Let us be moral. Let us contemplate existence., media_common.quotation.author, Charles Dickens)"
+      ],
+      "conflicting_triples": [
+        "(Let us be moral. Let us contemplate existence., media_common.quotation.author, Charles Dickens)",
+        "(Charles Dickens, fictional_universe.fictional_character_creator.fictional_characters_created, David Copperfield)"
+      ]
+    },
+    {
+      "id": "WebQTest-375_e1454c8b479000f97c25ee372d747347",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The cricket on the hearth, book.book_edition.author_editor, Charles Dickens)"
+      ],
+      "conflicting_triples": [
+        "(The cricket on the hearth, book.book_edition.author_editor, Charles Dickens)",
+        "(Charles Dickens, fictional_universe.fictional_character_creator.fictional_characters_created, Great Expectations)"
+      ]
+    },
+    {
+      "id": "WebQTest-519_eac5a0c81145d4a23ee95cae14351774",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Just Walkin' in the Rain, music.composition.lyricist, Nashville)"
+      ],
+      "conflicting_triples": [
+        "(Just Walkin' in the Rain, music.composition.lyricist, Nashville)",
+        "(Nashville, location.location.time_zones, Eastern Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTest-542_216264fded30a84867101ba378e2428e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Stroke It Noel, music.composition.composer, Alex Chilton)",
+        "(Stroke It Noel, music.composition.lyricist, Alex Chilton)"
+      ],
+      "conflicting_triples": [
+        "(Stroke It Noel, music.composition.composer, Alex Chilton)",
+        "(Stroke It Noel, music.composition.lyricist, Alex Chilton)",
+        "(Alex Chilton, people.deceased_person.place_of_death, Baton Rouge)"
+      ]
+    },
+    {
+      "id": "WebQTest-542_9131e49190aad60dc4fbd564e78cf5d5",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Downs, music.composition.composer, Alex Chilton)"
+      ],
+      "conflicting_triples": [
+        "(Downs, music.composition.composer, Alex Chilton)",
+        "(Alex Chilton, people.deceased_person.place_of_death, Baton Rouge)"
+      ]
+    },
+    {
+      "id": "WebQTest-542_b82441a0a2ccf88afa7fb143e9f5e449",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Thank You Friends, music.composition.composer, Alex Chilton)"
+      ],
+      "conflicting_triples": [
+        "(Thank You Friends, music.composition.composer, Alex Chilton)",
+        "(Alex Chilton, people.deceased_person.place_of_death, Memphis)"
+      ]
+    },
+    {
+      "id": "WebQTest-548_4d11a45faace15d2c9d5dae9832cae4c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Life in the Fast Lane, music.recording.artist, Joe Walsh)"
+      ],
+      "conflicting_triples": [
+        "(Life in the Fast Lane, music.recording.artist, Joe Walsh)",
+        "(Joe Walsh, music.guitarist.guitars_played, Gibson Les Paul)"
+      ]
+    },
+    {
+      "id": "WebQTest-548_4ed7d453c445df967570b4685d656f9c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Funk #49, music.composition.lyricist, Joe Walsh)"
+      ],
+      "conflicting_triples": [
+        "(Funk #49, music.composition.lyricist, Joe Walsh)",
+        "(Joe Walsh, music.guitarist.guitars_played, Fender Telecaster)"
+      ]
+    },
+    {
+      "id": "WebQTest-548_5f65f28a990726dda8b60f83eb73c80d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Help Me Make It Thru the Night, music.composition.lyricist, Joe Walsh)"
+      ],
+      "conflicting_triples": [
+        "(Help Me Make It Thru the Night, music.composition.lyricist, Joe Walsh)",
+        "(Joe Walsh, music.guitarist.guitars_played, Fender Telecaster)"
+      ]
+    },
+    {
+      "id": "WebQTest-548_6b65a7948e8a5a52b1ed74160c4aecb3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Confessor, music.composition.composer, Joe Walsh)"
+      ],
+      "conflicting_triples": [
+        "(The Confessor, music.composition.composer, Joe Walsh)",
+        "(Joe Walsh, music.guitarist.guitars_played, Gibson Les Paul)"
+      ]
+    },
+    {
+      "id": "WebQTest-548_939e166d8f012cfe892f45fed17a71a3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Radio Song, music.composition.composer, Joe Walsh)"
+      ],
+      "conflicting_triples": [
+        "(The Radio Song, music.composition.composer, Joe Walsh)",
+        "(Joe Walsh, music.guitarist.guitars_played, Gibson Les Paul)"
+      ]
+    },
+    {
+      "id": "WebQTest-55_350cad074495ce796cd95a9bbce0ceb4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Elf's Lament, music.recording.artist, Michael Bubl\u00e9)"
+      ],
+      "conflicting_triples": [
+        "(Elf's Lament, music.recording.artist, Michael Bubl\u00e9)",
+        "(Michael Bubl\u00e9, people.person.profession, Michael Bubl\u00e9)"
+      ]
+    },
+    {
+      "id": "WebQTest-55_5d347c9ca6d42c2ca74e06b6bec081cb",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Soda Pop, music.recording.artist, Michael Bubl\u00e9)",
+        "(Soda Pop, music.recording.featured_artists, Michael Bubl\u00e9)"
+      ],
+      "conflicting_triples": [
+        "(Soda Pop, music.recording.artist, Michael Bubl\u00e9)",
+        "(Soda Pop, music.recording.featured_artists, Michael Bubl\u00e9)",
+        "(Michael Bubl\u00e9, people.person.profession, Lyricist)"
+      ]
+    },
+    {
+      "id": "WebQTest-55_aa809c4b556066af564266fe1f37ee4c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(To Be Loved Tour, music.concert_tour.artist, Michael Bubl\u00e9)"
+      ],
+      "conflicting_triples": [
+        "(To Be Loved Tour, music.concert_tour.artist, Michael Bubl\u00e9)",
+        "(Michael Bubl\u00e9, people.person.profession, Musician)"
+      ]
+    },
+    {
+      "id": "WebQTest-634_54d73a3ea0de9b701f865feec89dffd6",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Dominion, location.neighborhood.neighborhood_of, San Antonio)"
+      ],
+      "conflicting_triples": [
+        "(The Dominion, location.neighborhood.neighborhood_of, San Antonio)",
+        "(San Antonio, location.hud_county_place.county, Bexar County)"
+      ]
+    },
+    {
+      "id": "WebQTest-654_3a8152d581de19d1b839f3822e9392e3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(El Gouna Beverage Co. Sakara Gold, food.beer.from_region, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(El Gouna Beverage Co. Sakara Gold, food.beer.from_region, Egypt)",
+        "(Egypt, location.country.currency_used, Egyptian pound sterling)"
+      ]
+    },
+    {
+      "id": "WebQTest-654_6ca8cba7511811830a04cd64a8a4cf77",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Egyptian Mau, biology.animal_breed.place_of_origin, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Egyptian Mau, biology.animal_breed.place_of_origin, Egypt)",
+        "(Egypt, location.country.currency_used, Egyptian dollar)"
+      ]
+    },
+    {
+      "id": "WebQTest-654_8b3815ec57389b13892dd5abb108cc4e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Gebel Elba, location.location.partially_containedby, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Gebel Elba, location.location.partially_containedby, Egypt)",
+        "(Egypt, location.country.currency_used, Egyptian pound sterling)"
+      ]
+    },
+    {
+      "id": "WebQTest-654_9f924908bb36bf7d331fa1b933af9f58",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Al Ahram Beverages Co. Stella, food.beer.from_region, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Al Ahram Beverages Co. Stella, food.beer.from_region, Egypt)",
+        "(Egypt, location.country.currency_used, Sudanese pound)"
+      ]
+    },
+    {
+      "id": "WebQTest-654_b183c990916cd703ef71720d378b748e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Tutankhamun, fictional_universe.fictional_character.places_lived, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Tutankhamun, fictional_universe.fictional_character.places_lived, Egypt)",
+        "(Egypt, location.country.currency_used, Egyptian dinar)"
+      ]
+    },
+    {
+      "id": "WebQTest-654_eacad512118512366a932ffd59ad4578",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Egyptian Arabic, language.human_language.countries_spoken_in, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Egyptian Arabic, language.human_language.countries_spoken_in, Egypt)",
+        "(Egypt, location.country.currency_used, Sudanese pound)"
+      ]
+    },
+    {
+      "id": "WebQTest-699_538195f1f01fd027882e6a50839e2a9b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Magistrates' Court of Victoria, law.court.jurisdiction, Victoria)"
+      ],
+      "conflicting_triples": [
+        "(Magistrates' Court of Victoria, law.court.jurisdiction, Victoria)",
+        "(Victoria, location.australian_state.capital_city, Sydney)"
+      ]
+    },
+    {
+      "id": "WebQTest-699_c03c4525d4ac4e6fecf42cfd6fe1929a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(County Court of Victoria, law.court.jurisdiction, Victoria)"
+      ],
+      "conflicting_triples": [
+        "(County Court of Victoria, law.court.jurisdiction, Victoria)",
+        "(Victoria, base.aareas.schema.administrative_area.capital, Sydney)",
+        "(Victoria, location.australian_state.capital_city, Sydney)"
+      ]
+    },
+    {
+      "id": "WebQTest-69_365cba904abc355bc084b442a5a4ab37",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brentwood Journal, book.newspaper.circulation_areas, Brentwood)"
+      ],
+      "conflicting_triples": [
+        "(Brentwood Journal, book.newspaper.circulation_areas, Brentwood)",
+        "(Brentwood, location.hud_county_place.county, Davidson County)"
+      ]
+    },
+    {
+      "id": "WebQTest-783_398858835267d06d629eb27d398324f7",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Houston City Council, government.governmental_body.jurisdiction, Houston)"
+      ],
+      "conflicting_triples": [
+        "(Houston City Council, government.governmental_body.jurisdiction, Houston)",
+        "(Houston, location.hud_county_place.county, Harris County)"
+      ]
+    },
+    {
+      "id": "WebQTest-96_4cc67ce49bb7a1fec24d61aaf2014ff5",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The sky is no longer the limit., media_common.quotation.author, Richard Nixon)"
+      ],
+      "conflicting_triples": [
+        "(The sky is no longer the limit., media_common.quotation.author, Richard Nixon)",
+        "(Richard Nixon, people.deceased_person.place_of_death, Los Angeles)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1023_0513ae5213a4f69739cdef9e7c160e2b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Argentina peso ley, finance.currency.countries_formerly_used, Argentina)"
+      ],
+      "conflicting_triples": [
+        "(Argentina peso ley, finance.currency.countries_formerly_used, Argentina)",
+        "(Argentina, location.country.currency_used, Uruguayan peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1023_229ad21bde59a69d52825593bbe35131",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Otro Mundo Golden Ale, food.beer.from_region, Argentina)"
+      ],
+      "conflicting_triples": [
+        "(Otro Mundo Golden Ale, food.beer.from_region, Argentina)",
+        "(Argentina, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1023_4fb2643554bf5111a245dd1d6a424106",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(L'Italiano, book.newspaper.circulation_areas, Argentina)"
+      ],
+      "conflicting_triples": [
+        "(L'Italiano, book.newspaper.circulation_areas, Argentina)",
+        "(Argentina, location.country.currency_used, Uruguayan peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1023_6b6f19d9abc98d7eda3c6da9a66f1176",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cordoba Fighting Dog, biology.animal_breed.place_of_origin, Argentina)"
+      ],
+      "conflicting_triples": [
+        "(Cordoba Fighting Dog, biology.animal_breed.place_of_origin, Argentina)",
+        "(Argentina, location.country.currency_used, Uruguayan peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1023_8aae72630c47d660704dda5e96688d1d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Los Andes, common.image.appears_in_topic_gallery, Argentina)"
+      ],
+      "conflicting_triples": [
+        "(Los Andes, common.image.appears_in_topic_gallery, Argentina)",
+        "(Argentina, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1023_a1237b43e9bf52095cdf48b1fbb8f2db",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(President of Argentina, government.government_office_or_title.jurisdiction, Argentina)"
+      ],
+      "conflicting_triples": [
+        "(President of Argentina, government.government_office_or_title.jurisdiction, Argentina)",
+        "(Argentina, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_3b676cf5603d91ac09fd09d3697b68fb",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Akher Saa, book.newspaper.circulation_areas, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Akher Saa, book.newspaper.circulation_areas, Egypt)",
+        "(Egypt, location.country.currency_used, Sudanese pound)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_64489ea2de4b116070d33a0ebcfd4866",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Atef Sedki, people.person.nationality, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Atef Sedki, people.person.nationality, Egypt)",
+        "(Egypt, location.country.currency_used, Sudanese pound)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_6ca8cba7511811830a04cd64a8a4cf77",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Egyptian Mau, biology.animal_breed.place_of_origin, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Egyptian Mau, biology.animal_breed.place_of_origin, Egypt)",
+        "(Egypt, location.country.currency_used, Egyptian dinar)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_82c62adc2280ef589ec7baf90ab10b3a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Akhbar el-Yom, book.newspaper.circulation_areas, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Akhbar el-Yom, book.newspaper.circulation_areas, Egypt)",
+        "(Egypt, location.country.currency_used, Jordanian dinar)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_839fa68cda37e890bb3eed45714fcc43",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Chausie, biology.animal_breed.place_of_origin, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Chausie, biology.animal_breed.place_of_origin, Egypt)",
+        "(Egypt, location.country.currency_used, Sudanese pound)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_8b3815ec57389b13892dd5abb108cc4e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Gebel Elba, base.schemastaging.disputed_location.claimed_by, Egypt)",
+        "(Gebel Elba, location.location.partially_containedby, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Gebel Elba, base.schemastaging.disputed_location.claimed_by, Egypt)",
+        "(Gebel Elba, location.location.partially_containedby, Egypt)",
+        "(Egypt, location.country.currency_used, Israeli shekel)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_c0495334f4678f947149a7a30d8e49a0",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Red Sea Governorate, location.administrative_division.country, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Red Sea Governorate, location.administrative_division.country, Egypt)",
+        "(Egypt, location.country.currency_used, Egyptian dollar)"
+      ]
+    },
+    {
+      "id": "WebQTrn-105_eacad512118512366a932ffd59ad4578",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Egyptian Arabic, language.human_language.countries_spoken_in, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Egyptian Arabic, language.human_language.countries_spoken_in, Egypt)",
+        "(Egypt, location.country.currency_used, Egyptian dinar)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1069_b526307856da0d2f8d1bf4ceecb179ad",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(L\u00e6s\u00f8 Municipality, location.administrative_division.second_level_division_of, Denmark)"
+      ],
+      "conflicting_triples": [
+        "(L\u00e6s\u00f8 Municipality, location.administrative_division.second_level_division_of, Denmark)",
+        "(Denmark, location.country.languages_spoken, Icelandic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_01f87aa7a17136ce71d0ba651793399a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Romansh language, language.human_language.countries_spoken_in, Switzerland)",
+        "(Romansh language, language.human_language.main_country, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(Romansh language, language.human_language.countries_spoken_in, Switzerland)",
+        "(Romansh language, language.human_language.main_country, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_4ec9be4c828025d788bc5fb5ebca9e6e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Federal Supreme Court of Switzerland, law.court.jurisdiction, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(Federal Supreme Court of Switzerland, law.court.jurisdiction, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_748d99137014fa7ffb972277db1147c3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brasserie des Franches-Montagnes La Salamandre, food.beer.from_region, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(Brasserie des Franches-Montagnes La Salamandre, food.beer.from_region, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_c9539927b8e30c27bfea741ee7d15d9a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(National Council, government.governmental_body.jurisdiction, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(National Council, government.governmental_body.jurisdiction, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_cb9805c4c3bedc59995289ea0f7dbf7f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Romansh language, language.human_language.countries_spoken_in, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(Romansh language, language.human_language.countries_spoken_in, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_e5d58a39f71afaa19e8df8c6a01e7abe",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brasserie des Franches-Montagnes La Meule, food.beer.from_region, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(Brasserie des Franches-Montagnes La Meule, food.beer.from_region, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_edd867fed7a87e2ab21c03288665f35b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Council of States, government.governmental_body.jurisdiction, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(Council of States, government.governmental_body.jurisdiction, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1155_fbf8e0d41d59c1c1f57016316d470540",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Basel-Stadt, location.administrative_division.country, Switzerland)",
+        "(Basel-Stadt, location.location.containedby, Switzerland)"
+      ],
+      "conflicting_triples": [
+        "(Basel-Stadt, location.administrative_division.country, Switzerland)",
+        "(Basel-Stadt, location.location.containedby, Switzerland)",
+        "(Switzerland, location.country.currency_used, Euro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1232_ae9a833cf2cca30c1c9725fc6a167794",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Africa Proconsularis, location.administrative_division.country, Roman Empire)"
+      ],
+      "conflicting_triples": [
+        "(Africa Proconsularis, location.administrative_division.country, Roman Empire)",
+        "(Roman Empire, location.country.capital, Carthage)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1283_e831da3802943dad506eb1e3fb611847",
+      "case": "positive-control",
+      "failure_category": "false-positive-conflict",
+      "conflicts": [
+        "Lansing \u00b7 location.location.containedby: Eaton County vs Michigan"
+      ]
+    },
+    {
+      "id": "WebQTrn-1283_fe799f0968328608acc72a24be05ffe2",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Michigan Supreme Court, law.court.jurisdiction, Michigan)"
+      ],
+      "conflicting_triples": [
+        "(Michigan Supreme Court, law.court.jurisdiction, Michigan)",
+        "(Michigan, location.location.time_zones, Eastern Standard Time)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1297_02ed5ce4f0d0e6c1b8d15752a1be80ad",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Miami, periodicals.newspaper_circulation_area.newspapers, Urdu Times)"
+      ],
+      "conflicting_triples": [
+        "(Miami, periodicals.newspaper_circulation_area.newspapers, Urdu Times)",
+        "(Urdu Times, book.newspaper.circulation_areas, Paris)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1297_11e4c2b019af8a62700bd4b1fe6d1cfd",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Thought Of You, music.composition.composer, Justin Bieber)"
+      ],
+      "conflicting_triples": [
+        "(Thought Of You, music.composition.composer, Justin Bieber)",
+        "(Justin Bieber, people.person.place_of_birth, Manchester)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1297_99157c72607b35d66607df042ab3af4f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(All Around The World, music.composition.lyricist, Justin Bieber)",
+        "(All Around The World, music.composition.composer, Justin Bieber)"
+      ],
+      "conflicting_triples": [
+        "(All Around The World, music.composition.lyricist, Justin Bieber)",
+        "(All Around The World, music.composition.composer, Justin Bieber)",
+        "(Justin Bieber, people.person.place_of_birth, Manchester)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1297_a0da13a7b70a064b8cffb58007f6739d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(#Thatpower, music.recording.artist, Justin Bieber)"
+      ],
+      "conflicting_triples": [
+        "(#Thatpower, music.recording.artist, Justin Bieber)",
+        "(Justin Bieber, people.person.place_of_birth, Manchester)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1645_b797099cd5718b7e0784f12721f3689f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(William Carroll, military.military_person.participated_in_conflicts, Battle of New Orleans)"
+      ],
+      "conflicting_triples": [
+        "(William Carroll, military.military_person.participated_in_conflicts, Battle of New Orleans)",
+        "(Battle of New Orleans, time.event.locations, New Orleans)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1722_08b974020ec8f32124e635dbf1a7c396",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Hubert Ingraham, people.person.nationality, Bahamas)"
+      ],
+      "conflicting_triples": [
+        "(Hubert Ingraham, people.person.nationality, Bahamas)",
+        "(Bahamas, base.locations.countries.continent, Central America)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1722_34f9412e607f037074aebcb8ec0f7891",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Senate of the Bahamas, government.governmental_body.jurisdiction, Bahamas)"
+      ],
+      "conflicting_triples": [
+        "(Senate of the Bahamas, government.governmental_body.jurisdiction, Bahamas)",
+        "(Bahamas, base.locations.countries.continent, Caribbean)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1722_4c9c478708f3daab701711f12484d823",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(New Providence, location.administrative_division.country, Bahamas)"
+      ],
+      "conflicting_triples": [
+        "(New Providence, location.administrative_division.country, Bahamas)",
+        "(Bahamas, base.locations.countries.continent, South America)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1722_aca40552e6778874c40c75071d819a54",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Bahamas Creole English Language, language.human_language.countries_spoken_in, Bahamas)",
+        "(Bahamas Creole English Language, language.human_language.main_country, Bahamas)"
+      ],
+      "conflicting_triples": [
+        "(Bahamas Creole English Language, language.human_language.countries_spoken_in, Bahamas)",
+        "(Bahamas Creole English Language, language.human_language.main_country, Bahamas)",
+        "(Bahamas, location.location.containedby, Caribbean)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1722_f4a32f9b5e628b4c25c759d940bfbab6",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Jerome Fitzgerald, people.person.nationality, Bahamas)"
+      ],
+      "conflicting_triples": [
+        "(Jerome Fitzgerald, people.person.nationality, Bahamas)",
+        "(Bahamas, base.locations.countries.continent, Caribbean)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1770_626d410d568357fbf40484f5f472121f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Wishing on a Star, music.recording.artist, Beyonc\u00e9 Knowles)"
+      ],
+      "conflicting_triples": [
+        "(Wishing on a Star, music.recording.artist, Beyonc\u00e9 Knowles)",
+        "(Beyonc\u00e9 Knowles, people.person.children, Rumi Carter)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1770_6a7c160ace84e7908302f805739ad06d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Dangerously in Love 2, music.composition.composer, Beyonc\u00e9 Knowles)"
+      ],
+      "conflicting_triples": [
+        "(Dangerously in Love 2, music.composition.composer, Beyonc\u00e9 Knowles)",
+        "(Beyonc\u00e9 Knowles, people.person.children, Rumi Carter)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1770_76c2e83b07b9da336705f1d623faf5a4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Mrs. Carter Show World Tour, music.concert_tour.artist, Beyonc\u00e9 Knowles)"
+      ],
+      "conflicting_triples": [
+        "(The Mrs. Carter Show World Tour, music.concert_tour.artist, Beyonc\u00e9 Knowles)",
+        "(Beyonc\u00e9 Knowles, people.person.children, Rumi Carter)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1770_7c271dcbcf911ac67fff291e0c0a0ee8",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(D\u00e9j\u00e0 vu (no rap version), music.recording.featured_artists, Beyonc\u00e9 Knowles)"
+      ],
+      "conflicting_triples": [
+        "(D\u00e9j\u00e0 vu (no rap version), music.recording.featured_artists, Beyonc\u00e9 Knowles)",
+        "(Beyonc\u00e9 Knowles, people.person.children, Rumi Carter)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1770_bc80eb99b461b02979f7b4186cb73f41",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Story of Beauty, music.composition.composer, Beyonc\u00e9 Knowles)"
+      ],
+      "conflicting_triples": [
+        "(The Story of Beauty, music.composition.composer, Beyonc\u00e9 Knowles)",
+        "(Beyonc\u00e9 Knowles, people.person.children, Rumi Carter)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1770_fee80219bb52a93bbd48e877ed0adc5d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "('03 Bonnie & Clyde / Daddy, music.recording.featured_artists, Beyonc\u00e9 Knowles)",
+        "('03 Bonnie & Clyde / Daddy, music.recording.artist, Jay-Z)"
+      ],
+      "conflicting_triples": [
+        "('03 Bonnie & Clyde / Daddy, music.recording.featured_artists, Beyonc\u00e9 Knowles)",
+        "('03 Bonnie & Clyde / Daddy, music.recording.artist, Jay-Z)",
+        "(Beyonc\u00e9 Knowles, people.person.children, Beyonc\u00e9)",
+        "(Jay-Z, people.person.children, Beyonc\u00e9)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_0e945cac8043fe5af615e4b2f0ddac8f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Israeli lira, finance.currency.countries_formerly_used, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Israeli lira, finance.currency.countries_formerly_used, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_1ae1a6be469266690c163ee3f6e0293c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Israel, government.governmental_jurisdiction.government, Cabinet of Israel)"
+      ],
+      "conflicting_triples": [
+        "(Israel, government.governmental_jurisdiction.government, Cabinet of Israel)",
+        "(Israel, location.country.form_of_government, Westminster system)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_21d93e83b78eb4bae89800d09deafa2f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Israeli Ministry of Defense, government.government_agency.jurisdiction, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Israeli Ministry of Defense, government.government_agency.jurisdiction, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_501c6712d98f6b8b1f2db4599112f057",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Haaretz, book.newspaper.circulation_areas, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Haaretz, book.newspaper.circulation_areas, Israel)",
+        "(Israel, location.country.form_of_government, Westminster system)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_7322a2a4d46bf36b95bfab4418c9a32b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Northern District, location.administrative_division.country, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Northern District, location.administrative_division.country, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_82d451237e3819f1b085a95e72a89aa4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Supreme Court of Israel, law.court.jurisdiction, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Supreme Court of Israel, law.court.jurisdiction, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_9440ac3bd6d8053ca4d553da408a7cb0",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Old Israeli shekel, finance.currency.countries_formerly_used, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Old Israeli shekel, finance.currency.countries_formerly_used, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_b9fa34f09c15f589df8150b880882013",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(HaTzofe, book.newspaper.circulation_areas, Israel)"
+      ],
+      "conflicting_triples": [
+        "(HaTzofe, book.newspaper.circulation_areas, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_bda5cd2328322c309ecbaaffcb9e7c8e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Haifa District, location.location.containedby, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Haifa District, location.location.containedby, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-1938_fa2f7731ddb5e1a327b2e49b9fe9c9c5",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Maccabee, food.beer.country, Israel)"
+      ],
+      "conflicting_triples": [
+        "(Maccabee, food.beer.country, Israel)",
+        "(Israel, location.country.form_of_government, Constitutional monarchy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2023_0c3145253f892ff944c08119aab2d5ee",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Can I Live, music.composition.composer, Jay-Z)"
+      ],
+      "conflicting_triples": [
+        "(Can I Live, music.composition.composer, Jay-Z)",
+        "(Jay-Z, music.artist.origin, Queens)",
+        "(Jay-Z, people.person.place_of_birth, Queens)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2023_835a8ec1be91ea0beafe52046c426bd3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Can I Live II, music.composition.composer, Jay-Z)"
+      ],
+      "conflicting_triples": [
+        "(Can I Live II, music.composition.composer, Jay-Z)",
+        "(Jay-Z, music.artist.origin, Queens)",
+        "(Jay-Z, people.person.place_of_birth, Queens)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2023_ab27357b0c4c667d23f485248e35c1bf",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Jay-Z Fall Tour, music.concert_tour.artist, Jay-Z)"
+      ],
+      "conflicting_triples": [
+        "(Jay-Z Fall Tour, music.concert_tour.artist, Jay-Z)",
+        "(Jay-Z, music.artist.origin, Queens)",
+        "(Jay-Z, people.person.place_of_birth, Queens)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2023_c0b39ce6f793480f678ceccad425298e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Still D.R.E., music.composition.lyricist, Jay-Z)"
+      ],
+      "conflicting_triples": [
+        "(Still D.R.E., music.composition.lyricist, Jay-Z)",
+        "(Jay-Z, people.person.place_of_birth, Queens)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2026_0c8bcc717d50c92c31ff802641504b43",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Salcedo, location.administrative_division.second_level_division_of, Dominican Republic)"
+      ],
+      "conflicting_triples": [
+        "(Salcedo, location.administrative_division.second_level_division_of, Dominican Republic)",
+        "(Dominican Republic, location.country.currency_used, Mexican peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2026_5abd17edee676db9f12bbbe84edfb575",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Saman\u00e1 English, language.human_language.countries_spoken_in, Dominican Republic)"
+      ],
+      "conflicting_triples": [
+        "(Saman\u00e1 English, language.human_language.countries_spoken_in, Dominican Republic)",
+        "(Dominican Republic, location.country.currency_used, Haitian gourde)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2026_84e5ab7013a2c0dd11f7f61db45df94c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(San Pedro de Macor\u00eds Province, location.location.containedby, Dominican Republic)",
+        "(San Pedro de Macor\u00eds Province, location.administrative_division.country, Dominican Republic)"
+      ],
+      "conflicting_triples": [
+        "(San Pedro de Macor\u00eds Province, location.location.containedby, Dominican Republic)",
+        "(San Pedro de Macor\u00eds Province, location.administrative_division.country, Dominican Republic)",
+        "(Dominican Republic, location.country.currency_used, Haitian gourde)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2026_96417e4d721f5c0e2c9079454df0af5b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(El Seibo Province, location.administrative_division.country, Dominican Republic)"
+      ],
+      "conflicting_triples": [
+        "(El Seibo Province, location.administrative_division.country, Dominican Republic)",
+        "(Dominican Republic, location.country.currency_used, Haitian gourde)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2057_522769c85c8189a870c317c0aa940eaa",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Sacatep\u00e9quez Department, location.administrative_division.country, Guatemala)"
+      ],
+      "conflicting_triples": [
+        "(Sacatep\u00e9quez Department, location.administrative_division.country, Guatemala)",
+        "(Guatemala, location.country.currency_used, Mexican peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2057_5a938fc3874043b1e130e2813ff0cf7c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Congress of Guatemala, government.governmental_body.jurisdiction, Guatemala)"
+      ],
+      "conflicting_triples": [
+        "(Congress of Guatemala, government.governmental_body.jurisdiction, Guatemala)",
+        "(Guatemala, location.country.currency_used, Quetzalcoatl)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2057_b64f996ceca972c0d6fea3de2705ce63",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Alta Verapaz Department, location.administrative_division.country, Guatemala)"
+      ],
+      "conflicting_triples": [
+        "(Alta Verapaz Department, location.administrative_division.country, Guatemala)",
+        "(Guatemala, location.country.currency_used, Costa Rican col\u00f3n)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2069_52c8e056ec6add6f53e03ba70667b590",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Ministry General Secretariat of the Presidency, government.government_agency.jurisdiction, Chile)"
+      ],
+      "conflicting_triples": [
+        "(Ministry General Secretariat of the Presidency, government.government_agency.jurisdiction, Chile)",
+        "(Chile, location.country.languages_spoken, Spanish Language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2069_5a7f5c1dfeaddda67fda5178c6c27e16",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Tarapac\u00e1 Region, location.location.containedby, Chile)",
+        "(Tarapac\u00e1 Region, location.administrative_division.country, Chile)"
+      ],
+      "conflicting_triples": [
+        "(Tarapac\u00e1 Region, location.location.containedby, Chile)",
+        "(Tarapac\u00e1 Region, location.administrative_division.country, Chile)",
+        "(Chile, location.country.languages_spoken, Aymara Language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2069_755bf60e299967df7b265e22e1ac2367",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Easter Island, location.administrative_division.second_level_division_of, Chile)"
+      ],
+      "conflicting_triples": [
+        "(Easter Island, location.administrative_division.second_level_division_of, Chile)",
+        "(Chile, location.country.languages_spoken, Rapa Nui Language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2069_cf3638075fd9204c82c8adf9ae47925e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Supreme Court of Chile, law.court.jurisdiction, Chile)"
+      ],
+      "conflicting_triples": [
+        "(Supreme Court of Chile, law.court.jurisdiction, Chile)",
+        "(Chile, location.country.languages_spoken, Quechua Language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_3a8152d581de19d1b839f3822e9392e3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(El Gouna Beverage Co. Sakara Gold, food.beer.from_region, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(El Gouna Beverage Co. Sakara Gold, food.beer.from_region, Egypt)",
+        "(Egypt, location.country.official_language, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_3b676cf5603d91ac09fd09d3697b68fb",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Akher Saa, book.newspaper.circulation_areas, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Akher Saa, book.newspaper.circulation_areas, Egypt)",
+        "(Egypt, location.country.official_language, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_50cf52311d0cdd04337ffc0d5378b1b8",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Gebel Elba, location.location.partially_containedby, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Gebel Elba, location.location.partially_containedby, Egypt)",
+        "(Egypt, location.country.official_language, Egyptian Arabic)",
+        "(Egypt, location.country.languages_spoken, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_602d3e74c7063895f149a8f44b9e406f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Domari Language, language.human_language.countries_spoken_in, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Domari Language, language.human_language.countries_spoken_in, Egypt)",
+        "(Egypt, location.country.languages_spoken, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_82c62adc2280ef589ec7baf90ab10b3a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Akhbar el-Yom, book.newspaper.circulation_areas, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Akhbar el-Yom, book.newspaper.circulation_areas, Egypt)",
+        "(Egypt, location.country.languages_spoken, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_839fa68cda37e890bb3eed45714fcc43",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Chausie, biology.animal_breed.place_of_origin, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Chausie, biology.animal_breed.place_of_origin, Egypt)",
+        "(Egypt, location.country.official_language, Arabic Language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_8b3815ec57389b13892dd5abb108cc4e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Gebel Elba, base.schemastaging.disputed_location.claimed_by, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Gebel Elba, base.schemastaging.disputed_location.claimed_by, Egypt)",
+        "(Egypt, location.country.languages_spoken, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_9f924908bb36bf7d331fa1b933af9f58",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Al Ahram Beverages Co. Stella, food.beer.from_region, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Al Ahram Beverages Co. Stella, food.beer.from_region, Egypt)",
+        "(Egypt, location.country.languages_spoken, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_b183c990916cd703ef71720d378b748e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Tutankhamun, fictional_universe.fictional_character.places_lived, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Tutankhamun, fictional_universe.fictional_character.places_lived, Egypt)",
+        "(Egypt, location.country.official_language, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_c0495334f4678f947149a7a30d8e49a0",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Red Sea Governorate, location.administrative_division.country, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Red Sea Governorate, location.administrative_division.country, Egypt)",
+        "(Egypt, location.country.official_language, Egyptian Arabic)",
+        "(Egypt, location.country.languages_spoken, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2189_cf2c2ca737c00135df125459635a368a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Al Sharqia Governorate, location.administrative_division.country, Egypt)",
+        "(Al Sharqia Governorate, location.location.containedby, Egypt)"
+      ],
+      "conflicting_triples": [
+        "(Al Sharqia Governorate, location.administrative_division.country, Egypt)",
+        "(Al Sharqia Governorate, location.location.containedby, Egypt)",
+        "(Egypt, location.country.official_language, Egyptian Arabic)",
+        "(Egypt, location.country.languages_spoken, Egyptian Arabic)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2215_11c4cd5a25fd84f3980d7013c0329bad",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Beat This Summer Tour, music.concert_tour.artist, Brad Paisley)"
+      ],
+      "conflicting_triples": [
+        "(Beat This Summer Tour, music.concert_tour.artist, Brad Paisley)",
+        "(Brad Paisley, music.artist.origin, Wheeling)",
+        "(Brad Paisley, people.person.place_of_birth, Wheeling)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2215_1997cb4922db71983be26e6a509950f4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Country Nation World Tour, music.concert_tour.artist, Brad Paisley)"
+      ],
+      "conflicting_triples": [
+        "(Country Nation World Tour, music.concert_tour.artist, Brad Paisley)",
+        "(Brad Paisley, music.artist.origin, Wheeling)",
+        "(Brad Paisley, people.person.place_of_birth, Wheeling)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2215_2fa90adc92b5095b8e1fd27754180250",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(I'm Gonna Get Drunk and Play Hank Williams, music.recording.featured_artists, Brad Paisley)"
+      ],
+      "conflicting_triples": [
+        "(I'm Gonna Get Drunk and Play Hank Williams, music.recording.featured_artists, Brad Paisley)",
+        "(Brad Paisley, people.person.place_of_birth, Wheeling)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2215_38e836442d3d4535942bf8f0cbbbe65a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Hot Rod Heart, music.recording.artist, Brad Paisley)"
+      ],
+      "conflicting_triples": [
+        "(Hot Rod Heart, music.recording.artist, Brad Paisley)",
+        "(Brad Paisley, music.artist.origin, El Cerrito)",
+        "(Brad Paisley, people.person.place_of_birth, El Cerrito)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2250_98aa1c3bf990bf3d779dee7b611c33fa",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Norio Ohga, people.deceased_person.place_of_death, Tokyo)"
+      ],
+      "conflicting_triples": [
+        "(Norio Ohga, people.deceased_person.place_of_death, Tokyo)",
+        "(Tokyo, base.aareas.schema.administrative_area.administrative_children, Shibuya)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2286_a23d2f977b0719cd9eb684929c371ccb",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Governor of Kentucky, government.government_office_or_title.jurisdiction, Kentucky)"
+      ],
+      "conflicting_triples": [
+        "(Governor of Kentucky, government.government_office_or_title.jurisdiction, Kentucky)",
+        "(Kentucky, location.location.containedby, United States)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2292_8784ca0ffa5adf55625c8af4f6b657b3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Government of the Soviet Union, government.government.government_for, Soviet Union)"
+      ],
+      "conflicting_triples": [
+        "(Government of the Soviet Union, government.government.government_for, Soviet Union)",
+        "(Soviet Union, location.country.form_of_government, Planned economy)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2292_b1f9bf9c0551430652e0ae3b98455ea6",
+      "case": "positive-control",
+      "failure_category": "false-positive-conflict",
+      "conflicts": [
+        "Soviet ruble \u00b7 finance.currency.countries_used: Latvian Soviet Socialist Republic vs Lithuanian Soviet Socialist Republic"
+      ]
+    },
+    {
+      "id": "WebQTrn-2292_c672d27c3d00ea802b18f17142a0c867",
+      "case": "positive-control",
+      "failure_category": "false-positive-conflict",
+      "conflicts": [
+        "Hungarian Revolution of 1956 \u00b7 time.event.locations: Hungarian People's Republic vs Hungary"
+      ]
+    },
+    {
+      "id": "WebQTrn-2314_019ac2df6831ea7e866fa674ce4a9fae",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Second Vice-President of Costa Rica, government.government_office_or_title.jurisdiction, Costa Rica)"
+      ],
+      "conflicting_triples": [
+        "(Second Vice-President of Costa Rica, government.government_office_or_title.jurisdiction, Costa Rica)",
+        "(Costa Rica, location.country.currency_used, Guatemalan quetzal)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2314_02afa48afcaa1d6de81f7d0aaf1a59f7",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(La Uni\u00f3n, location.administrative_division.second_level_division_of, Costa Rica)"
+      ],
+      "conflicting_triples": [
+        "(La Uni\u00f3n, location.administrative_division.second_level_division_of, Costa Rica)",
+        "(Costa Rica, location.country.currency_used, Nicaraguan c\u00f3rdoba)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2314_2945752f3c92dbdddaf2ae179c5f6e12",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cartago, location.administrative_division.second_level_division_of, Costa Rica)"
+      ],
+      "conflicting_triples": [
+        "(Cartago, location.administrative_division.second_level_division_of, Costa Rica)",
+        "(Costa Rica, location.country.currency_used, Guatemalan quetzal)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2314_6bd8e51d185b5d602ee1eb939f5714fb",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cartago Province, location.location.containedby, Costa Rica)"
+      ],
+      "conflicting_triples": [
+        "(Cartago Province, location.location.containedby, Costa Rica)",
+        "(Costa Rica, location.country.currency_used, Costa Rican dollar)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2314_be3d335c63904299f0103e947254a9f7",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Government of Costa Rica, government.government.government_for, Costa Rica)"
+      ],
+      "conflicting_triples": [
+        "(Government of Costa Rica, government.government.government_for, Costa Rica)",
+        "(Costa Rica, location.country.currency_used, Salvadoran col\u00f3n)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2314_c7855b562d8033982891d4b411baf8a4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Bribri Language, language.human_language.countries_spoken_in, Costa Rica)"
+      ],
+      "conflicting_triples": [
+        "(Bribri Language, language.human_language.countries_spoken_in, Costa Rica)",
+        "(Costa Rica, location.country.currency_used, Panamanian balboa)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2314_f53b7962c4dfca88044f3c0a89ac0290",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Puntarenas Province, location.administrative_division.country, Costa Rica)",
+        "(Puntarenas Province, location.location.containedby, Costa Rica)"
+      ],
+      "conflicting_triples": [
+        "(Puntarenas Province, location.administrative_division.country, Costa Rica)",
+        "(Puntarenas Province, location.location.containedby, Costa Rica)",
+        "(Costa Rica, location.country.currency_used, Panamanian balboa)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2319_5d066fa0939d708dab176e819188e151",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cherkasy Oblast, location.location.containedby, Ukraine)",
+        "(Cherkasy Oblast, location.administrative_division.country, Ukraine)"
+      ],
+      "conflicting_triples": [
+        "(Cherkasy Oblast, location.location.containedby, Ukraine)",
+        "(Cherkasy Oblast, location.administrative_division.country, Ukraine)",
+        "(Ukraine, location.country.official_language, Russian Language)",
+        "(Ukraine, location.country.languages_spoken, Russian Language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2483_201c5ed15c03f34a04d7beaf37de01f4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Limerick, travel.travel_destination.tourist_attractions, River Shannon)"
+      ],
+      "conflicting_triples": [
+        "(Limerick, travel.travel_destination.tourist_attractions, River Shannon)",
+        "(River Shannon, geography.river.mouth, Atlantic Ocean)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2483_4690cc164c56aa2e35bbe6ddfb171bea",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Shannon Pot, geography.lake.outflow, River Shannon)"
+      ],
+      "conflicting_triples": [
+        "(Shannon Pot, geography.lake.outflow, River Shannon)",
+        "(River Shannon, geography.river.mouth, River Shannon)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2483_6346c09707b364fa1e98c5561e9c738f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Killaloe Bridge, transportation.bridge.body_of_water_spanned, River Shannon)"
+      ],
+      "conflicting_triples": [
+        "(Killaloe Bridge, transportation.bridge.body_of_water_spanned, River Shannon)",
+        "(River Shannon, geography.river.mouth, Atlantic Ocean)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2483_94f89bc182aa3e9a176dd7a939ebdfd3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Living Bridge, transportation.bridge.body_of_water_spanned, River Shannon)"
+      ],
+      "conflicting_triples": [
+        "(The Living Bridge, transportation.bridge.body_of_water_spanned, River Shannon)",
+        "(River Shannon, geography.river.mouth, Galway Bay)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2540_9ed4dcee2e3a2bd52f3a33594726bb51",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Houses of Parliament series, visual_art.art_series.artist, Claude Monet)"
+      ],
+      "conflicting_triples": [
+        "(Houses of Parliament series, visual_art.art_series.artist, Claude Monet)",
+        "(Claude Monet, influence.influence_node.influenced_by, Claude Monet)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2641_8fe5ec39e992465249b6b75c971057ed",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(College isn't the place to go for ideas., media_common.quotation.author, Helen Keller)"
+      ],
+      "conflicting_triples": [
+        "(College isn't the place to go for ideas., media_common.quotation.author, Helen Keller)",
+        "(Helen Keller, people.deceased_person.place_of_death, Bethlehem)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2641_aa25cef57eebcc069b1783e80e760069",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Helen Keller, book.author.book_editions_published, The story of my life)"
+      ],
+      "conflicting_triples": [
+        "(Helen Keller, book.author.book_editions_published, The story of my life)",
+        "(Helen Keller, people.deceased_person.place_of_death, Worcester)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2748_4d6c65004ee28d487bc3921f625106b5",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Manager Daily, book.newspaper.circulation_areas, Thailand)"
+      ],
+      "conflicting_triples": [
+        "(Manager Daily, book.newspaper.circulation_areas, Thailand)",
+        "(Thailand, location.country.languages_spoken, Thai language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2748_7712cb150914e7be807253ecc9fa6e3e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Thai baht, finance.currency.countries_used, Thailand)"
+      ],
+      "conflicting_triples": [
+        "(Thai baht, finance.currency.countries_used, Thailand)",
+        "(Thailand, location.country.languages_spoken, Lao language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2809_76ad44c32bce2694411c86576bbec2e7",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(J. D. Salinger, book.author.book_editions_published, A Catcher in the Rye)"
+      ],
+      "conflicting_triples": [
+        "(J. D. Salinger, book.author.book_editions_published, A Catcher in the Rye)",
+        "(J. D. Salinger, people.deceased_person.place_of_death, Hanover)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2809_9a675f10a70c0e698f094116c3f82a7d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Catcher in the Rye, book.written_work.author, J. D. Salinger)"
+      ],
+      "conflicting_triples": [
+        "(The Catcher in the Rye, book.written_work.author, J. D. Salinger)",
+        "(J. D. Salinger, people.deceased_person.place_of_death, Hanover)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2815_4d2f11c63fa0611b0e29bc00f41bf7a9",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Profiles in courage, book.book_edition.author_editor, John F. Kennedy)"
+      ],
+      "conflicting_triples": [
+        "(Profiles in courage, book.book_edition.author_editor, John F. Kennedy)",
+        "(John F. Kennedy, people.person.place_of_birth, Newton)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2815_b0ec4891d80892c6499b17b0c8c363e2",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Addison's disease, medicine.disease.notable_people_with_this_condition, John F. Kennedy)"
+      ],
+      "conflicting_triples": [
+        "(Addison's disease, medicine.disease.notable_people_with_this_condition, John F. Kennedy)",
+        "(John F. Kennedy, people.person.place_of_birth, Cambridge)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2818_5b6bc3c00ad3a3ddc3dfa8e4b440c5c9",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Kineshma Bridge, transportation.bridge.body_of_water_spanned, Volga River)"
+      ],
+      "conflicting_triples": [
+        "(Kineshma Bridge, transportation.bridge.body_of_water_spanned, Volga River)",
+        "(Volga River, geography.river.origin, Valdai Hills National Park)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2818_7337f6e256ea9b695d810136db74f041",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Saratov Bridge, transportation.bridge.body_of_water_spanned, Volga River)"
+      ],
+      "conflicting_triples": [
+        "(Saratov Bridge, transportation.bridge.body_of_water_spanned, Volga River)",
+        "(Volga River, geography.river.origin, Volga River)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2968_16d7795d856ce567c83173691845c6bf",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(1815 New England hurricane, meteorology.tropical_cyclone.affected_areas, New England)"
+      ],
+      "conflicting_triples": [
+        "(1815 New England hurricane, meteorology.tropical_cyclone.affected_areas, New England)",
+        "(New England, location.location.time_zones, Atlantic Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTrn-2968_2ce01a5449a034b71f1e232ceb565296",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Hurricane Daisy, meteorology.tropical_cyclone.affected_areas, New England)"
+      ],
+      "conflicting_triples": [
+        "(Hurricane Daisy, meteorology.tropical_cyclone.affected_areas, New England)",
+        "(New England, location.location.time_zones, Atlantic Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3033_46114008e5fa5395b2ea254aaea6985e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Fiona Coyne, fictional_universe.fictional_character.places_lived, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Fiona Coyne, fictional_universe.fictional_character.places_lived, Toronto)",
+        "(Toronto, base.biblioness.bibs_location.state, Quebec)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3033_c6146585b4ccc06a7cd611c93cba660c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Gilfoyle, fictional_universe.fictional_character.places_lived, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Gilfoyle, fictional_universe.fictional_character.places_lived, Toronto)",
+        "(Toronto, base.biblioness.bibs_location.state, Quebec)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3033_c93b982bbc3358f769cd28fe07c446be",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Toronto City Council, government.governmental_body.jurisdiction, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Toronto City Council, government.governmental_body.jurisdiction, Toronto)",
+        "(Toronto, base.biblioness.bibs_location.state, Quebec)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3033_e3a5f9c340a4ea179541856ccb4900eb",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Xtra!, book.newspaper.circulation_areas, Toronto)"
+      ],
+      "conflicting_triples": [
+        "(Xtra!, book.newspaper.circulation_areas, Toronto)",
+        "(Toronto, location.location.containedby, Toronto)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3038_0b5041659b357b7246a23ac30d7f6b29",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Poor Richard's Almanac of 1757, book.book_edition.author_editor, Benjamin Franklin)"
+      ],
+      "conflicting_triples": [
+        "(Poor Richard's Almanac of 1757, book.book_edition.author_editor, Benjamin Franklin)",
+        "(Benjamin Franklin, people.person.place_of_birth, Philadelphia)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3038_15cace8f716a3aed245757a5874e1bb0",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Who is rich? He that rejoices in his portion., media_common.quotation.author, Benjamin Franklin)"
+      ],
+      "conflicting_triples": [
+        "(Who is rich? He that rejoices in his portion., media_common.quotation.author, Benjamin Franklin)",
+        "(Benjamin Franklin, people.person.place_of_birth, Cambridge)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3038_75053cb108f036148b2e5631983f76a3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Poor Richard's Almanac of 1735, book.book_edition.author_editor, Benjamin Franklin)"
+      ],
+      "conflicting_triples": [
+        "(Poor Richard's Almanac of 1735, book.book_edition.author_editor, Benjamin Franklin)",
+        "(Benjamin Franklin, people.person.place_of_birth, Philadelphia)"
+      ]
+    },
+    {
+      "id": "WebQTrn-303_2ee96aa7464485d80d214b61773f4a5c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Not Without Laughter (Thrift Edition), book.book_edition.author_editor, Langston Hughes)"
+      ],
+      "conflicting_triples": [
+        "(Not Without Laughter (Thrift Edition), book.book_edition.author_editor, Langston Hughes)",
+        "(Langston Hughes, influence.influence_node.influenced_by, Langston Hughes)"
+      ]
+    },
+    {
+      "id": "WebQTrn-303_427a7718b761cdd4c8e2011875d643b4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Langston in Harlem, book.written_work.author, Langston Hughes)"
+      ],
+      "conflicting_triples": [
+        "(Langston in Harlem, book.written_work.author, Langston Hughes)",
+        "(Langston Hughes, influence.influence_node.influenced_by, Robert Frost)"
+      ]
+    },
+    {
+      "id": "WebQTrn-303_770773a5150d1cdd3cfadfc25022720b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Street Scene: Act I. No. 6b Quartet, music.composition.lyricist, Langston Hughes)"
+      ],
+      "conflicting_triples": [
+        "(Street Scene: Act I. No. 6b Quartet, music.composition.lyricist, Langston Hughes)",
+        "(Langston Hughes, influence.influence_node.influenced_by, Robert Frost)"
+      ]
+    },
+    {
+      "id": "WebQTrn-303_904d48695a4599b8d86651a50d4baab6",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Street Scene: Lullaby, music.composition.lyricist, Langston Hughes)"
+      ],
+      "conflicting_triples": [
+        "(Street Scene: Lullaby, music.composition.lyricist, Langston Hughes)",
+        "(Langston Hughes, influence.influence_node.influenced_by, Emily Dickinson)"
+      ]
+    },
+    {
+      "id": "WebQTrn-303_b818f73a303b1240045fd4ffcb8e9609",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Not Without Laughter, book.written_work.author, Langston Hughes)"
+      ],
+      "conflicting_triples": [
+        "(Not Without Laughter, book.written_work.author, Langston Hughes)",
+        "(Langston Hughes, influence.influence_node.influenced_by, Carl Sandburg)"
+      ]
+    },
+    {
+      "id": "WebQTrn-303_c413d25bc8fb85a551d2619016da958b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Negro Speaks of Rivers, book.written_work.author, Langston Hughes)"
+      ],
+      "conflicting_triples": [
+        "(The Negro Speaks of Rivers, book.written_work.author, Langston Hughes)",
+        "(Langston Hughes, influence.influence_node.influenced_by, Carl Sandburg)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3048_ae9a833cf2cca30c1c9725fc6a167794",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Africa Proconsularis, location.administrative_division.country, Roman Empire)"
+      ],
+      "conflicting_triples": [
+        "(Africa Proconsularis, location.administrative_division.country, Roman Empire)",
+        "(Roman Empire, location.country.form_of_government, Dictatorship)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3049_ae2f0556c44ee8e111f11615ad14f9d8",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Creative Loafing, book.newspaper.circulation_areas, Atlanta)"
+      ],
+      "conflicting_triples": [
+        "(Creative Loafing, book.newspaper.circulation_areas, Atlanta)",
+        "(Atlanta, olympics.olympic_host_city.olympics_hosted, Centennial Olympic Park)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3049_c2209731c36910d996455a986525aba1",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Atlanta Georgian, book.newspaper.circulation_areas, Atlanta)"
+      ],
+      "conflicting_triples": [
+        "(Atlanta Georgian, book.newspaper.circulation_areas, Atlanta)",
+        "(Atlanta, olympics.olympic_host_city.olympics_hosted, Super Bowl LI)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3098_0b5041659b357b7246a23ac30d7f6b29",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Poor Richard's Almanac of 1757, book.book_edition.author_editor, Benjamin Franklin)"
+      ],
+      "conflicting_triples": [
+        "(Poor Richard's Almanac of 1757, book.book_edition.author_editor, Benjamin Franklin)",
+        "(Benjamin Franklin, people.person.place_of_birth, Philadelphia)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3098_75053cb108f036148b2e5631983f76a3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Poor Richard's Almanac of 1735, book.book_edition.author_editor, Benjamin Franklin)"
+      ],
+      "conflicting_triples": [
+        "(Poor Richard's Almanac of 1735, book.book_edition.author_editor, Benjamin Franklin)",
+        "(Benjamin Franklin, people.person.place_of_birth, Philadelphia)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3151_12f714783be901012e7fa202551f74e2",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Greek drachma, finance.currency.countries_formerly_used, Greece)",
+        "(Greek drachma, finance.currency.countries_used, Kingdom of Greece)"
+      ],
+      "conflicting_triples": [
+        "(Greek drachma, finance.currency.countries_formerly_used, Greece)",
+        "(Greek drachma, finance.currency.countries_used, Kingdom of Greece)",
+        "(Greece, location.country.languages_spoken, Macedonian language)",
+        "(Kingdom of Greece, location.country.languages_spoken, Turkish language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3151_36808d9c3e62ce1bcd729d814d597c46",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Macedonian Thrace Brewery Vergina Premium Lager, food.beer.from_region, Greece)"
+      ],
+      "conflicting_triples": [
+        "(Macedonian Thrace Brewery Vergina Premium Lager, food.beer.from_region, Greece)",
+        "(Greece, location.country.languages_spoken, Turkish language)",
+        "(Greece, location.country.official_language, Bulgarian language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3151_5ff5b8826574b331ba342518d1c1bb34",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Molossus, biology.animal_breed.place_of_origin, Greece)"
+      ],
+      "conflicting_triples": [
+        "(Molossus, biology.animal_breed.place_of_origin, Greece)",
+        "(Greece, location.country.languages_spoken, Serbo-Croatian language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3151_6c814f2ef8a8f703137524a5ecf17ba4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Retsina, food.wine_style.place_of_origin, Greece)"
+      ],
+      "conflicting_triples": [
+        "(Retsina, food.wine_style.place_of_origin, Greece)",
+        "(Greece, location.country.languages_spoken, Macedonian language)",
+        "(Greece, location.country.official_language, Turkish language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3166_214faf824f15a8bbc18cd54c5c3e0076",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Kukmin Ilbo, book.newspaper.circulation_areas, South Korea)"
+      ],
+      "conflicting_triples": [
+        "(Kukmin Ilbo, book.newspaper.circulation_areas, South Korea)",
+        "(South Korea, location.country.capital, Incheon)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3166_5a38185606a7a8c9158d615dddb5b29f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(South Korean hwan, finance.currency.countries_formerly_used, South Korea)"
+      ],
+      "conflicting_triples": [
+        "(South Korean hwan, finance.currency.countries_formerly_used, South Korea)",
+        "(South Korea, location.country.capital, Pyongyang)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3166_762847d07f73b2ca5fd1504d7dcd9d9a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(South Korean won, finance.currency.countries_used, South Korea)",
+        "(South Korean won, finance.currency.countries_formerly_used, South Korea)"
+      ],
+      "conflicting_triples": [
+        "(South Korean won, finance.currency.countries_used, South Korea)",
+        "(South Korean won, finance.currency.countries_formerly_used, South Korea)",
+        "(South Korea, location.country.capital, Busan)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3166_adbac8a6e3875142a0d07e9d593ef18c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(South Korean won, finance.currency.countries_formerly_used, South Korea)"
+      ],
+      "conflicting_triples": [
+        "(South Korean won, finance.currency.countries_formerly_used, South Korea)",
+        "(South Korea, location.country.capital, Busan)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3166_ce0b2dd544240a0334daa2db22ca156f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Typoon Whang, meteorology.tropical_cyclone.affected_areas, South Korea)"
+      ],
+      "conflicting_triples": [
+        "(Typoon Whang, meteorology.tropical_cyclone.affected_areas, South Korea)",
+        "(South Korea, location.country.capital, Busan)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3166_cf9ffbb57f2b9e73dca2d2492121f242",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Ulsan, location.location.containedby, South Korea)"
+      ],
+      "conflicting_triples": [
+        "(Ulsan, location.location.containedby, South Korea)",
+        "(South Korea, location.country.capital, Busan)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3166_d67d1a50e910a4fb8986ceb9205de433",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cass, food.beer.from_region, South Korea)"
+      ],
+      "conflicting_triples": [
+        "(Cass, food.beer.from_region, South Korea)",
+        "(South Korea, location.country.capital, Busan)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_2cb97dc9d778b69fd832740909b026a9",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Vyatka horse, biology.animal_breed.place_of_origin, Russia)"
+      ],
+      "conflicting_triples": [
+        "(Vyatka horse, biology.animal_breed.place_of_origin, Russia)",
+        "(Russia, location.country.currency_used, Belarusian ruble)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_4bedefa2f2f0c2843bcf7407cd03420c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Battle of Kulikovo, base.culturalevent.event.entity_involved, Grand Duchy of Moscow)"
+      ],
+      "conflicting_triples": [
+        "(Battle of Kulikovo, base.culturalevent.event.entity_involved, Grand Duchy of Moscow)",
+        "(Grand Duchy of Moscow, location.country.currency_used, Belarusian ruble)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_5831bd7b6badbaf458df00184249bb38",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Bochkarev Krepkoe, food.beer.from_region, Russia)"
+      ],
+      "conflicting_triples": [
+        "(Bochkarev Krepkoe, food.beer.from_region, Russia)",
+        "(Russia, location.country.currency_used, Belarusian ruble)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_79ee4c5d31170a2a4638a4fa603f0b52",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Zhivoye Dyelo, book.newspaper.circulation_areas, Russia)"
+      ],
+      "conflicting_triples": [
+        "(Zhivoye Dyelo, book.newspaper.circulation_areas, Russia)",
+        "(Russia, location.country.currency_used, Belarusian ruble)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_7cd339eefa681cdb907de4bdf65f8aae",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Chechen Language, language.human_language.countries_spoken_in, Russia)"
+      ],
+      "conflicting_triples": [
+        "(Chechen Language, language.human_language.countries_spoken_in, Russia)",
+        "(Russia, location.country.currency_used, Belarusian ruble)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_a9b18d079f29555cbd1e1740c7d6e40e",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Krasnodar Krai, location.administrative_division.country, Russia)"
+      ],
+      "conflicting_triples": [
+        "(Krasnodar Krai, location.administrative_division.country, Russia)",
+        "(Russia, location.country.currency_used, Kazakhstani tenge)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_c1ee86e75cac5d1087ce6131dd7c7414",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Pivzavod AO Vena Nevskoye Light, food.beer.from_region, Russia)"
+      ],
+      "conflicting_triples": [
+        "(Pivzavod AO Vena Nevskoye Light, food.beer.from_region, Russia)",
+        "(Russia, location.country.currency_used, Belarusian ruble)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3335_f81b2d3ee250e8503f128923a79d3c5a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Tsakhur Language, language.human_language.countries_spoken_in, Russia)"
+      ],
+      "conflicting_triples": [
+        "(Tsakhur Language, language.human_language.countries_spoken_in, Russia)",
+        "(Russia, location.country.currency_used, Azerbaijani manat)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3382_a24b8d71d20499c6d7e568317f526a91",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Rome, base.biblioness.bibs_location.country, Italy)"
+      ],
+      "conflicting_triples": [
+        "(Rome, base.biblioness.bibs_location.country, Italy)",
+        "(Italy, location.country.currency_used, Lira)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3412_305f49b65a760af0e6ce8d06f43aa22a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Out of Your Mind (radio edit), music.recording.artist, Victoria Beckham)",
+        "(Out of Your Mind (radio edit), music.recording.featured_artists, Victoria Beckham)"
+      ],
+      "conflicting_triples": [
+        "(Out of Your Mind (radio edit), music.recording.artist, Victoria Beckham)",
+        "(Out of Your Mind (radio edit), music.recording.featured_artists, Victoria Beckham)",
+        "(Victoria Beckham, music.artist.origin, Essex)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3412_67a2142ccd0f2bc9248c5f945f0cd1ab",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Out of Your Mind (10\u00ba Below dub), music.recording.featured_artists, Victoria Beckham)"
+      ],
+      "conflicting_triples": [
+        "(Out of Your Mind (10\u00ba Below dub), music.recording.featured_artists, Victoria Beckham)",
+        "(Victoria Beckham, music.artist.origin, Essex)",
+        "(Victoria Beckham, people.person.place_of_birth, Essex)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3673_901bb39197972fca3fb83fece42ee8c7",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Overlook Hotel, fictional_universe.fictional_setting.contained_by, Colorado)"
+      ],
+      "conflicting_triples": [
+        "(Overlook Hotel, fictional_universe.fictional_setting.contained_by, Colorado)",
+        "(Colorado, location.location.time_zones, Pacific Time Zone)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_0f8b0a1dd90e08c55605b60a0e13cb71",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cervecera del Sur del Peru Cusquena, food.beer.from_region, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Cervecera del Sur del Peru Cusquena, food.beer.from_region, Peru)",
+        "(Peru, location.country.currency_used, Peruvian sol)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_2458404b2726ce40f3d525263dc9f74c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Puno Region, location.location.containedby, Peru)",
+        "(Puno Region, location.administrative_division.country, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Puno Region, location.location.containedby, Peru)",
+        "(Puno Region, location.administrative_division.country, Peru)",
+        "(Peru, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_3e65e28b17506cb5116b2460467ea42f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Ancash Region, location.location.containedby, Peru)",
+        "(Ancash Region, location.administrative_division.country, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Ancash Region, location.location.containedby, Peru)",
+        "(Ancash Region, location.administrative_division.country, Peru)",
+        "(Peru, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_4ccdeac69c947afd15a0b301091498c0",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Peruvian inti, finance.currency.countries_formerly_used, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Peruvian inti, finance.currency.countries_formerly_used, Peru)",
+        "(Peru, location.country.currency_used, Peruvian sol)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_6ed17cf93677d92f2fcd2df541fa96b3",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Supreme Court of Peru, law.court.jurisdiction, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Supreme Court of Peru, law.court.jurisdiction, Peru)",
+        "(Peru, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_a20823840ed586d363d240f035da3434",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Government of Peru, government.government.government_for, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Government of Peru, government.government.government_for, Peru)",
+        "(Peru, location.country.currency_used, Peruvian inti)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_a680164909cf9d99a48afde43e75219b",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Pilsen Callao, food.beer.from_region, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Pilsen Callao, food.beer.from_region, Peru)",
+        "(Peru, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_e30e234d3055e7c20ad20d1562018910",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Peruvian Paso, biology.animal_breed.place_of_origin, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Peruvian Paso, biology.animal_breed.place_of_origin, Peru)",
+        "(Peru, location.country.currency_used, Peruvian inti)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_eaeb39a0db717338715a044a8175bd9a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Peruvian sol, finance.currency.countries_formerly_used, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Peruvian sol, finance.currency.countries_formerly_used, Peru)",
+        "(Peru, location.country.currency_used, Peruvian inti)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3766_ec0e8589cffeb3721b09bd2a5f042e63",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Omagua dialect, language.human_language.countries_spoken_in, Peru)"
+      ],
+      "conflicting_triples": [
+        "(Omagua dialect, language.human_language.countries_spoken_in, Peru)",
+        "(Peru, location.country.currency_used, Chilean peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3769_47cc02e7e7f83568581f65b7dd3449dd",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Orlando Weekly, book.newspaper.circulation_areas, Orlando)"
+      ],
+      "conflicting_triples": [
+        "(Orlando Weekly, book.newspaper.circulation_areas, Orlando)",
+        "(Orlando, location.hud_county_place.county, Osceola County)"
+      ]
+    },
+    {
+      "id": "WebQTrn-3769_6e0a31334a35147f868ae514f9eb9ab8",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Orlando Business Journal, book.newspaper.circulation_areas, Orlando)"
+      ],
+      "conflicting_triples": [
+        "(Orlando Business Journal, book.newspaper.circulation_areas, Orlando)",
+        "(Orlando, location.hud_county_place.county, Seminole County)"
+      ]
+    },
+    {
+      "id": "WebQTrn-412_7c7cba4e5ad6a30bc7ca63b0f1a6b13a",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Nllarge.gif, common.image.appears_in_topic_gallery, Netherlands)"
+      ],
+      "conflicting_triples": [
+        "(Nllarge.gif, common.image.appears_in_topic_gallery, Netherlands)",
+        "(Netherlands, location.country.official_language, Flemish Language)",
+        "(Netherlands, location.country.languages_spoken, Flemish Language)"
+      ]
+    },
+    {
+      "id": "WebQTrn-412_8f39780bf44690321c49823643e6438d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(South Holland, location.administrative_division.country, Netherlands)"
+      ],
+      "conflicting_triples": [
+        "(South Holland, location.administrative_division.country, Netherlands)",
+        "(Netherlands, location.country.official_language, English Language)",
+        "(Netherlands, location.country.languages_spoken, Afrikaans)"
+      ]
+    },
+    {
+      "id": "WebQTrn-412_cd0f98f0640aa1ab6c224a564e8024ad",
+      "case": "positive-control",
+      "failure_category": "false-positive-conflict",
+      "conflicts": [
+        "Heemstede \u00b7 location.location.containedby: Kingdom of the Netherlands vs Netherlands"
+      ]
+    },
+    {
+      "id": "WebQTrn-42_479799609c49ac2f363e42bda7221b6f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Andrew Jackson Daguerrotype, common.image.appears_in_topic_gallery, Andrew Jackson)"
+      ],
+      "conflicting_triples": [
+        "(Andrew Jackson Daguerrotype, common.image.appears_in_topic_gallery, Andrew Jackson)",
+        "(Andrew Jackson, symbols.name_source.namesakes, Republican Party)"
+      ]
+    },
+    {
+      "id": "WebQTrn-42_68ca58222630fcb347377f70c8c180cc",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Our Union: It must be preserved., media_common.quotation.author, Andrew Jackson)"
+      ],
+      "conflicting_triples": [
+        "(Our Union: It must be preserved., media_common.quotation.author, Andrew Jackson)",
+        "(Andrew Jackson, symbols.name_source.namesakes, Whig Party)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_14401f79da415edb1294256b2504a591",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Canchim, biology.animal_breed.place_of_origin, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Canchim, biology.animal_breed.place_of_origin, Brazil)",
+        "(Brazil, location.country.currency_used, Argentine peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_5cbe9f9a08150c3c1c7c0d3c289520aa",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(O Pasquim, book.newspaper.circulation_areas, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(O Pasquim, book.newspaper.circulation_areas, Brazil)",
+        "(Brazil, location.country.currency_used, Argentinian peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_62fc8fb27e9c5c32e70a8a87349f3de4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brasil em Folhas, book.newspaper.circulation_areas, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Brasil em Folhas, book.newspaper.circulation_areas, Brazil)",
+        "(Brazil, location.country.currency_used, Argentinian peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_6367f99d8cafbc012cc87579e49996bd",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Federal government of Brazil, government.government.government_for, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Federal government of Brazil, government.government.government_for, Brazil)",
+        "(Brazil, location.country.currency_used, Argentine peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_644473daf4329ae665ef8a7c257fa848",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brahma Bock, food.beer.from_region, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Brahma Bock, food.beer.from_region, Brazil)",
+        "(Brazil, location.country.currency_used, Brazilian cruzeiro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_95660eb409a570c121f2dbae9c56b9c2",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brazil Flag, common.image.appears_in_topic_gallery, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Brazil Flag, common.image.appears_in_topic_gallery, Brazil)",
+        "(Brazil, location.country.currency_used, Brazilian cruzado)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_a2c89921dcd5592a5c1a9709f800ef52",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brazilian cruzado, finance.currency.countries_formerly_used, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Brazilian cruzado, finance.currency.countries_formerly_used, Brazil)",
+        "(Brazil, location.country.currency_used, Brazilian cruzeiro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_c932aa6e6365aa759f5d0f8da236643c",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Superior Electoral Court, law.court.jurisdiction, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Superior Electoral Court, law.court.jurisdiction, Brazil)",
+        "(Brazil, location.country.currency_used, Argentinian peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_ca5d0c83e4129629b296098655107aee",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cervejaria Kaiser Palma Louca, food.beer.from_region, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Cervejaria Kaiser Palma Louca, food.beer.from_region, Brazil)",
+        "(Brazil, location.country.currency_used, Argentine peso)"
+      ]
+    },
+    {
+      "id": "WebQTrn-484_f978435827c7e85a6632a72eea403599",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Brazilian cruzado novo, finance.currency.countries_formerly_used, Brazil)"
+      ],
+      "conflicting_triples": [
+        "(Brazilian cruzado novo, finance.currency.countries_formerly_used, Brazil)",
+        "(Brazil, location.country.currency_used, Brazilian cruzeiro)"
+      ]
+    },
+    {
+      "id": "WebQTrn-493_487e4f4ea07d526a8acd19ffa9c542a8",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Elio Di Rupo, people.person.nationality, Belgium)"
+      ],
+      "conflicting_triples": [
+        "(Elio Di Rupo, people.person.nationality, Belgium)",
+        "(Belgium, location.location.containedby, Belgium)"
+      ]
+    },
+    {
+      "id": "WebQTrn-493_590fff78c30981ef9566ad54a453d002",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Schipperke, biology.animal_breed.place_of_origin, Belgium)"
+      ],
+      "conflicting_triples": [
+        "(Schipperke, biology.animal_breed.place_of_origin, Belgium)",
+        "(Belgium, base.locations.countries.continent, Belgium)",
+        "(Belgium, location.location.containedby, Belgium)"
+      ]
+    },
+    {
+      "id": "WebQTrn-493_85f381b8012b4def553954906bc9fafb",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(City of Brussels, location.location.containedby, Belgium)"
+      ],
+      "conflicting_triples": [
+        "(City of Brussels, location.location.containedby, Belgium)",
+        "(Belgium, location.location.containedby, Benelux)"
+      ]
+    },
+    {
+      "id": "WebQTrn-497_a1739c3fe23ae1c5f93a421061ef5a1d",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Wapen_van_Amsterdam_bewerkt.PNG, common.image.appears_in_topic_gallery, Amsterdam)"
+      ],
+      "conflicting_triples": [
+        "(Wapen_van_Amsterdam_bewerkt.PNG, common.image.appears_in_topic_gallery, Amsterdam)",
+        "(Amsterdam, base.biblioness.bibs_location.country, Belgium)"
+      ]
+    },
+    {
+      "id": "WebQTrn-497_a36d1c20b53f39947d462b263c6e1203",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Montelbaanstoren (1512) on the Oude Schans, common.image.appears_in_topic_gallery, Amsterdam)"
+      ],
+      "conflicting_triples": [
+        "(The Montelbaanstoren (1512) on the Oude Schans, common.image.appears_in_topic_gallery, Amsterdam)",
+        "(Amsterdam, base.biblioness.bibs_location.country, Belgium)",
+        "(Amsterdam, location.administrative_division.country, Belgium)"
+      ]
+    },
+    {
+      "id": "WebQTrn-497_f7b8eb3c69f4f516a626fa9d2f9efa54",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(De Pers, book.newspaper.circulation_areas, Amsterdam)"
+      ],
+      "conflicting_triples": [
+        "(De Pers, book.newspaper.circulation_areas, Amsterdam)",
+        "(Amsterdam, base.biblioness.bibs_location.country, Belgium)",
+        "(Amsterdam, location.administrative_division.country, Belgium)"
+      ]
+    },
+    {
+      "id": "WebQTrn-568_02ce61aa4afe73ccad00e588d96f46b4",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Parkdale, location.neighborhood.neighborhood_of, Charlotte)"
+      ],
+      "conflicting_triples": [
+        "(Parkdale, location.neighborhood.neighborhood_of, Charlotte)",
+        "(Charlotte, location.hud_county_place.county, Wake County)"
+      ]
+    },
+    {
+      "id": "WebQTrn-568_ae176a507290b2f5342c73d91ecfb246",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Creative Loafing Charlotte, book.newspaper.circulation_areas, Charlotte)"
+      ],
+      "conflicting_triples": [
+        "(Creative Loafing Charlotte, book.newspaper.circulation_areas, Charlotte)",
+        "(Charlotte, location.hud_county_place.county, Gaston County)"
+      ]
+    },
+    {
+      "id": "WebQTrn-568_f4dd5e4885d4e73788e2f0e9a63d6035",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Charlotte News, book.newspaper.circulation_areas, Charlotte)"
+      ],
+      "conflicting_triples": [
+        "(The Charlotte News, book.newspaper.circulation_areas, Charlotte)",
+        "(Charlotte, location.hud_county_place.county, Cabarrus County)"
+      ]
+    },
+    {
+      "id": "WebQTrn-706_6032efd4798dd7c25582a0bc6cc5b4ea",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(John Muir Cane, common.image.appears_in_topic_gallery, John Muir)"
+      ],
+      "conflicting_triples": [
+        "(John Muir Cane, common.image.appears_in_topic_gallery, John Muir)",
+        "(John Muir, people.deceased_person.place_of_death, San Francisco)"
+      ]
+    },
+    {
+      "id": "WebQTrn-724_d133cd1308f3fd8e12b6e2eb7acbc859",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Flag of Calabria, common.image.appears_in_topic_gallery, Calabria)"
+      ],
+      "conflicting_triples": [
+        "(Flag of Calabria, common.image.appears_in_topic_gallery, Calabria)",
+        "(Calabria, common.topic.notable_types, Sicily)"
+      ]
+    },
+    {
+      "id": "WebQTrn-846_27a3b20f7d1aebfeea7ca284d80cceb5",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Cheers (Drink to That), music.recording.featured_artists, Avril Lavigne)"
+      ],
+      "conflicting_triples": [
+        "(Cheers (Drink to That), music.recording.featured_artists, Avril Lavigne)",
+        "(Avril Lavigne, people.person.place_of_birth, Bridgetown)"
+      ]
+    },
+    {
+      "id": "WebQTrn-846_3b594835a34214586fc274bdb1d8d0b6",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Here\u2019s To Never Growing Up, music.music_video.artist, Avril Lavigne)"
+      ],
+      "conflicting_triples": [
+        "(Here\u2019s To Never Growing Up, music.music_video.artist, Avril Lavigne)",
+        "(Avril Lavigne, people.person.place_of_birth, Napanee)"
+      ]
+    },
+    {
+      "id": "WebQTrn-846_581ac098af1edbcc3d96a126843bb703",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(The Best Damn World Tour, music.concert_tour.artist, Avril Lavigne)"
+      ],
+      "conflicting_triples": [
+        "(The Best Damn World Tour, music.concert_tour.artist, Avril Lavigne)",
+        "(Avril Lavigne, people.person.place_of_birth, Napanee)"
+      ]
+    },
+    {
+      "id": "WebQTrn-846_acc6d2d37e15db911023be3a597053e9",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Stop Standing There, music.composition.lyricist, Avril Lavigne)"
+      ],
+      "conflicting_triples": [
+        "(Stop Standing There, music.composition.lyricist, Avril Lavigne)",
+        "(Avril Lavigne, people.person.place_of_birth, Kingston)"
+      ]
+    },
+    {
+      "id": "WebQTrn-846_b2db88607e6e187c67839c81f66e708f",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Stop Standing There, music.composition.composer, Avril Lavigne)"
+      ],
+      "conflicting_triples": [
+        "(Stop Standing There, music.composition.composer, Avril Lavigne)",
+        "(Avril Lavigne, people.person.place_of_birth, Toronto)"
+      ]
+    },
+    {
+      "id": "WebQTrn-857_11ec6edb4a5549d8a8ce1f2117fe3368",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(State of the Union Addresses of William J. Clinton, book.book_edition.author_editor, Bill Clinton)"
+      ],
+      "conflicting_triples": [
+        "(State of the Union Addresses of William J. Clinton, book.book_edition.author_editor, Bill Clinton)",
+        "(Bill Clinton, government.us_president.vice_president, Joe Lieberman)"
+      ]
+    },
+    {
+      "id": "WebQTrn-857_db1bb777e721559317bb829acd142fed",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(My Life [Abridged] [Audible Audio Edition], book.book_edition.reader, Bill Clinton)"
+      ],
+      "conflicting_triples": [
+        "(My Life [Abridged] [Audible Audio Edition], book.book_edition.reader, Bill Clinton)",
+        "(Bill Clinton, government.us_president.vice_president, Joe Biden)"
+      ]
+    },
+    {
+      "id": "WebQTrn-945_121437233d5ec5331edb2a957e079759",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Upper Mississippi River, location.location.primarily_containedby, Illinois)"
+      ],
+      "conflicting_triples": [
+        "(Upper Mississippi River, location.location.primarily_containedby, Illinois)",
+        "(Illinois, location.location.time_zones, Central Standard Time)"
+      ]
+    },
+    {
+      "id": "WebQTrn-95_0b5333d98ef87008aa02d1fbc1554b05",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)"
+      ],
+      "conflicting_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)",
+        "(Jamaica, location.country.currency_used, East Caribbean dollar)"
+      ]
+    },
+    {
+      "id": "WebQTrn-95_2ef516a3253d8d1d2c28ae11c6d5b2e9",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Trelawny Parish, location.administrative_division.country, Jamaica)"
+      ],
+      "conflicting_triples": [
+        "(Trelawny Parish, location.administrative_division.country, Jamaica)",
+        "(Jamaica, location.country.currency_used, Caribbean dollar)"
+      ]
+    },
+    {
+      "id": "WebQTrn-95_6f91b128b3ff3663ab0fb24cb4bfd1b2",
+      "case": "known-conflict",
+      "failure_category": "missed-conflict",
+      "positive_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)"
+      ],
+      "conflicting_triples": [
+        "(Jamaican English, language.human_language.countries_spoken_in, Jamaica)",
+        "(Jamaica, location.country.currency_used, Trinidadian dollar)"
+      ]
+    }
+  ],
+  "evaluation_boundary": "Tests EvidenceWeave conflict surfacing after structured triples are normalized into claims. It does not evaluate free-text contradiction extraction or LLM reasoning."
+}
