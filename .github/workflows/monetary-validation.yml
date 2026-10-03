@@ -1,0 +1,29 @@
+name: Monetary Validation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "simulator.py"
+      - "demo/hardening.py"
+      - "demo/validation.py"
+      - ".github/workflows/monetary-validation.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: python -m demo.validation
+      - uses: actions/upload-artifact@v4
+        with:
+          name: monetary-validation
+          path: |
+            docs/evaluations/MONETARY_VALIDATION.md
+            artifacts/monetary_validation.json
