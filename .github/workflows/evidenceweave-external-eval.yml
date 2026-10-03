@@ -1,0 +1,31 @@
+name: EvidenceWeave External Conflict Evaluation
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "portfolio_projects/renteria-evidenceweave/src/evidenceweave/**"
+      - ".github/workflows/evidenceweave-external-eval.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  conflictqa:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio_projects/renteria-evidenceweave
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m evidenceweave.external_eval
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evidenceweave-conflictqa-evaluation
+          path: |
+            portfolio_projects/renteria-evidenceweave/artifacts/CONFLICTQA_EXTERNAL_EVAL.md
+            portfolio_projects/renteria-evidenceweave/artifacts/conflictqa-external-eval.json
