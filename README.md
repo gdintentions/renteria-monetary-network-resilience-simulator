@@ -10,6 +10,8 @@
 
 **[Start Here: portfolio map →](START_HERE.md)**
 
+**[Demo-Safe Showcase →](demo_safe/README.md)** — runnable synthetic versions of private projects for recruiter and academic review.
+
 A portfolio-grade scenario simulator for exploring how competing global monetary and payment networks could evolve over a 10–15 year horizon under geopolitical, fiscal, cyber, commodity, and digital-currency shocks.
 
 ## Portfolio role
