@@ -1,0 +1,32 @@
+name: ArgusLoop Controlled Benchmark
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "portfolio_projects/renteria-argusloop/src/**"
+      - "portfolio_projects/renteria-argusloop/scripts/controlled_benchmark.py"
+      - ".github/workflows/argusloop-benchmark.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio_projects/renteria-argusloop
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -e ".[dev]"
+      - run: python scripts/controlled_benchmark.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: argusloop-controlled-benchmark
+          path: |
+            portfolio_projects/renteria-argusloop/artifacts/CONTROLLED_BENCHMARK.md
+            portfolio_projects/renteria-argusloop/artifacts/controlled-benchmark.json
