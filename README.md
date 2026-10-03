@@ -116,6 +116,30 @@ START_HERE.md                portfolio-level recruiter index
 
 Python modeling, Monte Carlo simulation, agent-based modeling concepts, graph/network analysis, scenario design, public-data calibration, uncertainty communication, reproducibility, test-driven implementation, CI, and model-governance disclosure.
 
+## Validation status
+
+The simulator now publishes both **sensitivity analysis** and a deliberately narrow **historical proxy backtest** rather than presenting a single attractive scenario run.
+
+Across 25 seed/calibration combinations:
+
+- BRICS settlement network finished first in **18 / 25** runs
+- US / USD network finished first in **7 / 25** runs
+- the BRICS final share varied by **15.83 percentage points**, the widest range in the grid
+
+Historical proxy sanity check against the normalized BIS USD/EUR/CNY 2022→2025 subset:
+
+- direction accuracy: **33.3% (1 / 3)**
+- mean absolute error: **1.001 percentage points**
+- USD direction: **FAIL**
+- EUR direction: **FAIL**
+- CNY/BRICS proxy direction: **PASS**
+
+The failures are published in [the validation report](docs/evaluations/MONETARY_VALIDATION.md). They are not tuned away.
+
+This is not a forecasting-validation claim. BIS FX turnover is not the same quantity as the simulator's six-network internal share, and CNY is only a coarse proxy for the BRICS-network concept.
+
+**What the failures tell us to build next:** separate historical observables from scenario variables more rigorously, test additional historical windows/targets, and run parameter-identifiability and sensitivity analysis before considering any stronger predictive claim.
+
 ## Important interpretation note
 
 `share` is a model-internal relative attractiveness/usage measure. It is **not** intended to equal official reserve composition, SWIFT payment share, trade-invoicing share, BIS FX turnover, or any single real-world metric. Monte Carlo bands describe uncertainty inside the scenario model; they are not statistical confidence intervals for real-world outcomes.
