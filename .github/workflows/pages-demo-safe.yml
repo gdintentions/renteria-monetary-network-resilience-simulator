@@ -1,0 +1,56 @@
+name: Deploy Demo-Safe Showcase
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "hosted_demo/**"
+      - ".github/workflows/pages-demo-safe.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  actions: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Verify static showcase
+        run: |
+          test -f hosted_demo/index.html
+          test -f hosted_demo/styles.css
+          test -f hosted_demo/app.js
+          python - <<'PY'
+          from pathlib import Path
+          html=Path("hosted_demo/index.html").read_text()
+          js=Path("hosted_demo/app.js").read_text()
+          required=["governed-rag","polyglot-relay","context-atlas","monetary-simulator","boundary"]
+          missing=[x for x in required if x not in html]
+          assert not missing, missing
+          assert "Translation unavailable in this demo-safe fixture." in js
+          assert "56.70" in html and "89.2" in html
+          print("static showcase verification: PASS")
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: hosted_demo
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
