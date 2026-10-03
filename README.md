@@ -10,7 +10,9 @@
 
 **[Start Here: portfolio map →](START_HERE.md)**
 
-**[Demo-Safe Showcase →](demo_safe/README.md)** — runnable synthetic versions of private projects for recruiter and academic review.
+**[Live Demo-Safe Showcase →](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/)** — browser-runnable synthetic demonstrations for recruiter and academic review.
+
+**[Demo-Safe Source Miniatures →](demo_safe/README.md)** — reduced public code without private implementation details.
 
 A portfolio-grade scenario simulator for exploring how competing global monetary and payment networks could evolve over a 10–15 year horizon under geopolitical, fiscal, cyber, commodity, and digital-currency shocks.
 
