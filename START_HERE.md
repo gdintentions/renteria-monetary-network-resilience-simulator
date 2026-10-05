@@ -117,3 +117,8 @@ The long-term direction is to make the portfolio progressively more connected: i
 - [Renteria EvidenceWeave](portfolio_projects/renteria-evidenceweave/README.md)
 
 Private source repositories remain private unless explicitly released. The public evidence index is the recruiter-safe view of those projects.
+
+## Production rollout and release gates
+
+[Shared completion model and project-specific remaining gates](docs/PRODUCTION_ROLLOUT.md) records the Governed RAG hardening baseline without converting prototype or benchmark results into production certification.
+

@@ -155,3 +155,8 @@ This project complements the portfolio’s governed-RAG and multilingual systems
 ## Disclaimer
 
 Educational and research-oriented simulation only. It is not investment, legal, economic-policy, or financial advice and should not be interpreted as a forecast.
+
+## Production rollout and release gates
+
+[Shared completion model and project-specific remaining gates](docs/PRODUCTION_ROLLOUT.md) records the Governed RAG hardening baseline without converting prototype or benchmark results into production certification.
+

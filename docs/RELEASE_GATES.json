@@ -1,0 +1,377 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-10-05",
+  "scope": "Actual production release gates; passing controlled tests alone does not close these gates.",
+  "projects": [
+    {
+      "id": "governed-rag",
+      "name": "Governed RAG",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Independent policy holdout: answerable, no-answer, conflicts and injection; citation precision, unsupported-answer rate, escalation recall and reviewer time.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "monetary-simulator",
+      "name": "Monetary Simulator",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Broader historical windows/observables and parameter-identifiability analysis; preserve current 33.3% proxy direction accuracy and sensitivity failures.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "argusloop",
+      "name": "ArgusLoop",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Supervised disposable real-GUI tasks with synthetic accounts, completion rate and false approval/block categories; fake-adapter 21/21 does not establish GUI success.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "evidenceweave",
+      "name": "EvidenceWeave",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Improve independently labeled conflict recall; keep current 258 misses and 4 false positives. Add separately labeled free-text extraction tests before text-reasoning claims.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "polyglot-relay",
+      "name": "Polyglot Relay",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Permitted translation/speech provider integration and independently rated translations across chosen languages; placeholder dictionary output is not live translation.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "context-atlas",
+      "name": "Context Atlas",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Independently labeled real note links, false suggested edges, import/update and deletion evaluation.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "local-model-workbench",
+      "name": "Local Model Workbench",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Installed permitted model versions, fixed labeled task quality and repeated latency/availability evaluation.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "notes-evidence-rag",
+      "name": "Notes Evidence RAG",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Independent note-question holdout with actual claim support, no-answer/conflict/injection cases, not citation-ID existence alone.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "assistant-ledger",
+      "name": "Personal Assistant Ledger",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Multi-day timezone/restart/cancellation/inbox delivery drill; external actions remain drafts pending separate authorized adapters.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "rag-recruiter-demos",
+      "name": "RAG Recruiter Demos",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Synthetic examples clearly labeled; version/parity checks against source behavior; do not borrow real-policy accuracy claims from NFCorpus.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    }
+  ]
+}
