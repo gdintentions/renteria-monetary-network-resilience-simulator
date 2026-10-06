@@ -103,6 +103,15 @@ const colors=["#73d7ff","#f7a76c","#b48cff","#ffd166","#7de2ae","#9eabc2"];
 function rng(seed){let s=(seed>>>0)||1;return()=>{s=(s*1664525+1013904223)>>>0;return s/4294967296}}
 function normalize(vals){const sum=vals.reduce((a,b)=>a+b,0);return vals.map(v=>v/sum*100)}
 function simulate(){
+  const rawSeed=qs('#sim-seed').value.trim();
+  const seedValue=Number(rawSeed);
+  if(!rawSeed||!Number.isInteger(seedValue)||seedValue<0||seedValue>99999){
+    qs('#sim-error').textContent='Seed must be a whole number from 0 to 99999.';
+    ['#sim-ranking','#sim-metrics','#sim-events'].forEach(id=>qs(id).replaceChildren());
+    const canvas=qs('#sim-chart');canvas.getContext('2d').clearRect(0,0,canvas.width,canvas.height);
+    return;
+  }
+  qs('#sim-error').textContent='';
   const years=+qs("#sim-years").value,seed=+qs("#sim-seed").value,intensity=+qs("#sim-intensity").value/100,cal=+qs("#sim-calibration").value/100,R=rng(seed);
   let state=normalize([42,16,16,10,7,9]);
   const rows=[{year:2026,shares:[...state]}],events=[];
@@ -135,4 +144,3 @@ function renderSim(rows,events){
 }
 ["#sim-years","#sim-intensity","#sim-calibration"].forEach(id=>qs(id).addEventListener("input",()=>{qs(id+"-out").textContent=qs(id).value+(id==="#sim-years"?" years":"%")}));
 qs("#sim-run").addEventListener("click",simulate);simulate();
-

@@ -73,7 +73,7 @@ flowchart LR
 
 ## Recommended recruiter review path — 10 minutes
 
-1. **Start with the Monetary Network Resilience Simulator.** It is the public visual flagship and shows simulation, agents, graph analysis, uncertainty, testing, and documentation in one place.
+1. **Start with the [live Governed RAG review demonstration](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/#governed-rag).** Inspect the synthetic draft, sources, withholding and simulated review; then view the Monetary Simulator's scenario assumptions and published backtest failures.
 2. **Read the Governed RAG snapshot.** This establishes the portfolio’s evidence-and-governance control pattern.
 3. **Compare the two Governed RAG demos.** Demo v1 emphasizes the operational control loop; v2 emphasizes model comparison and measurable retrieval behavior.
 4. **Review Polyglot Relay.** It carries governance ideas into multilingual and accessibility-focused interaction.

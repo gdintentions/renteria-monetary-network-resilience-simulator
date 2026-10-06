@@ -8,9 +8,9 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 **Role:** evidence-grounded policy Q&A and AI governance reference implementation.
 
-**Implemented:** section-aware chunking, TF-IDF/cosine retrieval, source citations, heuristic confidence scoring, safe/review/block routing, FastAPI endpoints, an in-memory human-review queue, deterministic evaluation, and a Streamlit recruiter dashboard.
+**Implemented:** section-aware chunking, TF-IDF/cosine retrieval, source citations, heuristic confidence scoring, safe/review/block routing, FastAPI endpoints, durable SQLite evidence/review/audit records, bearer client/reviewer roles, withheld drafts, deterministic evaluation, and a Streamlit recruiter dashboard.
 
-**Verified boundary:** the corpus and benchmark cases are authored fixtures. Confidence is a heuristic score, not a calibrated probability. The review queue is not durable and authentication is not implemented.
+**Verified boundary:** the core has 51 automated tests and a separately published held-out NFCorpus retrieval evaluation: MRR@10 0.4830, nDCG@10 0.2943, mean Recall@10 0.1464, and 108 complete top-10 misses among 323 queries. These results do not measure real-policy answer correctness. Independent policy labels and organizational deployment validation remain pending. The [live synthetic reviewer miniature](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/#governed-rag) uses different JavaScript retrieval logic and simulated approval; it is not the authenticated Python service.
 
 ## Governed RAG Demo
 
@@ -50,7 +50,7 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 **Implemented:** Markdown/text import, explicit wikilinks, broken-link detection, lexical connection suggestions, source hashes, current-content retrieval, SQLite persistence, and a loopback web interface.
 
-**Verification:** 11 automated tests passed in the release evidence record, including local HTTP process tests for session-token enforcement, Host/Origin rejection, path boundaries, graph behavior, deletion behavior, and revision hashes. GitHub Actions completed successfully on September 28, 2026.
+**Verification:** 14 automated tests passed in the hardening release, including local HTTP process tests for session-token enforcement, Host/Origin rejection, path boundaries, graph behavior, deletion behavior, and revision hashes. GitHub Actions completed successfully on September 28, 2026.
 
 **Boundary:** graph suggestions are lexical overlap, not semantic truth. The application is local-only and is not a hosted service.
 
@@ -62,7 +62,7 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 **Implemented:** discovery of locally installed Ollama models, one-to-three-model prompt comparison, runtime/error/token recording, opt-in experiment persistence, export/delete, and loopback-only adapter restrictions.
 
-**Verification:** 12 automated tests passed in the release evidence record, including local HTTP tests, explicit failure handling, unknown-model rejection, redirect rejection, and cloud-tag rejection. GitHub Actions completed successfully on September 28, 2026.
+**Verification:** 15 automated tests passed in the hardening release, including local HTTP tests, explicit failure handling, unknown-model rejection, redirect rejection, and cloud-tag rejection. GitHub Actions completed successfully on September 28, 2026.
 
 **Boundary:** no model is bundled, and real-model inference was not exercised in the release evidence. Wall time is not a controlled quality benchmark.
 
@@ -74,7 +74,7 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 **Implemented:** note import/edit/delete/export, lexical passage ranking, line-numbered excerpts, content hashes, no-match abstention, extractive mode, optional local-model generation, and citation-ID validation.
 
-**Verification:** 11 automated tests passed in the release evidence record, including no-evidence abstention, citation gating, deletion behavior, session controls, Host/Origin rejection, and local HTTP behavior. GitHub Actions completed successfully on September 28, 2026.
+**Verification:** 14 automated tests passed in the hardening release, including no-evidence abstention, citation gating, deletion behavior, session controls, Host/Origin rejection, and local HTTP behavior. GitHub Actions completed successfully on September 28, 2026.
 
 **Boundary:** citation-ID validation proves that a cited source identifier exists; it does not prove entailment or factual correctness. Generated output remains a human-review draft.
 
@@ -86,10 +86,16 @@ This page gives recruiters and reviewers a public, non-sensitive overview of pro
 
 **Implemented:** SQLite-backed editable memory, timezone-aware reminders, restart catch-up, idempotent local notices, external-action draft/approval/cancellation states, and an audit trail that omits memory values.
 
-**Verification:** 12 automated tests passed in the release evidence record, including timezone handling, idempotent reminders, cancellation, approval constraints, audit-value omission, local HTTP controls, and session protection. GitHub Actions completed successfully on September 28, 2026.
+**Verification:** 15 automated tests passed in the hardening release, including timezone handling, idempotent reminders, cancellation, approval constraints, audit-value omission, local HTTP controls, and session protection. GitHub Actions completed successfully on September 28, 2026.
 
 **Boundary:** there is no external message delivery, autonomous tool use, or cloud scheduler. Approved external actions remain drafts.
 
 ## How to interpret these projects
 
 These are working prototypes and inspectable engineering demonstrations, not claims of production deployment, market demand, calibrated model accuracy, or commercial readiness. The portfolio intentionally distinguishes implemented behavior, synthetic/modelled evidence, and validation work that remains to be done.
+
+## Browser verification added October 5, 2026 (Pacific)
+
+All four local apps also passed real Chromium integration against their actual Python loopback servers with disposable synthetic state. [Atlas PR 2](https://github.com/gdintentions/renteria-context-atlas/pull/2), [Workbench PR 2](https://github.com/gdintentions/renteria-local-model-workbench/pull/2), [Notes RAG PR 2](https://github.com/gdintentions/renteria-notes-evidence-rag/pull/2), and [Ledger PR 2](https://github.com/gdintentions/renteria-personal-assistant-ledger/pull/2) are merged. Tests include export/reload persistence and mobile viewport checks. Workbench tested unavailable-runtime handling, not actual model inference. This closes the specified synthetic browser checks, not independent quality or production deployment gates.
+
+See [the completion register](COMPLETION_REGISTER.md) for remaining work and [sharing guidance](PUBLIC_SHARING.md) for factual introductions.
