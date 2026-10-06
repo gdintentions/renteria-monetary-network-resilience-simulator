@@ -11,38 +11,55 @@ window.addEventListener("hashchange",route);route();
 
 const stop=new Set(["the","is","a","an","what","who","how","to","of","and","are","be","from"]);
 const tok=(s)=>[...s.toLowerCase().matchAll(/[a-z0-9']+/g)].map(m=>m[0]).filter(x=>!stop.has(x));
-const policy=[
-  {id:"vendor",title:"Vendor Access",text:"Vendor access requires approval from the internal owner before production access is granted."},
-  {id:"external",title:"External Review",text:"External document access is logged and reviewed quarterly by the responsible control owner."},
-  {id:"legal",title:"Legal Questions",text:"Legal interpretation questions must be escalated to qualified human review."},
-  {id:"audit",title:"Audit Trail",text:"Released answers retain the question, evidence identifier, confidence, and governance decision."},
-];
-function cos(a,b){
-  const ca={},cb={};a.forEach(x=>ca[x]=(ca[x]||0)+1);b.forEach(x=>cb[x]=(cb[x]||0)+1);
-  const terms=new Set([...Object.keys(ca),...Object.keys(cb)]);
-  let dot=0,na=0,nb=0;terms.forEach(t=>{dot+=(ca[t]||0)*(cb[t]||0);na+=(ca[t]||0)**2;nb+=(cb[t]||0)**2});
-  return na&&nb?dot/(Math.sqrt(na)*Math.sqrt(nb)):0;
+let ragState=null;
+function renderRag(){
+  if(!ragState)return;
+  const state=ragState;
+  qs('#rag-decision').textContent=state.decision.toUpperCase();
+  qs('#rag-confidence').textContent=state.support_score.toFixed(3);
+  qs('#rag-release').textContent=state.release_status.toUpperCase();
+  qs('#rag-answer').textContent=RecruiterRAG.released(state)|| (state.release_status==='rejected'?'Draft rejected in this simulation.':'Answer withheld pending simulated review.');
+  qs('#rag-draft').textContent=state.draft;
+  qs('#rag-flags').textContent=state.flags.join(', ')||'None detected by this miniature';
+  qs('#rag-approve').disabled=state.release_status!=='pending'||state.decision==='block'||state.flags.includes('conflicting_policy');
+  qs('#rag-reject').disabled=state.release_status!=='pending';
+  qs('#rag-export').disabled=false;
+  const evidence=qs('#rag-evidence');evidence.replaceChildren();
+  state.ranked.forEach(row=>{
+    const div=document.createElement('div');div.className='evidence';
+    const title=document.createElement('strong');title.textContent=row.title+' · '+row.id;
+    const score=document.createElement('span');score.className='score';score.textContent=' · similarity '+row.score.toFixed(3)+(state.citations.some(c=>c.id===row.id)?' · cited':' · not cited');
+    const text=document.createElement('p');text.textContent=row.text;
+    div.append(title,score,text);evidence.append(div);
+  });
+  qs('#rag-events').textContent=state.events.map((event,i)=>(i+1)+'. '+event.action+' (simulated)').join('\n');
 }
 function runRag(){
-  const question=qs("#rag-question").value.trim();const qt=tok(question);const qset=new Set(qt);
-  const rows=policy.map(p=>{
-    const dt=tok(p.text),matched=[...new Set(dt.filter(x=>qset.has(x)))];
-    const score=cos(qt,dt);return {...p,matched,score};
-  }).sort((a,b)=>b.score-a.score);
-  const best=rows[0],coverage=best.matched.length/Math.max(new Set(qt).size,1);
-  const confidence=Math.max(0,Math.min(1,.7*best.score+.3*coverage));
-  let decision="block",answer="Insufficient approved evidence.";
-  if(best.matched.length>=2&&confidence>=.18){
-    decision=(confidence<.42||qset.has("legal"))?"review":"safe";
-    answer=best.text;
-  }
-  qs("#rag-decision").textContent=decision.toUpperCase();
-  qs("#rag-decision").style.color=decision==="safe"?"var(--good)":decision==="review"?"var(--warn)":"var(--bad)";
-  qs("#rag-confidence").textContent=(confidence*100).toFixed(1)+"%";
-  qs("#rag-answer").textContent=answer;
-  qs("#rag-evidence").innerHTML=rows.map(r=>`<div class="evidence"><strong>${r.title}</strong> <span class="score">${(r.score*100).toFixed(1)} similarity</span><p>${r.text}</p><small>Matched terms: ${r.matched.join(", ")||"none"}</small></div>`).join("");
+  qs('#rag-error').textContent='';
+  try{ragState=RecruiterRAG.evaluate(qs('#rag-question').value,qs('#rag-corpus').value);renderRag();}
+  catch(error){clearRag();qs('#rag-error').textContent=error.message;qs('#rag-answer').textContent='No current draft. Fix the question and evaluate again.';qs('#rag-draft').textContent='';qs('#rag-evidence').replaceChildren();qs('#rag-events').textContent='';['#rag-approve','#rag-reject','#rag-export'].forEach(id=>qs(id).disabled=true);}
 }
-qs("#rag-run").addEventListener("click",runRag);qsa("[data-rag]").forEach(b=>b.addEventListener("click",()=>{qs("#rag-question").value=b.dataset.rag;runRag()}));runRag();
+function clearRag(){
+  ragState=null;
+  ['#rag-decision','#rag-confidence','#rag-release'].forEach(id=>qs(id).textContent='—');
+  qs('#rag-answer').textContent='Inputs changed. Create a new draft to evaluate them.';
+  qs('#rag-draft').textContent='';qs('#rag-flags').textContent='';qs('#rag-error').textContent='';
+  qs('#rag-evidence').replaceChildren();qs('#rag-events').textContent='';
+  ['#rag-approve','#rag-reject','#rag-export'].forEach(id=>qs(id).disabled=true);
+}
+qs('#rag-question').addEventListener('input',clearRag);
+qs('#rag-corpus').addEventListener('change',clearRag);
+qs('#rag-run').addEventListener('click',runRag);
+qsa('[data-rag]').forEach(button=>button.addEventListener('click',()=>{qs('#rag-question').value=button.dataset.rag;qs('#rag-corpus').value=button.dataset.corpus||'normal';runRag();}));
+['approved','rejected'].forEach(status=>qs(status==='approved'?'#rag-approve':'#rag-reject').addEventListener('click',()=>{
+  try{ragState=RecruiterRAG.review(ragState,status);renderRag();}catch(error){qs('#rag-error').textContent=error.message;}
+}));
+qs('#rag-export').addEventListener('click',()=>{
+  if(!ragState)return;
+  const url=URL.createObjectURL(new Blob([JSON.stringify(ragState,null,2)],{type:'application/json'}));
+  const link=document.createElement('a');link.href=url;link.download='synthetic-rag-review.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+runRag();
 
 const trans={hello:{es:"hola",fr:"bonjour",ja:"こんにちは"},"thank you":{es:"gracias",fr:"merci",ja:"ありがとう"}};
 const riskWords=new Set(["medical","legal","emergency","bank","password","account"]);
@@ -118,3 +135,4 @@ function renderSim(rows,events){
 }
 ["#sim-years","#sim-intensity","#sim-calibration"].forEach(id=>qs(id).addEventListener("input",()=>{qs(id+"-out").textContent=qs(id).value+(id==="#sim-years"?" years":"%")}));
 qs("#sim-run").addEventListener("click",simulate);simulate();
+
