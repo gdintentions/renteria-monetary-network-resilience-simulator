@@ -37,7 +37,38 @@ const server=http.createServer((req,res)=>{
   await page.reload();assert.equal(await page.locator("#rag-release").innerText(),"PENDING");
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   await page.screenshot({path:"/tmp/rag-recruiter-mobile.png",fullPage:true});
+  // Verify each remaining hosted miniature independently of the Python apps.
+  await page.goto("http://127.0.0.1:"+server.address().port+"/#polyglot-relay");
+  for(const [language,translation] of [["es","hola"],["fr","bonjour"],["ja","こんにちは"]]){
+   await page.locator('#poly-target').selectOption(language);await page.locator('#poly-run').click();
+   assert.equal(await page.locator('#poly-output').innerText(),translation);
+  }
+  await page.getByRole('button',{name:'unsupported phrase',exact:true}).click();
+  assert.equal(await page.locator('#poly-decision').innerText(),'BLOCK');
+  await page.getByRole('button',{name:'high-risk unsupported',exact:true}).click();
+  assert.equal(await page.locator('#poly-decision').innerText(),'REVIEW');
+  assert.match(await page.locator('#poly-output').innerText(),/unavailable/);
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.goto("http://127.0.0.1:"+server.address().port+"/#context-atlas");
+  assert.match(await page.locator('#atlas-reasons').innerText(),/explicit/);
+  await page.locator('#atlas-svg circle').nth(3).focus();await page.keyboard.press('Enter');
+  assert.equal(await page.locator('#atlas-title').innerText(),'Draft');
+  assert.match(await page.locator('#atlas-reasons').innerText(),/Missing Note/);
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+  await page.goto("http://127.0.0.1:"+server.address().port+"/#monetary-simulator");
+  const initial=await page.locator('#sim-ranking').innerText();
+  await page.locator('#sim-run').click();assert.equal(await page.locator('#sim-ranking').innerText(),initial);
+  const shares=(await page.locator('#sim-ranking strong').allTextContents()).map(x=>parseFloat(x));
+  assert.equal(shares.length,6);assert(shares.every(Number.isFinite));assert(Math.abs(shares.reduce((a,b)=>a+b,0)-100)<.04);
+  await page.locator('#sim-intensity').fill('0');await page.locator('#sim-run').click();
+  assert.notEqual(await page.locator('#sim-ranking').innerText(),initial);
+  await page.locator('#sim-seed').fill('');await page.locator('#sim-run').click();
+  assert.match(await page.locator('#sim-error').innerText(),/Seed/);
+  assert.equal(await page.locator('#sim-ranking').innerText(),'');
+  await page.locator('#sim-seed').fill('42');await page.locator('#sim-run').click();
+  assert.equal(await page.locator('#sim-error').innerText(),'');
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   assert.deepEqual(errors,[]);
-  console.log("PASS: mobile review flow, conflicts/injections, safe rendering, export and reload isolation.");
+  console.log("PASS: four hosted miniatures; RAG review/export, translation boundaries, keyboard graph inspection, deterministic finite shares and invalid-input withholding.");
  } finally {await browser.close();server.close();}
 })().catch(error=>{console.error(error);server.close();process.exitCode=1;});
