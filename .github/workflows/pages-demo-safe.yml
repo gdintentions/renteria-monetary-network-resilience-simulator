@@ -25,9 +25,11 @@ jobs:
       - uses: actions/checkout@v7
       - name: Verify static showcase
         run: |
+          node --test hosted_demo/rag-demo.test.cjs
           test -f hosted_demo/index.html
           test -f hosted_demo/styles.css
           test -f hosted_demo/app.js
+          test -f hosted_demo/rag-demo.js
           python - <<'PY'
           from pathlib import Path
           html=Path("hosted_demo/index.html").read_text()
