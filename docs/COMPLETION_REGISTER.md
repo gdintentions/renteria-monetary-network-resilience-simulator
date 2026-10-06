@@ -16,7 +16,7 @@ Release baseline: Governed RAG's synthetic recruiter workflow, not its uncomplet
 | Context Atlas | Independently judged note links and import/update/delete quality | Permitted representative notes and independently assigned relevance judgments |
 | Notes Evidence RAG | Claim support, conflict and adversarial source study | Independent answers/citation labels; installed local model for generated-mode evaluation |
 | Local Model Workbench | Repeated model task/latency/availability study | Capable host, permitted installed model versions, model provenance and fixed task labels |
-| Personal Assistant Ledger | Simulated-clock recovery/DST study and then actual multi-day uptime drill | Intended operator/host; delivery adapters remain separate from draft-only scope |
+| Personal Assistant Ledger | Actual multi-day uptime drill after the passed synthetic clock/recovery study | Intended operator/host; delivery adapters remain separate from draft-only scope |
 | Polyglot Relay | Provider-independent adapter and measured quality evaluation | Chosen permitted translation/speech provider, credentials and independent language reviewers |
 | Monetary Simulator | More historical intervals/observables and identifiability analysis | Frozen historical data/provenance and defined observable-to-model mappings |
 | ArgusLoop | Actual disposable GUI tasks with completion/false-block categories | Isolated desktop with synthetic accounts; fake-adapter pass is not GUI success |
@@ -29,3 +29,5 @@ This register is a work queue, not a completion certificate. None of these pendi
 ## How a release closes
 
 The PR states a bounded use case and acceptance checks. Run the relevant unit/integration/domain checks on the exact revision; retain failures and evidence artifacts. Merge after required checks pass. Verify deployment when the change affects a hosted demo. Update the snapshot with the measured scope and link to the tested revision. Keep remaining provider, data, quality and operator gates explicit.
+
+Follow-up releases: Atlas and Notes RAG PR 3 close stale-query/late-response bugs under real browser regression. Ledger PR 3 passes 18 unit tests and browser integration, including a synthetic three-day recovery/DST-offset/concurrency drill. Actual wall-clock uptime, named-zone recurrence, delivery adapters and production acceptance remain separate open gates.
