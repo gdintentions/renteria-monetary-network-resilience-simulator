@@ -140,6 +140,10 @@ def benchmark(output):
                         "failure_category": None if ok else "false_allow_or_mutation",
                     }
                 )
+            # Preserve task evidence even if screenshot capture fails.
+            output.write_text(
+                json.dumps({"tasks": rows, "status": "screenshot_pending"}, indent=2) + "\n"
+            )
             # Screenshot is of this synthetic fixture only.
             pyautogui.screenshot().save(output.with_suffix(".png"))
         finally:

@@ -35,6 +35,7 @@ jobs:
     env:
       PYTHONPATH: portfolio_projects/renteria-argusloop/src
       ARGUS_DISPOSABLE_GUI: '1'
+      XDG_SESSION_TYPE: x11
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
