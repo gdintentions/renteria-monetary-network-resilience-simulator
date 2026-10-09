@@ -95,6 +95,7 @@ def benchmark(output):
             for trial in range(1, 4):
                 text = "synthetic-note-" + str(trial)
                 click("entry")
+                dispatch({"action": "press_key", "key": "end"})
                 # Fresh appended input makes the expected effect observable without control chords.
                 dispatch({"action": "type", "text": text})
                 click("button")
@@ -108,6 +109,9 @@ def benchmark(output):
                 rows.append(
                     {
                         "task": "type_and_save_" + str(trial),
+                        "expected_value": expected,
+                        "observed_value": state["value"],
+                        "observed_saves": state["saves"],
                         "passed": state["value"] == expected and state["saves"] == trial,
                         "failure_category": None
                         if state["value"] == expected and state["saves"] == trial

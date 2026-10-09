@@ -1,0 +1,37 @@
+{
+  "source_job_url": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/37881951143/job/113663375134",
+  "source_commit": "4743dcd6fc94c495ed5a49d033c2251d08c93dd8",
+  "result": {
+    "scope": "Actual Xvfb/Tk/PyAutoGUI adapter integration with scripted coordinates. Not vision planning, unfamiliar apps, or autonomous desktop success.",
+    "tasks": [
+      {
+        "task": "type_and_save_1",
+        "passed": true,
+        "failure_category": null
+      },
+      {
+        "task": "type_and_save_2",
+        "passed": false,
+        "failure_category": "wrong_gui_effect"
+      },
+      {
+        "task": "type_and_save_3",
+        "passed": false,
+        "failure_category": "wrong_gui_effect"
+      },
+      {
+        "task": "sensitive_text",
+        "passed": true,
+        "failure_category": null
+      },
+      {
+        "task": "destructive_key",
+        "passed": true,
+        "failure_category": null
+      }
+    ],
+    "passed": 3,
+    "total": 5
+  },
+  "diagnosis": "The scripted sequence assumed typing would append after re-clicking the entry. Re-clicking placed the cursor within existing text. Add an explicit End-key action before typing; preserve the original failure."
+}
