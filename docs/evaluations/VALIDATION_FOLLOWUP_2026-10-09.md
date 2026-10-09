@@ -29,7 +29,7 @@ The missed pairs have no differing values for an identical normalized subject/pr
 
 ## ArgusLoop: actual GUI integration
 
-New disposable Xvfb/Tk/PyAutoGUI benchmark exercises the actual adapter with three type-and-save tasks and two blocked-action checks. It captures a synthetic screenshot and observed GUI state. At document creation, CI execution is pending; consult the Validation follow-up workflow for the actual result. Scripted coordinates isolate execution reliability; this is not a vision-planner benchmark or success on unfamiliar applications.
+New disposable Xvfb/Tk/PyAutoGUI benchmark exercises the actual adapter with three type-and-save tasks and two blocked-action checks. It captures a synthetic screenshot and observed GUI state. The corrected actual GUI run passed **5/5 tasks** on source commit `9300a5f7f9b4c1e04484cc63519a5599cf8c6d61`. [Verified CI run](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/37882095423) retains the screenshot and raw observed-state JSON. The first completed run passed **3/5** because re-clicking the entry placed the cursor within existing text; the scripted sequence now explicitly presses End before appending. The failed 3/5 result is retained in `artifacts/argus_gui_first_completed_2026-10-09.json`. An earlier infrastructure run failed screenshot capture until the X11 session type was declared. Neither failure is erased. Scripted coordinates isolate execution reliability; this is not a vision-planner benchmark or success on unfamiliar applications.
 
 ## Remaining projects and real-use blockers
 
