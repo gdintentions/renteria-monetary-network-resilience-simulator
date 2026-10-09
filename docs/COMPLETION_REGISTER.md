@@ -31,3 +31,7 @@ This register is a work queue, not a completion certificate. None of these pendi
 The PR states a bounded use case and acceptance checks. Run the relevant unit/integration/domain checks on the exact revision; retain failures and evidence artifacts. Merge after required checks pass. Verify deployment when the change affects a hosted demo. Update the snapshot with the measured scope and link to the tested revision. Keep remaining provider, data, quality and operator gates explicit.
 
 Follow-up releases: Atlas and Notes RAG PR 3 close stale-query/late-response bugs under real browser regression. Ledger PR 3 passes 18 unit tests and browser integration, including a synthetic three-day recovery/DST-offset/concurrency drill. Actual wall-clock uptime, named-zone recurrence, delivery adapters and production acceptance remain separate open gates.
+
+## October 9, 2026 UTC follow-up
+
+[Measured retrieval improvement, expanded historical comparisons, conflict-coverage audit and disposable GUI integration](evaluations/VALIDATION_FOLLOWUP_2026-10-09.md). Original evaluation results remain preserved; new regression evidence does not close independent production gates.

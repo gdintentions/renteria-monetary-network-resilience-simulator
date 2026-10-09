@@ -1,0 +1,16 @@
+{
+  "observable": "BIS OTC FX turnover currency shares, net-net, April; original shares sum to 200% across all currencies",
+  "retrieved_at": "2026-10-09",
+  "vintage_note": "Frozen published-release figures, not a latest-vintage database. 2013-2019 from September 2019 Table 2; 2022-2025 from September 2025 release. Later revisions may differ.",
+  "sources": {
+    "2019_table2": "https://www.bis.org/publications/201909-commentary-otc-derivatives.pdf",
+    "2025_release": "https://www.bis.org/publications/202509-commentary-otc-derivatives"
+  },
+  "observations": [
+    {"year": 2013, "USD": 87.0, "EUR": 33.4, "CNY": 2.2, "source": "2019_table2"},
+    {"year": 2016, "USD": 87.6, "EUR": 31.4, "CNY": 4.0, "source": "2019_table2"},
+    {"year": 2019, "USD": 88.3, "EUR": 32.3, "CNY": 4.3, "source": "2019_table2"},
+    {"year": 2022, "USD": 88.4, "EUR": 30.6, "CNY": 7.0, "source": "2025_release"},
+    {"year": 2025, "USD": 89.2, "EUR": 28.9, "CNY": 8.5, "source": "2025_release"}
+  ]
+}

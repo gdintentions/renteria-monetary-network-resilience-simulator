@@ -1,0 +1,51 @@
+name: Validation follow-up
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - 'demo/historical_windows.py'
+      - 'demo/data/bis_fx_history.json'
+      - 'scripts/evidence_coverage_audit.py'
+      - 'portfolio_projects/renteria-argusloop/scripts/gui_benchmark.py'
+      - '.github/workflows/validation-followup.yml'
+permissions:
+  contents: read
+jobs:
+  external-regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: pip install pytest
+      - run: python -m demo.historical_windows
+      - run: python -m pytest -q tests
+      - run: python scripts/evidence_coverage_audit.py --cache /tmp/conflictqa-frozen
+      - uses: actions/upload-artifact@v4
+        with:
+          name: external-regression-followup
+          path: |
+            artifacts/historical_windows_2026-10-09.json
+            artifacts/evidence_coverage_2026-10-09.json
+  disposable-gui:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: portfolio_projects/renteria-argusloop/src
+      ARGUS_DISPOSABLE_GUI: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update -qq && sudo apt-get install -y xvfb xauth python3-tk scrot
+      - run: pip install pydantic pillow pyautogui
+      - name: Exercise actual adapter against disposable synthetic GUI
+        run: xvfb-run -a -s '-screen 0 1280x800x24' python portfolio_projects/renteria-argusloop/scripts/gui_benchmark.py --output artifacts/argus-gui-2026-10-09.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: argus-disposable-gui
+          path: artifacts/argus-gui-2026-10-09.*

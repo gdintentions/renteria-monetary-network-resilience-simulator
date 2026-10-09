@@ -62,3 +62,7 @@ When a benchmark exposes a weakness:
 6. keep the boundary between synthetic, controlled, external, and production evidence explicit.
 
 That process is now part of the portfolio's engineering standard.
+
+## October 9, 2026 UTC follow-up
+
+[Measured retrieval improvement, expanded historical comparisons, conflict-coverage audit and disposable GUI integration](evaluations/VALIDATION_FOLLOWUP_2026-10-09.md). Original evaluation results remain preserved; new regression evidence does not close independent production gates.
