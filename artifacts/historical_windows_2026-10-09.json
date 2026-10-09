@@ -1,0 +1,143 @@
+{
+  "scope": "Retrospective fixed-parameter proxy replays, not forecasts made at those dates; not independent periods or causal validation. CNY is not a BRICS settlement network.",
+  "source_file_sha256": "b01a23ec8f79268e1a812f8e577044b1b08567da0a79ba86193dd3b04a1254ac",
+  "windows": [
+    {
+      "start_year": 2013,
+      "end_year": 2016,
+      "predicted_normalized_shares": {
+        "USD": 0.70784,
+        "EUR": 0.273381,
+        "CNY": 0.01878
+      },
+      "observed_normalized_shares": {
+        "USD": 0.7121951219512195,
+        "EUR": 0.2552845528455284,
+        "CNY": 0.032520325203252036
+      },
+      "model_errors_pp": {
+        "USD": 0.4355121951219454,
+        "EUR": 1.8096447154471562,
+        "CNY": 1.3740325203252035
+      },
+      "persistence_errors_pp": {
+        "USD": 0.25703258663907214,
+        "EUR": 1.714611599623339,
+        "CNY": 1.4575790129842572
+      },
+      "model_mae_pp": 1.2063964769647684,
+      "persistence_mae_pp": 1.1430743997488895,
+      "direction_correct": {
+        "USD": false,
+        "EUR": false,
+        "CNY": true
+      },
+      "common_growth_shift_max_difference": 0.0
+    },
+    {
+      "start_year": 2016,
+      "end_year": 2019,
+      "predicted_normalized_shares": {
+        "USD": 0.709969,
+        "EUR": 0.256018,
+        "CNY": 0.034013
+      },
+      "observed_normalized_shares": {
+        "USD": 0.7069655724579664,
+        "EUR": 0.2586068855084067,
+        "CNY": 0.034427542033626905
+      },
+      "model_errors_pp": {
+        "USD": 0.3003427542033532,
+        "EUR": 0.2588885508406691,
+        "CNY": 0.04145420336269037
+      },
+      "persistence_errors_pp": {
+        "USD": 0.522954949325305,
+        "EUR": 0.3322332662878291,
+        "CNY": 0.19072168303748693
+      },
+      "model_mae_pp": 0.20022850280223756,
+      "persistence_mae_pp": 0.34863663288354035,
+      "direction_correct": {
+        "USD": true,
+        "EUR": true,
+        "CNY": true
+      },
+      "common_growth_shift_max_difference": 0.0
+    },
+    {
+      "start_year": 2019,
+      "end_year": 2022,
+      "predicted_normalized_shares": {
+        "USD": 0.704676,
+        "EUR": 0.259321,
+        "CNY": 0.036003
+      },
+      "observed_normalized_shares": {
+        "USD": 0.7015873015873016,
+        "EUR": 0.24285714285714285,
+        "CNY": 0.05555555555555555
+      },
+      "model_errors_pp": {
+        "USD": 0.3088698412698321,
+        "EUR": 1.6463857142857168,
+        "CNY": 1.9552555555555553
+      },
+      "persistence_errors_pp": {
+        "USD": 0.5378270870664781,
+        "EUR": 1.5749742651263858,
+        "CNY": 2.112801352192865
+      },
+      "model_mae_pp": 1.3035037037037014,
+      "persistence_mae_pp": 1.408534234795243,
+      "direction_correct": {
+        "USD": true,
+        "EUR": false,
+        "CNY": true
+      },
+      "common_growth_shift_max_difference": 0.0
+    },
+    {
+      "start_year": 2022,
+      "end_year": 2025,
+      "predicted_normalized_shares": {
+        "USD": 0.698658,
+        "EUR": 0.243298,
+        "CNY": 0.058044
+      },
+      "observed_normalized_shares": {
+        "USD": 0.7045813586097947,
+        "EUR": 0.2282780410742496,
+        "CNY": 0.06714060031595577
+      },
+      "model_errors_pp": {
+        "USD": 0.5923358609794649,
+        "EUR": 1.5019958925750392,
+        "CNY": 0.9096600315955772
+      },
+      "persistence_errors_pp": {
+        "USD": 0.2994057022493002,
+        "EUR": 1.457910178289326,
+        "CNY": 1.1585044760400218
+      },
+      "model_mae_pp": 1.001330595050027,
+      "persistence_mae_pp": 0.9719401188595493,
+      "direction_correct": {
+        "USD": false,
+        "EUR": false,
+        "CNY": true
+      },
+      "common_growth_shift_max_difference": 0.0
+    }
+  ],
+  "summary": {
+    "window_count": 4,
+    "target_count": 12,
+    "model_mae_pp": 0.9278648196301836,
+    "persistence_mae_pp": 0.9680463465718055,
+    "model_wins_vs_persistence": 2,
+    "direction_accuracy": 0.5833333333333334
+  },
+  "identifiability": "A common additive shift of +0.1 to every structural growth cancels during share normalization. Absolute growth levels are not identifiable from normalized shares alone. Resilience is unidentifiable in this no-shock replay. No parameters were fitted to these targets."
+}

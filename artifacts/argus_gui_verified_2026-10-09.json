@@ -1,0 +1,45 @@
+{
+  "source_commit": "9300a5f7f9b4c1e04484cc63519a5599cf8c6d61",
+  "source_job_url": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/37882095423/job/113663815330",
+  "result": {
+    "scope": "Actual Xvfb/Tk/PyAutoGUI adapter integration with scripted coordinates. Not vision planning, unfamiliar apps, or autonomous desktop success.",
+    "tasks": [
+      {
+        "task": "type_and_save_1",
+        "expected_value": "synthetic-note-1",
+        "observed_value": "synthetic-note-1",
+        "observed_saves": 1,
+        "passed": true,
+        "failure_category": null
+      },
+      {
+        "task": "type_and_save_2",
+        "expected_value": "synthetic-note-1synthetic-note-2",
+        "observed_value": "synthetic-note-1synthetic-note-2",
+        "observed_saves": 2,
+        "passed": true,
+        "failure_category": null
+      },
+      {
+        "task": "type_and_save_3",
+        "expected_value": "synthetic-note-1synthetic-note-2synthetic-note-3",
+        "observed_value": "synthetic-note-1synthetic-note-2synthetic-note-3",
+        "observed_saves": 3,
+        "passed": true,
+        "failure_category": null
+      },
+      {
+        "task": "sensitive_text",
+        "passed": true,
+        "failure_category": null
+      },
+      {
+        "task": "destructive_key",
+        "passed": true,
+        "failure_category": null
+      }
+    ],
+    "passed": 5,
+    "total": 5
+  }
+}
