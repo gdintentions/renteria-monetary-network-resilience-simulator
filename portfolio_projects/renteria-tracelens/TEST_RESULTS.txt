@@ -1,0 +1,15 @@
+Synthetic contract tests, not independent accuracy validation.
+test_bad_kept (test_tracelens.Tests.test_bad_kept) ... ok
+test_counterfactual (test_tracelens.Tests.test_counterfactual) ... ok
+test_duplicates (test_tracelens.Tests.test_duplicates) ... ok
+test_exhaustive_gap (test_tracelens.Tests.test_exhaustive_gap) ... ok
+test_judge_failure (test_tracelens.Tests.test_judge_failure) ... ok
+test_judge_false_positive_visible (test_tracelens.Tests.test_judge_false_positive_visible) ... ok
+test_miss_outside_pool (test_tracelens.Tests.test_miss_outside_pool) ... ok
+test_selection_loss (test_tracelens.Tests.test_selection_loss) ... ok
+test_unknown_is_not_gap (test_tracelens.Tests.test_unknown_is_not_gap) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK

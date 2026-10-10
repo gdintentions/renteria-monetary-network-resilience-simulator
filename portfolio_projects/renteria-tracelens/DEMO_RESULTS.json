@@ -1,0 +1,83 @@
+{
+  "evidence_type": "authored synthetic demonstration",
+  "runs": [
+    {
+      "command": "python tracelens.py sample_trace.json --sweep 1 2 3",
+      "result": [
+        {
+          "top_k": 1,
+          "diagnosis": {
+            "status": "SELECTION_MISS",
+            "cells": {
+              "hit": [],
+              "noise": [
+                "general-access"
+              ],
+              "miss": [
+                "vendor-policy"
+              ],
+              "cut": [
+                "exception"
+              ]
+            },
+            "basis": "supplied judge labels; not answer correctness",
+            "gold_metrics": {
+              "candidate_recall": 1.0,
+              "selected_recall": 0.0,
+              "judge_false_positive_ids": [],
+              "judge_false_negative_ids": []
+            }
+          }
+        },
+        {
+          "top_k": 2,
+          "diagnosis": {
+            "status": "SELECTION_MISS",
+            "cells": {
+              "hit": [],
+              "noise": [
+                "general-access",
+                "exception"
+              ],
+              "miss": [
+                "vendor-policy"
+              ],
+              "cut": []
+            },
+            "basis": "supplied judge labels; not answer correctness",
+            "gold_metrics": {
+              "candidate_recall": 1.0,
+              "selected_recall": 0.0,
+              "judge_false_positive_ids": [],
+              "judge_false_negative_ids": []
+            }
+          }
+        },
+        {
+          "top_k": 3,
+          "diagnosis": {
+            "status": "NOISY_CONTEXT",
+            "cells": {
+              "hit": [
+                "vendor-policy"
+              ],
+              "noise": [
+                "general-access",
+                "exception"
+              ],
+              "miss": [],
+              "cut": []
+            },
+            "basis": "supplied judge labels; not answer correctness",
+            "gold_metrics": {
+              "candidate_recall": 1.0,
+              "selected_recall": 1.0,
+              "judge_false_positive_ids": [],
+              "judge_false_negative_ids": []
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

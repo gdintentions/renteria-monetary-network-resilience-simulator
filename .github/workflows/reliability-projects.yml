@@ -1,0 +1,29 @@
+name: Reliability project tests
+on:
+  push:
+    paths:
+      - 'portfolio_projects/renteria-tracelens/**'
+      - 'portfolio_projects/renteria-continuity-router/**'
+      - 'portfolio_projects/renteria-sourcegate/**'
+      - '.github/workflows/reliability-projects.yml'
+  pull_request:
+    paths:
+      - 'portfolio_projects/renteria-tracelens/**'
+      - 'portfolio_projects/renteria-continuity-router/**'
+      - 'portfolio_projects/renteria-sourcegate/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [renteria-tracelens, renteria-continuity-router, renteria-sourcegate]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -v
+        working-directory: portfolio_projects/${{ matrix.project }}

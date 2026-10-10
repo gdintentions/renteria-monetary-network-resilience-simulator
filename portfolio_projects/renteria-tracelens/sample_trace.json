@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "id": "general-access"
+    },
+    {
+      "id": "exception"
+    },
+    {
+      "id": "vendor-policy"
+    }
+  ],
+  "kept_ids": [
+    "general-access"
+  ],
+  "judge_labels": {
+    "general-access": "partial",
+    "exception": "unrelated",
+    "vendor-policy": "answers"
+  },
+  "gold_ids": [
+    "vendor-policy"
+  ]
+}

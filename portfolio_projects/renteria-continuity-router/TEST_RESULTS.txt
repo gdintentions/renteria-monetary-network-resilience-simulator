@@ -1,0 +1,15 @@
+Synthetic contract tests, not independent accuracy validation.
+test_cancel_propagates (test_router.Tests.test_cancel_propagates) ... ok
+test_empty_output (test_router.Tests.test_empty_output) ... ok
+test_failover_and_open (test_router.Tests.test_failover_and_open) ... ok
+test_long_retry_after_fails_over (test_router.Tests.test_long_retry_after_fails_over) ... ok
+test_no_retry_auth (test_router.Tests.test_no_retry_auth) ... ok
+test_policy_never_calls (test_router.Tests.test_policy_never_calls) ... ok
+test_programming_error_visible (test_router.Tests.test_programming_error_visible) ... ok
+test_single_recovery_probe (test_router.Tests.test_single_recovery_probe) ... ok
+test_total_deadline (test_router.Tests.test_total_deadline) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.030s
+
+OK

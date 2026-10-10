@@ -1,0 +1,68 @@
+{
+  "evidence_type": "authored synthetic demonstration",
+  "runs": [
+    {
+      "command": "python continuity_router.py",
+      "result": [
+        {
+          "status": "ANSWERED",
+          "provider": "backup",
+          "text": "Synthetic support response; no live model called.",
+          "events": [
+            {
+              "provider": "primary",
+              "event": "FAILURE",
+              "code": 503,
+              "attempt": 1
+            },
+            {
+              "provider": "primary",
+              "event": "FAILURE",
+              "code": 503,
+              "attempt": 2
+            },
+            {
+              "provider": "backup",
+              "event": "SUCCESS",
+              "attempt": 1
+            }
+          ],
+          "elapsed_s": 5.8858000102191e-05
+        },
+        {
+          "status": "ANSWERED",
+          "provider": "backup",
+          "text": "Synthetic support response; no live model called.",
+          "events": [
+            {
+              "provider": "primary",
+              "event": "CIRCUIT_SKIP"
+            },
+            {
+              "provider": "backup",
+              "event": "SUCCESS",
+              "attempt": 1
+            }
+          ],
+          "elapsed_s": 8.091999916359782e-06
+        },
+        {
+          "status": "NEEDS_REVIEW",
+          "provider": null,
+          "text": null,
+          "events": [
+            {
+              "provider": "primary",
+              "event": "POLICY_SKIP"
+            },
+            {
+              "provider": "backup",
+              "event": "POLICY_SKIP"
+            }
+          ],
+          "elapsed_s": 9.010000212583691e-07
+        }
+      ]
+    }
+  ]
+}

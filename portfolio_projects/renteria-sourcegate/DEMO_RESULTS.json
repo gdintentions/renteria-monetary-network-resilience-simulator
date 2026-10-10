@@ -1,0 +1,85 @@
+{
+  "evidence_type": "authored synthetic demonstration",
+  "runs": [
+    {
+      "command": "python sourcegate.py --mode complete",
+      "result": {
+        "status": "CITED_EXTRACTS",
+        "answer": [
+          {
+            "text": "Fictional vendor access requires a sponsor.",
+            "citation": "kb-access",
+            "url": "https://policy.example/access"
+          },
+          {
+            "text": "Fictional access expires after 14 days.",
+            "citation": "web-duration",
+            "url": "https://policy.example/duration"
+          }
+        ],
+        "rejected_ids": [],
+        "events": [
+          "RETRIEVE",
+          "GRADE",
+          "WEB_FALLBACK"
+        ],
+        "basis": "supplied evaluator and claim metadata; human verification still needed"
+      }
+    },
+    {
+      "command": "python sourcegate.py --mode conflict",
+      "result": {
+        "status": "NEEDS_REVIEW",
+        "reason": "CONFLICT",
+        "conflicts": [
+          "approver"
+        ],
+        "missing": [],
+        "rejected_ids": [],
+        "events": [
+          "RETRIEVE",
+          "GRADE",
+          "WEB_FALLBACK"
+        ],
+        "answer": null
+      }
+    },
+    {
+      "command": "python sourcegate.py --mode untrusted",
+      "result": {
+        "status": "NEEDS_REVIEW",
+        "reason": "MISSING_EVIDENCE",
+        "conflicts": [],
+        "missing": [
+          "duration"
+        ],
+        "rejected_ids": [
+          "web-duration"
+        ],
+        "events": [
+          "RETRIEVE",
+          "GRADE",
+          "WEB_FALLBACK"
+        ],
+        "answer": null
+      }
+    },
+    {
+      "command": "python sourcegate.py --mode offline",
+      "result": {
+        "status": "NEEDS_REVIEW",
+        "reason": "MISSING_EVIDENCE",
+        "conflicts": [],
+        "missing": [
+          "duration"
+        ],
+        "rejected_ids": [],
+        "events": [
+          "RETRIEVE",
+          "GRADE"
+        ],
+        "answer": null
+      }
+    }
+  ]
+}
