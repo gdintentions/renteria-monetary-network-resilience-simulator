@@ -1,6 +1,6 @@
 # Renteria ContinuityRouter
 
-**v0.1.0 · Runnable Python prototype · AI infrastructure & resilience**
+**v0.2.0 · Python core + browser portfolio release · AI infrastructure & resilience**
 
 An asynchronous router accepts provider callables, applies classification allowlists, retries transient failures, opens failed-provider circuits, permits a single recovery probe, and enforces a total wall-clock request budget.
 
@@ -56,3 +56,17 @@ This standalone project sits in `portfolio_projects/renteria-continuity-router` 
 public portfolio repository. It has its own manifest and tests and can later be
 extracted into a separate repository. It does not alter the private Governed RAG
 service. [Portfolio index](../../START_HERE.md).
+
+## Browser release v0.2.0
+
+[Run ContinuityRouter in your browser](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/reliability/#continuity-router).
+This executes this repository's Python core inside a Web Worker with Pyodide 0.27.7;
+it is not a separate JavaScript imitation. No account, local installation or API key is required.
+The hosted runtime and bundled Python are rebuilt and tested before Pages deployment.
+
+[Project-specific completion gates](COMPLETION.md) ·
+[Shared release evidence and reproduced failures](../../docs/RELIABILITY_RELEASE.md) ·
+[Observed synthetic scenario outputs](../../artifacts/reliability/scenario_outputs.json).
+
+The v0.2.0 scope is a complete, inspectable synthetic portfolio demonstration.
+Independent real-world labels, live providers and production acceptance remain separate gates.

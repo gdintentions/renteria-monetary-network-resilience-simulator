@@ -1,0 +1,150 @@
+{
+  "timestamp_utc": "2026-10-11T03:04:44.286Z",
+  "base_url": "http://127.0.0.1:40983/reliability/",
+  "scope": "Chromium desktop/mobile; actual Python with synthetic fixtures",
+  "checks": [
+    {
+      "name": "TraceLens actual ranking → selection miss → top-k replay",
+      "status": "PASS"
+    },
+    {
+      "name": "Exact Python source hashes attached",
+      "status": "PASS"
+    },
+    {
+      "name": "Download contains exact displayed evidence",
+      "status": "PASS"
+    },
+    {
+      "name": "TraceLens candidate-miss",
+      "status": "PASS"
+    },
+    {
+      "name": "TraceLens unknown",
+      "status": "PASS"
+    },
+    {
+      "name": "TraceLens judge-disagreement",
+      "status": "PASS"
+    },
+    {
+      "name": "TraceLens corpus-gap",
+      "status": "PASS"
+    },
+    {
+      "name": "TraceLens judge-unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "Editing clears stale result and export",
+      "status": "PASS"
+    },
+    {
+      "name": "Malformed JSON rejected without stale export",
+      "status": "PASS"
+    },
+    {
+      "name": "Python schema failure displayed safely",
+      "status": "PASS"
+    },
+    {
+      "name": "User IDs rendered as text, never HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "TraceLens mobile layout and no JS errors",
+      "status": "PASS"
+    },
+    {
+      "name": "Router failover and circuit-open sequence",
+      "status": "PASS"
+    },
+    {
+      "name": "Restricted data never calls either provider",
+      "status": "PASS"
+    },
+    {
+      "name": "Internal data cannot fail over to public backup",
+      "status": "PASS"
+    },
+    {
+      "name": "Real async cooldown and recovery probe",
+      "status": "PASS"
+    },
+    {
+      "name": "Total deadline withholds output",
+      "status": "PASS"
+    },
+    {
+      "name": "Authentication failure never retried",
+      "status": "PASS"
+    },
+    {
+      "name": "Blank budget rejected and previous output cleared",
+      "status": "PASS"
+    },
+    {
+      "name": "Router mobile layout and no JS errors",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate fallback off means no search",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate permitted correction yields exact citations",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate conflict withheld",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate untrusted withheld",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate expired withheld",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate bad-grade withheld",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate bad-metadata withheld",
+      "status": "PASS"
+    },
+    {
+      "name": "SourceGate mobile layout and no JS errors",
+      "status": "PASS"
+    },
+    {
+      "name": "Keyboard run activation",
+      "status": "PASS"
+    },
+    {
+      "name": "Reload resets evidence and search permission",
+      "status": "PASS"
+    },
+    {
+      "name": "Desktop layout and no JS errors",
+      "status": "PASS"
+    },
+    {
+      "name": "Runtime resource failure fails closed",
+      "status": "PASS"
+    },
+    {
+      "name": "Runtime restart recovers without retaining old results",
+      "status": "PASS"
+    },
+    {
+      "name": "All resource requests remain on the hosting origin",
+      "status": "PASS"
+    }
+  ],
+  "errors": [
+    "Source manifest unavailable"
+  ]
+}

@@ -1,0 +1,20 @@
+test_router_fractional_retries_rejected (test_regressions.BoundaryRegressions.test_router_fractional_retries_rejected) ... ok
+test_router_nonfinite_timeout_rejected (test_regressions.BoundaryRegressions.test_router_nonfinite_timeout_rejected) ... ok
+test_sourcegate_bad_claims_fail_closed (test_regressions.BoundaryRegressions.test_sourcegate_bad_claims_fail_closed) ... ok
+test_sourcegate_nonfinite_claims_fail_closed (test_regressions.BoundaryRegressions.test_sourcegate_nonfinite_claims_fail_closed) ... ok
+test_trace_gold_disagreement_not_supported (test_regressions.BoundaryRegressions.test_trace_gold_disagreement_not_supported) ... ok
+test_trace_malformed_candidate_is_validation_error (test_regressions.BoundaryRegressions.test_trace_malformed_candidate_is_validation_error) ... ok
+test_router_authorization_blocks_every_call (test_scenarios.EndToEnd.test_router_authorization_blocks_every_call) ... ok
+test_router_deadline_withholds (test_scenarios.EndToEnd.test_router_deadline_withholds) ... ok
+test_router_recovery_sequence (test_scenarios.EndToEnd.test_router_recovery_sequence) ... ok
+test_source_negative_cases_withhold (test_scenarios.EndToEnd.test_source_negative_cases_withhold) ... ok
+test_source_permission_and_citations (test_scenarios.EndToEnd.test_source_permission_and_citations) ... ok
+test_trace_malformed_input_withholds (test_scenarios.EndToEnd.test_trace_malformed_input_withholds) ... ok
+test_trace_ranking_selection_replay (test_scenarios.EndToEnd.test_trace_ranking_selection_replay) ... ok
+test_trace_unknown_and_disagreement (test_scenarios.EndToEnd.test_trace_unknown_and_disagreement) ... ok
+test_unknown_project_rejected (test_scenarios.EndToEnd.test_unknown_project_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.069s
+
+OK

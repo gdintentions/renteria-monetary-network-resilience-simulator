@@ -11,7 +11,16 @@ def diagnose(trace):
     Gold labels are optional, exhaustive corpus annotations, never model guesses.
     Judge labels must cover every candidate exactly once to support a diagnosis.
     """
-    candidates = trace["candidates"]
+    if not isinstance(trace, dict): raise ValueError("trace must be an object")
+    candidates = trace.get("candidates")
+    kept = trace.get("kept_ids")
+    def valid_id(value): return isinstance(value, str) and 0 < len(value) <= 200
+    if not isinstance(candidates, list) or len(candidates) > 1000:
+        raise ValueError("candidates must be a list of at most 1000 entries")
+    if any(not isinstance(c, dict) or not valid_id(c.get("id")) for c in candidates):
+        raise ValueError("candidate needs a nonempty string ID (at most 200 characters)")
+    if not isinstance(kept, list) or any(not valid_id(x) for x in kept):
+        raise ValueError("kept_ids must be a list of string IDs")
     ids = [c["id"] for c in candidates]
     kept = trace["kept_ids"]
     if len(set(ids)) != len(ids) or len(set(kept)) != len(kept):
@@ -22,9 +31,9 @@ def diagnose(trace):
         if not isinstance(c["id"], str) or not c["id"]:
             raise ValueError("nonempty string ID required")
     labels = trace.get("judge_labels", {})
-    valid = set(labels) == set(ids) and all(v in LABELS for v in labels.values())
+    valid = isinstance(labels, dict) and set(labels) == set(ids) and all(isinstance(v, str) and v in LABELS for v in labels.values())
     gold = trace.get("gold_ids")
-    if gold is not None and (not isinstance(gold, list) or any(not isinstance(x,str) for x in gold)):
+    if gold is not None and (not isinstance(gold, list) or any(not valid_id(x) for x in gold)):
         raise ValueError("gold_ids must be an exhaustive list or omitted")
     if gold is not None and len(set(gold)) != len(gold):
         raise ValueError("duplicate gold IDs")
@@ -55,6 +64,9 @@ def diagnose(trace):
             "selected_recall": len(g&selected)/len(g) if g else None,
             "judge_false_positive_ids": sorted(supported-g),
             "judge_false_negative_ids": sorted((g&set(ids))-supported)}
+        if result["gold_metrics"]["judge_false_positive_ids"] or result["gold_metrics"]["judge_false_negative_ids"]:
+            result["observed_judge_status"] = status
+            result["status"] = "JUDGE_DISAGREEMENT"
     return result
 
 def sweep(trace, budgets):

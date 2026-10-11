@@ -6,6 +6,12 @@ on:
     paths:
       - "hosted_demo/**"
       - ".github/workflows/pages-demo-safe.yml"
+      - "portfolio_projects/renteria-tracelens/**"
+      - "portfolio_projects/renteria-continuity-router/**"
+      - "portfolio_projects/renteria-sourcegate/**"
+      - "reliability_lab/**"
+      - "reliability_tests/**"
+      - "scripts/*reliability*"
   workflow_dispatch:
 
 permissions:
@@ -41,6 +47,27 @@ jobs:
           assert "56.70" in html and "89.2" in html
           print("static showcase verification: PASS")
           PY
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact Python cores
+        run: python scripts/verify_reliability.py
+      - run: npm ci --prefix reliability_lab --ignore-scripts
+      - run: python scripts/build_reliability_browser.py
+      - run: npm install --prefix /tmp/reliability-browser playwright@1.51.1
+      - run: /tmp/reliability-browser/node_modules/.bin/playwright install --with-deps chromium
+      - name: Gate deployment on actual Python browser flows
+        run: node scripts/reliability_browser_smoke.cjs
+        env:
+          NODE_PATH: /tmp/reliability-browser/node_modules
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reliability-pages-acceptance
+          path: artifacts/reliability/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v5
         with:

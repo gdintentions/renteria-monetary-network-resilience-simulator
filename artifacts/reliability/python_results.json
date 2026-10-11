@@ -1,0 +1,37 @@
+{
+  "timestamp_utc": "2026-10-11T03:04:34.857734+00:00",
+  "scope": "Authored synthetic contract, boundary and adapter-to-core scenarios; not independent domain validation",
+  "suites": [
+    {
+      "suite": "portfolio_projects/renteria-tracelens",
+      "exit_code": 0,
+      "log": "artifacts/reliability/renteria-tracelens.txt"
+    },
+    {
+      "suite": "portfolio_projects/renteria-continuity-router",
+      "exit_code": 0,
+      "log": "artifacts/reliability/renteria-continuity-router.txt"
+    },
+    {
+      "suite": "portfolio_projects/renteria-sourcegate",
+      "exit_code": 0,
+      "log": "artifacts/reliability/renteria-sourcegate.txt"
+    },
+    {
+      "suite": "reliability_tests",
+      "exit_code": 0,
+      "log": "artifacts/reliability/reliability_tests.txt"
+    }
+  ],
+  "source_sha256": {
+    "portfolio_projects/renteria-continuity-router/continuity_router.py": "892330bbaff5a245496548ad39e2821ba49c3ad10afa058cf4dc4901b49770c0",
+    "portfolio_projects/renteria-continuity-router/test_router.py": "09a31f617407a9e8895d1383c0d0712633465ec331cf1c3581baf7793046f499",
+    "portfolio_projects/renteria-sourcegate/sourcegate.py": "635a36478fb567500509ab66fd7538f9acbd77e901751959b529853daa7afebb",
+    "portfolio_projects/renteria-sourcegate/test_sourcegate.py": "53067c5f51a7d6853412b1185cbbd8350d4fc653c1e87a74e8cdfe04bb0e8123",
+    "portfolio_projects/renteria-tracelens/test_tracelens.py": "a21ea4ad33e32bdd483cd0f020662e15e04fe43488a0017b1bda4bd17582d8fe",
+    "portfolio_projects/renteria-tracelens/tracelens.py": "ee5cdd053e67378cb3c20020dedf01fd816272dbb729e12cff2a23bb9fdc9455",
+    "reliability_lab/scenarios.py": "c2303371b1a221daa37bb314582665cb4d3c04826eb2dc9deeedbbc69cb3ecc5",
+    "reliability_tests/test_regressions.py": "5bf5aa7454485dca1a622da91e978740b14d46512ffddf1f59e29828144ad7a2",
+    "reliability_tests/test_scenarios.py": "33aa4e3ea1ec7de0d9df34942317264230d66799908d39f41c91f92fcf1d09b7"
+  }
+}
