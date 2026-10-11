@@ -2,6 +2,7 @@
 import asyncio
 import json
 import random
+import math
 import time
 from dataclasses import dataclass, field
 from typing import Callable, Awaitable
@@ -41,14 +42,22 @@ class Breaker:
 
 class Router:
     def __init__(self, providers, *, retries=1, timeout=2.0, cooldown=30.0, threshold=2, seed=7):
-        if not providers or len({p.name for p in providers})!=len(providers):raise ValueError("unique providers required")
-        if retries<0 or timeout<=0 or cooldown<0 or threshold<1:raise ValueError("invalid limits")
+        if not providers or len(providers)>16 or any(not isinstance(p, Provider) or not isinstance(p.name,str) or not p.name or len(p.name)>100 or not callable(p.complete) for p in providers):
+            raise ValueError("1 to 16 named callable providers required")
+        if len({p.name for p in providers})!=len(providers):raise ValueError("unique providers required")
+        if any(not isinstance(p.classifications, (set,frozenset)) or not p.classifications <= {"public","internal","restricted"} for p in providers):
+            raise ValueError("invalid provider classifications")
+        if type(retries) is not int or not 0<=retries<=5 or type(threshold) is not int or threshold<1:
+            raise ValueError("integer retry/threshold limits required")
+        if any(type(v) not in (int,float) or not math.isfinite(v) for v in (timeout,cooldown)) or not 0<timeout<=60 or not 0<=cooldown<=3600:
+            raise ValueError("finite bounded time limits required")
         self.providers=providers;self.retries=retries;self.timeout=timeout
         self.cooldown=cooldown;self.threshold=threshold;self.rng=random.Random(seed)
         self.breakers={p.name:Breaker() for p in providers}
     async def route(self, prompt, *, classification="public", budget=5.0):
         if classification not in {"public","internal","restricted"}:raise ValueError("unknown classification")
-        if budget<=0:raise ValueError("positive time budget required")
+        if type(budget) not in (int,float) or not math.isfinite(budget) or not 0<budget<=60:raise ValueError("finite budget in (0,60] required")
+        if not isinstance(prompt,str) or not prompt.strip() or len(prompt)>2000:raise ValueError("prompt must contain 1 to 2000 characters")
         start=time.monotonic();deadline=start+budget;events=[]
         for provider in self.providers:
             if classification not in provider.classifications:

@@ -1,6 +1,6 @@
 # Renteria SourceGate
 
-**v0.1.0 · Runnable Python prototype · Corrective retrieval & governed help desks**
+**v0.2.0 · Python core + browser portfolio release · Corrective retrieval & governed help desks**
 
 A corrective workflow retrieves local evidence, evaluates it, optionally invokes a search adapter for missing claims, checks source allowlists and expiry, detects conflicts in structured claims, and returns cited extracts or a review-required result.
 
@@ -56,3 +56,17 @@ This standalone project sits in `portfolio_projects/renteria-sourcegate` in the 
 public portfolio repository. It has its own manifest and tests and can later be
 extracted into a separate repository. It does not alter the private Governed RAG
 service. [Portfolio index](../../START_HERE.md).
+
+## Browser release v0.2.0
+
+[Run SourceGate in your browser](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/reliability/#sourcegate).
+This executes this repository's Python core inside a Web Worker with Pyodide 0.27.7;
+it is not a separate JavaScript imitation. No account, local installation or API key is required.
+The hosted runtime and bundled Python are rebuilt and tested before Pages deployment.
+
+[Project-specific completion gates](COMPLETION.md) ·
+[Shared release evidence and reproduced failures](../../docs/RELIABILITY_RELEASE.md) ·
+[Observed synthetic scenario outputs](../../artifacts/reliability/scenario_outputs.json).
+
+The v0.2.0 scope is a complete, inspectable synthetic portfolio demonstration.
+Independent real-world labels, live providers and production acceptance remain separate gates.

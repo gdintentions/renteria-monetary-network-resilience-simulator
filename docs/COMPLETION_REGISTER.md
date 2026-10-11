@@ -35,3 +35,10 @@ Follow-up releases: Atlas and Notes RAG PR 3 close stale-query/late-response bug
 ## October 9, 2026 UTC follow-up
 
 [Measured retrieval improvement, expanded historical comparisons, conflict-coverage audit and disposable GUI integration](evaluations/VALIDATION_FOLLOWUP_2026-10-09.md). Original evaluation results remain preserved; new regression evidence does not close independent production gates.
+
+## Reliability projects — v0.2.0
+
+TraceLens, ContinuityRouter and SourceGate now have an actual-Python browser lab,
+project-specific end-to-end acceptance checks, preserved original failures and
+explicit completion gates. [Release evidence](RELIABILITY_RELEASE.md) records the
+bounded synthetic portfolio scope and the separate real-use limits.

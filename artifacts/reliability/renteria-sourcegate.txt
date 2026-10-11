@@ -1,0 +1,15 @@
+test_complete (test_sourcegate.Tests.test_complete) ... ok
+test_conflict (test_sourcegate.Tests.test_conflict) ... ok
+test_duplicate_id (test_sourcegate.Tests.test_duplicate_id) ... ok
+test_exact_citation (test_sourcegate.Tests.test_exact_citation) ... ok
+test_expired (test_sourcegate.Tests.test_expired) ... ok
+test_host_suffix_spoof (test_sourcegate.Tests.test_host_suffix_spoof) ... ok
+test_missing_grade (test_sourcegate.Tests.test_missing_grade) ... ok
+test_offline (test_sourcegate.Tests.test_offline) ... ok
+test_unknown_claim_not_inferred (test_sourcegate.Tests.test_unknown_claim_not_inferred) ... ok
+test_untrusted (test_sourcegate.Tests.test_untrusted) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

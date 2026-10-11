@@ -1,0 +1,1252 @@
+{
+  "scope": "19 authored synthetic scenarios; NOT an independent benchmark",
+  "cases": [
+    {
+      "input": {
+        "project": "tracelens",
+        "scenario": "selection-miss"
+      },
+      "observed": {
+        "project": "tracelens",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "input_trace": {
+            "candidates": [
+              {
+                "id": "general-access"
+              },
+              {
+                "id": "vendor-policy"
+              },
+              {
+                "id": "exception"
+              }
+            ],
+            "kept_ids": [
+              "general-access"
+            ],
+            "judge_labels": {
+              "general-access": "unrelated",
+              "vendor-policy": "answers",
+              "exception": "unrelated"
+            },
+            "gold_ids": [
+              "vendor-policy"
+            ]
+          },
+          "diagnosis": {
+            "status": "SELECTION_MISS",
+            "cells": {
+              "hit": [],
+              "noise": [
+                "general-access"
+              ],
+              "miss": [
+                "vendor-policy"
+              ],
+              "cut": [
+                "exception"
+              ]
+            },
+            "basis": "supplied judge labels; not answer correctness",
+            "gold_metrics": {
+              "candidate_recall": 1.0,
+              "selected_recall": 0.0,
+              "judge_false_positive_ids": [],
+              "judge_false_negative_ids": []
+            }
+          },
+          "replay": [
+            {
+              "top_k": 1,
+              "diagnosis": {
+                "status": "SELECTION_MISS",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access"
+                  ],
+                  "miss": [
+                    "vendor-policy"
+                  ],
+                  "cut": [
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 1.0,
+                  "selected_recall": 0.0,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            },
+            {
+              "top_k": 2,
+              "diagnosis": {
+                "status": "NOISY_CONTEXT",
+                "cells": {
+                  "hit": [
+                    "vendor-policy"
+                  ],
+                  "noise": [
+                    "general-access"
+                  ],
+                  "miss": [],
+                  "cut": [
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 1.0,
+                  "selected_recall": 1.0,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            },
+            {
+              "top_k": 3,
+              "diagnosis": {
+                "status": "NOISY_CONTEXT",
+                "cells": {
+                  "hit": [
+                    "vendor-policy"
+                  ],
+                  "noise": [
+                    "general-access",
+                    "exception"
+                  ],
+                  "miss": [],
+                  "cut": []
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 1.0,
+                  "selected_recall": 1.0,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            }
+          ],
+          "baseline": "Top-1 lexical retrieval vs top-k replay; supplied synthetic labels, not measured answer accuracy."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "tracelens",
+        "scenario": "candidate-miss"
+      },
+      "observed": {
+        "project": "tracelens",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "input_trace": {
+            "candidates": [
+              {
+                "id": "general-access"
+              },
+              {
+                "id": "exception"
+              }
+            ],
+            "kept_ids": [
+              "general-access"
+            ],
+            "judge_labels": {
+              "general-access": "unrelated",
+              "exception": "unrelated"
+            },
+            "gold_ids": [
+              "vendor-policy"
+            ]
+          },
+          "diagnosis": {
+            "status": "CANDIDATE_MISS",
+            "cells": {
+              "hit": [],
+              "noise": [
+                "general-access"
+              ],
+              "miss": [],
+              "cut": [
+                "exception"
+              ]
+            },
+            "basis": "supplied judge labels; not answer correctness",
+            "gold_metrics": {
+              "candidate_recall": 0.0,
+              "selected_recall": 0.0,
+              "judge_false_positive_ids": [],
+              "judge_false_negative_ids": []
+            }
+          },
+          "replay": [
+            {
+              "top_k": 1,
+              "diagnosis": {
+                "status": "CANDIDATE_MISS",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access"
+                  ],
+                  "miss": [],
+                  "cut": [
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 0.0,
+                  "selected_recall": 0.0,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            },
+            {
+              "top_k": 2,
+              "diagnosis": {
+                "status": "CANDIDATE_MISS",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access",
+                    "exception"
+                  ],
+                  "miss": [],
+                  "cut": []
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 0.0,
+                  "selected_recall": 0.0,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            },
+            {
+              "top_k": 3,
+              "diagnosis": {
+                "status": "CANDIDATE_MISS",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access",
+                    "exception"
+                  ],
+                  "miss": [],
+                  "cut": []
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 0.0,
+                  "selected_recall": 0.0,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            }
+          ],
+          "baseline": "Top-1 lexical retrieval vs top-k replay; supplied synthetic labels, not measured answer accuracy."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "tracelens",
+        "scenario": "unknown"
+      },
+      "observed": {
+        "project": "tracelens",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "input_trace": {
+            "candidates": [
+              {
+                "id": "general-access"
+              },
+              {
+                "id": "vendor-policy"
+              },
+              {
+                "id": "exception"
+              }
+            ],
+            "kept_ids": [
+              "general-access"
+            ],
+            "judge_labels": {
+              "general-access": "unrelated",
+              "vendor-policy": "partial",
+              "exception": "unrelated"
+            }
+          },
+          "diagnosis": {
+            "status": "INSUFFICIENT_EVIDENCE",
+            "cells": {
+              "hit": [],
+              "noise": [
+                "general-access"
+              ],
+              "miss": [],
+              "cut": [
+                "vendor-policy",
+                "exception"
+              ]
+            },
+            "basis": "supplied judge labels; not answer correctness"
+          },
+          "replay": [
+            {
+              "top_k": 1,
+              "diagnosis": {
+                "status": "INSUFFICIENT_EVIDENCE",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access"
+                  ],
+                  "miss": [],
+                  "cut": [
+                    "vendor-policy",
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness"
+              }
+            },
+            {
+              "top_k": 2,
+              "diagnosis": {
+                "status": "INSUFFICIENT_EVIDENCE",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access",
+                    "vendor-policy"
+                  ],
+                  "miss": [],
+                  "cut": [
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness"
+              }
+            },
+            {
+              "top_k": 3,
+              "diagnosis": {
+                "status": "INSUFFICIENT_EVIDENCE",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access",
+                    "vendor-policy",
+                    "exception"
+                  ],
+                  "miss": [],
+                  "cut": []
+                },
+                "basis": "supplied judge labels; not answer correctness"
+              }
+            }
+          ],
+          "baseline": "Top-1 lexical retrieval vs top-k replay; supplied synthetic labels, not measured answer accuracy."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "tracelens",
+        "scenario": "judge-disagreement"
+      },
+      "observed": {
+        "project": "tracelens",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "input_trace": {
+            "candidates": [
+              {
+                "id": "general-access"
+              },
+              {
+                "id": "vendor-policy"
+              },
+              {
+                "id": "exception"
+              }
+            ],
+            "kept_ids": [
+              "general-access"
+            ],
+            "judge_labels": {
+              "general-access": "answers",
+              "vendor-policy": "answers",
+              "exception": "unrelated"
+            },
+            "gold_ids": [
+              "vendor-policy"
+            ]
+          },
+          "diagnosis": {
+            "status": "JUDGE_DISAGREEMENT",
+            "cells": {
+              "hit": [
+                "general-access"
+              ],
+              "noise": [],
+              "miss": [
+                "vendor-policy"
+              ],
+              "cut": [
+                "exception"
+              ]
+            },
+            "basis": "supplied judge labels; not answer correctness",
+            "gold_metrics": {
+              "candidate_recall": 1.0,
+              "selected_recall": 0.0,
+              "judge_false_positive_ids": [
+                "general-access"
+              ],
+              "judge_false_negative_ids": []
+            },
+            "observed_judge_status": "SUPPORTED_CONTEXT"
+          },
+          "replay": [
+            {
+              "top_k": 1,
+              "diagnosis": {
+                "status": "JUDGE_DISAGREEMENT",
+                "cells": {
+                  "hit": [
+                    "general-access"
+                  ],
+                  "noise": [],
+                  "miss": [
+                    "vendor-policy"
+                  ],
+                  "cut": [
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 1.0,
+                  "selected_recall": 0.0,
+                  "judge_false_positive_ids": [
+                    "general-access"
+                  ],
+                  "judge_false_negative_ids": []
+                },
+                "observed_judge_status": "SUPPORTED_CONTEXT"
+              }
+            },
+            {
+              "top_k": 2,
+              "diagnosis": {
+                "status": "JUDGE_DISAGREEMENT",
+                "cells": {
+                  "hit": [
+                    "general-access",
+                    "vendor-policy"
+                  ],
+                  "noise": [],
+                  "miss": [],
+                  "cut": [
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 1.0,
+                  "selected_recall": 1.0,
+                  "judge_false_positive_ids": [
+                    "general-access"
+                  ],
+                  "judge_false_negative_ids": []
+                },
+                "observed_judge_status": "SUPPORTED_CONTEXT"
+              }
+            },
+            {
+              "top_k": 3,
+              "diagnosis": {
+                "status": "JUDGE_DISAGREEMENT",
+                "cells": {
+                  "hit": [
+                    "general-access",
+                    "vendor-policy"
+                  ],
+                  "noise": [
+                    "exception"
+                  ],
+                  "miss": [],
+                  "cut": []
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": 1.0,
+                  "selected_recall": 1.0,
+                  "judge_false_positive_ids": [
+                    "general-access"
+                  ],
+                  "judge_false_negative_ids": []
+                },
+                "observed_judge_status": "NOISY_CONTEXT"
+              }
+            }
+          ],
+          "baseline": "Top-1 lexical retrieval vs top-k replay; supplied synthetic labels, not measured answer accuracy."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "tracelens",
+        "scenario": "corpus-gap"
+      },
+      "observed": {
+        "project": "tracelens",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "input_trace": {
+            "candidates": [
+              {
+                "id": "general-access"
+              },
+              {
+                "id": "vendor-policy"
+              },
+              {
+                "id": "exception"
+              }
+            ],
+            "kept_ids": [
+              "general-access"
+            ],
+            "judge_labels": {
+              "general-access": "unrelated",
+              "vendor-policy": "unrelated",
+              "exception": "unrelated"
+            },
+            "gold_ids": []
+          },
+          "diagnosis": {
+            "status": "CORPUS_GAP_CONFIRMED",
+            "cells": {
+              "hit": [],
+              "noise": [
+                "general-access"
+              ],
+              "miss": [],
+              "cut": [
+                "vendor-policy",
+                "exception"
+              ]
+            },
+            "basis": "supplied judge labels; not answer correctness",
+            "gold_metrics": {
+              "candidate_recall": null,
+              "selected_recall": null,
+              "judge_false_positive_ids": [],
+              "judge_false_negative_ids": []
+            }
+          },
+          "replay": [
+            {
+              "top_k": 1,
+              "diagnosis": {
+                "status": "CORPUS_GAP_CONFIRMED",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access"
+                  ],
+                  "miss": [],
+                  "cut": [
+                    "vendor-policy",
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": null,
+                  "selected_recall": null,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            },
+            {
+              "top_k": 2,
+              "diagnosis": {
+                "status": "CORPUS_GAP_CONFIRMED",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access",
+                    "vendor-policy"
+                  ],
+                  "miss": [],
+                  "cut": [
+                    "exception"
+                  ]
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": null,
+                  "selected_recall": null,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            },
+            {
+              "top_k": 3,
+              "diagnosis": {
+                "status": "CORPUS_GAP_CONFIRMED",
+                "cells": {
+                  "hit": [],
+                  "noise": [
+                    "general-access",
+                    "vendor-policy",
+                    "exception"
+                  ],
+                  "miss": [],
+                  "cut": []
+                },
+                "basis": "supplied judge labels; not answer correctness",
+                "gold_metrics": {
+                  "candidate_recall": null,
+                  "selected_recall": null,
+                  "judge_false_positive_ids": [],
+                  "judge_false_negative_ids": []
+                }
+              }
+            }
+          ],
+          "baseline": "Top-1 lexical retrieval vs top-k replay; supplied synthetic labels, not measured answer accuracy."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "tracelens",
+        "scenario": "judge-unavailable"
+      },
+      "observed": {
+        "project": "tracelens",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "input_trace": {
+            "candidates": [
+              {
+                "id": "general-access"
+              },
+              {
+                "id": "vendor-policy"
+              },
+              {
+                "id": "exception"
+              }
+            ],
+            "kept_ids": [
+              "general-access"
+            ],
+            "judge_labels": {
+              "general-access": "unrelated",
+              "exception": "unrelated"
+            },
+            "gold_ids": [
+              "vendor-policy"
+            ]
+          },
+          "diagnosis": {
+            "status": "JUDGE_UNAVAILABLE",
+            "kept_ids": [
+              "general-access"
+            ],
+            "reason": "Missing, extra or invalid judge labels; do not infer a corpus gap."
+          },
+          "replay": [
+            {
+              "top_k": 1,
+              "diagnosis": {
+                "status": "JUDGE_UNAVAILABLE",
+                "kept_ids": [
+                  "general-access"
+                ],
+                "reason": "Missing, extra or invalid judge labels; do not infer a corpus gap."
+              }
+            },
+            {
+              "top_k": 2,
+              "diagnosis": {
+                "status": "JUDGE_UNAVAILABLE",
+                "kept_ids": [
+                  "general-access",
+                  "vendor-policy"
+                ],
+                "reason": "Missing, extra or invalid judge labels; do not infer a corpus gap."
+              }
+            },
+            {
+              "top_k": 3,
+              "diagnosis": {
+                "status": "JUDGE_UNAVAILABLE",
+                "kept_ids": [
+                  "general-access",
+                  "vendor-policy",
+                  "exception"
+                ],
+                "reason": "Missing, extra or invalid judge labels; do not infer a corpus gap."
+              }
+            }
+          ],
+          "baseline": "Top-1 lexical retrieval vs top-k replay; supplied synthetic labels, not measured answer accuracy."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "continuity-router",
+        "scenario": "healthy",
+        "classification": "public",
+        "budget": 0.08
+      },
+      "observed": {
+        "project": "continuity-router",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "requests": [
+            {
+              "status": "ANSWERED",
+              "provider": "primary",
+              "text": "Synthetic primary response.",
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "SUCCESS",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 2.4124999981722794e-05
+            }
+          ],
+          "provider_calls": [
+            "primary"
+          ],
+          "baseline": "An unguarded primary-only call would fail on the injected outage; no external reliability measured."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "continuity-router",
+        "scenario": "failover",
+        "classification": "public",
+        "budget": 0.08
+      },
+      "observed": {
+        "project": "continuity-router",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "requests": [
+            {
+              "status": "ANSWERED",
+              "provider": "backup",
+              "text": "Synthetic backup response.",
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "FAILURE",
+                  "code": 503,
+                  "attempt": 1
+                },
+                {
+                  "provider": "backup",
+                  "event": "SUCCESS",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 2.77209999239858e-05
+            },
+            {
+              "status": "ANSWERED",
+              "provider": "backup",
+              "text": "Synthetic backup response.",
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "CIRCUIT_SKIP"
+                },
+                {
+                  "provider": "backup",
+                  "event": "SUCCESS",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 5.571200017584488e-05
+            }
+          ],
+          "provider_calls": [
+            "primary",
+            "backup",
+            "backup"
+          ],
+          "baseline": "An unguarded primary-only call would fail on the injected outage; no external reliability measured."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "continuity-router",
+        "scenario": "deadline",
+        "classification": "public",
+        "budget": 0.08
+      },
+      "observed": {
+        "project": "continuity-router",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "requests": [
+            {
+              "status": "NEEDS_REVIEW",
+              "provider": null,
+              "text": null,
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "FAILURE",
+                  "code": "timeout",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 0.0803145150000546
+            }
+          ],
+          "provider_calls": [
+            "primary"
+          ],
+          "baseline": "An unguarded primary-only call would fail on the injected outage; no external reliability measured."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "continuity-router",
+        "scenario": "auth-failure",
+        "classification": "public",
+        "budget": 0.08
+      },
+      "observed": {
+        "project": "continuity-router",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "requests": [
+            {
+              "status": "ANSWERED",
+              "provider": "backup",
+              "text": "Synthetic backup response.",
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "FAILURE",
+                  "code": 401,
+                  "attempt": 1
+                },
+                {
+                  "provider": "backup",
+                  "event": "SUCCESS",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 3.763600011552626e-05
+            }
+          ],
+          "provider_calls": [
+            "primary",
+            "backup"
+          ],
+          "baseline": "An unguarded primary-only call would fail on the injected outage; no external reliability measured."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "continuity-router",
+        "scenario": "recovery",
+        "classification": "public",
+        "budget": 0.08
+      },
+      "observed": {
+        "project": "continuity-router",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "requests": [
+            {
+              "status": "ANSWERED",
+              "provider": "backup",
+              "text": "Synthetic backup response.",
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "FAILURE",
+                  "code": 503,
+                  "attempt": 1
+                },
+                {
+                  "provider": "backup",
+                  "event": "SUCCESS",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 1.5714000028310693e-05
+            },
+            {
+              "status": "ANSWERED",
+              "provider": "backup",
+              "text": "Synthetic backup response.",
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "CIRCUIT_SKIP"
+                },
+                {
+                  "provider": "backup",
+                  "event": "SUCCESS",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 5.857999894942623e-06
+            },
+            {
+              "status": "ANSWERED",
+              "provider": "primary",
+              "text": "Synthetic primary response.",
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "SUCCESS",
+                  "attempt": 1
+                }
+              ],
+              "elapsed_s": 3.128599996671255e-05
+            }
+          ],
+          "provider_calls": [
+            "primary",
+            "backup",
+            "backup",
+            "primary"
+          ],
+          "baseline": "An unguarded primary-only call would fail on the injected outage; no external reliability measured."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "continuity-router",
+        "scenario": "failover",
+        "classification": "restricted",
+        "budget": 0.08
+      },
+      "observed": {
+        "project": "continuity-router",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "requests": [
+            {
+              "status": "NEEDS_REVIEW",
+              "provider": null,
+              "text": null,
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "POLICY_SKIP"
+                },
+                {
+                  "provider": "backup",
+                  "event": "POLICY_SKIP"
+                }
+              ],
+              "elapsed_s": 1.9630001588666346e-06
+            },
+            {
+              "status": "NEEDS_REVIEW",
+              "provider": null,
+              "text": null,
+              "events": [
+                {
+                  "provider": "primary",
+                  "event": "POLICY_SKIP"
+                },
+                {
+                  "provider": "backup",
+                  "event": "POLICY_SKIP"
+                }
+              ],
+              "elapsed_s": 6.610000582440989e-07
+            }
+          ],
+          "provider_calls": [],
+          "baseline": "An unguarded primary-only call would fail on the injected outage; no external reliability measured."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "sourcegate",
+        "scenario": "complete",
+        "web_allowed": true
+      },
+      "observed": {
+        "project": "sourcegate",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "result": {
+            "status": "CITED_EXTRACTS",
+            "answer": [
+              {
+                "text": "Fictional vendor access requires a sponsor.",
+                "citation": "kb-access",
+                "url": "https://policy.example/access"
+              },
+              {
+                "text": "Fictional access expires after 14 days.",
+                "citation": "web-duration",
+                "url": "https://policy.example/duration"
+              }
+            ],
+            "rejected_ids": [],
+            "events": [
+              "RETRIEVE",
+              "GRADE",
+              "WEB_FALLBACK"
+            ],
+            "basis": "supplied evaluator and claim metadata; human verification still needed"
+          },
+          "search_calls": [
+            "fixture-search"
+          ],
+          "evaluation_date": "2026-10-10",
+          "baseline": "Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "sourcegate",
+        "scenario": "conflict",
+        "web_allowed": true
+      },
+      "observed": {
+        "project": "sourcegate",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "result": {
+            "status": "NEEDS_REVIEW",
+            "reason": "CONFLICT",
+            "conflicts": [
+              "approver"
+            ],
+            "missing": [],
+            "rejected_ids": [],
+            "events": [
+              "RETRIEVE",
+              "GRADE",
+              "WEB_FALLBACK"
+            ],
+            "answer": null
+          },
+          "search_calls": [
+            "fixture-search"
+          ],
+          "evaluation_date": "2026-10-10",
+          "baseline": "Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "sourcegate",
+        "scenario": "untrusted",
+        "web_allowed": true
+      },
+      "observed": {
+        "project": "sourcegate",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "result": {
+            "status": "NEEDS_REVIEW",
+            "reason": "MISSING_EVIDENCE",
+            "conflicts": [],
+            "missing": [
+              "duration"
+            ],
+            "rejected_ids": [
+              "web-duration"
+            ],
+            "events": [
+              "RETRIEVE",
+              "GRADE",
+              "WEB_FALLBACK"
+            ],
+            "answer": null
+          },
+          "search_calls": [
+            "fixture-search"
+          ],
+          "evaluation_date": "2026-10-10",
+          "baseline": "Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "sourcegate",
+        "scenario": "expired",
+        "web_allowed": true
+      },
+      "observed": {
+        "project": "sourcegate",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "result": {
+            "status": "NEEDS_REVIEW",
+            "reason": "MISSING_EVIDENCE",
+            "conflicts": [],
+            "missing": [
+              "duration"
+            ],
+            "rejected_ids": [
+              "web-duration"
+            ],
+            "events": [
+              "RETRIEVE",
+              "GRADE",
+              "WEB_FALLBACK"
+            ],
+            "answer": null
+          },
+          "search_calls": [
+            "fixture-search"
+          ],
+          "evaluation_date": "2026-10-10",
+          "baseline": "Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "sourcegate",
+        "scenario": "bad-grade",
+        "web_allowed": true
+      },
+      "observed": {
+        "project": "sourcegate",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "result": {
+            "status": "NEEDS_REVIEW",
+            "reason": "ADAPTER_OR_SCHEMA_FAILURE",
+            "error_type": "ValueError",
+            "events": [
+              "RETRIEVE"
+            ],
+            "answer": null
+          },
+          "search_calls": [],
+          "evaluation_date": "2026-10-10",
+          "baseline": "Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "sourcegate",
+        "scenario": "bad-metadata",
+        "web_allowed": true
+      },
+      "observed": {
+        "project": "sourcegate",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "result": {
+            "status": "NEEDS_REVIEW",
+            "reason": "ADAPTER_OR_SCHEMA_FAILURE",
+            "error_type": "ValueError",
+            "events": [
+              "RETRIEVE",
+              "GRADE",
+              "WEB_FALLBACK"
+            ],
+            "answer": null
+          },
+          "search_calls": [
+            "fixture-search"
+          ],
+          "evaluation_date": "2026-10-10",
+          "baseline": "Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures."
+        }
+      }
+    },
+    {
+      "input": {
+        "project": "sourcegate",
+        "scenario": "complete",
+        "web_allowed": false
+      },
+      "observed": {
+        "project": "sourcegate",
+        "synthetic": true,
+        "engine": "repository Python core",
+        "result": {
+          "result": {
+            "status": "NEEDS_REVIEW",
+            "reason": "MISSING_EVIDENCE",
+            "conflicts": [],
+            "missing": [
+              "duration"
+            ],
+            "rejected_ids": [],
+            "events": [
+              "RETRIEVE",
+              "GRADE"
+            ],
+            "answer": null
+          },
+          "search_calls": [],
+          "evaluation_date": "2026-10-10",
+          "baseline": "Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures."
+        }
+      }
+    }
+  ]
+}

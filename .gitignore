@@ -7,3 +7,7 @@ venv/
 .DS_Store
 .streamlit/secrets.toml
 *.csv
+node_modules/
+hosted_demo/reliability/runtime/
+hosted_demo/reliability/*.py
+hosted_demo/reliability/source-manifest.json
