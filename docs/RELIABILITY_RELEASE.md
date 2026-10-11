@@ -32,7 +32,7 @@ Source hashes prove file parity, not authorship, safety or independent correctne
 ## Executed evidence
 
 - **28 existing Python tests** (9 TraceLens, 9 ContinuityRouter, 10 SourceGate).
-- **15 added regression/end-to-end tests**, with additional scenario subcases.
+- **18 added regression/end-to-end tests**, with additional scenario subcases.
 - **35 Chromium browser acceptance checks** at mobile 390×844 and desktop 1440×1000:
   actual Python execution, successful and withheld results, provenance export,
   malformed input, text-only rendering, stale-output clearing, keyboard operation,
@@ -79,6 +79,28 @@ conflicts, expired/look-alike sources and bad evaluator metadata. They are not
 hidden by an aggregate success score. The demo intentionally preserves baseline
 weaknesses: top-1 lexical ranking drops a needed answer; local-only SourceGate lacks
 a duration claim; a primary-only call cannot answer through the injected outage.
+
+## Deployment-discovered deadline failure and correction
+
+The first Pages build for the merged release failed its browser deadline check:
+[failed run 38107393689](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/38107393689).
+The observed result was `ANSWERED` when `NEEDS_REVIEW` was expected. The deployment
+gate prevented publishing that build. Browser timers can fire slightly early;
+the router previously treated the tiny apparent remainder of the total budget as
+permission to try the backup.
+
+The correction treats expiry of the remaining-budget timer as terminal, even if
+the clock shows rounding slack. It also rejects a response that arrives after the
+overall deadline. A separate passing control proves that a **per-provider** timeout
+can still fail over when the overall budget genuinely remains. These three checks
+bring the Python total to **46 tests** (28 existing + 18 regression/end-to-end).
+[Two reproduced deadline failures before the fix](../artifacts/reliability/deadline_before_fix.txt)
+are retained alongside the [corrected regression run](../artifacts/reliability/reliability_tests.txt).
+
+Timeouts require cancellation-cooperative provider adapters; a provider that blocks
+the event loop can delay returning control. Late output is withheld when control
+returns. The browser worker adds a separate five-second termination watchdog.
+This is not a hard-real-time service guarantee.
 
 ## Acceptance gates
 

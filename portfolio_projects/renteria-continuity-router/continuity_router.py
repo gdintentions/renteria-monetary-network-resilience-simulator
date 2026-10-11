@@ -59,6 +59,7 @@ class Router:
         if type(budget) not in (int,float) or not math.isfinite(budget) or not 0<budget<=60:raise ValueError("finite budget in (0,60] required")
         if not isinstance(prompt,str) or not prompt.strip() or len(prompt)>2000:raise ValueError("prompt must contain 1 to 2000 characters")
         start=time.monotonic();deadline=start+budget;events=[]
+        budget_exhausted=False
         for provider in self.providers:
             if classification not in provider.classifications:
                 events.append({"provider":provider.name,"event":"POLICY_SKIP"});continue
@@ -72,6 +73,11 @@ class Router:
                     if remaining<=0:break
                     try:
                         text=await asyncio.wait_for(provider.complete(prompt), min(self.timeout,remaining))
+                        # A provider can suppress cancellation or return after its
+                        # timer. Never release a response past the overall budget.
+                        if time.monotonic()>=deadline:
+                            budget_exhausted=True
+                            raise ProviderFailure("deadline")
                         if not isinstance(text,str) or not text.strip():raise ProviderFailure("invalid_output")
                         breaker.finish(True,time.monotonic(),self.threshold)
                         events.append({"provider":provider.name,"event":"SUCCESS","attempt":attempt+1})
@@ -80,11 +86,20 @@ class Router:
                     except (asyncio.TimeoutError,ProviderFailure) as exc:
                         err=exc if isinstance(exc,ProviderFailure) else ProviderFailure("timeout")
                         events.append({"provider":provider.name,"event":"FAILURE","code":err.code,"attempt":attempt+1})
+                        # Browser timers can fire slightly early. Once the timer
+                        # for the remaining TOTAL budget fires, any apparent
+                        # rounding slack is not permission to retry or fail over.
+                        if isinstance(exc,asyncio.TimeoutError) and remaining<=self.timeout:
+                            budget_exhausted=True
+                        if budget_exhausted:
+                            events.append({"provider":provider.name,"event":"BUDGET_EXHAUSTED"})
+                            break
                         if not err.retryable or attempt==self.retries:break
                         delay=err.retry_after if err.retry_after is not None else self.rng.uniform(0,min(1,0.05*2**attempt))
                         if not isinstance(delay,(int,float)) or not 0<=delay<deadline-time.monotonic():break
                         await asyncio.sleep(delay)
                 breaker.finish(False,time.monotonic(),self.threshold)
+                if budget_exhausted:break
             except asyncio.CancelledError:
                 breaker.probing=False
                 raise

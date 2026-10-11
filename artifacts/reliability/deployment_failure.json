@@ -1,0 +1,11 @@
+{
+  "run_url": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/38107393689",
+  "source_commit": "e4f40c3c4c97e7fa2a72a78745241b605e17f3d0",
+  "job_id": 114375679904,
+  "step": "Gate deployment on actual Python browser flows",
+  "assertion": "Total deadline withholds output",
+  "expected": "NEEDS_REVIEW",
+  "observed": "ANSWERED",
+  "deployment": "skipped because acceptance failed",
+  "correction": "Remaining-budget timeout is terminal; late provider returns are withheld."
+}

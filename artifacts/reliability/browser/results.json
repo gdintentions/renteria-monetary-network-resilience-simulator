@@ -1,6 +1,6 @@
 {
-  "timestamp_utc": "2026-10-11T03:04:44.286Z",
-  "base_url": "http://127.0.0.1:40983/reliability/",
+  "timestamp_utc": "2026-10-11T07:44:01.687Z",
+  "base_url": "http://127.0.0.1:38845/reliability/",
   "scope": "Chromium desktop/mobile; actual Python with synthetic fixtures",
   "checks": [
     {

@@ -745,7 +745,7 @@
                   "attempt": 1
                 }
               ],
-              "elapsed_s": 2.4124999981722794e-05
+              "elapsed_s": 2.3244999965754687e-05
             }
           ],
           "provider_calls": [
@@ -785,7 +785,7 @@
                   "attempt": 1
                 }
               ],
-              "elapsed_s": 2.77209999239858e-05
+              "elapsed_s": 2.7430999978150794e-05
             },
             {
               "status": "ANSWERED",
@@ -802,7 +802,7 @@
                   "attempt": 1
                 }
               ],
-              "elapsed_s": 5.571200017584488e-05
+              "elapsed_s": 7.010999979684129e-06
             }
           ],
           "provider_calls": [
@@ -837,9 +837,13 @@
                   "event": "FAILURE",
                   "code": "timeout",
                   "attempt": 1
+                },
+                {
+                  "provider": "primary",
+                  "event": "BUDGET_EXHAUSTED"
                 }
               ],
-              "elapsed_s": 0.0803145150000546
+              "elapsed_s": 0.08054211200004602
             }
           ],
           "provider_calls": [
@@ -879,7 +883,7 @@
                   "attempt": 1
                 }
               ],
-              "elapsed_s": 3.763600011552626e-05
+              "elapsed_s": 3.579399998443478e-05
             }
           ],
           "provider_calls": [
@@ -920,7 +924,7 @@
                   "attempt": 1
                 }
               ],
-              "elapsed_s": 1.5714000028310693e-05
+              "elapsed_s": 7.770700000264696e-05
             },
             {
               "status": "ANSWERED",
@@ -937,7 +941,7 @@
                   "attempt": 1
                 }
               ],
-              "elapsed_s": 5.857999894942623e-06
+              "elapsed_s": 6.169000016598147e-06
             },
             {
               "status": "ANSWERED",
@@ -950,7 +954,7 @@
                   "attempt": 1
                 }
               ],
-              "elapsed_s": 3.128599996671255e-05
+              "elapsed_s": 3.2660000044870685e-05
             }
           ],
           "provider_calls": [
@@ -990,7 +994,7 @@
                   "event": "POLICY_SKIP"
                 }
               ],
-              "elapsed_s": 1.9630001588666346e-06
+              "elapsed_s": 1.8730000306277361e-06
             },
             {
               "status": "NEEDS_REVIEW",
@@ -1006,7 +1010,7 @@
                   "event": "POLICY_SKIP"
                 }
               ],
-              "elapsed_s": 6.610000582440989e-07
+              "elapsed_s": 5.709999868486193e-07
             }
           ],
           "provider_calls": [],
