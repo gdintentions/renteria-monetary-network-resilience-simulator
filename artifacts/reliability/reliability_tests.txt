@@ -4,6 +4,9 @@ test_sourcegate_bad_claims_fail_closed (test_regressions.BoundaryRegressions.tes
 test_sourcegate_nonfinite_claims_fail_closed (test_regressions.BoundaryRegressions.test_sourcegate_nonfinite_claims_fail_closed) ... ok
 test_trace_gold_disagreement_not_supported (test_regressions.BoundaryRegressions.test_trace_gold_disagreement_not_supported) ... ok
 test_trace_malformed_candidate_is_validation_error (test_regressions.BoundaryRegressions.test_trace_malformed_candidate_is_validation_error) ... ok
+test_late_return_is_never_released (test_regressions.DeadlineRegressions.test_late_return_is_never_released) ... ok
+test_overall_timeout_never_uses_rounding_slack (test_regressions.DeadlineRegressions.test_overall_timeout_never_uses_rounding_slack) ... ok
+test_provider_timeout_with_budget_remaining_can_fail_over (test_regressions.DeadlineRegressions.test_provider_timeout_with_budget_remaining_can_fail_over) ... ok
 test_router_authorization_blocks_every_call (test_scenarios.EndToEnd.test_router_authorization_blocks_every_call) ... ok
 test_router_deadline_withholds (test_scenarios.EndToEnd.test_router_deadline_withholds) ... ok
 test_router_recovery_sequence (test_scenarios.EndToEnd.test_router_recovery_sequence) ... ok
@@ -15,6 +18,6 @@ test_trace_unknown_and_disagreement (test_scenarios.EndToEnd.test_trace_unknown_
 test_unknown_project_rejected (test_scenarios.EndToEnd.test_unknown_project_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 15 tests in 0.069s
+Ran 18 tests in 0.110s
 
 OK

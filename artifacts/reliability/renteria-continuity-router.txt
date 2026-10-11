@@ -9,6 +9,6 @@ test_single_recovery_probe (test_router.Tests.test_single_recovery_probe) ... ok
 test_total_deadline (test_router.Tests.test_total_deadline) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.028s
+Ran 9 tests in 0.029s
 
 OK

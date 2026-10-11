@@ -1,0 +1,60 @@
+test_router_fractional_retries_rejected (test_regressions.BoundaryRegressions.test_router_fractional_retries_rejected) ... ok
+test_router_nonfinite_timeout_rejected (test_regressions.BoundaryRegressions.test_router_nonfinite_timeout_rejected) ... ok
+test_sourcegate_bad_claims_fail_closed (test_regressions.BoundaryRegressions.test_sourcegate_bad_claims_fail_closed) ... ok
+test_sourcegate_nonfinite_claims_fail_closed (test_regressions.BoundaryRegressions.test_sourcegate_nonfinite_claims_fail_closed) ... ok
+test_trace_gold_disagreement_not_supported (test_regressions.BoundaryRegressions.test_trace_gold_disagreement_not_supported) ... ok
+test_trace_malformed_candidate_is_validation_error (test_regressions.BoundaryRegressions.test_trace_malformed_candidate_is_validation_error) ... ok
+test_late_return_is_never_released (test_regressions.DeadlineRegressions.test_late_return_is_never_released) ... FAIL
+test_overall_timeout_never_uses_rounding_slack (test_regressions.DeadlineRegressions.test_overall_timeout_never_uses_rounding_slack) ... FAIL
+test_router_authorization_blocks_every_call (test_scenarios.EndToEnd.test_router_authorization_blocks_every_call) ... ok
+test_router_deadline_withholds (test_scenarios.EndToEnd.test_router_deadline_withholds) ... ok
+test_router_recovery_sequence (test_scenarios.EndToEnd.test_router_recovery_sequence) ... ok
+test_source_negative_cases_withhold (test_scenarios.EndToEnd.test_source_negative_cases_withhold) ... ok
+test_source_permission_and_citations (test_scenarios.EndToEnd.test_source_permission_and_citations) ... ok
+test_trace_malformed_input_withholds (test_scenarios.EndToEnd.test_trace_malformed_input_withholds) ... ok
+test_trace_ranking_selection_replay (test_scenarios.EndToEnd.test_trace_ranking_selection_replay) ... ok
+test_trace_unknown_and_disagreement (test_scenarios.EndToEnd.test_trace_unknown_and_disagreement) ... ok
+test_unknown_project_rejected (test_scenarios.EndToEnd.test_unknown_project_rejected) ... ok
+
+======================================================================
+FAIL: test_late_return_is_never_released (test_regressions.DeadlineRegressions.test_late_return_is_never_released)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/fe58a8d8b81b/portfolio/reliability_tests/test_regressions.py", line 59, in test_late_return_is_never_released
+    self.assertEqual(result['status'],'NEEDS_REVIEW')
+AssertionError: 'ANSWERED' != 'NEEDS_REVIEW'
+- ANSWERED
++ NEEDS_REVIEW
+
+
+======================================================================
+FAIL: test_overall_timeout_never_uses_rounding_slack (test_regressions.DeadlineRegressions.test_overall_timeout_never_uses_rounding_slack)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/fe58a8d8b81b/portfolio/reliability_tests/test_regressions.py", line 51, in test_overall_timeout_never_uses_rounding_slack
+    self.assertEqual([e['provider'] for e in result['events'] if e['event']=='FAILURE'],['primary'])
+AssertionError: Lists differ: ['primary', 'backup'] != ['primary']
+
+First list contains 1 additional elements.
+First extra element 1:
+'backup'
+
+- ['primary', 'backup']
++ ['primary']
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.112s
+
+FAILED (failures=2)

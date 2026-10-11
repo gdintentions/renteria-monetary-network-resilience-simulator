@@ -35,4 +35,43 @@ class BoundaryRegressions(unittest.TestCase):
         result=run('q',['a'],lambda q:[doc],lambda q,ds:{'a':'relevant'},lambda q:[],allowed_hosts={'policy.example'})
         self.assertEqual(result['status'],'NEEDS_REVIEW')
 
+class DeadlineRegressions(unittest.IsolatedAsyncioTestCase):
+    async def test_overall_timeout_never_uses_rounding_slack(self):
+        from unittest.mock import patch
+        calls=[]
+        async def up(q):calls.append('backup');return 'unexpected'
+        async def down(q):return 'not reached'
+        async def early_timeout(coro,timeout):
+            coro.close()
+            raise asyncio.TimeoutError()
+        with patch('continuity_router.asyncio.wait_for',side_effect=early_timeout):
+            result=await Router([Provider('primary',down),Provider('backup',up)],retries=0,timeout=1).route('fixture',budget=.1)
+        self.assertEqual([e['provider'] for e in result['events'] if e['event']=='FAILURE'],['primary'])
+        self.assertEqual(result['status'],'NEEDS_REVIEW')
+    async def test_late_return_is_never_released(self):
+        from unittest.mock import patch
+        async def slow(q):await asyncio.sleep(.02);return 'late answer'
+        async def uncancelled(coro,timeout):return await coro
+        with patch('continuity_router.asyncio.wait_for',side_effect=uncancelled):
+            result=await Router([Provider('slow',slow)],retries=0).route('fixture',budget=.001)
+        self.assertEqual(result['status'],'NEEDS_REVIEW')
+        self.assertIsNone(result['text'])
+
+    async def test_provider_timeout_with_budget_remaining_can_fail_over(self):
+        from unittest.mock import patch
+        async def up(q):return 'backup answer'
+        async def slow(q):return 'not reached'
+        attempts=0
+        async def provider_timeout(coro,timeout):
+            nonlocal attempts
+            attempts+=1
+            if attempts==1:
+                coro.close()
+                raise asyncio.TimeoutError()
+            return await coro
+        with patch('continuity_router.asyncio.wait_for',side_effect=provider_timeout):
+            result=await Router([Provider('primary',slow),Provider('backup',up)],retries=0,timeout=.01).route('fixture',budget=1)
+        self.assertEqual(result['status'],'ANSWERED')
+        self.assertEqual(result['provider'],'backup')
+
 if __name__=='__main__':unittest.main()
