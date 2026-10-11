@@ -42,3 +42,9 @@ TraceLens, ContinuityRouter and SourceGate now have an actual-Python browser lab
 project-specific end-to-end acceptance checks, preserved original failures and
 explicit completion gates. [Release evidence](RELIABILITY_RELEASE.md) records the
 bounded synthetic portfolio scope and the separate real-use limits.
+
+Release verified October 11, 2026 at 07:52 UTC: all three reliability projects are
+complete for their stated synthetic portfolio demo scope. Build, deployment and
+35 live Chromium checks passed; served Python source parity was verified.
+[Completion evidence](../artifacts/reliability/COMPLETION.json).
+The independent-label/live-provider/production gates remain separate and open.

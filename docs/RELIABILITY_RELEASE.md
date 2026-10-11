@@ -2,6 +2,22 @@
 
 Date: October 11, 2026 UTC. Original base: `57feaab29032b3d1d4e8392325df244d71c7464c`.
 
+## Verified release
+
+**All three projects meet the synthetic portfolio demonstration standard.**
+Release revision `8e62f9be308c60f9139f91b4c9662ca6dedf0aa9` passed build,
+deployment and live-host verification on October 11, 2026 at 07:52 UTC.
+[Successful deployment and live test run](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/38122746290).
+
+The 35 browser acceptance checks also passed on the public site, and both its
+source manifest and actual Python bytes match the checked-out revision.
+[Live test results](../artifacts/reliability/live/results.json) ·
+[Source parity](../artifacts/reliability/live/live-source-parity.json) ·
+[Completion record](../artifacts/reliability/COMPLETION.json).
+The raw live report includes `Source manifest unavailable` during the intentional
+HTTP 503 fault injection; fail-closed behavior and restart recovery passed.
+This expected fault is retained, not silently removed from the report.
+
 ## Release scope
 
 Three browser-runnable, inspectable **synthetic portfolio demonstrations**, with the
@@ -109,7 +125,7 @@ This is not a hard-real-time service guarantee.
 - [SourceGate gates](../portfolio_projects/renteria-sourcegate/COMPLETION.md)
 
 The CI workflow runs Python 3.11 and 3.12 checks and the actual Python browser lab.
-Pages separately runs the acceptance suite before deployment. A failed acceptance
+Pages separately runs the acceptance suite before deployment, then verifies source-byte parity and all 35 checks against the live public URL. A failed acceptance
 check prevents replacing the live Pages artifact. Source/runtime changes rebuild
 the bundle; generated runtime binaries are not committed. The npm lockfile pins
 package integrity. Browser evidence is attached to CI runs, including failures.

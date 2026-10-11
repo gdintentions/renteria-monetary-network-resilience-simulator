@@ -1,0 +1,29 @@
+{
+  "timestamp_utc": "2026-10-11T07:52:14.650Z",
+  "base_url": "https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/reliability/",
+  "commit": "8e62f9be308c60f9139f91b4c9662ca6dedf0aa9",
+  "status": "PASS",
+  "attempt": 1,
+  "manifest": {
+    "runtime": "Pyodide 0.27.7",
+    "scope": "actual Python cores; authored synthetic adapters",
+    "sources": {
+      "tracelens.py": {
+        "path": "portfolio_projects/renteria-tracelens/tracelens.py",
+        "sha256": "ee5cdd053e67378cb3c20020dedf01fd816272dbb729e12cff2a23bb9fdc9455"
+      },
+      "continuity_router.py": {
+        "path": "portfolio_projects/renteria-continuity-router/continuity_router.py",
+        "sha256": "23a12c8bd41dcf31b2972bbe952bebfd2475bc620f421b68397219685bc18cb0"
+      },
+      "sourcegate.py": {
+        "path": "portfolio_projects/renteria-sourcegate/sourcegate.py",
+        "sha256": "635a36478fb567500509ab66fd7538f9acbd77e901751959b529853daa7afebb"
+      },
+      "scenarios.py": {
+        "path": "reliability_lab/scenarios.py",
+        "sha256": "c2303371b1a221daa37bb314582665cb4d3c04826eb2dc9deeedbbc69cb3ecc5"
+      }
+    }
+  }
+}

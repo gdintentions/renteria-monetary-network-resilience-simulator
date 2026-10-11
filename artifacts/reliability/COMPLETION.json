@@ -1,0 +1,31 @@
+{
+  "scope": "Synthetic portfolio demonstrations; actual Python cores in browser",
+  "release_commit": "8e62f9be308c60f9139f91b4c9662ca6dedf0aa9",
+  "verified_at_utc": "2026-10-11T07:52:25.145Z",
+  "workflow_run": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/38122746290",
+  "live_artifact": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/38122746290/artifacts/11695922735",
+  "python_test_count": 46,
+  "live_browser_checks": 35,
+  "source_parity": "PASS",
+  "expected_injected_faults": [
+    "Source manifest unavailable"
+  ],
+  "fault_explanation": "During the deliberate HTTP 503 source-manifest injection, the worker reports Source manifest unavailable; the fail-closed and subsequent restart checks both pass. The original raw report is retained.",
+  "projects": {
+    "tracelens": {
+      "portfolio_demo_complete": true,
+      "production_ready": false,
+      "completion_document": "portfolio_projects/renteria-tracelens/COMPLETION.md"
+    },
+    "continuity-router": {
+      "portfolio_demo_complete": true,
+      "production_ready": false,
+      "completion_document": "portfolio_projects/renteria-continuity-router/COMPLETION.md"
+    },
+    "sourcegate": {
+      "portfolio_demo_complete": true,
+      "production_ready": false,
+      "completion_document": "portfolio_projects/renteria-sourcegate/COMPLETION.md"
+    }
+  }
+}
