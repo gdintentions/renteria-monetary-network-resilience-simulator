@@ -1,5 +1,7 @@
 # Public introductions and distribution
 
+Start with the [public source guide](../PUBLIC_SOURCE_GUIDE.md) for direct implementation/test links, synthetic-versus-private boundaries and the existing MIT license. The original private-source repositories are not to be made public as part of the curated release. Run the [scoped safety check](../scripts/check_public_release.py) and applicable CI before merging public source changes. Credential scanning is not a historical or comprehensive privacy audit.
+
 Use one stable public landing page: https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/ . Link to the corresponding project section, public snapshot, evaluation report and limitations. Private source remains restricted. Publish a bounded demonstrated milestone when its checks pass; broad commercial or organizational readiness is a separate claim.
 
 ## Suggested venues
