@@ -1,0 +1,52 @@
+name: Public Recruiter Source Safety
+
+on:
+  push:
+    paths:
+      - "PUBLIC_SOURCE_GUIDE.md"
+      - "README.md"
+      - "START_HERE.md"
+      - "docs/PUBLIC_SHARING.md"
+      - ".github/SECURITY.md"
+      - "scripts/check_public_release.py"
+      - "demo_safe/governed-rag/**"
+      - "demo_safe/governed-rag-model-lab/**"
+      - "portfolio_projects/renteria-tracelens/**"
+      - "portfolio_projects/renteria-continuity-router/**"
+      - "portfolio_projects/renteria-sourcegate/**"
+      - "hosted_demo/**"
+      - ".github/workflows/public-release-check.yml"
+  pull_request:
+    paths:
+      - "PUBLIC_SOURCE_GUIDE.md"
+      - "README.md"
+      - "START_HERE.md"
+      - "docs/PUBLIC_SHARING.md"
+      - ".github/SECURITY.md"
+      - "scripts/check_public_release.py"
+      - "demo_safe/governed-rag/**"
+      - "demo_safe/governed-rag-model-lab/**"
+      - "portfolio_projects/renteria-tracelens/**"
+      - "portfolio_projects/renteria-continuity-router/**"
+      - "portfolio_projects/renteria-sourcegate/**"
+      - "hosted_demo/**"
+      - ".github/workflows/public-release-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Scan curated public source and check entry points
+        run: python scripts/check_public_release.py
+      - name: Run public Python demo smoke tests
+        run: python demo_safe/smoke_test.py
+      - name: Run hosted RAG reviewer contract tests
+        run: node --test hosted_demo/rag-demo.test.cjs
