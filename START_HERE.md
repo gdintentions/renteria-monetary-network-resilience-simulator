@@ -10,6 +10,7 @@ A growing portfolio of working AI systems, governance controls, simulation model
 - [Portfolio evidence review and test results](EVIDENCE_REVIEW_2026-09-25.md)
 - [Public recruiter snapshots for private-source projects](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md)
 - [Live browser demo-safe showcase](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/)
+- **[Recruiter source guide: four inspected public projects, actual code, tests, demos and safety boundaries](PUBLIC_SOURCE_GUIDE.md)**
 - [Runnable demo-safe source showcase](demo_safe/README.md)
 
 ## Portfolio thesis
@@ -60,7 +61,7 @@ flowchart LR
 | Project | Access | Portfolio role | What it demonstrates |
 |---|---|---|---|
 | **Monetary Network Resilience Simulator** | Public source | Scenario modeling & resilience | Monte Carlo simulation, settlement-network agents, network graphs, illustrative calibration inputs, uncertainty bands |
-| **Enterprise AI Chatbot — Governed RAG** | [Safe demo](demo_safe/governed-rag/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#enterprise-ai-chatbot--governed-rag) · private source | Governance & evidence foundation | TF-IDF/cosine retrieval, citations, heuristic confidence, safe/review/block routing, FastAPI, human review |
+| **Enterprise AI Chatbot — Governed RAG** | [Public miniature source](demo_safe/governed-rag/demo.py) · [Browser demo](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/#governed-rag) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#enterprise-ai-chatbot--governed-rag) · private source | Governance & evidence foundation | TF-IDF/cosine retrieval, citations, heuristic confidence, safe/review/block routing, FastAPI, human review |
 | **Governed RAG Demo** | [Safe demo](demo_safe/governed-rag/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#governed-rag-demo) · private source | Recruiter-safe operational demo | Compact policy Q&A, evidence ranking, abstention, governance simulation |
 | **Governed RAG Recruiter Demo v2** | [Safe demo](demo_safe/governed-rag-model-lab/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#governed-rag-recruiter-demo-v2) · private source | Retrieval evaluation lab | Jaccard, TF-IDF, trigram and hybrid retrieval; MRR, Hit@3, robustness tests |
 | **Renteria Polyglot Relay** | [Safe demo](demo_safe/polyglot-relay/README.md) · [snapshot](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#renteria-polyglot-relay) · private source | Governed multilingual interaction | Voice/text workflows, accessibility, risk/quality routing, transcript observability |
