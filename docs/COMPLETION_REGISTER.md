@@ -19,7 +19,7 @@ Release baseline: Governed RAG's synthetic recruiter workflow, not its uncomplet
 | Personal Assistant Ledger | Actual multi-day uptime drill after the passed synthetic clock/recovery study | Intended operator/host; delivery adapters remain separate from draft-only scope |
 | Polyglot Relay | Provider-independent adapter and measured quality evaluation | Chosen permitted translation/speech provider, credentials and independent language reviewers |
 | Monetary Simulator | More historical intervals/observables and identifiability analysis | Frozen historical data/provenance and defined observable-to-model mappings |
-| ArgusLoop | Actual disposable GUI tasks with completion/false-block categories | Isolated desktop with synthetic accounts; fake-adapter pass is not GUI success |
+| ArgusLoop | Expand beyond the October 9 scripted 5/5 actual-GUI benchmark; evaluate unfamiliar UI/vision planning separately | New isolated tasks and independent success/false-block judgments; the earlier 3/5 failure remains preserved |
 | EvidenceWeave | Distinguish exclusive versus multi-valued relations; separately evaluate text extraction | Frozen development/test split and independently labeled free-text contradictions |
 | Legacy RAG demo | Maintain as a frozen instructional baseline; test links and boundaries | No automatic promotion to the new service or real-policy quality claim |
 | RAG model lab v2 | Retrieval comparison on a frozen external holdout | Separate development labels and held-out judgments; five authored cases remain a miniature |
@@ -48,3 +48,7 @@ complete for their stated synthetic portfolio demo scope. Build, deployment and
 35 live Chromium checks passed; served Python source parity was verified.
 [Completion evidence](../artifacts/reliability/COMPLETION.json).
 The independent-label/live-provider/production gates remain separate and open.
+
+## Evidence refresh — October 27, 2026 Pacific
+
+The [Governed RAG snapshot](PORTFOLIO_PROJECT_SNAPSHOTS.md#enterprise-ai-chatbot--governed-rag) now links 64 passing core tests per Python version, the dependency-patched audit and container smoke, and the retained original audit failure. These checks validate the stated revision, not production readiness. The [validation matrix](VALIDATION_MATRIX.md) labels its original table as historical and directs readers to successor reports. Independent policy labels/reviewer judgments, local-model inference evidence, elapsed uptime and provider/host acceptance gates remain open. Preparing an intake checklist does not close those gates.
