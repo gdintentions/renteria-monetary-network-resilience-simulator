@@ -1,6 +1,8 @@
 # Portfolio Validation Matrix
 
-**Updated:** October 3, 2026
+**Original benchmark table:** October 3, 2026. Evidence navigation refreshed October 27, 2026 Pacific.
+
+The table below preserves the original benchmark rather than silently replacing historical failures. For current follow-up results, read the [October 9 report](evaluations/VALIDATION_FOLLOWUP_2026-10-09.md): Monetary covers four retrospective windows (2/4 wins against persistence), ArgusLoop has a 5/5 actual scripted GUI run with the earlier 3/5 failure retained, and EvidenceWeave normalization changed zero outcomes. For Governed RAG, the [October 14 comparison](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag/blob/main/docs/evaluations/RETRIEVAL_COMPARISON_2026-10-14.md) adds lexical fusion/reranking on the previously inspected NFCorpus set. See the [refreshed recruiter snapshot](PORTFOLIO_PROJECT_SNAPSHOTS.md#enterprise-ai-chatbot--governed-rag) for current core tests and dependency remediation. These follow-ups do not close independent production gates.
 
 This page is the evidence index for four flagship Renteria AI Systems projects. It deliberately records failures alongside successes.
 
