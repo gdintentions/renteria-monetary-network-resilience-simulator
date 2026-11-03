@@ -7,7 +7,8 @@
 This is a self-contained project in the [Renteria AI Systems Portfolio](../../START_HERE.md).
 - [Interactive browser demo](../../hosted_demo/qrcn/index.html) (synthetic outcomes, no security guarantees)
 - [Core Python implementation](qrcn/core.py)
-- [Automated tests](tests/test_core.py)
+- [Automated tests](tests/test_core.py) and [Phase 2 durability tests](tests/test_durable.py)
+- [Phase 2 executed validation and preserved failures](docs/PHASE2_VALIDATION_2026-11-02.md)
 - [Threat model and security limits](docs/THREAT_MODEL.md)
 - [Evidence and outstanding gates](docs/VALIDATION.md)
 
@@ -37,13 +38,18 @@ Requires Python 3.11+ (standard library only).
 cd portfolio_projects/qrcn
 python -m unittest discover -s tests -v
 python -m scripts.run_demo
+python -m scripts.run_phase2
 ```
+
+## Phase 2: file-backed reliability experiment
+
+The optional, standard-library [SQLite adapter](qrcn/durable.py) adds atomic unique-ID commits, per-journal writer fencing, process-restart recovery, multi-threaded duplicate rejection, and read-only detection of conflicting entries when independent partitions both commit. The original Phase 1 core and browser demonstration are retained. [Executed test results, known defects and open gates](docs/PHASE2_VALIDATION_2026-11-02.md) include **23 green unit tests per Python version** and a documented initial SQLite locking failure. The split-brain hazard is **detected but not prevented**.
 
 ## Defined security boundary
 
 - Key derivation is demonstrated using per-node HMAC-SHA256 tags and a monotonically increasing local key epoch. **No post-quantum algorithm or actual key distribution is implemented.**
 - Integrity checks cannot provide confidentiality. The simulated payload is visible to the app and browser demo.
-- The journal is an in-memory Python dictionary. This is *not* distributed exactly-once consensus, fault-tolerant persistence or double-entry accounting.
+- The original Phase 1 journal is an in-memory Python dictionary. The optional Phase 2 [SQLite journal](qrcn/durable.py) persists on a **single local host** across restarts but does **not** implement distributed consensus, guaranteed power-loss durability, multi-party settlement or double-entry accounting.
 - Failover simulates selection of a second node after an outage. It is not a realistic distributed recovery guarantee.
 - No real payments, financial accounts, network packets, quantum entanglement, QKD, FIPS-certified security or production API integration.
 - The browser UI depicts **synthetic, predefined educational cases** rather than interacting with the Python security implementation.
@@ -52,7 +58,7 @@ python -m scripts.run_demo
 
 Development: working Python logic, automated tests, reproducible scenario outputs, demonstrable intentional failures.
 Independent validation: **OPEN** — requires third-party threat review and held-out perturbations.
-Production: **OPEN** — requires durable transaction journal, distributed consensus/atomicity model, secure identity/key vault, authenticated network transport, PQC migration design, real operational metrics and legal/regulatory review.
+Production: **OPEN** — Phase 2 provides an experimental single-host journal; genuine multi-node consensus/finality, power-failure recovery evidence, secure identity/key vault, authenticated network transport, PQC migration design, real operational metrics and legal/regulatory review are still required.
 
 ## Project origin and naming
 
