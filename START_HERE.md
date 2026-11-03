@@ -77,6 +77,12 @@ flowchart LR
 | **Renteria ContinuityRouter** | [Browser demo](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/reliability/#continuity-router) · [Public source](portfolio_projects/renteria-continuity-router/README.md) | AI infrastructure & resilience | Authorized failover, request deadlines, circuit recovery |
 | **Renteria SourceGate** | [Browser demo](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/reliability/#sourcegate) · [Public source](portfolio_projects/renteria-sourcegate/README.md) | Corrective retrieval & evidence governance | Source allowlists, expiry, fact coverage, conflict abstention |
 
+## November 2, 2026 — QRCN transaction-integrity research miniature
+
+- **[QRCN — Quantum-Resilient Clearing Network](portfolio_projects/qrcn/README.md)** — runnable standard-library Python simulator of per-hop HMAC integrity, key-epoch changes, replay rejection, node outage failover and a one-process settlement journal. **No actual QKD/PQC, distributed consensus or production payment capability.**
+- [Interactive QRCN browser demonstration](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/qrcn/) — synthetic transaction attack and recovery scenarios, explicitly independent of the Python backend.
+- [QRCN tests and known failure gates](portfolio_projects/qrcn/docs/VALIDATION.md)
+
 ## Recommended recruiter review path — 10 minutes
 
 1. **Start with the [live Governed RAG review demonstration](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/#governed-rag).** Inspect the synthetic draft, sources, withholding and simulated review; then view the Monetary Simulator's scenario assumptions and published backtest failures.
