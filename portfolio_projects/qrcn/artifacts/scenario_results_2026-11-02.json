@@ -1,0 +1,99 @@
+{
+  "normal": {
+    "status": "accepted",
+    "route": [
+      "alpha"
+    ],
+    "events": [
+      "authenticated:alpha",
+      "committed_once"
+    ],
+    "ledger": {
+      "accepted_count": 1,
+      "accepted_cents": 10500,
+      "unique_ids": 1,
+      "key_epoch": 0
+    }
+  },
+  "tamper": {
+    "status": "rejected_integrity",
+    "route": [
+      "alpha"
+    ],
+    "events": [
+      "tamper_detected"
+    ],
+    "ledger": {
+      "accepted_count": 0,
+      "accepted_cents": 0,
+      "unique_ids": 0,
+      "key_epoch": 0
+    }
+  },
+  "stale_tag": {
+    "status": "rejected_integrity",
+    "route": [
+      "alpha"
+    ],
+    "events": [
+      "stale_authentication"
+    ],
+    "ledger": {
+      "accepted_count": 0,
+      "accepted_cents": 0,
+      "unique_ids": 0,
+      "key_epoch": 1
+    }
+  },
+  "primary_outage": {
+    "status": "accepted",
+    "route": [
+      "beta"
+    ],
+    "events": [
+      "node_unavailable:alpha",
+      "authenticated:beta",
+      "committed_once"
+    ],
+    "ledger": {
+      "accepted_count": 1,
+      "accepted_cents": 10500,
+      "unique_ids": 1,
+      "key_epoch": 0
+    }
+  },
+  "all_outage": {
+    "status": "unavailable",
+    "route": [],
+    "events": [
+      "node_unavailable:alpha",
+      "node_unavailable:beta",
+      "node_unavailable:gamma",
+      "no_healthy_node"
+    ],
+    "ledger": {
+      "accepted_count": 0,
+      "accepted_cents": 0,
+      "unique_ids": 0,
+      "key_epoch": 0
+    }
+  },
+  "lost_ack": {
+    "status": "accepted",
+    "route": [
+      "alpha"
+    ],
+    "events": [
+      "authenticated:alpha",
+      "committed_once",
+      "acknowledgment_lost",
+      "retry:duplicate_rejected"
+    ],
+    "ledger": {
+      "accepted_count": 1,
+      "accepted_cents": 10500,
+      "unique_ids": 1,
+      "key_epoch": 0
+    }
+  }
+}
