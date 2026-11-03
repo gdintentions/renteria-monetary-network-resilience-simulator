@@ -77,6 +77,11 @@ flowchart LR
 | **Renteria ContinuityRouter** | [Browser demo](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/reliability/#continuity-router) · [Public source](portfolio_projects/renteria-continuity-router/README.md) | AI infrastructure & resilience | Authorized failover, request deadlines, circuit recovery |
 | **Renteria SourceGate** | [Browser demo](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/reliability/#sourcegate) · [Public source](portfolio_projects/renteria-sourcegate/README.md) | Corrective retrieval & evidence governance | Source allowlists, expiry, fact coverage, conflict abstention |
 
+## QRCN — Dedicated project archive and development record
+
+- **[Open the QRCN project folder](QRCN/README.md)** — central access point for Phase 1–4 architecture, code, tests, results, failure reports, open gates, and research branches.
+- **[QRCN complete development history](QRCN/PROJECT_RECORD.md)** — chronology, verified test evidence, historical limitations, and next experiments.
+
 ## November 2, 2026 — QRCN transaction-integrity research miniature
 
 - **[QRCN — Quantum-Resilient Clearing Network](portfolio_projects/qrcn/README.md)** — runnable standard-library Python simulator of per-hop HMAC integrity, key-epoch changes, replay rejection, node outage failover and a one-process settlement journal. **No actual QKD/PQC, distributed consensus or production payment capability.**
