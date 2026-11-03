@@ -45,3 +45,9 @@ Fix: eliminate per-connection journal-mode switching and explicitly close each c
 ## Phase 2 verdict
 
 **Development gate passed for this specified local-simulation contract. Do not claim distributed exactly-once semantics, quantum resilience, regulatory compliance, or production readiness.** Independent review and production release remain open. The next engineering gate is independent hostile testing, process-level load/stress, persistent audit-chain tampering, and an explicit consensus/failover design (or a transparent admission that the system is intentionally centralized for settlement integrity).
+
+## Browser interface verification (successor evidence)
+
+- [Chromium browser interaction run](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/41575535402) passed on the Phase 2 branch, alongside the latest [QRCN Python CI](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/41575535558) and [public-source safety check](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/41575535441).
+- Browser script `scripts/qrcn_browser_smoke.cjs` exercised six client-side synthetic scenarios, checked each displayed receipt/status and captured a screenshot artifact. It does **not** exercise the Python SQLite implementation or prove a deployed website is current.
+- New Phase 2 browser examples are saved in `hosted_demo/qrcn/index.html` on this **unmerged experimental branch**. The existing public GitHub Pages demo may still show only Phase 1 until an approved release deploys the branch.
