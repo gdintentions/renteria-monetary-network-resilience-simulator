@@ -1,0 +1,35 @@
+name: QRCN research prototype tests
+on:
+  push:
+    paths:
+      - 'portfolio_projects/qrcn/**'
+      - 'hosted_demo/qrcn/**'
+      - '.github/workflows/qrcn-tests.yml'
+  pull_request:
+    paths:
+      - 'portfolio_projects/qrcn/**'
+      - 'hosted_demo/qrcn/**'
+      - '.github/workflows/qrcn-tests.yml'
+  workflow_dispatch:
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Core unit tests
+        run: cd portfolio_projects/qrcn && python -m unittest discover -s tests -v
+      - name: Scenario output
+        run: cd portfolio_projects/qrcn && python -m scripts.run_demo > qrcn-scenarios.json
+      - name: Compile source
+        run: cd portfolio_projects/qrcn && python -m compileall -q qrcn tests scripts
+      - uses: actions/upload-artifact@v4
+        if: matrix.python-version == '3.11'
+        with:
+          name: qrcn-scenario-evidence
+          path: portfolio_projects/qrcn/qrcn-scenarios.json
