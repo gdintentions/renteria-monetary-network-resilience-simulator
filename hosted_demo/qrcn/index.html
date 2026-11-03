@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QRCN | Transaction Integrity &amp; Failover Lab</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,sans-serif;color:#e8f0f5;background:#0b1523}*{box-sizing:border-box}body{margin:0}main{max-width:1080px;margin:0 auto;padding:38px 20px 70px}h1{font-size:clamp(30px,5vw,52px);letter-spacing:-.045em;margin:6px 0 10px}h2{font-size:19px;margin:0 0 14px}p{color:#afc2d5;line-height:1.65}a{color:#b3e7ef}.eyebrow{color:#7bd4ca;letter-spacing:.17em;text-transform:uppercase;font-size:12px;font-weight:700}.pill{background:#153b42;border:1px solid #246e70;border-radius:30px;padding:6px 12px;color:#9fece5;font-size:12px;font-weight:600}.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}.panel{background:#122338;border:1px solid #27435f;border-radius:15px;padding:22px}.field{display:grid;gap:7px;margin:12px 0}label{font-size:13px;color:#bacddd}select,input{width:100%;font:inherit;border-radius:9px;padding:11px;border:1px solid #426080;background:#0b1728;color:#fff}button{background:#73d7cc;border:0;color:#07212b;padding:12px 20px;border-radius:9px;font-weight:750;cursor:pointer}button:hover{background:#a5f4e8}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #fff}.muted{font-size:12px;color:#9bb0c6}.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:19px 0}.node{padding:14px 12px;border:1px solid #4a6785;border-radius:10px;background:#183148;min-width:95px;text-align:center;font-size:13px}.arrow{color:#7bd4ca}.status{padding:9px 12px;border-radius:9px;display:inline-block;font-weight:750}.accepted{background:#214c41;color:#a9eacb}.rejected{background:#5a3135;color:#ffc2c3}.unavailable{background:#55482b;color:#fae3a8}ol{padding-left:24px;line-height:1.9;color:#bdd0de}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#07111e;padding:16px;border-radius:10px;color:#a5efda;max-height:320px;overflow:auto}footer{border-top:1px solid #29435d;margin-top:34px;padding-top:17px;font-size:13px;color:#a4bad0}@media(max-width:740px){.cards{grid-template-columns:1fr}.node{min-width:75px;padding:11px 7px;font-size:11px}}
+</style></head><body><main>
+<div class="eyebrow">Renteria AI Systems Portfolio / Research Prototype</div>
+<h1>Quantum-Resilient<br>Clearing Network</h1>
+<p>Explore how transaction-integrity checks, simulated key epochs, replay rejection and node failover behave under deliberate faults. <strong>This browser demo is a synthetic scenario visualizer, not the Python engine or a live payment network.</strong></p>
+<span class="pill">No actual quantum hardware • No real transactions • No security certification</span>
+<div class="cards">
+<section class="panel"><h2>Scenario controls</h2><div class="field"><label for="scenario">Fault injection</label><select id="scenario">
+<option value="normal">Valid message / healthy node</option>
+<option value="tamper">Altered transaction bytes</option>
+<option value="stale">Old-epoch authentication tag</option>
+<option value="outage">Primary node outage</option>
+<option value="all">All nodes unavailable</option>
+<option value="ack">Acknowledgment lost after commit</option>
+<option value="replay">Duplicate transaction identifier</option>
+</select></div><div class="field"><label for="amount">Illustrative transaction amount ($)</label><input id="amount" type="number" min="0.01" max="1000000" step="0.01" value="105.00"/></div><button type="button" id="run">Simulate transaction</button><p class="muted">Only local JavaScript scenario modeling. No secrets, actual cryptography or financial credentials are used here.</p></section>
+<section class="panel"><h2>Observed synthetic outcome</h2><div id="status" role="status" aria-live="polite"><span class="status accepted">Ready</span></div><div class="flow"><div class="node">Payer</div><span class="arrow">→</span><div class="node">Auth gate</div><span class="arrow">→</span><div class="node" id="node">Node α</div><span class="arrow">→</span><div class="node">Journal</div></div><div><strong>Event trace</strong><ol id="events"><li>Select a scenario and run it.</li></ol></div></section></div>
+<div class="cards"><section class="panel"><h2>Example receipt</h2><pre id="receipt">{"status":"not_run"}</pre></section><section class="panel"><h2>What this does not prove</h2><p>Changing packet wrappers does not protect data on its own. Authentication tags do not encrypt messages. Simulated failover is not distributed consensus. Quantum key distribution cannot guarantee detection of every cyber intrusion.</p><p>Read the <a href="../../portfolio_projects/qrcn/README.md">technical project</a> and its <a href="../../portfolio_projects/qrcn/docs/VALIDATION.md">failure and validation ledger</a>.</p></section></div>
+<footer>Educational, deterministic visualization. The separately implemented Python simulator and automated tests are the engineering artifacts. No real funds are moved. No claim of quantum protection or production readiness.</footer>
+</main><script>
+"use strict";
+const outcomes={
+normal:{status:"accepted",node:"alpha",events:["canonical_payload_created","authenticated:alpha","committed_once"],count:1},
+tamper:{status:"rejected_integrity",node:"alpha",events:["canonical_payload_created","tamper_detected","no_commit"],count:0},
+stale:{status:"rejected_integrity",node:"alpha",events:["key_epoch_advanced","stale_authentication","no_commit"],count:0},
+outage:{status:"accepted",node:"beta",events:["node_unavailable:alpha","routed_to:beta","authenticated:beta","committed_once"],count:1},
+all:{status:"unavailable",node:"none",events:["node_unavailable:alpha","node_unavailable:beta","node_unavailable:gamma","no_healthy_node"],count:0},
+ack:{status:"accepted",node:"alpha",events:["authenticated:alpha","committed_once","acknowledgment_lost","retry:duplicate_rejected"],count:1},
+replay:{status:"duplicate_rejected",node:"none",events:["prior_commit_exists","replay_detected","no_second_commit"],count:0}
+};
+let sequence=0;
+document.getElementById("run").addEventListener("click",()=>{
+const kind=document.getElementById("scenario").value;
+const amt=Number(document.getElementById("amount").value);
+if(!Number.isFinite(amt)||amt<=0||amt>1000000||Math.round(amt*100)!==amt*100&&Math.abs(Math.round(amt*100)-amt*100)>1e-6){document.getElementById("status").textContent="Enter a positive amount with at most two decimal places.";return;}
+sequence++;
+const result=outcomes[kind],cls=result.status==="accepted"?"accepted":result.status==="unavailable"?"unavailable":"rejected";
+document.getElementById("status").innerHTML='<span class="status '+cls+'"></span>';
+document.getElementById("status").firstElementChild.textContent=result.status.replaceAll("_"," ");
+document.getElementById("node").textContent=result.node==="none"?"No node":("Node "+(result.node==="alpha"?"α":"β"));
+const ol=document.getElementById("events");ol.replaceChildren();
+for(const event of result.events){const li=document.createElement("li");li.textContent=event;ol.appendChild(li);}
+document.getElementById("receipt").textContent=JSON.stringify({demo_only:true,transaction_id:"synthetic-"+String(sequence).padStart(3,"0"),amount_usd:amt,scenario:kind,status:result.status,route:result.node,local_commits:result.count,events:result.events},null,2);
+});
+</script></body></html>
