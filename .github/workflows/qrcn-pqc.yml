@@ -30,7 +30,7 @@ jobs:
       - name: Install isolated PQC experiment dependency
         run: python -m pip install -r portfolio_projects/qrcn/requirements-pqc-experiment.txt
       - name: Run NIST-standard-algorithm API tests
-        run: cd portfolio_projects/qrcn && python -m unittest tests/test_pqc_optional.py -v
+        run: cd portfolio_projects/qrcn && python -m unittest discover -s tests -p 'test_pqc_optional.py' -v
       - name: Capture local crypto API experiment results
         run: cd portfolio_projects/qrcn && python -m scripts.run_pqc > pqc-phase3.json
       - uses: actions/upload-artifact@v4
