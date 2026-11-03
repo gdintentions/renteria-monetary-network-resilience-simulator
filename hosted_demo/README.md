@@ -9,6 +9,8 @@ This directory is the static browser-hosted presentation layer for selected Rent
 - Context Atlas — explainable synthetic knowledge graph with explicit and missing links
 - Monetary Network Resilience Simulator — deterministic synthetic browser scenario model
 
+- QRCN transaction integrity and failover scenario visualizer at [\`qrcn/\`](qrcn/) — predefined synthetic outcomes, not a cryptographic implementation
+
 ## Privacy and IP boundary
 
 The hosted site is intentionally independent from the private working repositories. It contains:
