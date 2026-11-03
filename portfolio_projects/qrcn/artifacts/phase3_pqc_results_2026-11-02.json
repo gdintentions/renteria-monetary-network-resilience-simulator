@@ -1,0 +1,45 @@
+{
+  "altered_ciphertext_changes_secret": true,
+  "kem": "ML-KEM-768",
+  "key_sizes_bytes": {
+    "dsa_public": 1952,
+    "dsa_secret": 4032,
+    "dsa_signature": 3309,
+    "kem_ciphertext": 1088,
+    "kem_public": 1184,
+    "kem_secret": 2400,
+    "kem_shared_secret": 32
+  },
+  "library": "pqcrypto",
+  "limitations": [
+    "Not integrated with transport or clearing",
+    "Ephemeral keys only",
+    "No identity authentication, KDF, transcript binding, hybrid mode or KEM-based AEAD",
+    "No third-party audit or FIPS 140 module validation",
+    "No QKD or quantum hardware",
+    "Not an end-to-end latency benchmark"
+  ],
+  "scope": "isolated_local_pqc_api_experiment_not_transaction_protocol",
+  "shared_secret_matches": true,
+  "signature": "ML-DSA-65",
+  "tampered_signature_payload_rejected": true,
+  "valid_signature_verified": true,
+  "version": "1.0.0",
+  "warm_cpu_api_timings": {
+    "dsa_sign": {
+      "iterations": 12,
+      "max_ms": 9.2245,
+      "median_ms": 8.9829
+    },
+    "dsa_verify": {
+      "iterations": 12,
+      "max_ms": 0.2014,
+      "median_ms": 0.1915
+    },
+    "kem_encapsulation": {
+      "iterations": 12,
+      "max_ms": 0.0845,
+      "median_ms": 0.0702
+    }
+  }
+}

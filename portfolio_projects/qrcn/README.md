@@ -45,6 +45,15 @@ python -m scripts.run_phase2
 
 The optional, standard-library [SQLite adapter](qrcn/durable.py) adds atomic unique-ID commits, per-journal writer fencing, process-restart recovery, multi-threaded duplicate rejection, and read-only detection of conflicting entries when independent partitions both commit. The original Phase 1 core and browser demonstration are retained. [Executed test results, known defects and open gates](docs/PHASE2_VALIDATION_2026-11-02.md) include **23 green unit tests per Python version** and a documented initial SQLite locking failure. The split-brain hazard is **detected but not prevented**.
 
+## Phase 3 — quorum admission and optional PQC evaluation
+
+- [Quorum admission simulator](qrcn/quorum.py) — an **availability gate** requiring a majority of configured simulated members before writing to the Phase 2 shared SQLite journal. It has no independent-node votes or replicated consensus log; it **cannot** resolve real split-brain finality.
+- [Phase 3 scenario runner](scripts/run_phase3.py): `python -m scripts.run_phase3`
+- [Optional ML-KEM / ML-DSA experiment](scripts/run_pqc.py): `python -m pip install -r requirements-pqc-experiment.txt` then `python -m scripts.run_pqc`. This tests the external `pqcrypto==1.0.0` library locally; it is **not connected** to transport or clearing.
+- [Executed Phase 3 report and unresolved failures](docs/PHASE3_VALIDATION_2026-11-02.md), [quorum results](artifacts/phase3_quorum_results_2026-11-02.json), [PQC results](artifacts/phase3_pqc_results_2026-11-02.json).
+
+**The Phase 1 and Phase 2 implementations, demos, test cases and evidence remain intact. Independent security validation and production gates are still OPEN.**
+
 ## Defined security boundary
 
 - Key derivation is demonstrated using per-node HMAC-SHA256 tags and a monotonically increasing local key epoch. **No post-quantum algorithm or actual key distribution is implemented.**
