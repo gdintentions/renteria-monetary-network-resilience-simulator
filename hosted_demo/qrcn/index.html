@@ -17,10 +17,14 @@
 <option value="all">All nodes unavailable</option>
 <option value="ack">Acknowledgment lost after commit</option>
 <option value="replay">Duplicate transaction identifier</option>
+<option value="crash">Phase 2: crash before commit, then restart</option>
+<option value="fenced">Phase 2: stale writer fenced on same journal</option>
+<option value="concurrent">Phase 2: concurrent duplicates, same journal</option>
+<option value="split">Phase 2: isolated journals / split brain</option>
 </select></div><div class="field"><label for="amount">Illustrative transaction amount ($)</label><input id="amount" type="number" min="0.01" max="1000000" step="0.01" value="105.00"/></div><button type="button" id="run">Simulate transaction</button><p class="muted">Only local JavaScript scenario modeling. No secrets, actual cryptography or financial credentials are used here.</p></section>
 <section class="panel"><h2>Observed synthetic outcome</h2><div id="status" role="status" aria-live="polite"><span class="status accepted">Ready</span></div><div class="flow"><div class="node">Payer</div><span class="arrow">→</span><div class="node">Auth gate</div><span class="arrow">→</span><div class="node" id="node">Node α</div><span class="arrow">→</span><div class="node">Journal</div></div><div><strong>Event trace</strong><ol id="events"><li>Select a scenario and run it.</li></ol></div></section></div>
 <div class="cards"><section class="panel"><h2>Example receipt</h2><pre id="receipt">{"status":"not_run"}</pre></section><section class="panel"><h2>What this does not prove</h2><p>Changing packet wrappers does not protect data on its own. Authentication tags do not encrypt messages. Simulated failover is not distributed consensus. Quantum key distribution cannot guarantee detection of every cyber intrusion.</p><p>Read the <a href="https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/main/portfolio_projects/qrcn/README.md">technical project</a> and its <a href="https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/main/portfolio_projects/qrcn/docs/VALIDATION.md">failure and validation ledger</a>.</p></section></div>
-<footer>Educational, deterministic visualization. The separately implemented Python simulator and automated tests are the engineering artifacts. No real funds are moved. No claim of quantum protection or production readiness.</footer>
+<footer>Educational, deterministic visualization. The separately implemented Python simulator and automated tests are the engineering artifacts. Phase 2 visualizations are predefined examples, not connected to a live journal. No real funds are moved. No claim of quantum protection or production readiness.</footer>
 </main><script>
 "use strict";
 const outcomes={
@@ -30,7 +34,11 @@ stale:{status:"rejected_integrity",node:"alpha",events:["key_epoch_advanced","st
 outage:{status:"accepted",node:"beta",events:["node_unavailable:alpha","routed_to:beta","authenticated:beta","committed_once"],count:1},
 all:{status:"unavailable",node:"none",events:["node_unavailable:alpha","node_unavailable:beta","node_unavailable:gamma","no_healthy_node"],count:0},
 ack:{status:"accepted",node:"alpha",events:["authenticated:alpha","committed_once","acknowledgment_lost","retry:duplicate_rejected"],count:1},
-replay:{status:"duplicate_rejected",node:"none",events:["prior_commit_exists","replay_detected","no_second_commit"],count:0}
+replay:{status:"duplicate_rejected",node:"none",events:["prior_commit_exists","replay_detected","no_second_commit"],count:0},
+crash:{status:"accepted_after_restart",node:"alpha",events:["simulated_crash_before_commit","uncommitted_write_rolled_back","process_restarted","retry_authenticated","committed_once"],count:1},
+fenced:{status:"stale_writer_rejected",node:"alpha",events:["coordinator_epoch_advanced","stale_writer_attempt","rejected_by_shared_journal"],count:0},
+concurrent:{status:"one_commit_only",node:"alpha",events:["24_concurrent_duplicate_requests","one_id_committed","23_duplicate_ids_rejected"],count:1},
+split:{status:"requires_adjudication",node:"none",events:["partition_A_committed","partition_B_committed_conflicting_payload","split_brain_detected_after_the_fact","automatic_merge_refused"],count:2}
 };
 let sequence=0;
 document.getElementById("run").addEventListener("click",()=>{
