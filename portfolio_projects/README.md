@@ -14,3 +14,7 @@ Each project retains its own dependency manifest and documentation so it can be 
 - [Renteria SourceGate](renteria-sourcegate/README.md) — Source allowlists, expiry, fact coverage, conflict abstention.
 
 These v0.1.0 Python prototypes use synthetic fixtures and standard-library cores. See each project's test results and limits; live model/provider validation is pending. The unfinished Reflexion reference remains on hold.
+
+## Transaction integrity and security resilience — November 2, 2026
+
+- [QRCN — Quantum-Resilient Clearing Network](qrcn/README.md) — runnable synthetic transaction-integrity simulator, rotating per-hop HMAC tags, replay protection, alternate-node failover, nine unit tests, threat model and a separate browser scenario visualizer. This is **not** an actual quantum or production clearing platform.
