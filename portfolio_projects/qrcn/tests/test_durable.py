@@ -136,5 +136,42 @@ class DurableJournalTests(unittest.TestCase):
             SQLiteJournal(":memory:")
 
 
+    def test_abrupt_process_exit_after_commit_survives_restart(self):
+        program = (
+            "import os,sys; "
+            "from qrcn.core import Transaction; "
+            "from qrcn.durable import SQLiteJournal,DurableClearingNetwork; "
+            "j=SQLiteJournal(sys.argv[1]); "
+            "n=DurableClearingNetwork(j,key=b'phase-two-demo-shared-secret-0000000'); "
+            "assert n.clear(Transaction('tx-1','payer','payee',2500)).status=='accepted'; "
+            "os._exit(57)"
+        )
+        result = subprocess.run(
+            [sys.executable, "-c", program, str(self.path)],
+            capture_output=True, timeout=15,
+        )
+        self.assertEqual(result.returncode, 57, result.stderr)
+        self.assertEqual(self.network().clear(tx()).status, "duplicate_rejected")
+        self.assertEqual(self.journal().snapshot()["accepted_cents"], 2500)
+
+    def test_abrupt_exit_during_sqlite_transaction_rolls_back(self):
+        self.journal()
+        program = (
+            "import os,sqlite3,sys; "
+            "db=sqlite3.connect(sys.argv[1]); "
+            "db.execute('BEGIN IMMEDIATE'); "
+            "db.execute(\"INSERT INTO committed(tx_id,payload_hash,cents,epoch) "
+            "VALUES ('interrupted','precommit',2500,0)\"); "
+            "os._exit(58)"
+        )
+        result = subprocess.run(
+            [sys.executable, "-c", program, str(self.path)],
+            capture_output=True, timeout=15,
+        )
+        self.assertEqual(result.returncode, 58, result.stderr)
+        self.assertEqual(self.journal().snapshot()["accepted_count"], 0)
+        self.assertEqual(self.network().clear(tx("interrupted")).status, "accepted")
+
+
 if __name__ == "__main__":
     unittest.main()
