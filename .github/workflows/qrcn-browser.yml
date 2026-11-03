@@ -1,0 +1,35 @@
+name: QRCN browser interaction smoke
+on:
+  push:
+    paths:
+      - 'hosted_demo/qrcn/**'
+      - 'scripts/qrcn_browser_smoke.cjs'
+      - '.github/workflows/qrcn-browser.yml'
+  pull_request:
+    paths:
+      - 'hosted_demo/qrcn/**'
+      - 'scripts/qrcn_browser_smoke.cjs'
+      - '.github/workflows/qrcn-browser.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --prefix /tmp/qrcn-browser playwright@1.51.1
+      - run: /tmp/qrcn-browser/node_modules/.bin/playwright install --with-deps chromium
+      - name: Validate browser scenario controls
+        run: node scripts/qrcn_browser_smoke.cjs
+        env:
+          NODE_PATH: /tmp/qrcn-browser/node_modules
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qrcn-phase2-browser-smoke
+          path: artifacts/qrcn/
