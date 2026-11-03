@@ -26,10 +26,14 @@ jobs:
         run: cd portfolio_projects/qrcn && python -m unittest discover -s tests -v
       - name: Scenario output
         run: cd portfolio_projects/qrcn && python -m scripts.run_demo > qrcn-scenarios.json
+      - name: Durable SQLite recovery and split-brain evidence
+        run: cd portfolio_projects/qrcn && python -m scripts.run_phase2 > qrcn-phase2.json
       - name: Compile source
         run: cd portfolio_projects/qrcn && python -m compileall -q qrcn tests scripts
       - uses: actions/upload-artifact@v4
         if: matrix.python-version == '3.11'
         with:
           name: qrcn-scenario-evidence
-          path: portfolio_projects/qrcn/qrcn-scenarios.json
+          path: |
+            portfolio_projects/qrcn/qrcn-scenarios.json
+            portfolio_projects/qrcn/qrcn-phase2.json
