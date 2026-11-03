@@ -1,0 +1,21 @@
+{
+  "algorithm": "single-decree Paxos per transaction ID (educational)",
+  "events": {
+    "accept_quorum_lost": "no_accept_quorum",
+    "conflicting_proposal": "adopted_prior",
+    "majority": "chosen",
+    "minority": "no_prepare_quorum",
+    "original_value_preserved": true,
+    "restarted_node_retained_value": true
+  },
+  "node_storage": "three independent SQLite files",
+  "observed_messages": 21,
+  "prototype_only": true,
+  "real_payment_movement": false,
+  "unresolved": [
+    "No full replicated log or automatic ballots",
+    "Unauthenticated localhost transport",
+    "No Byzantine fault tolerance or live payment clearing",
+    "No integrated post-quantum handshake"
+  ]
+}
