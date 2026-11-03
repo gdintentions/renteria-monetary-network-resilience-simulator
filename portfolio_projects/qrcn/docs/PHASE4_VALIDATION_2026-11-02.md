@@ -63,3 +63,10 @@ Source:
 ## Status
 
 Development implementation and tests committed on the experimental branch. GitHub CI run links and raw output are authoritative evidence; no independent validation or production claim.
+
+## Verified CI evidence (added after execution)
+
+- [Successful QRCN Python workflow](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/41579981554): Python **3.11 and 3.12** passed. Python 3.11 reported **45 tests executed, one optional PQC test skipped** (all non-skipped tests passed). Tests include the new 10 acceptor safety scenarios and one test with **three separate loopback OS processes**.
+- Both Python jobs also executed `scripts.run_phase4` and archived the raw artifact. [Permanent repository copy](../artifacts/phase4_paxos_results_2026-11-02.json); raw GitHub Actions JSON SHA-256 `3ac10e471e4b3dd0823cbf5cbdee3f966100ab4d42df1628df50982b36448517`.
+- The raw scenario reports `no_prepare_quorum`, `chosen`, `adopted_prior`, `no_accept_quorum`, and successful persistence checks. These are deterministic synthetic tests, not distributed-security certification.
+- Initial **local-only development failure**: a database context manager closed a connection without committing, causing failed persistence tests. This was fixed before the GitHub source was committed; the initial local test is not a GitHub Actions artifact.
