@@ -1,0 +1,19 @@
+{
+  "actual_distributed_consensus": false,
+  "demo_only": true,
+  "events": {
+    "majority_partition": "accepted",
+    "minority_partition": "quorum_unavailable",
+    "new_writer": "accepted",
+    "overlapping_majority_duplicate": "duplicate_rejected",
+    "stale_writer_after_term_change": "stale_writer_rejected"
+  },
+  "journal": {
+    "accepted_cents": 2000,
+    "accepted_count": 2,
+    "coordinator_epoch": 1,
+    "unique_ids": 2
+  },
+  "model": "single-process quorum-admission proxy plus shared SQLite journal",
+  "unresolved": "No network voting, replicated log, independent crash safety, consensus election or Byzantine security"
+}
