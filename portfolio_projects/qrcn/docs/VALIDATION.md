@@ -1,7 +1,7 @@
 # QRCN validation and failure ledger
 
 Date: 2026-11-02
-Status: implementation and tests present; GitHub CI status must be separately checked. **No independent validation.**
+Status: **Core CI verified on Python 3.11 and 3.12.** No independent validation or production-readiness certification.
 
 ## Contract tests
 
@@ -14,6 +14,13 @@ Status: implementation and tests present; GitHub CI status must be separately ch
 - Dropped acknowledgment followed by retry cannot duplicate local settlement
 - Invalid negative/zero/non-integer amounts rejected
 - Invalid node or key configuration rejected
+
+## Executed automated evidence
+
+- [Successful GitHub Actions run #41574438714](https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/41574438714): both Python 3.11 and 3.12 executed the full project unittest suite, sample scenario runner and Python compilation without reported errors.
+- Six scenario outputs from the Python 3.11 run were [archived separately](../artifacts/scenario_results_2026-11-02.json), without modifying test inputs.
+- Scenario outcomes: normal transaction **accepted**; tampering **rejected**; stale authentication tag **rejected**; primary outage **rerouted to beta and accepted**; all-node outage **unavailable**; dropped acknowledgment **accepted once with retry rejected as duplicate**.
+- Source-control snapshot is synthetic and in-memory. CI pass establishes only the checked contracts; no browser automation, independent security review, network threat experiment, QKD/PQC implementation, or real finance integration was executed.
 
 ## Intentionally unclosed failures / scientific limits
 
