@@ -30,6 +30,8 @@ jobs:
         run: cd portfolio_projects/qrcn && python -m scripts.run_phase2 > qrcn-phase2.json
       - name: Quorum simulation evidence
         run: cd portfolio_projects/qrcn && python -m scripts.run_phase3 > qrcn-phase3.json
+      - name: Phase 4 independent acceptor scenario
+        run: cd portfolio_projects/qrcn && python -m scripts.run_phase4 > qrcn-phase4.json
       - name: Compile source
         run: cd portfolio_projects/qrcn && python -m compileall -q qrcn tests scripts
       - uses: actions/upload-artifact@v4
@@ -40,3 +42,4 @@ jobs:
             portfolio_projects/qrcn/qrcn-scenarios.json
             portfolio_projects/qrcn/qrcn-phase2.json
             portfolio_projects/qrcn/qrcn-phase3.json
+            portfolio_projects/qrcn/qrcn-phase4.json

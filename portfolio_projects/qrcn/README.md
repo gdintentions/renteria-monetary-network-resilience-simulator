@@ -54,6 +54,18 @@ The optional, standard-library [SQLite adapter](qrcn/durable.py) adds atomic uni
 
 **The Phase 1 and Phase 2 implementations, demos, test cases and evidence remain intact. Independent security validation and production gates are still OPEN.**
 
+## Phase 4 — Independent acceptors and single-decree Paxos prototype
+
+The [Phase 4 prototype](qrcn/paxos.py) implements **separate file-backed acceptors** with persisted promises and accepted values; the test proposer exchanges prepare and accept messages and requires a majority for a chosen synthetic transaction value. Unlike Phase 3, each node has its **own** SQLite database. An optional [loopback-only TCP server](qrcn/tcpnode.py) lets three independent processes exchange the protocol messages. [Phase 4 validation and limitations](docs/PHASE4_VALIDATION_2026-11-02.md).
+
+```bash
+cd portfolio_projects/qrcn
+python -m unittest discover -s tests -v
+python -m scripts.run_phase4
+```
+
+**Not a complete replicated consensus/payment platform:** No total-order log, authenticated peer networking, dynamic leadership, Byzantine consensus, independent security audit, production payments, or integrated post-quantum transport. The Phase 3 ML-KEM/ML-DSA experiments remain separate. The existing public browser demo stays an educational visualization, not a live backend.
+
 ## Defined security boundary
 
 - Key derivation is demonstrated using per-node HMAC-SHA256 tags and a monotonically increasing local key epoch. **No post-quantum algorithm or actual key distribution is implemented.**
