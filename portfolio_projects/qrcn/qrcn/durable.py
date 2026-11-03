@@ -6,6 +6,7 @@ quantum security. Phase 1 in-memory implementation remains unchanged.
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+from contextlib import contextmanager
 import hashlib
 import hmac
 import json
@@ -43,12 +44,17 @@ class SQLiteJournal:
                 epoch INTEGER NOT NULL CHECK(epoch >= 0))""")
             db.execute("INSERT OR IGNORE INTO coordinator(singleton, epoch) VALUES (1, 0)")
 
-    def _open(self) -> sqlite3.Connection:
+    @contextmanager
+    def _open(self):
+        # Each operation owns and closes its connection. Repeatedly switching
+        # journal modes under contention can itself cause SQLITE_BUSY.
         db = sqlite3.connect(self.file, timeout=15, isolation_level=None)
-        db.execute("PRAGMA busy_timeout=15000")
-        db.execute("PRAGMA synchronous=FULL")
-        db.execute("PRAGMA journal_mode=WAL")
-        return db
+        try:
+            db.execute("PRAGMA busy_timeout=15000")
+            db.execute("PRAGMA synchronous=FULL")
+            yield db
+        finally:
+            db.close()
 
     def current_epoch(self) -> int:
         with self._open() as db:
