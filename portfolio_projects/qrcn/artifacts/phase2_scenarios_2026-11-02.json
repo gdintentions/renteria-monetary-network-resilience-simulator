@@ -1,0 +1,34 @@
+{
+  "ack_lost_then_restart": [
+    "accepted",
+    "duplicate_rejected"
+  ],
+  "fencing": {
+    "epoch": 1,
+    "stale_writer": "stale_writer_rejected"
+  },
+  "interrupted_then_restart": [
+    "interrupted_before_commit",
+    "accepted"
+  ],
+  "metadata": {
+    "demo_only": true,
+    "distributed_consensus": false,
+    "persistence": "single-host SQLite files",
+    "phase": 2
+  },
+  "partition": {
+    "automatic_merge_performed": false,
+    "conflicting_ids": [
+      "demo-001"
+    ],
+    "isolated_commit": "accepted",
+    "requires_adjudication": true
+  },
+  "shared_journal": {
+    "accepted_cents": 14000,
+    "accepted_count": 2,
+    "coordinator_epoch": 1,
+    "unique_ids": 2
+  }
+}
