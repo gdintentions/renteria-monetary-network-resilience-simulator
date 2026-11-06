@@ -6,7 +6,7 @@
     "rag_bounded_local_drill": "passed",
     "independent_policy_review": "pending",
     "operator_acceptance": "pending",
-    "actual_user_workflow_session": "pending_participant_report_or_witnessed_session"
+    "actual_user_workflow_session": "ai_facilitated_choices_recorded_with_replay_disclosure"
   },
   "repositories": [
     {
@@ -88,8 +88,12 @@
       "participant-reported",
       "human-observed"
     ],
-    "current_status": "awaiting_actual_participation",
+    "current_status": "three_case_ai_facilitated_participant_feedback_recorded",
     "ai_assistance_must_be_disclosed": true,
-    "participant_report_is_independent_observation": false
+    "participant_report_is_independent_observation": false,
+    "unassisted_ui_validation_completed": false,
+    "formal_participant_attestation_collected": false,
+    "replay_disclosed": true,
+    "independent_review_completed": false
   }
 }

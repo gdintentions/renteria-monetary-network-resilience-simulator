@@ -71,3 +71,8 @@ A separate observer is optional for initial usability feedback. Participant repo
 are not independent observation, blinded evaluation, or operator acceptance. An AI
 may guide the participant, but cannot become an independent human witness. No
 participant session or independent review has yet been recorded by this update.
+
+
+## Assisted participant feedback recorded
+
+Three participant choices were recorded through an AI-operated local API walkthrough: approval/release of the supported case, rejection/withholding of the missing-evidence response, and a denied approval attempt on the known instruction-override case (HTTP 409, answer withheld). Case three was freshly replayed after the temporary terminal process became unavailable; that discontinuity is retained in the private RAG evidence summary. No accuracy percentage, active reviewer time, direct unassisted interface observation, formal participant attestation or independent review is claimed. A denied-review audit gap and the terminal's lack of an evidence-request action remain findings. Downstream projects remain queued behind independent review and the unresolved release gates.
