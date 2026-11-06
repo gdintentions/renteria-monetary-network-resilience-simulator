@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "as_of_pacific": "2026-11-05",
+  "scope": "prepared sequence; downstream execution not begun",
+  "prerequisites": {
+    "rag_bounded_local_drill": "passed",
+    "actual_human_workflow_observation": "pending",
+    "independent_policy_review": "pending",
+    "operator_acceptance": "pending"
+  },
+  "repositories": [
+    {
+      "repository": "gdintentions/enterprise-ai-chatbot-governed-rag",
+      "visibility": "private",
+      "transition_status": "local_drill_passed_human_steps_pending"
+    },
+    {
+      "repository": "gdintentions/renteria-polglot-relay",
+      "visibility": "private",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "repository": "gdintentions/enterprise-ai-chatbot-governed-rag-demo",
+      "visibility": "private",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "repository": "gdintentions/enterprise-ai-chatbot-governed-rag-recruiter-demo-v2",
+      "visibility": "private",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "visibility": "public",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "repository": "gdintentions/renteria-context-atlas",
+      "visibility": "private",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "repository": "gdintentions/renteria-local-model-workbench",
+      "visibility": "private",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "repository": "gdintentions/renteria-notes-evidence-rag",
+      "visibility": "private",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "repository": "gdintentions/renteria-personal-assistant-ledger",
+      "visibility": "private",
+      "transition_status": "queued_after_rag_human_steps"
+    }
+  ],
+  "embedded_projects": [
+    {
+      "name": "renteria-argusloop",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "name": "renteria-evidenceweave",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "name": "renteria-tracelens",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "name": "renteria-continuity-router",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "name": "renteria-sourcegate",
+      "transition_status": "queued_after_rag_human_steps"
+    },
+    {
+      "name": "qrcn",
+      "transition_status": "queued_after_rag_human_steps"
+    }
+  ],
+  "production_ready": false
+}
