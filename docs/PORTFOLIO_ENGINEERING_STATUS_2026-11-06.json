@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "reference": {
+    "repository": "gdintentions/enterprise-ai-chatbot-governed-rag",
+    "revision": "6c510c8a0319cc452ebbb7a57d6ef789d077f2f6",
+    "service_version": "2.1.0",
+    "independent_review_completed": false,
+    "production_ready": false
+  },
+  "scope": "14 components beyond RAG, in eight repositories; local synthetic engineering checks only",
+  "total_development_checks": 72,
+  "ci": "Consult each PR/current branch workflow run; separate execution evidence",
+  "upgrades": [
+    {
+      "project": "polyglot-relay",
+      "repository": "gdintentions/renteria-polglot-relay",
+      "source_revision": "696935ebfcc16faac7b30f6f742c13979ff33754",
+      "report": "https://github.com/gdintentions/renteria-polglot-relay/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "rag-demo",
+      "repository": "gdintentions/enterprise-ai-chatbot-governed-rag-demo",
+      "source_revision": "65c03cf9d1ca2e740e22c95f15ac174a1cfdbba2",
+      "report": "https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag-demo/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "rag-demo-v2",
+      "repository": "gdintentions/enterprise-ai-chatbot-governed-rag-recruiter-demo-v2",
+      "source_revision": "de8c14bdef8122e6ebaceedcac2f7d50376665fe",
+      "report": "https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag-recruiter-demo-v2/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "argusloop",
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "source_revision": "0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4",
+      "report": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06-r2/argusloop/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "continuity-router",
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "source_revision": "0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4",
+      "report": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06-r2/continuity-router/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "evidenceweave",
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "source_revision": "0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4",
+      "report": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06-r2/evidenceweave/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "monetary-simulator",
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "source_revision": "0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4",
+      "report": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06-r2/monetary-simulator/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "qrcn",
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "source_revision": "0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4",
+      "report": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06-r2/qrcn/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "sourcegate",
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "source_revision": "0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4",
+      "report": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06-r2/sourcegate/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "tracelens",
+      "repository": "gdintentions/renteria-monetary-network-resilience-simulator",
+      "source_revision": "0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4",
+      "report": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06-r2/tracelens/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 4,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "renteria-context-atlas",
+      "repository": "gdintentions/renteria-context-atlas",
+      "source_revision": "5994747540e98c87fdd8f76c9501138484d1cb5f",
+      "report": "https://github.com/gdintentions/renteria-context-atlas/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 8,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "renteria-local-model-workbench",
+      "repository": "gdintentions/renteria-local-model-workbench",
+      "source_revision": "ede8ac5e58070777cbb951e724a919e36817199f",
+      "report": "https://github.com/gdintentions/renteria-local-model-workbench/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 8,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "renteria-notes-evidence-rag",
+      "repository": "gdintentions/renteria-notes-evidence-rag",
+      "source_revision": "3f257445ef3182ec4f1c0ed9ad1e03c81f2599ae",
+      "report": "https://github.com/gdintentions/renteria-notes-evidence-rag/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 8,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    },
+    {
+      "project": "renteria-personal-assistant-ledger",
+      "repository": "gdintentions/renteria-personal-assistant-ledger",
+      "source_revision": "2e5fa840cab7109b885d07aa96374ffd06913dd1",
+      "report": "https://github.com/gdintentions/renteria-personal-assistant-ledger/blob/engineering/rag-standard-2026-11-06/artifacts/engineering-2026-11-06/report.json",
+      "local_engineering_status": "passed",
+      "check_count": 8,
+      "human_participants": 0,
+      "independent_review_completed": false,
+      "production_ready": false
+    }
+  ]
+}

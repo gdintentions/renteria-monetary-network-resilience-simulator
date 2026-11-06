@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - run: pip install pytest
+      - run: pip install "pytest>=8.3,<9" "pydantic>=2.9,<3" "pillow>=10,<13"
       - run: python -m demo.historical_windows
       - run: python -m pytest -q tests
       - run: python scripts/evidence_coverage_audit.py --cache /tmp/conflictqa-frozen

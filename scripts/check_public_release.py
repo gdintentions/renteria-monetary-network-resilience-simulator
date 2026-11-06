@@ -19,6 +19,13 @@ PUBLIC_DIRS = (
     "hosted_demo/reliability",
 )
 PUBLIC_FILES = (
+    "engineering.py",
+    "engineering_scenarios.py",
+    "docs/PORTFOLIO_ENGINEERING_2026-11-06.md",
+    "portfolio_projects/renteria-argusloop/src/argusloop/audit.py",
+    "portfolio_projects/renteria-evidenceweave/src/evidenceweave/checkpoint.py",
+    "portfolio_projects/renteria-evidenceweave/src/evidenceweave/pipeline.py",
+    "portfolio_projects/qrcn/qrcn/core.py",
     "hosted_demo/index.html",
     "hosted_demo/rag-demo.js",
     "hosted_demo/app.js",

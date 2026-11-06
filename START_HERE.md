@@ -139,3 +139,8 @@ Private source repositories remain private unless explicitly released. The publi
 
 [Shared completion model and project-specific remaining gates](docs/PRODUCTION_ROLLOUT.md) records the Governed RAG hardening baseline without converting prototype or benchmark results into production certification.
 
+
+
+## Portfolio engineering update — November 6, 2026
+
+[Runtime-specific bounded checks, recovery evidence, and independent-review handoff](docs/PORTFOLIO_ENGINEERING_2026-11-06.md) cover the 14 components beyond Governed RAG. Synthetic engineering results do not close independent validation or production gates.

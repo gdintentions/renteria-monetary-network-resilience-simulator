@@ -101,8 +101,9 @@ def run_simulation(
     Shares represent relative usage/attractiveness inside the model, not forecasts of
     official reserve holdings. Results are scenario-analysis outputs, not predictions.
     """
-    if years < 1:
-        raise ValueError("years must be >= 1")
+    if type(years) is not int or not 1 <= years <= 100:
+        raise ValueError("years must be >= 1 and <= 100 (integer)")
+    if type(seed) is not int or not 0 <= seed < 2**32:raise ValueError("uint32 seed required")
 
     rng = random.Random(seed)
     model_agents = _clone_agents(DEFAULT_AGENTS if agents is None else agents)
