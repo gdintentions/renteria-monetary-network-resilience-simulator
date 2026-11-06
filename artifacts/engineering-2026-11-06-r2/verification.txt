@@ -1,0 +1,12 @@
+Local suite and bounded drill output for implementation commit 0f4fdcdd36d6e61d06ba054b90cb66e5caed87e4
+.................                                                        [100%]
+17 passed in 0.16s
+{"project": "monetary-simulator", "status": "passed", "checks": 4}
+{"project": "tracelens", "status": "passed", "checks": 4}
+{"project": "continuity-router", "status": "passed", "checks": 4}
+{"project": "sourcegate", "status": "passed", "checks": 4}
+{"project": "evidenceweave", "status": "passed", "checks": 4}
+{"project": "argusloop", "status": "passed", "checks": 4}
+{"project": "qrcn", "status": "passed", "checks": 4}
+
+Additional scoped checks: QRCN 9 passed; EvidenceWeave 6 passed; ArgusLoop 6 passed; release-gate suite 5 passed after explicit expanded inventory check; ArgusLoop/EvidenceWeave Ruff passed. Earlier reliability suites and scoped public smoke tests passed. See CI for independent execution on the PR SHA.
