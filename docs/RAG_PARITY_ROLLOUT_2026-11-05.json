@@ -4,9 +4,9 @@
   "scope": "prepared sequence; downstream execution not begun",
   "prerequisites": {
     "rag_bounded_local_drill": "passed",
-    "actual_human_workflow_observation": "pending",
     "independent_policy_review": "pending",
-    "operator_acceptance": "pending"
+    "operator_acceptance": "pending",
+    "actual_user_workflow_session": "pending_participant_report_or_witnessed_session"
   },
   "repositories": [
     {
