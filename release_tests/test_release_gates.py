@@ -13,7 +13,12 @@ class ReleaseGateTests(unittest.TestCase):
 
     def test_current_portfolio_does_not_claim_unverified_production_readiness(self):
         reports = validate(self.manifest)
-        self.assertEqual(len(reports), 10)
+        self.assertEqual({row["id"] for row in reports}, {
+            "governed-rag", "monetary-simulator", "argusloop", "evidenceweave",
+            "polyglot-relay", "context-atlas", "local-model-workbench",
+            "notes-evidence-rag", "assistant-ledger", "rag-recruiter-demos",
+            "tracelens", "continuity-router", "sourcegate", "qrcn",
+        })
         self.assertTrue(all(not row["production_ready"] and row["pending"] for row in reports))
 
     def test_forged_readiness_claim_rejected(self):
