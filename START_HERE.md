@@ -143,4 +143,6 @@ Private source repositories remain private unless explicitly released. The publi
 
 ## Governed RAG baseline and staged portfolio rollout — November 5, 2026 Pacific
 
-[Runtime-specific rollout inventory and method](docs/RAG_PARITY_ROLLOUT_2026-11-05.md) records the requested sequence across all 15 components. Governed RAG's bounded local drill is developer evidence; real human observation and independent policy review remain open. Downstream execution stays queued until those prerequisites are completed and findings addressed. [Machine-readable queue](docs/RAG_PARITY_ROLLOUT_2026-11-05.json). Private implementation and review materials remain restricted.
+[Runtime-specific rollout inventory and method](docs/RAG_PARITY_ROLLOUT_2026-11-05.md) records the requested sequence across all 15 components. Governed RAG's bounded local drill is developer evidence; actual user-session evidence and independent policy review remain open. Downstream execution stays queued until those prerequisites are completed and findings addressed. [Machine-readable queue](docs/RAG_PARITY_ROLLOUT_2026-11-05.json). Private implementation and review materials remain restricted.
+
+Initial usability feedback may be participant-reported when a separate observer is unavailable. Such reports and any AI guidance are labeled explicitly and do not establish independent human observation or policy validation.

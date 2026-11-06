@@ -3,12 +3,12 @@
 ## Authorized sequence and present status
 
 Start with Governed RAG: bounded development-host execution, restore, an actual
-observed user workflow, then independent policy review. After those human steps
+user workflow (participant-reported if no separate observer is available), then independent policy review. After those human steps
 are completed and findings addressed, advance the other portfolio components
 through the same method, with checks adapted to their purpose and runtime.
 
 The Governed RAG local synthetic workflow/restore milestone is developer-operated
-evidence. Human observation, independent policy judgment and organizational
+evidence. Actual user participation, independent policy judgment and organizational
 acceptance remain open. No other component inherits a pass, production status or
 accuracy claim. This document prepares downstream work; it does not execute that
 work ahead of the requested prerequisites.
@@ -20,7 +20,7 @@ projects (15 components including the flagship). Private source remains private.
 
 | Component | Bounded execution and recovery contract | Domain/workflow evidence required |
 |---|---|---|
-| Governed RAG | Actual one-worker API; role/ownership/release checks; online SQLite backup; separate-directory restore and post-restore write | Real participant/observer, new independent policy labels/reviews, selected-host/operator acceptance |
+| Governed RAG | Actual one-worker API; role/ownership/release checks; online SQLite backup; separate-directory restore and post-restore write | Actual participant feedback (self-reported or witnessed), new independent policy labels/reviews, selected-host/operator acceptance |
 | Notes Evidence RAG | Local-only imports and bounded requests; SQLite/evidence/export restore; citation IDs and hashes retained | Independent claim support, no-answer/conflict/injection cases; actual optional model adapter separately |
 | Context Atlas | Local-only import/edit/delete/export; note/link hashes and SQLite restore; duplicate-title boundary | Permitted representative notes, independent link judgments and observed import workflow |
 | Personal Assistant Ledger | Local-only task approval; durable queue/backup; restart/idempotence/timezone checks | Actual elapsed multi-day use, no duplicate completion; external delivery excluded without adapters |
@@ -52,7 +52,8 @@ named open gate; it is not replaced with a manufactured successful observation.
    intended transient-state reset instead of inventing a database requirement.
 4. Record attempted/completed requests, errors, latency distribution and workload
    limits. A tiny workload is not capacity certification or an SLA.
-5. Observe an actual person, retain failures and assistance needed, and obtain
+5. Collect actual participant feedback, explicitly label self-reports versus
+   witnessed sessions, retain failures and any AI assistance, and obtain
    independent domain judgments on new held-out cases.
 6. Record scope-specific operator acceptance and remaining deployment/security
    obligations. Close only gates supported by actual evidence.
@@ -64,3 +65,9 @@ separate, accurately scoped demonstrations throughout.
 
 This raises evidence maturity component by component. It does not promise identical
 features, numerical scores, schedules, production suitability or successful review.
+
+
+A separate observer is optional for initial usability feedback. Participant reports
+are not independent observation, blinded evaluation, or operator acceptance. An AI
+may guide the participant, but cannot become an independent human witness. No
+participant session or independent review has yet been recorded by this update.

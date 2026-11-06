@@ -81,5 +81,15 @@
       "transition_status": "queued_after_rag_human_steps"
     }
   ],
-  "production_ready": false
+  "production_ready": false,
+  "initial_usability": {
+    "separate_observer_required": false,
+    "accepted_evidence_modes": [
+      "participant-reported",
+      "human-observed"
+    ],
+    "current_status": "awaiting_actual_participation",
+    "ai_assistance_must_be_disclosed": true,
+    "participant_report_is_independent_observation": false
+  }
 }
