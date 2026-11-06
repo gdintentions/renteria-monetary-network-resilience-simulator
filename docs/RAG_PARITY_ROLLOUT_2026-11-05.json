@@ -95,5 +95,17 @@
     "formal_participant_attestation_collected": false,
     "replay_disclosed": true,
     "independent_review_completed": false
+  },
+  "rag_engineering_baseline": {
+    "application_version": "2.1.0",
+    "integration_status": "merged_to_main",
+    "merge_commit": "6c510c8a0319cc452ebbb7a57d6ef789d077f2f6",
+    "local_tests_passed": 114,
+    "bounded_drill_checks_passed": 16,
+    "bounded_requests_succeeded": 40,
+    "denial_audit_gap": "fixed_and_restore_verified",
+    "evidence_request_walkthrough_gap": "fixed",
+    "independent_review_completed": false,
+    "production_ready": false
   }
 }

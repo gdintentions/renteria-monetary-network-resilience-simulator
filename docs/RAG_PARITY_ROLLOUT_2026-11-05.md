@@ -76,3 +76,10 @@ participant session or independent review has yet been recorded by this update.
 ## Assisted participant feedback recorded
 
 Three participant choices were recorded through an AI-operated local API walkthrough: approval/release of the supported case, rejection/withholding of the missing-evidence response, and a denied approval attempt on the known instruction-override case (HTTP 409, answer withheld). Case three was freshly replayed after the temporary terminal process became unavailable; that discontinuity is retained in the private RAG evidence summary. No accuracy percentage, active reviewer time, direct unassisted interface observation, formal participant attestation or independent review is claimed. A denied-review audit gap and the terminal's lack of an evidence-request action remain findings. Downstream projects remain queued behind independent review and the unresolved release gates.
+
+
+## Current RAG engineering baseline — November 6, 2026 Pacific
+
+RAG PR #19 is merged into its private `main` at `6c510c8a0319cc452ebbb7a57d6ef789d077f2f6` (service v2.1.0). Verification: 114 local tests, 16 bounded process/restore checks and 40/40 requests. Denied authorized review attempts are now durably audited and survive restore; the walkthrough supports evidence requests, deferral and interruption checkpoints. Unmeasured operational review time remains null. The original participant and failure evidence is preserved separately from the engineering follow-up.
+
+This establishes the current engineering baseline only. Independent policy review and organizational acceptance remain open. No downstream component has been upgraded or granted this baseline's results; their runtime-specific work remains queued under the requested sequence.
