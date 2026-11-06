@@ -42,13 +42,14 @@ class ClearingNetwork:
     """Single-process simulation, NOT an actual decentralized clearing house."""
 
     def __init__(self, nodes=("alpha", "beta", "gamma"), key: bytes | None = None):
-        if len(set(nodes)) != len(nodes) or len(nodes) < 2:
+        if not 2 <= len(nodes) <= 12 or any(not isinstance(n,str) or not 1 <= len(n) <= 200 for n in nodes) or len(set(nodes)) != len(nodes):
             raise ValueError("At least two uniquely named nodes are required")
         self.nodes = tuple(nodes)
         self.key = key if key is not None else secrets.token_bytes(32)
-        if len(self.key) < 16:
+        if not isinstance(self.key,bytes) or not 16 <= len(self.key) <= 64:
             raise ValueError("Key must have at least 16 bytes")
         self.committed: dict[str, bytes] = {}
+        self.records: list[dict] = []
         self.outage: set[str] = set()
         self.key_epoch = 0
         self.accepted_count = 0
@@ -75,11 +76,13 @@ class ClearingNetwork:
         if attack not in ("none", "tamper", "stale_tag", "drop_after_commit"):
             raise ValueError("Unrecognized simulated fault")
 
+        if any(not isinstance(v,str) or not 1 <= len(v) <= 200 for v in (tx.tx_id,tx.payer,tx.payee)):raise ValueError("Identifiers must contain 1..200 characters")
         encoded = tx.encode()
         if tx.tx_id in self.committed:
             # A duplicate identifier is rejected whether identical or conflicting.
             return Result("duplicate_rejected", tx.tx_id, (), ("replay_detected",))
 
+        if len(self.committed)>=1000:raise ValueError("Toy ledger limit: 1000 accepted records")
         route: list[str] = []
         events: list[str] = []
         for node in self.nodes:
@@ -111,6 +114,7 @@ class ClearingNetwork:
             return Result("unavailable", tx.tx_id, (), tuple(events + ["no_healthy_node"]))
 
         self.committed[tx.tx_id] = hashlib.sha256(encoded).digest()
+        self.records.append({"tx_id":tx.tx_id,"payer":tx.payer,"payee":tx.payee,"cents":tx.cents})
         self.accepted_count += 1
         self.accepted_cents += tx.cents
         events.append("committed_once")
@@ -123,3 +127,27 @@ class ClearingNetwork:
         return {"accepted_count": self.accepted_count,
                 "accepted_cents": self.accepted_cents, "unique_ids": len(self.committed),
                 "key_epoch": self.key_epoch}
+
+    def checkpoint(self) -> bytes:
+        """Authenticated toy journal; key must be retained separately. No key export."""
+        payload={'version':1,'nodes':self.nodes,'records':self.records,
+                 'key_epoch':self.key_epoch,'outage':sorted(self.outage)}
+        raw=json.dumps(payload,sort_keys=True,separators=(',',':')).encode()
+        return json.dumps({'payload':payload,'mac':hmac.new(self.key,raw,hashlib.sha256).hexdigest()},sort_keys=True).encode()
+
+    @classmethod
+    def restore(cls,raw:bytes,*,key:bytes):
+        if len(raw)>1_000_000:raise ValueError("Checkpoint size limit")
+        data=json.loads(raw)
+        if set(data)!={'payload','mac'}:raise ValueError("Checkpoint schema")
+        payload=data['payload'];encoded=json.dumps(payload,sort_keys=True,separators=(',',':')).encode()
+        if not hmac.compare_digest(hmac.new(key,encoded,hashlib.sha256).hexdigest(),data['mac']):raise ValueError("Checkpoint authentication failed")
+        if set(payload)!={'version','nodes','records','key_epoch','outage'} or payload['version']!=1:raise ValueError("Checkpoint version/schema")
+        if type(payload['key_epoch']) is not int or not 0 <= payload['key_epoch'] <= 1_000_000:raise ValueError("Key epoch")
+        if not isinstance(payload['records'],list) or len(payload['records'])>1000:raise ValueError("Journal bound")
+        network=cls(tuple(payload['nodes']),key=key)
+        for record in payload['records']:
+            if network.clear(Transaction(**record)).status!='accepted':raise ValueError("Duplicate recovered transaction")
+        if not set(payload['outage']) <= set(network.nodes):raise ValueError("Unknown recovered node")
+        network.key_epoch=payload['key_epoch'];network.outage=set(payload['outage'])
+        return network

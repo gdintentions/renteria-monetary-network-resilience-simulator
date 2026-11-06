@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-10-05",
+  "updated_at": "2026-11-06",
   "scope": "Actual production release gates; passing controlled tests alone does not close these gates.",
   "projects": [
     {
@@ -24,7 +24,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -61,7 +63,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -98,7 +102,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -135,7 +141,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -172,7 +180,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -209,7 +219,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -246,7 +258,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -283,7 +297,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -320,7 +336,9 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
-          "evidence": []
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",
@@ -357,7 +375,165 @@
           "id": "recovery",
           "status": "pending",
           "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
           "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "tracelens",
+      "name": "TraceLens",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Supplied labels are not independent truth; independent domain validation and target-use acceptance remain required.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "continuity-router",
+      "name": "Continuity Router",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Synthetic adapters; no provider SLO or persistent circuit-state claim; independent domain validation and target-use acceptance remain required.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "sourcegate",
+      "name": "SourceGate",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "No semantic truth certification or live-web quality claim; independent domain validation and target-use acceptance remain required.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Select the target, verify TLS and resource limits where relevant, and pass host-specific smoke/capacity checks.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Record a named owner, approved use scope, actual acceptance thresholds and incident/retention responsibility; none inferred from portfolio authorization.",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "qrcn",
+      "name": "QRCN",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Single-process toy HMAC; no real payment, PQC/QKD or distributed durability; independent domain validation and target-use acceptance remain required.",
+          "evidence": []
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify the intended access/trust boundary and roles for this runtime; local loopback and static demos do not establish hosted multi-user authorization.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Verify host-appropriate backup/restore or immutable static redeployment/rollback with recorded recovery evidence.",
+          "evidence": [
+            "docs/PORTFOLIO_ENGINEERING_2026-11-06.md (development evidence only; selected-host recovery still pending)"
+          ]
         },
         {
           "id": "deployment",

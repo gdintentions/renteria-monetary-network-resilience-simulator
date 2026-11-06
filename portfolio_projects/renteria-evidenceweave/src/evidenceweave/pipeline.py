@@ -14,20 +14,33 @@ class EvidenceWeave:
         self.graph = ClaimGraph()
 
     def add_source(self, source: Source) -> None:
+        if source.source_id in self.sources or len(self.sources) >= 1000:
+            raise ValueError("Duplicate source or source limit")
         self.sources[source.source_id] = source
 
     def add_block(self, block: EvidenceBlock) -> None:
+        if block.block_id in self.blocks or len(self.blocks) >= 5000:
+            raise ValueError("Duplicate evidence or block limit")
         if block.source_id not in self.sources:
             raise KeyError(f"unknown source: {block.source_id}")
         self.blocks[block.block_id] = block
 
     def add_claim(self, claim: Claim) -> None:
+        if claim.claim_id in self.graph.claims or len(self.graph.claims) >= 10000:
+            raise ValueError("Duplicate claim or claim limit")
         missing = [item for item in claim.evidence_ids if item not in self.blocks]
         if missing:
             raise KeyError(f"unknown evidence blocks: {missing}")
         self.graph.add(claim)
 
     def query(self, query: str, limit: int = 4) -> Answer:
+        if (
+            not isinstance(query, str)
+            or not 1 <= len(query.strip()) <= 4000
+            or type(limit) is not int
+            or not 1 <= limit <= 20
+        ):
+            raise ValueError("Query/limit outside bounded contract")
         ranked = sorted(
             self.blocks.values(),
             key=lambda block: cosine_text(query, block.content),
@@ -91,4 +104,3 @@ class EvidenceWeave:
 
 def modality_label(modality: Modality) -> str:
     return modality.value.title()
-
