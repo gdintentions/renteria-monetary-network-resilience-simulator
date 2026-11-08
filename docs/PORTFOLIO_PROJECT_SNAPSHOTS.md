@@ -2,6 +2,27 @@
 
 This page gives recruiters and reviewers a public, non-sensitive overview of projects whose working source repositories are currently private. It is intentionally factual: capabilities listed here are limited to behavior implemented in the corresponding repository and verified by its checked-in tests or documented demo boundaries.
 
+## Current verification — November 7, 2026 Pacific
+
+This additive update supersedes the older test-count summaries below, without deleting their historical evidence. See the [current evidence register](CURRENT_EVIDENCE_2026-11-07.md) for tested revisions, CI links, failures, and the distinction between mainline and experimental work. Private-source links remain access-controlled; publishing this summary does not publish private source, identities, labels, or credentials.
+
+| Component | Latest inspected evidence | Boundary still open |
+|---|---|---|
+| Governed RAG service v2.1.0 | **114 tests passed** on Python 3.11 and 3.12 at `9b7aafb08a1971031bdb65d1ee7ac510fde68de4`; [run 42349259829](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag/actions/runs/42349259829). Separate November 6 development drill: 16 checks and 40/40 synthetic requests. | Fresh independent policy labels/judgments, selected organizational host/operator acceptance, and production readiness remain open. |
+| Governed RAG Demo v1 | **6 local tests**, four bounded replay/restore checks; [verification](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag-demo/blob/cfc15e92/artifacts/engineering-2026-11-06/verification.txt). | Synthetic stateless demo, not the authenticated service or independent policy evaluation. |
+| Governed RAG Demo v2 | **6 local tests**, four bounded replay/restore checks; [verification](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag-recruiter-demo-v2/blob/82f2771c/artifacts/engineering-2026-11-06/verification.txt). | Five authored comparison cases are not an external or blind benchmark. |
+| Polyglot Relay | **4 local tests**; repaired risk-word detection, input bounds, build and dependency-audit output; [verification](https://github.com/gdintentions/renteria-polglot-relay/blob/347f0a62/artifacts/engineering-2026-11-06/verification.txt). | Translation remains a sample dictionary; quality/latency formulas are not provider measurements. |
+| Context Atlas | **15 local tests**, eight bounded recovery/rate checks; [verification](https://github.com/gdintentions/renteria-context-atlas/blob/ca20e5fe/artifacts/engineering-2026-11-06/verification.txt). | Link usefulness and observed human workflow have not been independently validated. |
+| Local Model Workbench | **16 local tests**, eight bounded recovery/rate checks; [verification](https://github.com/gdintentions/renteria-local-model-workbench/blob/e59a3774/artifacts/engineering-2026-11-06/verification.txt). | The drill exercised unavailable-model failure, not successful inference or model quality. |
+| Notes Evidence RAG | **15 local tests**, eight bounded recovery/rate checks; [verification](https://github.com/gdintentions/renteria-notes-evidence-rag/blob/73bf3d51/artifacts/engineering-2026-11-06/verification.txt). | Extraction/no-match checks do not establish independently judged support or optional generation quality. |
+| Personal Assistant Ledger | **19 local tests**, eight bounded recovery/rate checks; [verification](https://github.com/gdintentions/renteria-personal-assistant-ledger/blob/e190c0a3/artifacts/engineering-2026-11-06/verification.txt). | Approved external drafts are not delivered; actual multi-day/operator acceptance remains open. |
+
+The counts above are not pooled into an accuracy percentage. Local artifact results, CI executions, synthetic framework UI sessions, independent human evaluation, and production evidence are distinct categories. The November 6 rollout has zero human participants. Original baseline reports and failures remain intact.
+
+## Historical snapshots and implemented scope
+
+The dated hardening counts below describe their original releases, not the current test totals. Capability descriptions retain their stated prototype limits.
+
 ## Enterprise AI Chatbot — Governed RAG
 
 [Run the reduced public demo](../demo_safe/governed-rag/README.md)
