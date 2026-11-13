@@ -82,7 +82,9 @@ For the independent review, report final-route accuracy, required-handoff recall
 
 This specification is indexed in [Start Here](../../START_HERE.md#project-map) and the [recruiter snapshots](../../docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#project-specifications). The [validation queue](../../docs/VALIDATION_NEXT_SESSION_2026-11-06.md#november-12-2026-pacific--jev-support-desk) records the open JEV work. The November 7 evidence register is the historical inventory for that date.
 
-Any future public demo or source release should use synthetic fixtures and redacted summaries. Original slide images, credentials, private operational traces, and reviewer identities stay outside the public snapshot.
+[Open the recruiter browser demo](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/jev-support-desk/) to inspect six recorded synthetic scenarios from the offline prototype. Each shows the routing outcome, customer-facing text, and available evidence. The examples run as a static walkthrough in the browser.
+
+Any future public source release should use synthetic fixtures and redacted summaries. Original slide images, credentials, private operational traces, and reviewer identities stay outside the public snapshot.
 
 ### Source record
 

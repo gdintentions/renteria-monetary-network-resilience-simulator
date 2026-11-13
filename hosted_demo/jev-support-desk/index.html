@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Six synthetic support tickets demonstrate routing, approved facts, and human review.">
+<title>Jev-routed GenAI Support Desk Demo</title>
+<style>
+:root {
+  color-scheme: light;
+  font: 100%/1.6 system-ui, sans-serif;
+  color: #152833;
+  background: #eef2ed;
+  --paper: #fff;
+  --ink: #152833;
+  --muted: #3e5459;
+  --border: #c4d1cc;
+  --accent: #145547;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main, .header-inner { width: min(52rem, calc(100% - 2rem)); margin: auto; }
+header { background: #173b38; color: #fff; padding: 2.6rem 0 2.4rem; }
+h1 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -0.035em; line-height: 1.1; }
+h2 { font-size: 1.35rem; margin: 0 0 .65rem; }
+p { margin: .55rem 0 0; }
+header p { max-width: 42rem; margin-top: 1rem; color: #e0eeea; }
+main { padding-block: 1.65rem 3rem; }
+details { border: 1px solid var(--border); border-radius: .75rem; background: var(--paper); margin-bottom: .65rem; }
+summary { cursor: pointer; padding: .85rem 1rem; font-weight: 700; }
+summary > span:first-of-type { margin-right: .5rem; }
+summary:focus-visible { outline: 3px solid #0e6c57; outline-offset: 3px; border-radius: .7rem; }
+summary:hover { background: #f3f8f5; border-radius: .75rem; }
+.badge {
+  display: inline-block;
+  color: #16483d;
+  background: #e1f0e9;
+  font-size: .82rem;
+  font-weight: 650;
+  border-radius: 1rem;
+  padding: .08rem .65rem;
+}
+.details { border-top: 1px solid var(--border); padding: .75rem 1rem 1rem; }
+.ticket { color: var(--ink); font-weight: 650; margin: 0; }
+dt { font-weight: 650; margin-top: .6rem; }
+dd { color: var(--muted); margin: 0; overflow-wrap: anywhere; }
+dl { margin: 0; }
+footer { margin-top: 1.25rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <h1>Jev-routed GenAI Support Desk</h1>
+    <p>Explore how a fictional homewares desk handles order status, product questions, returns, and requests for a person.</p>
+  </div>
+</header>
+<main>
+  <section aria-labelledby="scenarios-title">
+    <h2 id="scenarios-title">Explore a support ticket</h2>
+
+        <details open>
+          <summary><span>Order lookup</span><span class="badge">Lookup complete</span></summary>
+          <div class="details">
+            <p class="ticket">Where is my order NH-4101?</p>
+            <dl>
+              <dt>Routing reason</dt><dd>The order is associated with the synthetic demo account.</dd>
+              <dt>Customer-facing text</dt><dd>Your order is in transit.</dd>
+
+              <dt>Evidence IDs</dt><dd>order.status.v1</dd>
+            </dl>
+          </div>
+        </details>
+
+        <details>
+          <summary><span>Catalog question</span><span class="badge">Needs agent approval</span></summary>
+          <div class="details">
+            <p class="ticket">What material is the Alder lamp?</p>
+            <dl>
+              <dt>Routing reason</dt><dd>The local checks passed. A person still reviews the draft.</dd>
+              <dt>Customer-facing text</dt><dd>A support agent needs to review this request.</dd>
+              <dt>Agent draft</dt><dd>Alder lamp: matte ceramic base, linen shade, $48.</dd>
+              <dt>Evidence IDs</dt><dd>catalog.alder-lamp.v1</dd>
+            </dl>
+          </div>
+        </details>
+
+        <details>
+          <summary><span>Return at the deadline</span><span class="badge">Needs agent approval</span></summary>
+          <div class="details">
+            <p class="ticket">Can I return NH-4102?</p>
+            <dl>
+              <dt>Routing reason</dt><dd>The local checks passed. A person still reviews the draft.</dd>
+              <dt>Customer-facing text</dt><dd>A support agent needs to review this request.</dd>
+              <dt>Agent draft</dt><dd>Return requests can be reviewed within seven calendar days of delivery, including day seven, for unused items with tags. Requests do not guarantee a refund. This desk cannot offer coupons or compensation. The order was delivered 7 days ago and is inside the return window.</dd>
+              <dt>Evidence IDs</dt><dd>policy.returns.v1, order.return-window.v1</dd>
+            </dl>
+          </div>
+        </details>
+
+        <details>
+          <summary><span>Human handoff</span><span class="badge">Human handoff</span></summary>
+          <div class="details">
+            <p class="ticket">I want to speak with a real person about my order.</p>
+            <dl>
+              <dt>Routing reason</dt><dd>The customer asked to speak to a person.</dd>
+              <dt>Customer-facing text</dt><dd>A support agent needs to review this request.</dd>
+
+              <dt>Evidence IDs</dt><dd>None needed</dd>
+            </dl>
+          </div>
+        </details>
+
+        <details>
+          <summary><span>Clarification</span><span class="badge">Needs clarification</span></summary>
+          <div class="details">
+            <p class="ticket">Can you help?</p>
+            <dl>
+              <dt>Routing reason</dt><dd>The desk needs more information to choose a route.</dd>
+              <dt>Customer-facing text</dt><dd>Could you describe what you need help with?</dd>
+
+              <dt>Evidence IDs</dt><dd>None needed</dd>
+            </dl>
+          </div>
+        </details>
+
+        <details>
+          <summary><span>Draft held</span><span class="badge">Draft held</span></summary>
+          <div class="details">
+            <p class="ticket">My delivery was delayed.</p>
+            <dl>
+              <dt>Routing reason</dt><dd>The deliberately faulty draft promised compensation outside the approved facts.</dd>
+              <dt>Customer-facing text</dt><dd>A support agent needs to review this request.</dd>
+              <dt>Agent draft</dt><dd>We will give you a $500 refund today.</dd>
+              <dt>Evidence IDs</dt><dd>policy.complaints.v1</dd>
+            </dl>
+          </div>
+        </details>
+  </section>
+  <footer><p>These scenarios were recorded from the offline prototype. Live Jev and Groq evaluation is pending.</p><p><a href="../">Back to the portfolio showcase</a></p></footer>
+</main>
+</body>
+</html>

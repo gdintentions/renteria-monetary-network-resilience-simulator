@@ -17,6 +17,7 @@ PUBLIC_DIRS = (
     "portfolio_projects/renteria-continuity-router",
     "portfolio_projects/renteria-sourcegate",
     "hosted_demo/reliability",
+    "hosted_demo/jev-support-desk",
 )
 PUBLIC_FILES = (
     "engineering.py",
@@ -97,6 +98,8 @@ def main() -> int:
         for anchor in ("governed-rag", "polyglot-relay", "context-atlas", "monetary-simulator"):
             if f'id="{anchor}"' not in site:
                 findings.append(f"missing demo target anchor: {anchor}")
+        if 'href="jev-support-desk/"' not in site or not (ROOT / "hosted_demo/jev-support-desk/index.html").is_file():
+            findings.append("missing JEV Support Desk demo link or target")
         reliability = (ROOT / "hosted_demo/reliability/index.html").read_text(encoding="utf-8")
         for anchor in ("tracelens", "continuity-router", "sourcegate"):
             if f'href="#{anchor}"' not in reliability:
@@ -108,7 +111,7 @@ def main() -> int:
         for finding in findings:
             print(f"- {finding}", file=sys.stderr)
         return 1
-    print(f"Public source check: PASS ({checked} scoped text files, 7 entrypoints, 7 demo links)")
+    print(f"Public source check: PASS ({checked} scoped text files, 7 entrypoints, 8 demo links)")
     print("Scope only: historical secrets, dependencies, private content and live security require separate review.")
     return 0
 
