@@ -25,6 +25,10 @@ The counts above are not pooled into an accuracy percentage. Local artifact resu
 
 **JEV-Routed GenAI Support Desk** · [Browser demo](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/jev-support-desk/) · [Project specification](../portfolio_projects/jev-routed-genai-support-desk/README.md). The offline prototype routes synthetic retail tickets, prepares evidence-bound drafts, and records agent review decisions. The archived v0.1.1 run routed 33 of 35 authored development cases correctly after tuning on the same set. Two paraphrases still went to clarification. Live-provider evaluation, independent review, selected-host checks, and operator acceptance remain open.
 
+### Guardrails Evaluation Lab
+
+[Open the Guardrails Evaluation Lab](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/guardrails-lab/) · Governed RAG extension. The offline run compares four cumulative configurations across seven authored synthetic cases. Input screening falsely blocks one legitimate correction. Output redaction reduces synthetic contact disclosures from one to zero. Application permissions deny the unauthorized fee waiver in every configuration. The final configuration matches six of seven expected outcomes. The browser displays recorded results. Live service integration and independent validation remain open.
+
 ## Historical snapshots and implemented scope
 
 The dated hardening counts below describe their original releases, not the current test totals. Capability descriptions retain their stated prototype limits.

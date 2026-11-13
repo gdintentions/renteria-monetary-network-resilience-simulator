@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare safeguards on seven synthetic Governed RAG cases.">
+  <title>Guardrails Evaluation Lab | Governed RAG</title>
+  <link rel="stylesheet" href="lab.css">
+  <script src="lab.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <a href="../#governed-rag">← Governed RAG showcase</a>
+      <h1>Guardrails Evaluation Lab</h1>
+      <p>Compare four safeguards on the same seven synthetic cases. Follow what reaches the draft writer, what gets released, and which actions get recorded.</p>
+    </div>
+  </header>
+  <main class="wrap">
+    <section aria-labelledby="comparison">
+      <h2 id="comparison">Compare safeguards</h2>
+      <p>Account access and action permissions apply at every stage.</p>
+      <div id="stages" class="stages" aria-label="Safeguard stages"></div>
+      <p id="stage-summary" class="stage-summary" aria-live="polite"></p>
+      <dl id="metrics" class="metrics"></dl>
+    </section>
+    <section aria-labelledby="cases">
+      <h2 id="cases">Inspect a case</h2>
+      <label for="case-picker">Synthetic scenario</label>
+      <select id="case-picker" disabled></select>
+      <article id="case-result" class="case" aria-live="polite">
+        <p id="status" role="status">Loading the recorded evaluation…</p>
+      </article>
+    </section>
+    <footer>
+      <p>Recorded from the offline Python lab. The cases and approvals are fictional. The browser reads a static results file and runs no model or account actions.</p>
+      <a href="https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/blob/main/docs/PORTFOLIO_PROJECT_SNAPSHOTS.md#guardrails-evaluation-lab">Evaluation notes</a>
+    </footer>
+  </main>
+</body>
+</html>

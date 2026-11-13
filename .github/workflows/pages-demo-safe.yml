@@ -32,6 +32,7 @@ jobs:
       - name: Verify static showcase
         run: |
           node --test hosted_demo/rag-demo.test.cjs
+          node --check hosted_demo/guardrails-lab/lab.js
           test -f hosted_demo/index.html
           test -f hosted_demo/styles.css
           test -f hosted_demo/app.js
@@ -61,6 +62,10 @@ jobs:
       - run: /tmp/reliability-browser/node_modules/.bin/playwright install --with-deps chromium
       - name: Gate deployment on actual Python browser flows
         run: node scripts/reliability_browser_smoke.cjs
+        env:
+          NODE_PATH: /tmp/reliability-browser/node_modules
+      - name: Exercise the Guardrails Evaluation Lab
+        run: node scripts/guardrails_browser_smoke.cjs
         env:
           NODE_PATH: /tmp/reliability-browser/node_modules
       - uses: actions/upload-artifact@v4
@@ -107,6 +112,11 @@ jobs:
           NODE_PATH: /tmp/reliability-browser/node_modules
           RELIABILITY_BASE_URL: ${{ needs.deploy.outputs.page_url }}reliability/
           RELIABILITY_ARTIFACTS: artifacts/reliability/live
+      - name: Exercise the published Guardrails Evaluation Lab
+        run: node scripts/guardrails_browser_smoke.cjs
+        env:
+          NODE_PATH: /tmp/reliability-browser/node_modules
+          GUARDRAILS_BASE_URL: ${{ needs.deploy.outputs.page_url }}guardrails-lab/
       - uses: actions/upload-artifact@v4
         if: always()
         with:
