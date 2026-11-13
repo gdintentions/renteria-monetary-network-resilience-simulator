@@ -32,6 +32,12 @@ All independent-domain and organizational-acceptance gates below remain open. Th
 | RAG Demo v2 | Synthetic comparison/rendering/abstention correctness and source-scope parity | Recruiter-demonstration acceptance, without inheriting core-service accuracy or authentication |
 | RAG Demo v1 | Synthetic workflow correctness and clear scope relative to core | Recruiter-demonstration acceptance, without a production-service claim |
 
+### November 12, 2026 Pacific — JEV Support Desk
+
+| Component | Next independent evidence | Acceptance decisions to establish |
+|---|---|---|
+| [JEV-Routed GenAI Support Desk](../portfolio_projects/jev-routed-genai-support-desk/README.md) | Open. Document personal technical ownership, observe a human workflow, and collect fresh blind labels for routing, abstention, and draft safety. | Open. Select the host and operator, agree on policy authority and deployment limits, then record restore, load, and acceptance results. |
+
 ## What remains external to implementation
 
 The project owner previously reported that no separate observer was available. No observer or independent reviewer is assumed or invented. Prepare a usable packet and identify a feasible qualified faculty member, mentor or reviewer when possible; no outreach has been authorized or sent here. Additional AI critique is supplementary and cannot close independent human validation.
