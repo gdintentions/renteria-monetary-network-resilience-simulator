@@ -29,6 +29,14 @@ The architecture uses explicit control flow. A free-running agent is unnecessary
 for these bounded tasks. Provider, evaluator and search adapters can be replaced
 without moving policy decisions into prompts.
 
+## Correction by missing claim
+
+The CRAG tutorial's refinement step motivates a narrower fallback. When callers supply `search_missing` and permit fallback, SourceGate sends an ordered tuple of missing claim keys to that adapter. Use predefined, non-sensitive keys. The existing `search(question)` adapter remains available for integrations that use it.
+
+If local evidence already covers the requested claims or has a conflict, the claim-based path skips fallback. Returned evidence must have web provenance and pass the existing source and expiry checks. A result outside the requested claims is excluded. A result that fills a gap and contradicts another required claim still triggers review. Accepted extracts retain their evidence IDs and URLs.
+
+In the browser, choose **Search for the missing claim only** and run with fallback disabled, then enabled. The fictional access example already has an approver. With permission, it requests only `duration`, excludes a vendor-training result, and cites the two extracts that cover the question. This example uses a fixture adapter.
+
 ## Boundaries and next validation
 
 The runnable demo uses invented enterprise-access policies, authored claim metadata and fixture grades. No live search, trained evaluator or generative answer model is bundled. The core accepts injected adapters; it does not prove semantic correctness of their labels or claims. Contradiction detection compares supplied structured values, not arbitrary natural language. Domain approval and expiry do not prove truth. Adapters need their own timeouts and input controls. The caller must authorize any external transfer of a question. Human verification remains necessary.

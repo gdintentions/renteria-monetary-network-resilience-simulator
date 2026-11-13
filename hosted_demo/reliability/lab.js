@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id);
 const definitions={
  'tracelens':{title:'TraceLens',intro:'Find where retrieval lost the evidence. Replay a selection change or inspect recorded Governed RAG policy traces.',scenarios:[['selection-miss','Selection drops the answer'],['candidate-miss','Answer missing from candidate pool'],['unknown','Labels cannot establish a corpus gap'],['judge-disagreement','Judge disagrees with gold labels'],['corpus-gap','Exhaustively labeled corpus gap'],['judge-unavailable','Judge response is incomplete'],['governed-rank','Governed RAG · Rank cutoff and answer replay'],['governed-candidate','Governed RAG · Outside candidate pool'],['governed-score','Governed RAG · Score cutoff'],['governed-unused','Governed RAG · Selected but unused']]},
  'continuity-router':{title:'ContinuityRouter',intro:'Watch authorized failover, bounded deadlines and circuit recovery. A provider is never called when classification rules prohibit it.',scenarios:[['failover','Primary outage → backup → open circuit'],['healthy','Healthy primary'],['deadline','Primary exceeds total deadline'],['auth-failure','Authentication failure is not retried'],['recovery','Outage → open circuit → recovered primary']]},
- 'sourcegate':{title:'SourceGate',intro:'Follow retrieval, relevance grading, permission-controlled correction and cited extracts. Conflicts or incomplete evidence withhold the answer.',scenarios:[['complete','Missing fact supplied by fixture search'],['conflict','Contradictory approvers'],['untrusted','Look-alike source hostname'],['expired','Expired evidence'],['bad-grade','Incomplete evaluator response'],['bad-metadata','Non-finite claim metadata']]}
+ 'sourcegate':{title:'SourceGate',intro:'Follow retrieval, relevance grading, permission-controlled correction and cited extracts. Conflicts or incomplete evidence withhold the answer.',scenarios:[['complete','Missing fact supplied by fixture search'],['targeted-correction','Search for the missing claim only'],['conflict','Contradictory approvers'],['untrusted','Look-alike source hostname'],['expired','Expired evidence'],['bad-grade','Incomplete evaluator response'],['bad-metadata','Non-finite claim metadata']]}
 };
 let project='tracelens',worker,ready=false,busy=false,last=null,manifest=null,sequence=0,timer=null;
 function clearResult(){last=null;$('download').disabled=true;$('decision').textContent='Ready for a scenario';$('summary').textContent='Run the current inputs to inspect the outcome.';$('metrics').replaceChildren();$('events').replaceChildren();$('output').textContent='No result yet.';$('error').textContent='';}
@@ -47,6 +47,12 @@ function render(envelope){
  }else{
   $('decision').textContent=r.result.reason||r.result.status;$('summary').textContent=r.baseline;
   metric('Fixture search calls',r.search_calls.length);metric('Cited extracts',(r.result.answer||[]).length);
+  const correction=r.result.correction;
+  if(correction){
+   event('Missing from local evidence: '+(correction.missing_local.join(', ')||'none'));
+   event('Claims sent to fallback: '+(correction.requested.join(', ')||'none'));
+   for(const id of correction.out_of_scope_ids||[])event('Excluded outside the requested claims: '+id);
+  }
   (r.result.events||[]).forEach(event);(r.result.rejected_ids||[]).forEach(id=>event('Rejected source: '+id));
   (r.result.answer||[]).forEach(a=>event('['+a.citation+'] '+a.text+' — '+a.url));
  }

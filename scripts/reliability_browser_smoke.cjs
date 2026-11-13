@@ -48,6 +48,13 @@ function check(name,fn){fn();checks.push({name,status:'PASS'});}
   out=await run('complete');check('SourceGate fallback off means no search',()=>{assert.deepEqual(out.result.search_calls,[]);assert.equal(out.result.result.reason,'MISSING_EVIDENCE');});
   await page.locator('#web-allowed').check();out=await run();check('SourceGate permitted correction yields exact citations',()=>assert.deepEqual(out.result.result.answer.map(a=>a.citation),['kb-access','web-duration']));
   await page.screenshot({path:path.join(artifacts,'sourcegate-mobile.png'),fullPage:true});
+  await page.locator('#web-allowed').uncheck();out=await run('targeted-correction');
+  check('SourceGate targeted fallback respects permission',()=>{assert.deepEqual(out.result.search_calls,[]);assert.deepEqual(out.result.result.correction.requested,[]);});
+  await page.locator('#web-allowed').check();out=await run();
+  check('SourceGate targets the missing claim and excludes unrelated results',()=>{
+    assert.deepEqual(out.result.result.correction,{missing_local:['duration'],requested:['duration'],out_of_scope_ids:['web-training']});
+    assert.deepEqual(out.result.result.answer.map(a=>a.citation),['kb-access','web-duration']);
+  });
   for(const [mode,reason] of [['conflict','CONFLICT'],['untrusted','MISSING_EVIDENCE'],['expired','MISSING_EVIDENCE'],['bad-grade','ADAPTER_OR_SCHEMA_FAILURE'],['bad-metadata','ADAPTER_OR_SCHEMA_FAILURE']]){out=await run(mode);check('SourceGate '+mode+' withheld',()=>{assert.equal(out.result.result.reason,reason);assert.equal(out.result.result.answer,null);});}
   await layout('SourceGate mobile layout and no JS errors');
   await page.locator('#run').focus();await page.keyboard.press('Enter');await page.locator('#run:not([disabled])').waitFor();checks.push({name:'Keyboard run activation',status:'PASS'});

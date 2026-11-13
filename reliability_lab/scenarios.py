@@ -61,16 +61,25 @@ async def route_example(mode, classification, budget):
 def source_example(mode, web_allowed):
     kb=Evidence('kb-access','Fictional vendor access requires a sponsor.','https://policy.example/access','2099-01-01',{'approver':'sponsor'})
     web=Evidence('web-duration','Fictional access expires after 14 days.','https://policy.example/duration','2099-01-01',{'duration':14},'web')
+    related = Evidence('web-training','Fictional vendor training takes two hours.',
+                       'https://policy.example/training','2099-01-01',{'training':2},'web')
     if mode=='conflict':web=Evidence('web-conflict','Fictional access requires IT; expires after 14 days.',web.source,web.expires,{'duration':14,'approver':'IT'},'web')
     elif mode=='untrusted':web=Evidence(web.id,web.text,'https://policy.example.evil.test/rule',web.expires,web.claims,'web')
     elif mode=='expired':web=Evidence(web.id,web.text,web.source,'2020-01-01',web.claims,'web')
     elif mode=='bad-metadata':web=Evidence(web.id,web.text,web.source,web.expires,{'duration':float('nan')},'web')
-    elif mode not in {'complete','bad-grade'}:raise ValueError('unknown evidence scenario')
+    elif mode not in {'complete','bad-grade','targeted-correction'}:raise ValueError('unknown evidence scenario')
     calls=[]
     def search(q):calls.append('fixture-search');return [web]
+    def search_missing(keys):
+        calls.append('fixture-search')
+        return [web, related] if keys == ('duration',) else []
     def grade(q,docs):return {} if mode=='bad-grade' else {d.id:'partial' for d in docs}
     result=run('Who approves access and for how long?', ['approver','duration'],lambda q:[kb],grade,search,
-               allowed_hosts={'policy.example'},today=date(2026,10,10),web_allowed=web_allowed)
+               allowed_hosts={'policy.example'},today=date(2026,10,10),web_allowed=web_allowed,
+               search_missing=search_missing if mode=='targeted-correction' else None)
+    if mode == 'targeted-correction':
+        return {'result':result,'search_calls':calls,'evaluation_date':'2026-10-10',
+                'baseline':'Local policy covers approval. With permission, the fixture adapter receives only the missing duration claim.'}
     return {'result':result,'search_calls':calls,'evaluation_date':'2026-10-10',
             'baseline':'Local-only evidence cannot cover duration; blindly concatenating sources would retain the conflict/untrusted/expired fixtures.'}
 
