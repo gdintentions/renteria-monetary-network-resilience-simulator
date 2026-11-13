@@ -14,9 +14,10 @@ sources={}
 for name,folder in [('tracelens','tracelens'),('continuity_router','continuity-router'),('sourcegate','sourcegate')]:
     path=ROOT/'portfolio_projects'/f'renteria-{folder}'/f'{name}.py';sources[f'{name}.py']=path
 sources['scenarios.py']=ROOT/'reliability_lab/scenarios.py'
+sources['governed_rag_examples.json']=ROOT/'portfolio_projects/renteria-tracelens/governed_rag_examples.json'
 manifest={'runtime':'Pyodide 0.27.7','scope':'actual Python cores; authored synthetic adapters','sources':{}}
 for name,path in sources.items():
     content=path.read_bytes();(out/name).write_bytes(content)
     manifest['sources'][name]={'path':str(path.relative_to(ROOT)), 'sha256':hashlib.sha256(content).hexdigest()}
 (out/'source-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-print('Built actual Python browser runtime and four source files.')
+print(f'Built actual Python browser runtime and {len(sources)} bundled files.')

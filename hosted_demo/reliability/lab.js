@@ -1,7 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id);
 const definitions={
- 'tracelens':{title:'TraceLens',intro:'Find where retrieval lost the evidence. Compare a top-1 lexical baseline with top-k replay and inspect disagreement.',scenarios:[['selection-miss','Selection drops the answer'],['candidate-miss','Answer missing from candidate pool'],['unknown','Labels cannot establish a corpus gap'],['judge-disagreement','Judge disagrees with gold labels'],['corpus-gap','Exhaustively labeled corpus gap'],['judge-unavailable','Judge response is incomplete']]},
+ 'tracelens':{title:'TraceLens',intro:'Find where retrieval lost the evidence. Replay a selection change or inspect recorded Governed RAG policy traces.',scenarios:[['selection-miss','Selection drops the answer'],['candidate-miss','Answer missing from candidate pool'],['unknown','Labels cannot establish a corpus gap'],['judge-disagreement','Judge disagrees with gold labels'],['corpus-gap','Exhaustively labeled corpus gap'],['judge-unavailable','Judge response is incomplete'],['governed-rank','Governed RAG · Rank cutoff and answer replay'],['governed-candidate','Governed RAG · Outside candidate pool'],['governed-score','Governed RAG · Score cutoff'],['governed-unused','Governed RAG · Selected but unused']]},
  'continuity-router':{title:'ContinuityRouter',intro:'Watch authorized failover, bounded deadlines and circuit recovery. A provider is never called when classification rules prohibit it.',scenarios:[['failover','Primary outage → backup → open circuit'],['healthy','Healthy primary'],['deadline','Primary exceeds total deadline'],['auth-failure','Authentication failure is not retried'],['recovery','Outage → open circuit → recovered primary']]},
  'sourcegate':{title:'SourceGate',intro:'Follow retrieval, relevance grading, permission-controlled correction and cited extracts. Conflicts or incomplete evidence withhold the answer.',scenarios:[['complete','Missing fact supplied by fixture search'],['conflict','Contradictory approvers'],['untrusted','Look-alike source hostname'],['expired','Expired evidence'],['bad-grade','Incomplete evaluator response'],['bad-metadata','Non-finite claim metadata']]}
 };
@@ -31,9 +31,15 @@ function render(envelope){
  const r=envelope.result;$('output').textContent=JSON.stringify(envelope,null,2);
  if(project==='tracelens'){
   $('decision').textContent=r.diagnosis.status;$('summary').textContent=r.baseline;
+  if(r.question)event('Question: '+r.question);
+  if(r.observed_answer)event('Observed answer: '+r.observed_answer);
+  const passages=r.diagnosis.evidence_stages?.supporting_passages||{};
+  for(const [id,stage] of Object.entries(passages))event(id+' → '+stage.replaceAll('_',' '));
+  for(const item of r.observed_answer_replay||[])event('Engine rerun at top '+item.top_k+': '+item.answer);
   const g=r.diagnosis.gold_metrics;if(g){metric('Candidate recall',g.candidate_recall??'Unknown / no gold answers');metric('Selected recall',g.selected_recall??'Unknown / no gold answers');}
   for(const [cell,ids] of Object.entries(r.diagnosis.cells||{}))event(cell.toUpperCase()+': '+(ids.join(', ')||'none'));
   for(const item of r.replay)event('Top '+item.top_k+' replay → '+item.diagnosis.status);
+  for(const item of r.score_replay||[])event('Score above '+item.min_score+' replay → '+item.diagnosis.status);
  }else if(project==='continuity-router'){
   const end=r.requests.at(-1);$('decision').textContent=end.status;$('summary').textContent=r.baseline;
   metric('Final provider',end.provider||'None');metric('Actual fixture calls',r.provider_calls.length);

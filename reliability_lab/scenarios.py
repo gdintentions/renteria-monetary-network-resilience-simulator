@@ -5,7 +5,8 @@ No network adapters, model claims, uploaded documents, or independent labels.
 import asyncio
 import json
 from datetime import date
-from tracelens import diagnose, sweep
+from pathlib import Path
+from tracelens import diagnose, sweep, sweep_scores
 from continuity_router import Router, Provider, ProviderFailure
 from sourcegate import Evidence, run
 
@@ -78,9 +79,30 @@ async def execute(payload):
     project=payload.get('project');mode=payload.get('scenario')
     if project=='tracelens':
         trace=payload.get('trace')
+        example = None
+        if trace is None and isinstance(mode, str) and mode.startswith("governed-"):
+            directory = Path(__file__).resolve().parent
+            dataset = directory / "governed_rag_examples.json"
+            if not dataset.is_file():
+                dataset = directory.parent / "portfolio_projects/renteria-tracelens/governed_rag_examples.json"
+            exported = json.loads(dataset.read_text(encoding="utf-8"))
+            example = exported["examples"].get(mode)
+            if example is None:
+                raise ValueError("unknown Governed RAG scenario")
+            trace = example["trace"]
         if trace is None:trace=trace_example(mode)
         result={'input_trace':trace,'diagnosis':diagnose(trace),'replay':sweep(trace,[1,2,3]),
                 'baseline':'Top-1 lexical retrieval vs top-k replay; supplied synthetic labels, not measured answer accuracy.'}
+        if example is not None:
+            result.update(
+                question=example["question"], observed_answer=example["answer"],
+                observed_engine_sha256=exported["engine_sha256"],
+                baseline="Recorded Governed RAG trace on authored synthetic policy. Selection replay uses the same candidate pool.",
+            )
+            if "observed_answer_replay" in example:
+                result["observed_answer_replay"] = example["observed_answer_replay"]
+        if trace.get("retrieval_ran") is True:
+            result["score_replay"] = sweep_scores(trace, [0.0, 0.15, 0.25])
     elif project=='continuity-router':result=await route_example(mode,payload.get('classification','public'),payload.get('budget',.08))
     elif project=='sourcegate':result=source_example(mode,payload.get('web_allowed',False))
     else:raise ValueError('unknown project')

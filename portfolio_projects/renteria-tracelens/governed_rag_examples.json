@@ -1,0 +1,181 @@
+{
+  "engine_sha256": "74053a8168db8d5f2491af57c1be393098c9c3328d610ad23d669b90e6620dfc",
+  "scope": "Authored synthetic policy fixture",
+  "examples": {
+    "governed-rank": {
+      "question": "What is the sponsor requirement for vendor production access?",
+      "answer": "Vendor production access requests for vendor production access forms use the operations directory.",
+      "trace": {
+        "top_k": 1,
+        "min_score": 0.0,
+        "retrieval_ran": true,
+        "candidates": [
+          {
+            "id": "directory",
+            "score": 0.41203268755395533
+          },
+          {
+            "id": "sponsor",
+            "score": 0.22273987713841864
+          },
+          {
+            "id": "training",
+            "score": 0.1594391940626049
+          },
+          {
+            "id": "badge",
+            "score": 0.0
+          }
+        ],
+        "kept_ids": [
+          "directory"
+        ],
+        "used_ids": [
+          "directory"
+        ],
+        "decision": "safe",
+        "gold_ids": [
+          "sponsor"
+        ]
+      },
+      "observed_answer_replay": [
+        {
+          "top_k": 1,
+          "answer": "Vendor production access requests for vendor production access forms use the operations directory.",
+          "decision": "safe",
+          "kept_ids": [
+            "directory"
+          ],
+          "used_ids": [
+            "directory"
+          ]
+        },
+        {
+          "top_k": 2,
+          "answer": "Vendor production access requests for vendor production access forms use the operations directory. External suppliers need a staff sponsor before requesting vendor production access to live systems.",
+          "decision": "safe",
+          "kept_ids": [
+            "directory",
+            "sponsor"
+          ],
+          "used_ids": [
+            "directory",
+            "sponsor"
+          ]
+        },
+        {
+          "top_k": 3,
+          "answer": "Vendor production access requests for vendor production access forms use the operations directory. External suppliers need a staff sponsor before requesting vendor production access to live systems.",
+          "decision": "safe",
+          "kept_ids": [
+            "directory",
+            "sponsor",
+            "training"
+          ],
+          "used_ids": [
+            "directory",
+            "sponsor"
+          ]
+        }
+      ]
+    },
+    "governed-candidate": {
+      "question": "What is the sponsor requirement for vendor production access?",
+      "answer": "Vendor production access requests for vendor production access forms use the operations directory.",
+      "trace": {
+        "top_k": 1,
+        "min_score": 0.0,
+        "retrieval_ran": true,
+        "candidates": [
+          {
+            "id": "directory",
+            "score": 0.41203268755395533
+          }
+        ],
+        "kept_ids": [
+          "directory"
+        ],
+        "used_ids": [
+          "directory"
+        ],
+        "decision": "safe",
+        "gold_ids": [
+          "sponsor"
+        ]
+      }
+    },
+    "governed-score": {
+      "question": "Third-party approver prerequisites?",
+      "answer": "I do not have enough approved evidence to answer that question reliably.",
+      "trace": {
+        "top_k": 4,
+        "min_score": 0.0,
+        "retrieval_ran": true,
+        "candidates": [
+          {
+            "id": "directory",
+            "score": 0.0
+          },
+          {
+            "id": "training",
+            "score": 0.0
+          },
+          {
+            "id": "sponsor",
+            "score": 0.0
+          },
+          {
+            "id": "badge",
+            "score": 0.0
+          }
+        ],
+        "kept_ids": [],
+        "used_ids": [],
+        "decision": "block",
+        "gold_ids": [
+          "sponsor"
+        ]
+      }
+    },
+    "governed-unused": {
+      "question": "Vendor access approval",
+      "answer": "Vendor production access requests for vendor production access forms use the operations directory. Vendor access training lists the classes and sandbox login process.",
+      "trace": {
+        "top_k": 3,
+        "min_score": 0.0,
+        "retrieval_ran": true,
+        "candidates": [
+          {
+            "id": "directory",
+            "score": 0.2836446003719205
+          },
+          {
+            "id": "training",
+            "score": 0.17171257541605353
+          },
+          {
+            "id": "sponsor",
+            "score": 0.14142736607912612
+          },
+          {
+            "id": "badge",
+            "score": 0.0
+          }
+        ],
+        "kept_ids": [
+          "directory",
+          "training",
+          "sponsor"
+        ],
+        "used_ids": [
+          "directory",
+          "training"
+        ],
+        "decision": "safe",
+        "gold_ids": [
+          "sponsor"
+        ]
+      }
+    }
+  }
+}

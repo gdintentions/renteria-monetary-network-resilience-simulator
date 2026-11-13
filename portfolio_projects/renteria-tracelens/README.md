@@ -29,9 +29,17 @@ The architecture uses explicit control flow. A free-running agent is unnecessary
 for these bounded tasks. Provider, evaluator and search adapters can be replaced
 without moving policy decisions into prompts.
 
+## Governed RAG trace integration
+
+The browser demo includes four recorded traces from the Governed RAG Python engine on a four-passage fictional policy corpus. The examples distinguish evidence outside the candidate pool, cut by rank, cut by score, and selected but unused in the extracted answer. The trace records which passages contributed text to the answer separately from the citation list.
+
+In the sponsor-policy case, the correct passage ranks second. Top-2 includes it in the observed answer. Top-3 adds one more distractor without changing the answer. TraceLens can also replay rank budgets or score thresholds on the recorded pool. Only the offline engine reruns produce new answers.
+
+The [recorded examples](governed_rag_examples.json) include the engine file hash and authored labels. These are synthetic development results. Independent policy review and live service tracing remain open.
+
 ## Boundaries and next validation
 
-This is a trace-analysis engine, not an embedding retriever or an LLM judge. Connect an existing retriever by preserving candidate rank order and supply independently evaluated labels. Gold labels must be exhaustive for the corpus version; the program cannot verify that promise. IDs may themselves be sensitive. Judge support does not prove the generated answer is correct.
+This trace-analysis engine can use observations from an existing retriever. Preserve candidate rank order and supply independently evaluated labels for domain validation. Gold labels must be exhaustive for the corpus version; the program cannot verify that promise. IDs may themselves be sensitive. Judge support does not prove the generated answer is correct.
 
 Before broader release, run independently labeled cases, record failures and
 compare against a simple baseline. Live integrations and production deployment
@@ -54,8 +62,7 @@ Tutorial screenshots and original code are not redistributed here.
 
 This standalone project sits in `portfolio_projects/renteria-tracelens` in the existing
 public portfolio repository. It has its own manifest and tests and can later be
-extracted into a separate repository. It does not alter the private Governed RAG
-service. [Portfolio index](../../START_HERE.md).
+extracted into a separate repository. The private Governed RAG engine provides an opt-in offline trace export. [Portfolio index](../../START_HERE.md).
 
 ## Browser release v0.2.0
 

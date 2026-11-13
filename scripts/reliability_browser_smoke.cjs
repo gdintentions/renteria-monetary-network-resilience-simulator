@@ -20,11 +20,17 @@ function check(name,fn){fn();checks.push({name,status:'PASS'});}
   async function run(scenario){if(scenario)await page.locator('#scenario').selectOption(scenario);await page.locator('#run').click();await page.locator('#run:not([disabled])').waitFor();const raw=await page.locator('#output').textContent();return raw==='No result yet.'?null:JSON.parse(raw);}
   async function layout(name){check(name,()=>assert.equal(errors.length,0,errors.join('\n')));assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   let out=await run('selection-miss');check('TraceLens actual ranking → selection miss → top-k replay',()=>{assert.equal(out.result.diagnosis.status,'SELECTION_MISS');assert.equal(out.result.replay[2].diagnosis.gold_metrics.selected_recall,1);});
-  const manifest=out.source_manifest;check('Exact Python source hashes attached',()=>{assert.equal(Object.keys(manifest.sources).length,4);assert.equal(manifest.runtime,'Pyodide 0.27.7');});
+  const manifest=out.source_manifest;check('Python and fixture hashes attached',()=>{assert.equal(Object.keys(manifest.sources).length,5);assert(manifest.sources['governed_rag_examples.json']);assert.equal(manifest.runtime,'Pyodide 0.27.7');});
   const [download]=await Promise.all([page.waitForEvent('download'),page.locator('#download').click()]);
   const exported=JSON.parse(fs.readFileSync(await download.path(),'utf8'));check('Download contains exact displayed evidence',()=>assert.deepEqual(exported,out));
   await page.screenshot({path:path.join(artifacts,'tracelens-mobile.png'),fullPage:true});
   for(const [mode,status] of [['candidate-miss','CANDIDATE_MISS'],['unknown','INSUFFICIENT_EVIDENCE'],['judge-disagreement','JUDGE_DISAGREEMENT'],['corpus-gap','CORPUS_GAP_CONFIRMED'],['judge-unavailable','JUDGE_UNAVAILABLE']]){out=await run(mode);check('TraceLens '+mode,()=>assert.equal(out.result.diagnosis.status,status));}
+  for(const [mode,stage] of [['governed-rank','below_rank_cutoff'],['governed-candidate','outside_candidate_pool'],['governed-score','below_score_cutoff'],['governed-unused','selected_not_used']]){
+    out=await run(mode);
+    check('TraceLens recorded '+mode,()=>assert.equal(out.result.diagnosis.evidence_stages.supporting_passages.sponsor,stage));
+  }
+  out=await run('governed-rank');
+  check('Observed answer changes at top two',()=>assert.deepEqual(out.result.observed_answer_replay.map(row=>row.used_ids.includes('sponsor')),[false,true,true]));
   await page.locator('#trace').fill('{');check('Editing clears stale result and export',()=>assert.equal(out.synthetic,true));assert(await page.locator('#download').isDisabled());assert.equal(await page.locator('#output').textContent(),'No result yet.');await run();assert.equal(await page.locator('#decision').textContent(),'INPUT REJECTED');checks.push({name:'Malformed JSON rejected without stale export',status:'PASS'});
   await page.locator('#trace').fill(JSON.stringify({candidates:[{}],kept_ids:[],judge_labels:{}}));await run();assert.equal(await page.locator('#decision').textContent(),'INPUT REJECTED');checks.push({name:'Python schema failure displayed safely',status:'PASS'});
   const evil='<img src=x onerror="window.injected=true">';await page.locator('#trace').fill(JSON.stringify({candidates:[{id:evil}],kept_ids:[evil],judge_labels:{[evil]:'answers'},gold_ids:[evil]}));out=await run();check('User IDs rendered as text, never HTML',()=>assert.equal(out.result.diagnosis.status,'SUPPORTED_CONTEXT'));assert.equal(await page.evaluate(()=>window.injected),undefined);await layout('TraceLens mobile layout and no JS errors');

@@ -7,7 +7,8 @@ const sources={
  'tracelens.py':'portfolio_projects/renteria-tracelens/tracelens.py',
  'continuity_router.py':'portfolio_projects/renteria-continuity-router/continuity_router.py',
  'sourcegate.py':'portfolio_projects/renteria-sourcegate/sourcegate.py',
- 'scenarios.py':'reliability_lab/scenarios.py'
+ 'scenarios.py':'reliability_lab/scenarios.py',
+ 'governed_rag_examples.json':'portfolio_projects/renteria-tracelens/governed_rag_examples.json'
 };
 const expected=Object.fromEntries(Object.entries(sources).map(([name,file])=>[name,{path:file,sha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')}]));
 (async()=>{
