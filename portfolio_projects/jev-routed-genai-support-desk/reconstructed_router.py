@@ -14,8 +14,8 @@ TRACK = re.compile(
     re.I,
 )
 EXCHANGE = re.compile(
-    r"\b(?:exchange|swap|trade|replace)\b.{0,90}\b(?:size|color|item|product|shirt|jacket)\b"
-    r"|\b(?:size|color|item|product|shirt|jacket)\b.{0,90}\b(?:exchange|swap|different)\b",
+    r"\b(?:exchange|swap|trade|replace|change)\b.{0,90}\b(?:size|color|item|product|shirt|jacket)\b"
+    r"|\b(?:size|color|item|product|shirt|jacket)\b.{0,90}\b(?:exchange|swap|different|change)\b",
     re.I,
 )
 HUMAN = re.compile(r"\b(?:human|person|representative|agent|supervisor)\b", re.I)
@@ -24,7 +24,7 @@ SENSITIVE = re.compile(
     re.I,
 )
 RETURN = re.compile(r"\b(?:return|refund)\b", re.I)
-PROMISE = re.compile(r"\b(?:guarantee|guaranteed|guaranteed refund|refund approved|credit issued|we have refunded)\b", re.I)
+PROMISE = re.compile(r"\b(?:guarantee|guaranteed|guaranteed refund|refund approved|credit issued|we have refunded|refund (?:has been |was )?processed|we (?:have )?processed (?:your |the )?refund)\b", re.I)
 
 
 @dataclass(frozen=True)
