@@ -1,7 +1,7 @@
 import unittest
 
-from evidenceweave.models import Claim
 from evidenceweave.functional_challenger import functional_conflict_candidates
+from evidenceweave.models import Claim
 
 
 class FunctionalChallengerTests(unittest.TestCase):
