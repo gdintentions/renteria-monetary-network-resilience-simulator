@@ -1,0 +1,140 @@
+{
+  "scope": "DEVELOPER EXAMPLE: do not present as unseen independent benchmark",
+  "cases": [
+    {
+      "id": "D01-direct",
+      "claims": [
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "Eastport"
+        },
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "Westport"
+        }
+      ]
+    },
+    {
+      "id": "D02-inverse",
+      "claims": [
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "Eastport"
+        },
+        {
+          "subject": "Westport",
+          "predicate": "capital_of",
+          "value": "Aurora"
+        }
+      ]
+    },
+    {
+      "id": "D03-alias",
+      "claims": [
+        {
+          "subject": "Aurora",
+          "predicate": "same_as",
+          "value": "A"
+        },
+        {
+          "subject": "A",
+          "predicate": "same_as",
+          "value": "B"
+        },
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "Eastport"
+        },
+        {
+          "subject": "B",
+          "predicate": "capital",
+          "value": "Westport"
+        }
+      ]
+    },
+    {
+      "id": "D04-multivalued-control",
+      "claims": [
+        {
+          "subject": "Aurora",
+          "predicate": "spoken_language",
+          "value": "French"
+        },
+        {
+          "subject": "Aurora",
+          "predicate": "spoken_language",
+          "value": "Spanish"
+        }
+      ]
+    },
+    {
+      "id": "D05-matching-inverse-control",
+      "claims": [
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "Eastport"
+        },
+        {
+          "subject": "Eastport",
+          "predicate": "capital_of",
+          "value": "Aurora"
+        }
+      ]
+    },
+    {
+      "id": "D06-unrelated-control",
+      "claims": [
+        {
+          "subject": "Aurora",
+          "predicate": "neighbor",
+          "value": "Borealis"
+        },
+        {
+          "subject": "Borealis",
+          "predicate": "capital",
+          "value": "Northport"
+        }
+      ]
+    },
+    {
+      "id": "D07-value-alias-control",
+      "claims": [
+        {
+          "subject": "Eastport",
+          "predicate": "same_as",
+          "value": "City of Eastport"
+        },
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "Eastport"
+        },
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "City of Eastport"
+        }
+      ]
+    },
+    {
+      "id": "D08-different-subject-control",
+      "claims": [
+        {
+          "subject": "Aurora",
+          "predicate": "capital",
+          "value": "Eastport"
+        },
+        {
+          "subject": "Borealis",
+          "predicate": "capital",
+          "value": "Westport"
+        }
+      ]
+    }
+  ]
+}

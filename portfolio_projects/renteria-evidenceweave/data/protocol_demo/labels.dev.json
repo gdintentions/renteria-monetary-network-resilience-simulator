@@ -1,0 +1,37 @@
+{
+  "scope": "DEVELOPER-authored; replace with separately signed external judgments for independent evaluation",
+  "labels": [
+    {
+      "id": "D01-direct",
+      "is_conflict": true
+    },
+    {
+      "id": "D02-inverse",
+      "is_conflict": true
+    },
+    {
+      "id": "D03-alias",
+      "is_conflict": true
+    },
+    {
+      "id": "D04-multivalued-control",
+      "is_conflict": false
+    },
+    {
+      "id": "D05-matching-inverse-control",
+      "is_conflict": false
+    },
+    {
+      "id": "D06-unrelated-control",
+      "is_conflict": false
+    },
+    {
+      "id": "D07-value-alias-control",
+      "is_conflict": false
+    },
+    {
+      "id": "D08-different-subject-control",
+      "is_conflict": false
+    }
+  ]
+}

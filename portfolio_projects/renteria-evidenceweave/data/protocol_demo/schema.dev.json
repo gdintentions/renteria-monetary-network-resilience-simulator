@@ -1,0 +1,9 @@
+{
+  "scope": "Development only; explicit ontology supplied by project author",
+  "functional_predicates": [
+    "capital"
+  ],
+  "inverse_predicates": {
+    "capital_of": "capital"
+  }
+}
