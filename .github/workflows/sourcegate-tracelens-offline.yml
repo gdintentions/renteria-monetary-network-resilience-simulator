@@ -1,6 +1,13 @@
 name: SourceGate and TraceLens Offline Review Protocol
 
 on:
+  push:
+    branches: [validation/sourcegate-tracelens-offline-2026-11-16]
+    paths:
+      - "portfolio_projects/renteria-sourcegate/**"
+      - "portfolio_projects/renteria-tracelens/**"
+      - "scripts/offline_review_runner.py"
+      - ".github/workflows/sourcegate-tracelens-offline.yml"
   pull_request:
     paths:
       - "scripts/offline_review_runner.py"
