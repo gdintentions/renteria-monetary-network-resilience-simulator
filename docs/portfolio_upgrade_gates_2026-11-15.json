@@ -52,14 +52,17 @@
       "wave": 1,
       "next_ticket": "EW-01: baseline failure taxonomy and limited regression-tested challenger",
       "gates": {
-        "automated_regression": "not_run",
+        "automated_regression": "passed",
         "domain_validation": "blocked",
         "owner_walkthrough": "blocked",
         "observed_workflow": "blocked",
         "selected_host": "blocked",
         "organizational_acceptance": "blocked"
       },
-      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+      "notes": "Only EW-01 taxonomy script CI passed, not a model or benchmark re-evaluation. Existing conflict detector recall remains 0.4000. Other release gates OPEN.",
+      "evidence": {
+        "automated_regression": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/43819208229"
+      }
     },
     {
       "name": "Polyglot Relay",
