@@ -1,0 +1,50 @@
+name: Wave 1 Evidence Regressions
+
+on:
+  pull_request:
+    paths:
+      - "portfolio_projects/renteria-sourcegate/**"
+      - "portfolio_projects/jev-routed-genai-support-desk/**"
+      - "scripts/evidenceweave_novelty_analysis.py"
+      - "tests/test_evidenceweave_novelty_analysis.py"
+      - ".github/workflows/wave1-evidence-regressions.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sourcegate-and-evidenceweave:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run SourceGate regression suite
+        working-directory: portfolio_projects/renteria-sourcegate
+        run: python -m unittest discover -s . -p "test_*.py" -v
+      - name: Run isolated JEV precheck regression tests
+        working-directory: portfolio_projects/jev-routed-genai-support-desk
+        run: python -m unittest discover -s . -p test_routing_regression_prototype.py -v
+      - name: Run EvidenceWeave novelty diagnostic tests
+        run: python -m unittest discover -s tests -p test_evidenceweave_novelty_analysis.py -v
+      - name: Reproduce historical missed-claim anomaly analysis
+        run: python scripts/evidenceweave_novelty_analysis.py --output artifacts/wave1-novelty/novel_claims.json
+      - name: Assert anomaly labeling and scope
+        run: |
+          python - <<'PY'
+          import json
+          p="artifacts/wave1-novelty/novel_claims.json"
+          data=json.load(open(p))
+          assert data["cases"] == 258
+          assert data["cases_with_novel_claims"] + data["cases_without_novel_claims"] == 258
+          assert "not validation" in data["scope"]
+          print("Verified: known missed cases are categorized as NOVELTY, not conflicts.")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wave1-novelty-${{ github.sha }}
+          path: artifacts/wave1-novelty/
+          retention-days: 90
