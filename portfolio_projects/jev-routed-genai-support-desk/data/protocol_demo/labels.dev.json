@@ -1,0 +1,53 @@
+{
+  "scope": "DEVELOPER-authored labels, not independent review",
+  "labels": [
+    {
+      "id": "t01",
+      "route": "clarify"
+    },
+    {
+      "id": "t02",
+      "route": "read_only_order_lookup"
+    },
+    {
+      "id": "t03",
+      "route": "clarify"
+    },
+    {
+      "id": "t04",
+      "route": "agent_review"
+    },
+    {
+      "id": "t05",
+      "route": "human"
+    },
+    {
+      "id": "t06",
+      "route": "human"
+    },
+    {
+      "id": "t07",
+      "route": "human"
+    },
+    {
+      "id": "t08",
+      "route": "clarify"
+    },
+    {
+      "id": "t09",
+      "route": "clarify"
+    },
+    {
+      "id": "t10",
+      "route": "read_only_order_lookup"
+    },
+    {
+      "id": "t11",
+      "route": "clarify"
+    },
+    {
+      "id": "t12",
+      "route": "human"
+    }
+  ]
+}
