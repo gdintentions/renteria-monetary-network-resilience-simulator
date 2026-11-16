@@ -1,0 +1,56 @@
+name: EvidenceWeave Failure Taxonomy CI
+
+on:
+  pull_request:
+    paths:
+      - "scripts/evidenceweave_failure_taxonomy.py"
+      - "tests/test_evidenceweave_failure_taxonomy.py"
+      - "portfolio_projects/renteria-evidenceweave/artifacts/conflictqa-external-eval.json"
+      - ".github/workflows/evidenceweave-taxonomy-ci.yml"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/evidenceweave_failure_taxonomy.py"
+      - "tests/test_evidenceweave_failure_taxonomy.py"
+      - "portfolio_projects/renteria-evidenceweave/artifacts/conflictqa-external-eval.json"
+      - ".github/workflows/evidenceweave-taxonomy-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  taxonomy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run script tests
+        run: python -m unittest discover -s tests -p test_evidenceweave_failure_taxonomy.py -v
+      - name: Reproduce published failure taxonomy
+        run: python scripts/evidenceweave_failure_taxonomy.py --output-dir artifacts/evidenceweave-taxonomy-ci
+      - name: Verify output schema and reproducibility
+        run: |
+          python - <<'PY'
+          import csv
+          import json
+          from pathlib import Path
+          p = Path("artifacts/evidenceweave-taxonomy-ci")
+          r = json.loads((p / "failure_taxonomy.json").read_text())
+          assert r["baseline"]["false_negative"] == 258
+          assert r["baseline"]["false_positive"] == 4
+          assert r["failure_categories"] == {"false-positive-conflict": 4, "missed-conflict": 258}
+          assert len(r["input_sha256"]) == 64
+          rows = list(csv.DictReader((p / "failure_taxonomy.csv").open()))
+          assert len(rows) == len(r["predicates"]) > 0
+          print("Verified counts, JSON/CSV row parity and input digest.")
+          PY
+      - name: Save attributable regression artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidenceweave-taxonomy-${{ github.sha }}
+          path: artifacts/evidenceweave-taxonomy-ci/
+          retention-days: 90
