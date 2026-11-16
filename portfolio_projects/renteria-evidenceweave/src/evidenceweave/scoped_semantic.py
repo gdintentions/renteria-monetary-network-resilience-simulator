@@ -65,17 +65,34 @@ def scoped_conflict_candidates(
     approved = set(approved_equivalence_ids)
     if not approved.issubset(set(ids)):
         raise ValueError("Approved aliases reference unknown claim IDs")
-    usable: list[Claim] = []
+    # A time-scoped identity assertion cannot safely be used as a timeless
+    # union-find edge. Reject it until a temporal identity algorithm exists.
     for claim in items:
-        if norm(claim.predicate) != norm(equivalence_predicate) or claim.claim_id in approved:
-            usable.append(claim)
-    candidates = semantic_candidates(
-        usable,
-        functional_predicates=functional_predicates,
-        inverse_predicates=dict(inverse_predicates or {}),
-        equivalence_predicate=equivalence_predicate,
-    )
-    return [
-        candidate for candidate in candidates
-        if _overlaps(contexts[candidate.left_claim_id], contexts[candidate.right_claim_id])
-    ]
+        if claim.claim_id in approved:
+            if norm(claim.predicate) != norm(equivalence_predicate):
+                raise ValueError("Only identity assertions may receive equivalence approval")
+            scope = contexts[claim.claim_id]
+            if scope.valid_from is not None or scope.valid_to is not None:
+                raise ValueError("Time-scoped equivalence requires a separate temporal review")
+
+    # Build the union-find graph independently for EACH declared policy domain.
+    # Otherwise a reviewed alias in domain A would contaminate facts in B.
+    groups: dict[str, list[Claim]] = {}
+    for claim in items:
+        if norm(claim.predicate) == norm(equivalence_predicate) and claim.claim_id not in approved:
+            continue
+        groups.setdefault(norm(contexts[claim.claim_id].domain), []).append(claim)
+
+    found: list[SemanticCandidate] = []
+    for claims_in_domain in groups.values():
+        candidates = semantic_candidates(
+            claims_in_domain,
+            functional_predicates=functional_predicates,
+            inverse_predicates=dict(inverse_predicates or {}),
+            equivalence_predicate=equivalence_predicate,
+        )
+        found.extend(
+            candidate for candidate in candidates
+            if _overlaps(contexts[candidate.left_claim_id], contexts[candidate.right_claim_id])
+        )
+    return found
