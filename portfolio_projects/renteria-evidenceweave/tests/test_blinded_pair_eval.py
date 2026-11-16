@@ -30,7 +30,7 @@ class BlindedPairEvaluationTests(unittest.TestCase):
         self.assertEqual(result["semantic_challenger"]["tp"], 1)
         self.assertEqual(result["semantic_challenger"]["fp"], 0)
         self.assertEqual(result["count"], 2)
-        self.assertEqual(result["label_provenance_status"] if "label_provenance_status" in result else "NOT_INDEPENDENTLY_VERIFIED",
+        self.assertEqual(result["label_provenance_status"],
                          "NOT_INDEPENDENTLY_VERIFIED")
 
     def test_reject_leaked_labels(self):
