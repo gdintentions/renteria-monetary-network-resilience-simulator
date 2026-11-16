@@ -67,9 +67,7 @@ def scoped_conflict_candidates(
         raise ValueError("Approved aliases reference unknown claim IDs")
     usable: list[Claim] = []
     for claim in items:
-        if norm(claim.predicate) != norm(equivalence_predicate):
-            usable.append(claim)
-        elif claim.claim_id in approved:
+        if norm(claim.predicate) != norm(equivalence_predicate) or claim.claim_id in approved:
             usable.append(claim)
     candidates = semantic_candidates(
         usable,
