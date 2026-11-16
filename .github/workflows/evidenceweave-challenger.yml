@@ -1,6 +1,11 @@
 name: EvidenceWeave Schema Challenger Replay
 
 on:
+  push:
+    branches: [experiment/evidenceweave-schema-conflicts-2026-11-15]
+    paths:
+      - "portfolio_projects/renteria-evidenceweave/**"
+      - ".github/workflows/evidenceweave-challenger.yml"
   pull_request:
     paths:
       - "portfolio_projects/renteria-evidenceweave/**"
