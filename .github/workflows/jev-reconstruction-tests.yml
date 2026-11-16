@@ -1,6 +1,11 @@
 name: JEV Reconstructed Router Tests
 
 on:
+  push:
+    branches: [experiment/jev-reconstructed-router-2026-11-16]
+    paths:
+      - "portfolio_projects/jev-routed-genai-support-desk/**"
+      - ".github/workflows/jev-reconstruction-tests.yml"
   pull_request:
     paths:
       - "portfolio_projects/jev-routed-genai-support-desk/**"
