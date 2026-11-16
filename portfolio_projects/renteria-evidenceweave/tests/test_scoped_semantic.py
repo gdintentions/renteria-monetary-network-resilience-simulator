@@ -78,6 +78,36 @@ class ScopedSemanticTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             FactScope("fiction", "2026-02-01", "2026-01-01")
 
+    def test_reviewed_alias_does_not_cross_policy_domain(self):
+        claims = [
+            claim("eq", "Aurora", "same_as", "Republic of Aurora"),
+            claim("a", "Aurora", "capital", "East"),
+            claim("b", "Republic of Aurora", "capital", "West"),
+        ]
+        # The alias was reviewed for domain A only; the conflicting facts
+        # are both about domain B, where that alias is unapproved.
+        contexts = {"eq": FactScope("domain-A"),
+                    "a": FactScope("domain-B"),
+                    "b": FactScope("domain-B")}
+        self.assertFalse(evaluate(claims, contexts, approved_equivalence_ids={"eq"}))
+
+    def test_time_bounded_alias_is_rejected_not_applied_globally(self):
+        claims = [
+            claim("eq", "Aurora", "same_as", "A"),
+            claim("a", "Aurora", "capital", "East"),
+            claim("b", "A", "capital", "West"),
+        ]
+        contexts = {"eq": FactScope("fiction", "2010-01-01", "2010-12-31"),
+                    "a": FactScope("fiction", "2026-01-01"),
+                    "b": FactScope("fiction", "2026-01-01")}
+        with self.assertRaisesRegex(ValueError, "Time-scoped equivalence"):
+            evaluate(claims, contexts, approved_equivalence_ids={"eq"})
+
+    def test_approval_cannot_turn_ordinary_claim_into_identity(self):
+        claims = [claim("a", "Aurora", "capital", "East")]
+        with self.assertRaisesRegex(ValueError, "Only identity assertions"):
+            evaluate(claims, {"a": FactScope("fiction")}, approved_equivalence_ids={"a"})
+
     def test_unknown_alias_approval_fails(self):
         claims = [claim("a", "Aurora", "capital", "East")]
         with self.assertRaisesRegex(ValueError, "unknown"):
