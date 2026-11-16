@@ -30,6 +30,20 @@ jobs:
           python -m pytest -q
       - name: Replay on historical exposed misses (not independent)
         run: python challenger_schema_replay.py
+      - name: Run paired synthetic semantic benchmark
+        run: python semantic_development_eval.py
+      - name: Validate both confusion matrices and published scope
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("artifacts/semantic-challenger-development.json").read_text())
+          assert len(data["cases"]) == 8
+          assert sum(data["baseline"].values()) == 8
+          assert sum(data["challenger"].values()) == 8
+          assert "author-labeled" in data["scope"]
+          print("Synthetic comparison only:", data["baseline"], data["challenger"])
+          PY
       - name: Assert no accuracy overclaim
         run: |
           python - <<'PY'
@@ -46,5 +60,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: evidenceweave-challenger-${{ github.sha }}
-          path: portfolio_projects/renteria-evidenceweave/artifacts/challenger-schema-replay.json
+          path: |
+            portfolio_projects/renteria-evidenceweave/artifacts/challenger-schema-replay.json
+            portfolio_projects/renteria-evidenceweave/artifacts/semantic-challenger-development.json
           retention-days: 90
