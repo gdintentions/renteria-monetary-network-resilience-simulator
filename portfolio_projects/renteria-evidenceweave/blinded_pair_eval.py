@@ -29,7 +29,7 @@ def evaluate_cases(case_doc: dict, label_doc: dict, config: dict) -> dict:
     if not isinstance(config.get("functional_predicates"), list) or not config["functional_predicates"]:
         raise ValueError("Explicit functional predicate schema is required")
     if not isinstance(config.get("inverse_predicates", {}), dict):
-        raise ValueError("Inverse mappings must be a dictionary")
+        raise TypeError("Inverse mappings must be a dictionary")
     ids = [c.get("id") for c in cases]
     label_ids = [l.get("id") for l in labels]
     if any(not isinstance(i, str) or not i for i in ids + label_ids):
@@ -75,6 +75,7 @@ def evaluate_cases(case_doc: dict, label_doc: dict, config: dict) -> dict:
                 "false_positive_rate": fp / (fp + tn) if fp + tn else None,
                 "precision": tp / (tp + fp) if tp + fp else None}
     return {"scope": "paired evaluation on supplied case labels, independence NOT verified",
+            "label_provenance_status": "NOT_INDEPENDENTLY_VERIFIED",
             "count": len(records), "exact_key": matrix("exact_key"),
             "semantic_challenger": matrix("semantic_challenger"), "cases": records}
 
