@@ -77,6 +77,8 @@ class ScopedSemanticTests(unittest.TestCase):
             FactScope("fiction", "2026-99-01")
         with self.assertRaises(ValueError):
             FactScope("fiction", "2026-02-01", "2026-01-01")
+        with self.assertRaisesRegex(ValueError, "canonical"):
+            FactScope("fiction", "20260101")
 
     def test_reviewed_alias_does_not_cross_policy_domain(self):
         claims = [
