@@ -1,0 +1,56 @@
+name: SourceGate and TraceLens Offline Review Protocol
+
+on:
+  push:
+    branches: [validation/sourcegate-tracelens-offline-2026-11-16]
+    paths:
+      - "portfolio_projects/renteria-sourcegate/**"
+      - "portfolio_projects/renteria-tracelens/**"
+      - "scripts/offline_review_runner.py"
+      - ".github/workflows/sourcegate-tracelens-offline.yml"
+  pull_request:
+    paths:
+      - "scripts/offline_review_runner.py"
+      - "tests/test_offline_review_runner.py"
+      - "data/validation_protocol_demo/**"
+      - "portfolio_projects/renteria-sourcegate/**"
+      - "portfolio_projects/renteria-tracelens/**"
+      - ".github/workflows/sourcegate-tracelens-offline.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-protocol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run source and trace regression tests
+        run: |
+          ( cd portfolio_projects/renteria-sourcegate && python -m unittest discover -s . -p "test_*.py" -v )
+          ( cd portfolio_projects/renteria-tracelens && python -m unittest discover -s . -p "test_*.py" -v )
+          python -m unittest discover -s tests -p "test_offline_review_runner.py" -v
+      - name: Compare cases to separate developer labels at zero API cost
+        run: |
+          python scripts/offline_review_runner.py --cases data/validation_protocol_demo/cases.dev.json --labels data/validation_protocol_demo/labels.dev.json --out artifacts/no-token-evidence-review.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d = json.loads(Path("artifacts/no-token-evidence-review.json").read_text())
+          assert d["provider_tokens_used"] == 0
+          assert d["independent_review"] is False
+          assert all(r["match"] for r in d["results"])
+          assert d["summary"]["sourcegate"]["n"] == 7
+          assert d["summary"]["tracelens"]["n"] == 6
+          print("No-token CI evidence protocol verified", d["summary"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: no-token-review-protocol-${{ github.sha }}
+          path: artifacts/no-token-evidence-review.json
+          retention-days: 90

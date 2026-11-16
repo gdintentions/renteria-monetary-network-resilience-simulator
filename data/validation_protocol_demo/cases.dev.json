@@ -1,0 +1,257 @@
+{
+  "scope": "DEVELOPER FIXTURES ONLY. Synthetic policies and labels, not external adjudication.",
+  "cases": [
+    {
+      "id": "S01-fully-covered",
+      "project": "sourcegate",
+      "input": {
+        "required_claims": [
+          "approver",
+          "duration"
+        ],
+        "evidence": [
+          {
+            "id": "complete",
+            "text": "Fictional policy evidence: complete",
+            "source": "https://policy.example/rule",
+            "expires": "2099-01-01",
+            "claims": {
+              "approver": "sponsor",
+              "duration": 14
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S02-missing",
+      "project": "sourcegate",
+      "input": {
+        "required_claims": [
+          "approver",
+          "duration"
+        ],
+        "evidence": [
+          {
+            "id": "one",
+            "text": "Fictional policy evidence: one",
+            "source": "https://policy.example/rule",
+            "expires": "2099-01-01",
+            "claims": {
+              "approver": "sponsor"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S03-conflicting",
+      "project": "sourcegate",
+      "input": {
+        "required_claims": [
+          "approver"
+        ],
+        "evidence": [
+          {
+            "id": "one",
+            "text": "Fictional policy evidence: one",
+            "source": "https://policy.example/rule",
+            "expires": "2099-01-01",
+            "claims": {
+              "approver": "sponsor"
+            }
+          },
+          {
+            "id": "two",
+            "text": "Fictional policy evidence: two",
+            "source": "https://policy.example/rule",
+            "expires": "2099-01-01",
+            "claims": {
+              "approver": "IT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S04-stale",
+      "project": "sourcegate",
+      "input": {
+        "required_claims": [
+          "approver"
+        ],
+        "evidence": [
+          {
+            "id": "stale",
+            "text": "Fictional policy evidence: stale",
+            "source": "https://policy.example/rule",
+            "expires": "2026-11-15",
+            "claims": {
+              "approver": "sponsor"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S05-empty-value",
+      "project": "sourcegate",
+      "input": {
+        "required_claims": [
+          "approver"
+        ],
+        "evidence": [
+          {
+            "id": "blank",
+            "text": "Fictional policy evidence: blank",
+            "source": "https://policy.example/rule",
+            "expires": "2099-01-01",
+            "claims": {
+              "approver": " "
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S06-false-and-zero",
+      "project": "sourcegate",
+      "input": {
+        "required_claims": [
+          "allow",
+          "duration"
+        ],
+        "evidence": [
+          {
+            "id": "legitimate",
+            "text": "Fictional policy evidence: legitimate",
+            "source": "https://policy.example/rule",
+            "expires": "2099-01-01",
+            "claims": {
+              "allow": false,
+              "duration": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "S07-untrusted-source",
+      "project": "sourcegate",
+      "input": {
+        "required_claims": [
+          "approver"
+        ],
+        "evidence": [
+          {
+            "id": "bad-host",
+            "text": "Fictional policy evidence: bad-host",
+            "source": "https://untrusted.example/policy",
+            "expires": "2099-01-01",
+            "claims": {
+              "approver": "sponsor"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "T01-selection-miss",
+      "project": "tracelens",
+      "input": {
+        "candidates": [
+          {
+            "id": "noise"
+          },
+          {
+            "id": "answer"
+          }
+        ],
+        "kept_ids": [
+          "noise"
+        ],
+        "judge_labels": {
+          "noise": "unrelated",
+          "answer": "answers"
+        },
+        "gold_ids": [
+          "answer"
+        ]
+      }
+    },
+    {
+      "id": "T02-supported",
+      "project": "tracelens",
+      "input": {
+        "candidates": [
+          {
+            "id": "answer"
+          }
+        ],
+        "kept_ids": [
+          "answer"
+        ],
+        "judge_labels": {
+          "answer": "answers"
+        },
+        "gold_ids": [
+          "answer"
+        ]
+      }
+    },
+    {
+      "id": "T03-no-judge",
+      "project": "tracelens",
+      "input": {
+        "candidates": [
+          {
+            "id": "answer"
+          }
+        ],
+        "kept_ids": []
+      }
+    },
+    {
+      "id": "T04-candidate-miss",
+      "project": "tracelens",
+      "input": {
+        "candidates": [],
+        "kept_ids": [],
+        "judge_labels": {},
+        "gold_ids": [
+          "unseen"
+        ]
+      }
+    },
+    {
+      "id": "T05-judge-disagreement",
+      "project": "tracelens",
+      "input": {
+        "candidates": [
+          {
+            "id": "answer"
+          }
+        ],
+        "kept_ids": [
+          "answer"
+        ],
+        "judge_labels": {
+          "answer": "unrelated"
+        },
+        "gold_ids": [
+          "answer"
+        ]
+      }
+    },
+    {
+      "id": "T06-not-run",
+      "project": "tracelens",
+      "input": {
+        "candidates": [],
+        "kept_ids": [],
+        "used_ids": [],
+        "retrieval_ran": false
+      }
+    }
+  ]
+}
