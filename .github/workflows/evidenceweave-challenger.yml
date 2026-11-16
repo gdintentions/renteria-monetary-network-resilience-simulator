@@ -44,6 +44,23 @@ jobs:
           assert "author-labeled" in data["scope"]
           print("Synthetic comparison only:", data["baseline"], data["challenger"])
           PY
+      - name: Run separated-label evaluation protocol (DEVELOPER fixtures only)
+        run: |
+          python blinded_pair_eval.py \
+            --cases data/protocol_demo/cases.dev.json \
+            --labels data/protocol_demo/labels.dev.json \
+            --config data/protocol_demo/schema.dev.json \
+            --out artifacts/separated-label-development.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path("artifacts/separated-label-development.json").read_text())
+          assert d["count"] == 8
+          assert d["label_provenance_status"] == "NOT_INDEPENDENTLY_VERIFIED"
+          assert d["exact_key"]["tp"] == 1
+          assert d["semantic_challenger"]["tp"] == 3
+          print("Development-only separate-label run:", d["exact_key"], d["semantic_challenger"])
+          PY
       - name: Assert no accuracy overclaim
         run: |
           python - <<'PY'
@@ -63,4 +80,5 @@ jobs:
           path: |
             portfolio_projects/renteria-evidenceweave/artifacts/challenger-schema-replay.json
             portfolio_projects/renteria-evidenceweave/artifacts/semantic-challenger-development.json
+            portfolio_projects/renteria-evidenceweave/artifacts/separated-label-development.json
           retention-days: 90
