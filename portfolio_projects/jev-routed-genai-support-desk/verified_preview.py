@@ -58,9 +58,15 @@ def compose_agent_preview(
         return hold("not_a_reviewable_route")
     if decision.verified_order is not True:
         return hold("order_ownership_not_verified")
+    if not isinstance(approved_sources, set) or any(
+        not isinstance(source_id, str) or not source_id for source_id in approved_sources
+    ):
+        return hold("invalid_source_allowlist")
     if not isinstance(facts, list) or len(facts) != 1 or not isinstance(facts[0], VerifiedFact):
         return hold("exactly_one_typed_fact_required")
     fact = facts[0]
+    if not isinstance(fact.key, str) or not isinstance(fact.value, str):
+        return hold("invalid_fact_type")
     if type(fact.verified) is not bool or not fact.verified:
         return hold("unverified_fact")
     if not isinstance(fact.source_id, str) or not fact.source_id or fact.source_id not in approved_sources:
