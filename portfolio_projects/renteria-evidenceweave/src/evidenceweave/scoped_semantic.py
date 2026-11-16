@@ -29,7 +29,8 @@ class FactScope:
             if value is not None:
                 if not isinstance(value, str):
                     raise ValueError("Dates must be ISO date strings")
-                date.fromisoformat(value)
+                if date.fromisoformat(value).isoformat() != value:
+                    raise ValueError("Only canonical YYYY-MM-DD dates are allowed")
         if self.valid_from and self.valid_to and self.valid_from > self.valid_to:
             raise ValueError("Validity interval end precedes start")
 
