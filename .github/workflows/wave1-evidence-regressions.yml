@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "portfolio_projects/renteria-sourcegate/**"
+      - "portfolio_projects/jev-routed-genai-support-desk/**"
       - "scripts/evidenceweave_novelty_analysis.py"
       - "tests/test_evidenceweave_novelty_analysis.py"
       - ".github/workflows/wave1-evidence-regressions.yml"
@@ -24,6 +25,9 @@ jobs:
       - name: Run SourceGate regression suite
         working-directory: portfolio_projects/renteria-sourcegate
         run: python -m unittest discover -s . -p "test_*.py" -v
+      - name: Run isolated JEV precheck regression tests
+        working-directory: portfolio_projects/jev-routed-genai-support-desk
+        run: python -m unittest discover -s . -p test_routing_regression_prototype.py -v
       - name: Run EvidenceWeave novelty diagnostic tests
         run: python -m unittest discover -s tests -p test_evidenceweave_novelty_analysis.py -v
       - name: Reproduce historical missed-claim anomaly analysis
