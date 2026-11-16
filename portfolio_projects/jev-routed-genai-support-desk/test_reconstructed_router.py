@@ -31,7 +31,8 @@ class RouterTests(unittest.TestCase):
 
     def test_human_and_sensitive_override_other_routes(self):
         for text in ("Get me a human to track my order",
-                     "My card was stolen, can you track my parcel?"):
+                     "My card was stolen, can you track my parcel?",
+                     "My account is locked, any parcel status update?"):
             self.assertEqual(route_ticket(text).route, "human")
 
     def test_refund_never_auto_authorized(self):
