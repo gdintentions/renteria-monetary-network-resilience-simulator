@@ -65,11 +65,18 @@ def run(
         if not isinstance(labels,dict) or set(labels)!={d.id for d in items} or any(not isinstance(v,str) or v not in {"relevant","partial","irrelevant"} for v in labels.values()):
             raise ValueError("incomplete or invalid evaluator response")
         return [d for d in items if labels[d.id]!="irrelevant"]
-    def covered(items):return set().union(*(set(d.claims) for d in items)) if items else set()
+    def meaningful(value):
+        # A source can name a claim while providing no actual fact.
+        # Keep zero and False: they can be legitimate evidence values.
+        return value is not None and not (isinstance(value, str) and not value.strip())
+    def covered(items):
+        return set().union(*(
+            {k for k, v in d.claims.items() if meaningful(v)} for d in items
+        )) if items else set()
     def conflicting_claims(items):
         return [
             key for key in required_claims
-            if len({json.dumps(d.claims[key], sort_keys=True) for d in items if key in d.claims}) > 1
+            if len({json.dumps(d.claims[key], sort_keys=True) for d in items if key in d.claims and meaningful(d.claims[key])}) > 1
         ]
 
     try:
