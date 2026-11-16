@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0",
+  "program_opened": "2026-11-15",
+  "baseline": "Governed RAG evidence discipline; not a production certification",
+  "status": "in_progress",
+  "change_scope": "Planning + CI integration; no project quality score automatically upgraded",
+  "projects": [
+    {
+      "name": "SourceGate",
+      "wave": 1,
+      "next_ticket": "SG-01: counterexample fixtures for partial, missing and expired evidence, plus conflict precedence",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "TraceLens",
+      "wave": 1,
+      "next_ticket": "TL-01: independently adjudicable trace diagnosis rubric and replay comparison",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "JEV Support Desk",
+      "wave": 1,
+      "next_ticket": "JEV-01: freeze fresh holdout and preserve R29/R30 as regression-only cases",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "EvidenceWeave",
+      "wave": 1,
+      "next_ticket": "EW-01: baseline failure taxonomy and limited regression-tested challenger",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "Polyglot Relay",
+      "wave": 2,
+      "next_ticket": "PL-01: permitted real-provider adapter and measurable translation quality/error/latency",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "Context Atlas",
+      "wave": 2,
+      "next_ticket": "CA-01: source-hashed link relevance holdout and browser workflow",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "Notes Evidence RAG",
+      "wave": 2,
+      "next_ticket": "NR-01: claim entailment and no-answer labels beyond citation-ID checks",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "Local Model Workbench",
+      "wave": 2,
+      "next_ticket": "LM-01: benchmark on actual locally installed models, hardware and error reporting",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "Personal Assistant Ledger",
+      "wave": 2,
+      "next_ticket": "PA-01: timezone/restart/deduplication multi-day scenarios",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "ArgusLoop",
+      "wave": 2,
+      "next_ticket": "AL-01: controlled real-GUI task outcomes, safe refusal, screenshot privacy",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "Monetary Simulator",
+      "wave": 3,
+      "next_ticket": "MS-01: frozen historical proxy/baseline and parameter sensitivity report",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "ContinuityRouter",
+      "wave": 3,
+      "next_ticket": "CR-01: permitted real provider fault injection and deadline measurements",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    },
+    {
+      "name": "QRCN",
+      "wave": 3,
+      "next_ticket": "QC-01: adversarial partition and rollback reasoning on separately preserved research branches",
+      "gates": {
+        "automated_regression": "not_run",
+        "domain_validation": "blocked",
+        "owner_walkthrough": "blocked",
+        "observed_workflow": "blocked",
+        "selected_host": "blocked",
+        "organizational_acceptance": "blocked"
+      },
+      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+    }
+  ]
+}
