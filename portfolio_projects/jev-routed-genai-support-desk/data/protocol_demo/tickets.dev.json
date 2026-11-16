@@ -1,0 +1,61 @@
+{
+  "scope": "DEVELOPER sample tickets, not original 35 or unseen holdout",
+  "tickets": [
+    {
+      "id": "t01",
+      "text": "Track my package"
+    },
+    {
+      "id": "t02",
+      "text": "Where is my parcel?",
+      "order_verified": true
+    },
+    {
+      "id": "t03",
+      "text": "Can I swap the size of my item?"
+    },
+    {
+      "id": "t04",
+      "text": "Could I change the size of my jacket?",
+      "order_verified": true,
+      "exchange_policy_verified": true
+    },
+    {
+      "id": "t05",
+      "text": "Please connect me to a human to track my order"
+    },
+    {
+      "id": "t06",
+      "text": "My card was stolen, where is my delivery?"
+    },
+    {
+      "id": "t07",
+      "text": "I want a refund"
+    },
+    {
+      "id": "t08",
+      "text": "Track my order and exchange the size of my jacket",
+      "order_verified": true,
+      "exchange_policy_verified": true
+    },
+    {
+      "id": "t09",
+      "text": "What are your hours?"
+    },
+    {
+      "id": "t10",
+      "text": "Order status update",
+      "order_verified": true
+    },
+    {
+      "id": "t11",
+      "text": "Exchange my item",
+      "order_verified": true,
+      "exchange_policy_verified": false
+    },
+    {
+      "id": "t12",
+      "text": "My account is locked, any parcel status update?"
+    }
+  ]
+}
