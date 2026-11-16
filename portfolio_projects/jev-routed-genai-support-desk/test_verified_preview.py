@@ -71,6 +71,19 @@ class VerifiedPreviewTests(unittest.TestCase):
         self.assertEqual(r.status, "HOLD")
         self.assertFalse(r.release_authorized)
 
+    def test_malformed_typed_fact_and_allowlist_fail_closed(self):
+        d = route_ticket("Track my package", order_verified=True)
+        for f in (VerifiedFact("order_status", ["shipped"], "policy-v1", True),
+                  VerifiedFact("order_status", None, "policy-v1", True)):
+            with self.subTest(f=f):
+                result = compose_agent_preview(d, [f], approved_sources={"policy-v1"})
+                self.assertEqual(result.status, "HOLD")
+                self.assertIsNone(result.text)
+        result = compose_agent_preview(
+            d, [fact("order_status", "shipped")], approved_sources=None
+        )
+        self.assertEqual(result.status, "HOLD")
+
     def test_unexpected_key_prevents_order_status_copy(self):
         d = route_ticket("Track my package", order_verified=True)
         r = compose_agent_preview(d, [fact("exchange_policy", "eligible_for_review")],
