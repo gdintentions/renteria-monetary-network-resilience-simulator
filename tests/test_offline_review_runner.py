@@ -1,9 +1,11 @@
 import copy
 import json
+import sys
 import unittest
 from pathlib import Path
 
-from offline_review_runner import run_cases
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from offline_review_runner import run_cases  # noqa: E402
 
 DIR = Path(__file__).resolve().parents[1] / "data" / "validation_protocol_demo"
 CASES = json.loads((DIR / "cases.dev.json").read_text())
