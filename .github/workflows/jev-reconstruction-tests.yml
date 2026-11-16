@@ -21,4 +21,24 @@ jobs:
           python-version: "3.11"
       - name: Run fail-closed routing and draft guard tests
         working-directory: portfolio_projects/jev-routed-genai-support-desk
-        run: python -m unittest discover -s . -p "test_reconstructed_router.py" -v
+        run: |
+          python -m unittest discover -s . -p "test_*.py" -v
+      - name: Run labeled developer-only routing assessment
+        working-directory: portfolio_projects/jev-routed-genai-support-desk
+        run: |
+          python routing_evaluation.py --tickets data/protocol_demo/tickets.dev.json --labels data/protocol_demo/labels.dev.json --output artifacts/routing-development.json
+          python - <<'PY'
+          import json
+          d=json.load(open("artifacts/routing-development.json"))
+          assert d["tickets"]==12
+          assert d["correct"] <= d["tickets"]
+          assert d["original_33_of_35_unchanged"] is True
+          assert d["independent_review"] is False
+          print("Developer reconstruction evaluation:",d["correct"],"of",d["tickets"])
+          PY
+      - name: Save no-cost verification artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: jev-routing-development-${{ github.sha }}
+          path: portfolio_projects/jev-routed-genai-support-desk/artifacts/routing-development.json
+          retention-days: 90
