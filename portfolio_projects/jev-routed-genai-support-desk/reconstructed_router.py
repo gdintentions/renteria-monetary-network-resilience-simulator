@@ -20,11 +20,11 @@ EXCHANGE = re.compile(
 )
 HUMAN = re.compile(r"\b(?:human|person|representative|agent|supervisor)\b", re.I)
 SENSITIVE = re.compile(
-    r"\b(?:fraud|identity theft|account locked|chargeback|billing dispute|stolen card|compromised account)\b",
+    r"\b(?:fraud|identity theft|account locked|chargeback|billing dispute|stolen card|card (?:was |is )?stolen|compromised account)\b",
     re.I,
 )
 RETURN = re.compile(r"\b(?:return|refund)\b", re.I)
-PROMISE = re.compile(r"\b(?:guarantee|guaranteed refund|refund approved|credit issued|we have refunded)\b", re.I)
+PROMISE = re.compile(r"\b(?:guarantee|guaranteed|guaranteed refund|refund approved|credit issued|we have refunded)\b", re.I)
 
 
 @dataclass(frozen=True)
