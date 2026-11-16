@@ -1,0 +1,57 @@
+{
+  "scope": "DEVELOPER-authored expected outcomes, not third-party labels",
+  "labels": [
+    {
+      "id": "S01-fully-covered",
+      "status": "CITED_EXTRACTS"
+    },
+    {
+      "id": "S02-missing",
+      "status": "NEEDS_REVIEW/MISSING_EVIDENCE"
+    },
+    {
+      "id": "S03-conflicting",
+      "status": "NEEDS_REVIEW/CONFLICT"
+    },
+    {
+      "id": "S04-stale",
+      "status": "NEEDS_REVIEW/MISSING_EVIDENCE"
+    },
+    {
+      "id": "S05-empty-value",
+      "status": "NEEDS_REVIEW/MISSING_EVIDENCE"
+    },
+    {
+      "id": "S06-false-and-zero",
+      "status": "CITED_EXTRACTS"
+    },
+    {
+      "id": "S07-untrusted-source",
+      "status": "NEEDS_REVIEW/MISSING_EVIDENCE"
+    },
+    {
+      "id": "T01-selection-miss",
+      "status": "SELECTION_MISS"
+    },
+    {
+      "id": "T02-supported",
+      "status": "SUPPORTED_CONTEXT"
+    },
+    {
+      "id": "T03-no-judge",
+      "status": "JUDGE_UNAVAILABLE"
+    },
+    {
+      "id": "T04-candidate-miss",
+      "status": "CANDIDATE_MISS"
+    },
+    {
+      "id": "T05-judge-disagreement",
+      "status": "JUDGE_DISAGREEMENT"
+    },
+    {
+      "id": "T06-not-run",
+      "status": "RETRIEVAL_NOT_RUN"
+    }
+  ]
+}
