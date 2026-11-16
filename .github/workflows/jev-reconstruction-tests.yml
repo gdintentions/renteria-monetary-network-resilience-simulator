@@ -1,0 +1,24 @@
+name: JEV Reconstructed Router Tests
+
+on:
+  pull_request:
+    paths:
+      - "portfolio_projects/jev-routed-genai-support-desk/**"
+      - ".github/workflows/jev-reconstruction-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reconstructed-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run fail-closed routing and draft guard tests
+        working-directory: portfolio_projects/jev-routed-genai-support-desk
+        run: python -m unittest discover -s . -p "test_reconstructed_router.py" -v
