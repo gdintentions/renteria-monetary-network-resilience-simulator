@@ -7,6 +7,8 @@ on:
       - "tests/test_evidenceweave_failure_taxonomy.py"
       - "portfolio_projects/renteria-evidenceweave/artifacts/conflictqa-external-eval.json"
       - ".github/workflows/evidenceweave-taxonomy-ci.yml"
+      - "scripts/check_portfolio_upgrade_gates.py"
+      - "docs/portfolio_upgrade_gates_2026-11-15.json"
   push:
     branches: [main]
     paths:
@@ -48,6 +50,8 @@ jobs:
           assert len(rows) == len(r["predicates"]) > 0
           print("Verified counts, JSON/CSV row parity and input digest.")
           PY
+      - name: Verify all three upgrade waves and evidence claim integrity
+        run: python scripts/check_portfolio_upgrade_gates.py
       - name: Save attributable regression artifacts
         uses: actions/upload-artifact@v4
         with:
