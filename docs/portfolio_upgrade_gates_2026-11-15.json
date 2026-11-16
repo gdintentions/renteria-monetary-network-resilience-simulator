@@ -10,14 +10,17 @@
       "wave": 1,
       "next_ticket": "SG-01: counterexample fixtures for partial, missing and expired evidence, plus conflict precedence",
       "gates": {
-        "automated_regression": "not_run",
+        "automated_regression": "passed",
         "domain_validation": "blocked",
         "owner_walkthrough": "blocked",
         "observed_workflow": "blocked",
         "selected_host": "blocked",
         "organizational_acceptance": "blocked"
       },
-      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+      "notes": "Branch-only missing-evidence value fix with full synthetic SourceGate test suite passing; independently judged source coverage and acceptance remain blocked.",
+      "evidence": {
+        "automated_regression": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/43820354990"
+      }
     },
     {
       "name": "TraceLens",
@@ -45,7 +48,7 @@
         "selected_host": "blocked",
         "organizational_acceptance": "blocked"
       },
-      "notes": "Existing historical project evidence remains in original reports; this new manifest records only upgrade-program gates."
+      "notes": "Isolated synthetic routing precheck tests passed CI, but archived v0.1.1 router was not modified or retested. Historical routing accuracy 33/35 unchanged; actual integration blocked pending source archive."
     },
     {
       "name": "EvidenceWeave",
@@ -59,7 +62,7 @@
         "selected_host": "blocked",
         "organizational_acceptance": "blocked"
       },
-      "notes": "Only EW-01 taxonomy script CI passed, not a model or benchmark re-evaluation. Existing conflict detector recall remains 0.4000. Other release gates OPEN.",
+      "notes": "Baseline failure taxonomy and novelty-only diagnostics passed CI. Core conflict recall remains historically 0.4000; new conflict detector accuracy not demonstrated.",
       "evidence": {
         "automated_regression": "https://github.com/gdintentions/renteria-monetary-network-resilience-simulator/actions/runs/43819208229"
       }
