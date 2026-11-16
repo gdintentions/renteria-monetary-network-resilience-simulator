@@ -1,0 +1,50 @@
+name: EvidenceWeave Schema Challenger Replay
+
+on:
+  pull_request:
+    paths:
+      - "portfolio_projects/renteria-evidenceweave/**"
+      - ".github/workflows/evidenceweave-challenger.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  challenger:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: portfolio_projects/renteria-evidenceweave
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install local project
+        run: python -m pip install -e ".[dev]"
+      - name: Run test suite and static checks
+        run: |
+          python -m ruff check .
+          python -m pytest -q
+      - name: Replay on historical exposed misses (not independent)
+        run: python challenger_schema_replay.py
+      - name: Assert no accuracy overclaim
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path("artifacts/challenger-schema-replay.json").read_text())
+          assert x["misses_inspected"] == 258
+          assert x["full_test_precision"] is None
+          assert x["full_test_recall"] is None
+          assert x["historical_recall"] == 0.4
+          assert "No external accuracy improvement" in x["claim"]
+          print("Replayed historical misses with explicit limitations.")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: evidenceweave-challenger-${{ github.sha }}
+          path: portfolio_projects/renteria-evidenceweave/artifacts/challenger-schema-replay.json
+          retention-days: 90
