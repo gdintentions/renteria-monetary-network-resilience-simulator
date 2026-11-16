@@ -6,8 +6,8 @@ It is NOT calibrated semantic contradiction detection.
 """
 from __future__ import annotations
 
+from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
-from typing import Iterable, Mapping
 
 from .models import Claim
 
