@@ -17,9 +17,27 @@ class ReleaseGateTests(unittest.TestCase):
             "governed-rag", "monetary-simulator", "argusloop", "evidenceweave",
             "polyglot-relay", "context-atlas", "local-model-workbench",
             "notes-evidence-rag", "assistant-ledger", "rag-recruiter-demos",
-            "tracelens", "continuity-router", "sourcegate", "qrcn",
+            "tracelens", "continuity-router", "sourcegate", "qrcn", "jev-support-desk",
         })
         self.assertTrue(all(not row["production_ready"] and row["pending"] for row in reports))
+
+    def test_inventory_separates_systems_repositories_and_demo_variants(self):
+        inventory = self.manifest["inventory"]
+        reports = validate(self.manifest)
+        self.assertEqual(inventory["system_count"], 14)
+        self.assertEqual(inventory["accessible_owned_repository_count"], 9)
+        self.assertEqual(inventory["demo_variant_count"], 2)
+        self.assertEqual(len(set(inventory["demo_variants"])), 2)
+        system_ids = {row["id"] for row in reports} - {inventory["demo_group_id"]}
+        self.assertEqual(len(system_ids), inventory["system_count"])
+        self.assertIn("jev-support-desk", system_ids)
+
+    def test_jev_acceptance_cannot_be_inferred_from_demo_or_reconstruction(self):
+        project = next(row for row in self.manifest["projects"] if row["id"] == "jev-support-desk")
+        self.assertFalse(project["production_ready"])
+        self.assertEqual(len(project["gates"]), 5)
+        self.assertTrue(all(gate["status"] == "pending" for gate in project["gates"]))
+        self.assertIn("independently labeled", project["gates"][0]["requirement"])
 
     def test_forged_readiness_claim_rejected(self):
         self.manifest["projects"][0]["production_ready"] = True

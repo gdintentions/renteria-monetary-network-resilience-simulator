@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-11-06",
+  "updated_at": "2026-11-20",
   "scope": "Actual production release gates; passing controlled tests alone does not close these gates.",
   "projects": [
     {
@@ -548,6 +548,59 @@
           "evidence": []
         }
       ]
+    },
+    {
+      "id": "jev-support-desk",
+      "name": "JEV-Routed GenAI Support Desk",
+      "production_ready": false,
+      "gates": [
+        {
+          "id": "domain_validation",
+          "status": "pending",
+          "requirement": "Fresh independently labeled ticket routes, required handoffs, unsupported previews and abstention; archived 33/35 tuned cases and draft reconstruction fixtures are separate development evidence.",
+          "evidence": [
+            "portfolio_projects/jev-routed-genai-support-desk/README.md"
+          ]
+        },
+        {
+          "id": "security_boundary",
+          "status": "pending",
+          "requirement": "Verify real identity/account separation, agent roles and policy/evidence authority on the intended runtime; synthetic verification flags and static walkthroughs are not authentication.",
+          "evidence": []
+        },
+        {
+          "id": "recovery",
+          "status": "pending",
+          "requirement": "Reproduce the selected implementation's durable receipt/queue restore and rollback on the selected host; preserve original archive provenance and do not substitute a clean-room reconstruction silently.",
+          "evidence": []
+        },
+        {
+          "id": "deployment",
+          "status": "pending",
+          "requirement": "Choose the host, permitted providers/data, resource/cost limits and test workload; verify applicable TLS, dependency failures and capacity. A static browser walkthrough is not a deployed support engine.",
+          "evidence": []
+        },
+        {
+          "id": "operator_acceptance",
+          "status": "pending",
+          "requirement": "Named accountable operator and authorized domain owner agree escalation coverage, retention/incident responsibilities and acceptance thresholds, then record a dated accept/reject decision.",
+          "evidence": []
+        }
+      ]
     }
-  ]
+  ],
+  "inventory": {
+    "system_count": 14,
+    "accessible_owned_repository_count": 9,
+    "demo_variant_count": 2,
+    "demo_group_id": "rag-recruiter-demos",
+    "demo_variants": [
+      "governed-rag-demo-v1",
+      "governed-rag-demo-v2"
+    ],
+    "paused_references": [
+      "Reflexion (unfinished reference)"
+    ],
+    "interpretation": "14 systems plus two related presentation variants; the variants share one release-gate group. Repository count is not system count."
+  }
 }

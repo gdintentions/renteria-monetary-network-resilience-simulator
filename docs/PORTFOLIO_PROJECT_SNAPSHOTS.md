@@ -2,7 +2,15 @@
 
 This page gives recruiters and reviewers a public, non-sensitive overview of projects whose working source repositories are currently private. It is intentionally factual: capabilities listed here are limited to behavior implemented in the corresponding repository and verified by its checked-in tests or documented demo boundaries.
 
-## Current verification — November 7, 2026 Pacific
+## Current verification — November 20, 2026 Pacific
+
+The [current evidence register](CURRENT_EVIDENCE_2026-11-20.md) covers **14 systems plus two related RAG demo variants in nine accessible owned repositories**. JEV is one system; the RAG Guardrails lab is an extension, not an additional system. The [machine-readable release gates](RELEASE_GATES.json) now include JEV with all five organizational/production gates pending.
+
+The RAG OpenTelemetry service pin is corrected from 1.45.1 to 1.45.2 in [merged PR #21](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag/pull/21). Fresh candidate verification passed **125 tests on each of Python 3.11 and 3.12**, zero failures/errors/skips, with one existing warning; the exact-pin audit reported **zero known vulnerabilities across fourteen pins**, and the confined synthetic container smoke passed. [The current register](CURRENT_EVIDENCE_2026-11-20.md#governed-rag-dependency-revalidation) links exact revisions, run IDs and the final-head reruns. The [failed November 16 audit](https://github.com/gdintentions/enterprise-ai-chatbot-governed-rag/actions/runs/43931212837) remains preserved. This is bounded dependency/compatibility evidence, not independent policy or production certification.
+
+SourceGate's non-empty claim-coverage fix and EvidenceWeave failure diagnostics are merged at `7519f4d1`. New semantic conflict candidates, JEV reconstruction and SourceGate/TraceLens separate-label tooling remain in **draft PRs #25, #28 and #29**; passing authored fixtures do not establish independent validation or released behavior. See the current register for exact run links and failures. The 114-test summary below is historical, not the current total.
+
+## Historical verification — November 7, 2026 Pacific
 
 This additive update supersedes the older test-count summaries below, without deleting their historical evidence. See the [current evidence register](CURRENT_EVIDENCE_2026-11-07.md) for tested revisions, CI links, failures, and the distinction between mainline and experimental work. Private-source links remain access-controlled; publishing this summary does not publish private source, identities, labels, or credentials.
 
