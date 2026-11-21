@@ -10,7 +10,8 @@ A growing portfolio of working AI systems, governance controls, simulation model
 - **[November 2, 2026 portfolio engineering work log — Governed RAG NLI comparison and monetary stress-test plan](docs/PORTFOLIO_WORK_LOG_2026-11-02.md)**
 - [Portfolio evidence review and test results](EVIDENCE_REVIEW_2026-09-25.md)
 - [Public recruiter snapshots for private-source projects](docs/PORTFOLIO_PROJECT_SNAPSHOTS.md)
-- **[Current evidence and open acceptance gates — November 7, 2026](docs/CURRENT_EVIDENCE_2026-11-07.md)** — 13 systems plus two related RAG demo variants; exact test revisions, preserved failures, and miniature/service distinctions.
+- **[Current evidence and open acceptance gates — November 20, 2026](docs/CURRENT_EVIDENCE_2026-11-20.md)** — 14 systems plus two related RAG demo variants; measured results, current audit status, and mainline versus draft boundaries.
+- [Preserved November 7 evidence register](docs/CURRENT_EVIDENCE_2026-11-07.md) — historical inventory and results for that date.
 - [Live browser demo-safe showcase](https://gdintentions.github.io/renteria-monetary-network-resilience-simulator/)
 - **[Recruiter source guide: four inspected public projects, actual code, tests, demos and safety boundaries](PUBLIC_SOURCE_GUIDE.md)**
 - [Runnable demo-safe source showcase](demo_safe/README.md)
